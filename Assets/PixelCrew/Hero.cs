@@ -12,7 +12,7 @@ public class Hero : MonoBehaviour
 
     public void Update()
     {
-        if (_direction.x == 0 || _direction.y != 0) return;
+        if (_direction.x == 0 && _direction.y == 0) return;
 
         var delta = _direction.x * _speed * Time.deltaTime;
         var newXPosition = transform.position.x + delta;
