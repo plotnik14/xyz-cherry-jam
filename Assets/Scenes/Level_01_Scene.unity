@@ -998,7 +998,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 262238568}
-        m_MethodName: OnHorizontalMovement
+        m_MethodName: OnMovement
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1008,8 +1008,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: d28e5712-8b39-43c3-b8f9-83c253a448b7
-    m_ActionName: Hero/Horizontal[/Keyboard/a,/Keyboard/d]
+    m_ActionId: a615dec7-df34-463c-ad59-0acbe7444e01
+    m_ActionName: Hero/Movement[/Keyboard/a,/Keyboard/d,/Keyboard/s,/Keyboard/w]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero
