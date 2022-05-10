@@ -12,9 +12,10 @@ public class Hero : MonoBehaviour
 
     public void Update()
     {
-        if (_direction == Vector2.zero) return;
-
-        Vector2 delta = _direction * _speed * Time.deltaTime;
-        transform.position = new Vector3(transform.position.x + delta.x, transform.position.y + delta.y, transform.position.z);
+        if (_direction.magnitude > 0)
+        {
+            Vector2 delta = _direction * _speed * Time.deltaTime;
+            transform.position += new Vector3(delta.x, delta.y, transform.position.z);
+        }
     }
 }
