@@ -12,15 +12,25 @@ namespace PixelCrew
 
         private Vector2 _direction;
         private Rigidbody2D _rigidbody;
+        private Animator _animator;
+        private SpriteRenderer _sprite;
+
+        private static readonly int VerticalVelocityKey = Animator.StringToHash("vertical-velocity");
+        private static readonly int IsRunningKey = Animator.StringToHash("is-running");
+        private static readonly int IsOnGroundKey = Animator.StringToHash("is-on-ground");
+
 
         public void SetDirection(Vector2 direction)
         {
             _direction = direction;
+
         }
 
         public void Awake()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
+            _animator = GetComponent<Animator>();
+            _sprite = GetComponent<SpriteRenderer>();
         }
 
         public void FixedUpdate()
@@ -28,9 +38,11 @@ namespace PixelCrew
             _rigidbody.velocity = new Vector2(_direction.x * _speed, _rigidbody.velocity.y);
 
             bool isJumping = _direction.y > 0;
+            bool isOnGround = IsGrounded();
+
             if (isJumping)
             {
-                if (IsGrounded() && _rigidbody.velocity.y <= 0)
+                if (isOnGround && _rigidbody.velocity.y <= 0)
                 {
                     _rigidbody.AddForce(Vector2.up * _jumpSpeed, ForceMode2D.Impulse);
                 }
@@ -39,7 +51,25 @@ namespace PixelCrew
             {
                 _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _rigidbody.velocity.y * 0.5f);
             }
+
+            _animator.SetFloat(VerticalVelocityKey, _rigidbody.velocity.y);
+            _animator.SetBool(IsRunningKey, _direction.x != 0);
+            _animator.SetBool(IsOnGroundKey, isOnGround);
+
+            UpdateSpriteDirection();
         }
+
+        private void UpdateSpriteDirection()
+        { 
+            if (_direction.x > 0)
+            {
+                _sprite.flipX = false;
+            } else if (_direction.x < 0)
+            {
+                _sprite.flipX = true;
+            }
+        }
+
         private bool IsGrounded()
         {
             return _groundCheck.IsTouchingLayer;
