@@ -28,10 +28,10 @@ namespace PixelCrew.Components
 
             // ToDo delete/update ??
             // Testing SpriteAnimationWithClips
-            var coin = _objectToCollect.GetComponent<SpriteAnimationWithClips>();
-            if (coin != null)
+            var coinSpriteAnimation = _objectToCollect.GetComponent<SpriteAnimationWithClips>();
+            if (coinSpriteAnimation != null)
             {
-                coin.SetName("destroy");
+                coinSpriteAnimation.SetClip("destroy");
             }
         }
     }

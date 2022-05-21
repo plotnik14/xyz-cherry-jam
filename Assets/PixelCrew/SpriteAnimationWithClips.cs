@@ -69,7 +69,7 @@ namespace PixelCrew
             _currentSpriteIndex++;
         }
 
-        public void SetName(string name)
+        public void SetClip(string name)
         {
             UpdateClipByName(name);
 
