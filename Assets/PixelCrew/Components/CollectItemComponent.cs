@@ -24,6 +24,15 @@ namespace PixelCrew.Components
             {
                 Debug.LogError($"Untagged coin:{gameObject.name}");
             }
+
+
+            // ToDo delete/update ??
+            // Testing SpriteAnimationWithClips
+            var coin = _objectToCollect.GetComponent<SpriteAnimationWithClips>();
+            if (coin != null)
+            {
+                coin.SetName("destroy");
+            }
         }
     }
 

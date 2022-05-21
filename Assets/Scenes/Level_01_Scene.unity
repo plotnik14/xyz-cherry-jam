@@ -379,6 +379,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: spin
+  _loop: 1
+  _allowNextClip: 0
   _sprites:
   - {fileID: -2322180950842035098, guid: 6a8bb74ba8a9e0a4e8883ebcbe32ab54, type: 3}
   - {fileID: -4893972260818282012, guid: 6a8bb74ba8a9e0a4e8883ebcbe32ab54, type: 3}
@@ -3467,7 +3469,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa8d5d6f8b445304eb91ab5f7e329ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: spin
+  _name: destroy
+  _loop: 1
+  _allowNextClip: 0
   _sprites:
   - {fileID: -4986890610287934012, guid: 6a8bb74ba8a9e0a4e8883ebcbe32ab54, type: 3}
   - {fileID: 6143208460787649835, guid: 6a8bb74ba8a9e0a4e8883ebcbe32ab54, type: 3}
@@ -3756,6 +3760,21 @@ PrefabInstance:
       propertyPath: _inventory
       value: 
       objectReference: {fileID: 262238573}
+    - target: {fileID: 4400349685238173117, guid: 52ceb3c5845f6b24e85ffffe03dab0b2,
+        type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4400349685238173117, guid: 52ceb3c5845f6b24e85ffffe03dab0b2,
+        type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4400349686920255412, guid: 52ceb3c5845f6b24e85ffffe03dab0b2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4400349685238173104, guid: 52ceb3c5845f6b24e85ffffe03dab0b2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 52ceb3c5845f6b24e85ffffe03dab0b2, type: 3}
@@ -3778,8 +3797,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _frameRate: 10
-  _loop: 0
-  _allowNext: 1
   _clips:
   - {fileID: 217682151}
   - {fileID: 1497591588}
