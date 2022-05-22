@@ -42,7 +42,7 @@ namespace PixelCrew
 
             if (isJumping)
             {
-                if (isOnGround && _rigidbody.velocity.y <= 0)
+                if (isOnGround && _rigidbody.velocity.y <= 0.01)
                 {
                     _rigidbody.AddForce(Vector2.up * _jumpSpeed, ForceMode2D.Impulse);
                 }
