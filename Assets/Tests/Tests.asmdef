@@ -1,0 +1,12 @@
+﻿{
+    "name": "Tests",
+    "references": [
+        "PixelCrewAssembly"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ]
+}
