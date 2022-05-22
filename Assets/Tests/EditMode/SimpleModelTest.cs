@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using PixelCrew;
 
-namespace Editor
+namespace Tests.EditMode
 {
     internal class SimpleModelTest
     {
