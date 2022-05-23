@@ -7,6 +7,7 @@ namespace PixelCrew
     {
         [SerializeField] private float _speed;
         [SerializeField] private float _jumpSpeed;
+        [SerializeField] private float _damageJumpSpeed;
 
         [SerializeField] private LayerCheck _groundCheck;
 
@@ -17,10 +18,10 @@ namespace PixelCrew
 
         private bool _isGrounded;
         private bool _allowDoubleJump;
-
         private static readonly int VerticalVelocityKey = Animator.StringToHash("vertical-velocity");
         private static readonly int IsRunningKey = Animator.StringToHash("is-running");
         private static readonly int IsOnGroundKey = Animator.StringToHash("is-on-ground");
+        private static readonly int HitKey = Animator.StringToHash("hit");
 
 
         public void SetDirection(Vector2 direction)
@@ -105,6 +106,12 @@ namespace PixelCrew
         private bool IsGrounded()
         {
             return _groundCheck.IsTouchingLayer;
+        }
+
+        public void TakeDamage()
+        {
+            _animator.SetTrigger(HitKey);
+            _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _damageJumpSpeed);
         }
 
         private void OnDrawGizmos()
