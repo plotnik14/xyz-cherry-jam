@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using PixelCrew.Components;
+using UnityEngine;
 
 namespace PixelCrew
 {
@@ -8,13 +9,15 @@ namespace PixelCrew
         [SerializeField] private float _speed;
         [SerializeField] private float _jumpSpeed;
         [SerializeField] private float _damageJumpSpeed;
-
+        [SerializeField] private float _interactionRadius;
+        [SerializeField] private LayerMask _interactionLayer;
         [SerializeField] private LayerCheck _groundCheck;
 
         private Vector2 _direction;
         private Rigidbody2D _rigidbody;
         private Animator _animator;
         private SpriteRenderer _sprite;
+        private Collider2D[] _interactionResult = new Collider2D[1];
 
         private bool _isGrounded;
         private bool _allowDoubleJump;
@@ -112,6 +115,24 @@ namespace PixelCrew
         {
             _animator.SetTrigger(HitKey);
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _damageJumpSpeed);
+        }
+
+        public void Interact()
+        {
+            var size = Physics2D.OverlapCircleNonAlloc(
+                transform.position, 
+                _interactionRadius, 
+                _interactionResult, 
+                _interactionLayer);
+
+            for (int i = 0; i < size; i++)
+            {
+                var interactable = _interactionResult[i].GetComponent<InteractableComponent>();
+                if (interactable != null)
+                {
+                    interactable.Interact();
+                }
+            }
         }
 
         private void OnDrawGizmos()

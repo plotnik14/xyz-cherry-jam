@@ -13,5 +13,13 @@ namespace PixelCrew
             var direction = context.ReadValue<Vector2>();
             _hero.SetDirection(direction);
         }
+
+        public void OnInteract(InputAction.CallbackContext context)
+        {
+            if (context.canceled)
+            {
+                _hero.Interact();
+            }
+        }
     }
 }
