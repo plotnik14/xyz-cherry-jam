@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace PixelCrew.Components
 {
+    [Obsolete("DamageComponent is deprecated. Please use HealthChangeComponent")]
     public class DamageComponent : MonoBehaviour
     {
         [SerializeField] private int _damage;

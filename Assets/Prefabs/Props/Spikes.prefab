@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2412455136131471082}
   - component: {fileID: 2412455136131471084}
   - component: {fileID: 2412455136131471086}
-  - component: {fileID: 2412455136131471085}
+  - component: {fileID: 1933073031}
   m_Layer: 8
   m_Name: Spikes
   m_TagString: Untagged
@@ -27,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2412455136131471081}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.098693, y: -2.0771327, z: 9.942213}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -134,7 +134,8 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2412455136131471085}
+      - m_Target: {fileID: 2412455136131471085, guid: 8c1d40dc9da72f7418a22aa9f86485d8,
+          type: 3}
         m_MethodName: ApplyDamage
         m_Mode: 0
         m_Arguments:
@@ -145,7 +146,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2412455136131471085
+--- !u!114 &1933073031
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -154,7 +155,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2412455136131471081}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ce6c738db7170c429dfc32f9b6e938d, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ac3a445fcfdbab4e8bac31201724c28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 1
+  _healthPoints: -1
