@@ -12,11 +12,11 @@ namespace PixelCrew
         [SerializeField] private float _interactionRadius;
         [SerializeField] private LayerMask _interactionLayer;
         [SerializeField] private LayerCheck _groundCheck;
+        [SerializeField] private SpawnComponent _footPrintParticles;
 
         private Vector2 _direction;
         private Rigidbody2D _rigidbody;
         private Animator _animator;
-        private SpriteRenderer _sprite;
         private Collider2D[] _interactionResult = new Collider2D[1];
 
         private bool _isGrounded;
@@ -37,7 +37,6 @@ namespace PixelCrew
         {
             _rigidbody = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
-            _sprite = GetComponent<SpriteRenderer>();
         }
 
         public void FixedUpdate()
@@ -99,10 +98,10 @@ namespace PixelCrew
         { 
             if (_direction.x > 0)
             {
-                _sprite.flipX = false;
+                transform.localScale = Vector3.one;
             } else if (_direction.x < 0)
             {
-                _sprite.flipX = true;
+                transform.localScale = new Vector3(-1, 1, 1);
             }
         }
 
@@ -133,6 +132,11 @@ namespace PixelCrew
                     interactable.Interact();
                 }
             }
+        }
+
+        public void SpawnFootPrints()
+        {
+            _footPrintParticles.Spawn();
         }
 
         private void OnDrawGizmos()
