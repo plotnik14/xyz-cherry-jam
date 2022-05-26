@@ -14,7 +14,6 @@ namespace PixelCrew.Components
 
             if (_healthPoints > 0)
             {
-                Debug.Log("ApplyHealing on " + _healthPoints);
                 healthComponent.ApplyHealing(_healthPoints);
             }
             else if (_healthPoints < 0)
