@@ -17,6 +17,17 @@ namespace PixelCrew
             PrintCoinsCount();
         }
 
+        public void LoseCoins(int coinsCount)
+        {
+            _coins -= coinsCount;
+            PrintCoinsCount();
+        }
+
+        public int GetCoinsCount()
+        {
+            return _coins;
+        }
+
         private void PrintCoinsCount()
         {
             Debug.Log($"Coins count:{_coins}");

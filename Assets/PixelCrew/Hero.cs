@@ -13,11 +13,13 @@ namespace PixelCrew
         [SerializeField] private LayerMask _interactionLayer;
         [SerializeField] private LayerCheck _groundCheck;
         [SerializeField] private SpawnComponent _footPrintParticles;
+        [SerializeField] private ParticleSystem _hitParticles;
 
         private Vector2 _direction;
         private Rigidbody2D _rigidbody;
         private Animator _animator;
         private Collider2D[] _interactionResult = new Collider2D[1];
+        private HeroInventory _heroInventory;
 
         private bool _isGrounded;
         private bool _allowDoubleJump;
@@ -37,6 +39,7 @@ namespace PixelCrew
         {
             _rigidbody = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
+            _heroInventory = GetComponent<HeroInventory>();
         }
 
         public void FixedUpdate()
@@ -114,6 +117,25 @@ namespace PixelCrew
         {
             _animator.SetTrigger(HitKey);
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _damageJumpSpeed);
+
+            if (_heroInventory.GetCoinsCount() > 0)
+            {
+                SpawnCoinParticles();
+            }
+        }
+        
+        private void SpawnCoinParticles()
+        {
+            var coins = _heroInventory.GetCoinsCount();
+            var numCoinsToDispose = Mathf.Min(coins, 5);
+            _heroInventory.LoseCoins(numCoinsToDispose);
+
+            var burst = _hitParticles.emission.GetBurst(0);
+            burst.count = numCoinsToDispose;
+            _hitParticles.emission.SetBurst(0, burst);
+
+            _hitParticles.gameObject.SetActive(true);
+            _hitParticles.Play();
         }
 
         public void Interact()
