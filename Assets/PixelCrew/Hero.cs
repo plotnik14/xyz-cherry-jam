@@ -13,6 +13,7 @@ namespace PixelCrew
         [SerializeField] private LayerMask _interactionLayer;
         [SerializeField] private LayerCheck _groundCheck;
         [SerializeField] private SpawnComponent _footPrintParticles;
+        [SerializeField] private SpawnComponent _jumpParticles;
         [SerializeField] private ParticleSystem _hitParticles;
 
         private Vector2 _direction;
@@ -76,16 +77,18 @@ namespace PixelCrew
 
         private float CalculateJumpVelocity(float yVelocity)
         {
-            var isFaling = _rigidbody.velocity.y <= 0.01;
-            if (!isFaling) return yVelocity;
+            var isFalling = _rigidbody.velocity.y <= 0.01;
+            if (!isFalling) return yVelocity;
 
             if (_isGrounded)
             {
                 yVelocity += _jumpSpeed;
+                SpawnJumpParticles();
             }
             else if (_allowDoubleJump)
             {
                 yVelocity = _jumpSpeed;
+                SpawnJumpParticles();
                 _allowDoubleJump = false;
             }
 
@@ -159,6 +162,11 @@ namespace PixelCrew
         public void SpawnFootPrints()
         {
             _footPrintParticles.Spawn();
+        }
+
+        public void SpawnJumpParticles()
+        {
+            _jumpParticles.Spawn();
         }
 
         private void OnDrawGizmos()
