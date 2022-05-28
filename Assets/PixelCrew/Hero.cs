@@ -3,17 +3,18 @@ using UnityEngine;
 
 namespace PixelCrew
 {
-
     public class Hero : MonoBehaviour
     {
         [SerializeField] private float _speed;
         [SerializeField] private float _jumpSpeed;
         [SerializeField] private float _damageJumpSpeed;
         [SerializeField] private float _interactionRadius;
+        [SerializeField] private float _longFalling;
         [SerializeField] private LayerMask _interactionLayer;
         [SerializeField] private LayerCheck _groundCheck;
         [SerializeField] private SpawnComponent _footPrintParticles;
         [SerializeField] private SpawnComponent _jumpParticles;
+        [SerializeField] private SpawnComponent _fallParticles;
         [SerializeField] private ParticleSystem _hitParticles;
 
         private Vector2 _direction;
@@ -24,6 +25,8 @@ namespace PixelCrew
 
         private bool _isGrounded;
         private bool _allowDoubleJump;
+        private float _maxJumpPositionY;
+
         private static readonly int VerticalVelocityKey = Animator.StringToHash("vertical-velocity");
         private static readonly int IsRunningKey = Animator.StringToHash("is-running");
         private static readonly int IsOnGroundKey = Animator.StringToHash("is-on-ground");
@@ -33,7 +36,6 @@ namespace PixelCrew
         public void SetDirection(Vector2 direction)
         {
             _direction = direction;
-
         }
 
         public void Awake()
@@ -41,10 +43,14 @@ namespace PixelCrew
             _rigidbody = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
             _heroInventory = GetComponent<HeroInventory>();
+            _maxJumpPositionY = transform.position.y;
+            _allowDoubleJump = true;
         }
 
         public void FixedUpdate()
         {
+            CalculateFalling();
+
             var xVelocity = _direction.x * _speed;
             var yVelocity = CalculateYVelocity();
             _rigidbody.velocity = new Vector2(xVelocity, yVelocity);
@@ -93,6 +99,26 @@ namespace PixelCrew
             }
 
             return yVelocity;
+        }
+
+        private void CalculateFalling()
+        {
+            if (_isGrounded)
+            {             
+                var currentYPosition = transform.position.y;
+                var isLongFalling = Mathf.Abs(_maxJumpPositionY - currentYPosition) > _longFalling;
+                var isDoubleJumpLanding = _allowDoubleJump == false;
+
+                if (isLongFalling || isDoubleJumpLanding)
+                {
+                    SpawnLandingParticles();
+                }
+
+                _maxJumpPositionY = currentYPosition;
+            }
+
+            _maxJumpPositionY = Mathf.Max(_maxJumpPositionY, transform.position.y);
+
         }
 
         public void Update()
@@ -167,6 +193,11 @@ namespace PixelCrew
         public void SpawnJumpParticles()
         {
             _jumpParticles.Spawn();
+        }
+
+        public void SpawnLandingParticles()
+        {
+            _fallParticles.Spawn();
         }
 
         private void OnDrawGizmos()
