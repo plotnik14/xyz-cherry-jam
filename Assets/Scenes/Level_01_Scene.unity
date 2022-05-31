@@ -5272,7 +5272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 4
   _jumpSpeed: 12
-  _damageJumpSpeed: 40
+  _damageJumpSpeed: 10
   _interactionRadius: 1
   _longFalling: 3
   _interactionLayer:

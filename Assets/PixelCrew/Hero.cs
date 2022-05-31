@@ -26,6 +26,7 @@ namespace PixelCrew
         private bool _isGrounded;
         private bool _allowDoubleJump;
         private float _maxJumpPositionY;
+        private bool _isJumping;
 
         private static readonly int VerticalVelocityKey = Animator.StringToHash("vertical-velocity");
         private static readonly int IsRunningKey = Animator.StringToHash("is-running");
@@ -67,13 +68,18 @@ namespace PixelCrew
             var yVelocity = _rigidbody.velocity.y;
             bool isJumpPressed = _direction.y > 0;
 
-            if (_isGrounded) _allowDoubleJump = true;
+            if (_isGrounded)
+            {
+                _allowDoubleJump = true;
+                _isJumping = false;
+            }
 
             if (isJumpPressed)
             {
+                _isJumping = true;
                 yVelocity = CalculateJumpVelocity(yVelocity);
             }
-            else if (_rigidbody.velocity.y > 0)
+            else if (_isJumping && _rigidbody.velocity.y > 0)
             {
                 yVelocity *= 0.5f;
             }
@@ -144,6 +150,7 @@ namespace PixelCrew
 
         public void TakeDamage()
         {
+            _isJumping = false;
             _animator.SetTrigger(HitKey);
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _damageJumpSpeed);
 
