@@ -126,6 +126,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _destinationTransform: {fileID: 0}
+  _alphaTime: 1
+  _moveTime: 1
 --- !u!114 &2476059054234824263
 MonoBehaviour:
   m_ObjectHideFlags: 0
