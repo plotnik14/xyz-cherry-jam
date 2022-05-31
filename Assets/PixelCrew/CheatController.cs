@@ -59,7 +59,10 @@ namespace PixelCrew
     [Serializable]
     public class CheatItem
     {
-        public string Name;
-        public UnityEvent Action;
+        [SerializeField] private string _name;
+        [SerializeField] private UnityEvent _action;
+
+        public string Name => _name;
+        public UnityEvent Action => _action;
     }
 }
