@@ -174,6 +174,11 @@ namespace PixelCrew
             _hitParticles.Play();
         }
 
+        public void OnDisable()
+        {
+            _hitParticles.gameObject.SetActive(false);
+        }
+
         public void Interact()
         {
             var size = Physics2D.OverlapCircleNonAlloc(
