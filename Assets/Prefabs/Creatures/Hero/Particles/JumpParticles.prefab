@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 715821786386003258}
   - component: {fileID: 715821786386003252}
-  - component: {fileID: 715821786386003259}
+  - component: {fileID: 317370754340034862}
   - component: {fileID: 715821786386003253}
   m_Layer: 0
   m_Name: JumpParticles
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &715821786386003259
+--- !u!114 &317370754340034862
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,32 +92,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 715821786386003257}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e41daa4f42018a3458d4c2b107601b82, type: 3}
+  m_Script: {fileID: 11500000, guid: 96a7b47a1cbe6e048a7bc444b9d27bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _frameRate: 10
-  _loop: 0
-  _sprites:
-  - {fileID: 21300000, guid: e6c1a517a48100043afbbac341335c89, type: 3}
-  - {fileID: 21300000, guid: f35b12d82b150b24081d7544730788c7, type: 3}
-  - {fileID: 21300000, guid: c412193894310a04da5986373c3af29c, type: 3}
-  - {fileID: 21300000, guid: 31def1c3a792eeb44a77ca103ade8d1e, type: 3}
-  - {fileID: 21300000, guid: 41f3bb1fc3bad5749b60e77a7c051f2d, type: 3}
-  - {fileID: 21300000, guid: 3f76cf2d0e3bb52409b885f562ba3a0c, type: 3}
-  _onComplete:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 715821786386003253}
-        m_MethodName: DestroyObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  _clips:
+  - _name: JumpParticles
+    _sprites:
+    - {fileID: 21300000, guid: e6c1a517a48100043afbbac341335c89, type: 3}
+    - {fileID: 21300000, guid: f35b12d82b150b24081d7544730788c7, type: 3}
+    - {fileID: 21300000, guid: c412193894310a04da5986373c3af29c, type: 3}
+    - {fileID: 21300000, guid: 31def1c3a792eeb44a77ca103ade8d1e, type: 3}
+    - {fileID: 21300000, guid: 41f3bb1fc3bad5749b60e77a7c051f2d, type: 3}
+    - {fileID: 21300000, guid: 3f76cf2d0e3bb52409b885f562ba3a0c, type: 3}
+    _loop: 0
+    _allowNextClip: 0
+    _onComplete:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 715821786386003253}
+          m_MethodName: DestroyObject
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &715821786386003253
 MonoBehaviour:
   m_ObjectHideFlags: 0

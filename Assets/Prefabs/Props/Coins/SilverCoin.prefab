@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4400349685238173116}
   - component: {fileID: 4400349685238173115}
   - component: {fileID: 4400349685238173104}
+  - component: {fileID: -1365106557790415085}
   m_Layer: 0
   m_Name: SilverCoin
   m_TagString: SilverCoin
@@ -202,6 +203,31 @@ MonoBehaviour:
   _onComplete:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &-1365106557790415085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4400349685238173113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96a7b47a1cbe6e048a7bc444b9d27bed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _frameRate: 10
+  _clips:
+  - _name: Main
+    _sprites:
+    - {fileID: -2322180950842035098, guid: 6a8bb74ba8a9e0a4e8883ebcbe32ab54, type: 3}
+    - {fileID: -4893972260818282012, guid: 6a8bb74ba8a9e0a4e8883ebcbe32ab54, type: 3}
+    - {fileID: -6323751108524238166, guid: 6a8bb74ba8a9e0a4e8883ebcbe32ab54, type: 3}
+    - {fileID: 2722280177590742205, guid: 6a8bb74ba8a9e0a4e8883ebcbe32ab54, type: 3}
+    _loop: 1
+    _allowNextClip: 0
+    _onComplete:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &4400349686920255410
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,7 +238,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4400349686920255411}
   - component: {fileID: 4400349686920255413}
-  - component: {fileID: 4400349686920255412}
+  - component: {fileID: 2459485927621264399}
   m_Layer: 0
   m_Name: Destroy
   m_TagString: Untagged
@@ -284,7 +310,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4400349686920255412
+--- !u!114 &2459485927621264399
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -293,27 +319,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 4400349686920255410}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e41daa4f42018a3458d4c2b107601b82, type: 3}
+  m_Script: {fileID: 11500000, guid: 96a7b47a1cbe6e048a7bc444b9d27bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _frameRate: 10
-  _loop: 0
-  _sprites:
-  - {fileID: -4986890610287934012, guid: 6a8bb74ba8a9e0a4e8883ebcbe32ab54, type: 3}
-  - {fileID: 6143208460787649835, guid: 6a8bb74ba8a9e0a4e8883ebcbe32ab54, type: 3}
-  - {fileID: 7609282858266732271, guid: 6a8bb74ba8a9e0a4e8883ebcbe32ab54, type: 3}
-  - {fileID: -6288512792030432889, guid: 6a8bb74ba8a9e0a4e8883ebcbe32ab54, type: 3}
-  _onComplete:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4400349685238173116}
-        m_MethodName: DestroyObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  _clips:
+  - _name: Main
+    _sprites:
+    - {fileID: -4986890610287934012, guid: 6a8bb74ba8a9e0a4e8883ebcbe32ab54, type: 3}
+    - {fileID: 6143208460787649835, guid: 6a8bb74ba8a9e0a4e8883ebcbe32ab54, type: 3}
+    - {fileID: 7609282858266732271, guid: 6a8bb74ba8a9e0a4e8883ebcbe32ab54, type: 3}
+    - {fileID: -6288512792030432889, guid: 6a8bb74ba8a9e0a4e8883ebcbe32ab54, type: 3}
+    _loop: 0
+    _allowNextClip: 0
+    _onComplete:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4400349685238173116}
+          m_MethodName: DestroyObject
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

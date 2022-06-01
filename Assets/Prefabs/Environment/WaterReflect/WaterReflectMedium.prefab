@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2182055334094752168}
   - component: {fileID: 2182055334094752169}
-  - component: {fileID: 2182055334094752171}
+  - component: {fileID: 8534373985543543636}
   m_Layer: 0
   m_Name: WaterReflectMedium
   m_TagString: Untagged
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2182055334094752171
+--- !u!114 &8534373985543543636
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,16 +92,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 2182055334094752174}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e41daa4f42018a3458d4c2b107601b82, type: 3}
+  m_Script: {fileID: 11500000, guid: 96a7b47a1cbe6e048a7bc444b9d27bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _frameRate: 10
-  _loop: 1
-  _sprites:
-  - {fileID: -5528557573366522457, guid: df3bc1ba55229744e9899267412ff7bb, type: 3}
-  - {fileID: 8506211366736525064, guid: df3bc1ba55229744e9899267412ff7bb, type: 3}
-  - {fileID: 759440405009013545, guid: df3bc1ba55229744e9899267412ff7bb, type: 3}
-  - {fileID: 3538689430123128980, guid: df3bc1ba55229744e9899267412ff7bb, type: 3}
-  _onComplete:
-    m_PersistentCalls:
-      m_Calls: []
+  _clips:
+  - _name: Main
+    _sprites:
+    - {fileID: -5528557573366522457, guid: df3bc1ba55229744e9899267412ff7bb, type: 3}
+    - {fileID: 8506211366736525064, guid: df3bc1ba55229744e9899267412ff7bb, type: 3}
+    - {fileID: 759440405009013545, guid: df3bc1ba55229744e9899267412ff7bb, type: 3}
+    - {fileID: 3538689430123128980, guid: df3bc1ba55229744e9899267412ff7bb, type: 3}
+    _loop: 1
+    _allowNextClip: 0
+    _onComplete:
+      m_PersistentCalls:
+        m_Calls: []

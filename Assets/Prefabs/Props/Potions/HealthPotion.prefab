@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4588559214526573520}
   - component: {fileID: 4588559214526573521}
-  - component: {fileID: 4588559214526573535}
   - component: {fileID: 159055195866403817}
   - component: {fileID: 8203908399062767350}
   - component: {fileID: 1487283538}
   - component: {fileID: 7031111701497865209}
+  - component: {fileID: 2408404261999824071}
   m_Layer: 0
   m_Name: HealthPotion
   m_TagString: Untagged
@@ -87,31 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4588559214526573535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4588559214526573522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e41daa4f42018a3458d4c2b107601b82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _frameRate: 10
-  _loop: 1
-  _sprites:
-  - {fileID: 3714227102187029162, guid: 765af0328984bb54391606d35e673daa, type: 3}
-  - {fileID: -6202940564662568092, guid: 765af0328984bb54391606d35e673daa, type: 3}
-  - {fileID: -8747976068718324687, guid: 765af0328984bb54391606d35e673daa, type: 3}
-  - {fileID: 7142050841817600938, guid: 765af0328984bb54391606d35e673daa, type: 3}
-  - {fileID: -860807820763296739, guid: 765af0328984bb54391606d35e673daa, type: 3}
-  - {fileID: -5249288142952506341, guid: 765af0328984bb54391606d35e673daa, type: 3}
-  - {fileID: 1089735312403315716, guid: 765af0328984bb54391606d35e673daa, type: 3}
-  _onComplete:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &159055195866403817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,3 +177,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.23536682, y: 0.4163996}
   m_EdgeRadius: 0
+--- !u!114 &2408404261999824071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4588559214526573522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96a7b47a1cbe6e048a7bc444b9d27bed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _frameRate: 10
+  _clips:
+  - _name: Main
+    _sprites:
+    - {fileID: 3714227102187029162, guid: 765af0328984bb54391606d35e673daa, type: 3}
+    - {fileID: -6202940564662568092, guid: 765af0328984bb54391606d35e673daa, type: 3}
+    - {fileID: -8747976068718324687, guid: 765af0328984bb54391606d35e673daa, type: 3}
+    - {fileID: 7142050841817600938, guid: 765af0328984bb54391606d35e673daa, type: 3}
+    - {fileID: -860807820763296739, guid: 765af0328984bb54391606d35e673daa, type: 3}
+    - {fileID: -5249288142952506341, guid: 765af0328984bb54391606d35e673daa, type: 3}
+    - {fileID: 1089735312403315716, guid: 765af0328984bb54391606d35e673daa, type: 3}
+    _loop: 1
+    _allowNextClip: 0
+    _onComplete:
+      m_PersistentCalls:
+        m_Calls: []

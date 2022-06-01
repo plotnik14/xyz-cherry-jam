@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5728679182103233786}
   - component: {fileID: 5728679182103233788}
-  - component: {fileID: 5728679182103233789}
+  - component: {fileID: -7362701207794140854}
   m_Layer: 0
   m_Name: PalmTreeBackgroundRight
   m_TagString: Untagged
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5728679182103233789
+--- !u!114 &-7362701207794140854
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,16 +92,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 5728679182103233787}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e41daa4f42018a3458d4c2b107601b82, type: 3}
+  m_Script: {fileID: 11500000, guid: 96a7b47a1cbe6e048a7bc444b9d27bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _frameRate: 10
-  _loop: 1
-  _sprites:
-  - {fileID: -6024505487453159095, guid: 3bc1a2cc961534e4e972ad10e333de51, type: 3}
-  - {fileID: 3531074664856275464, guid: 3bc1a2cc961534e4e972ad10e333de51, type: 3}
-  - {fileID: 802857254159732353, guid: 3bc1a2cc961534e4e972ad10e333de51, type: 3}
-  - {fileID: 1278475588773109743, guid: 3bc1a2cc961534e4e972ad10e333de51, type: 3}
-  _onComplete:
-    m_PersistentCalls:
-      m_Calls: []
+  _clips:
+  - _name: Swaying
+    _sprites:
+    - {fileID: -6024505487453159095, guid: 3bc1a2cc961534e4e972ad10e333de51, type: 3}
+    - {fileID: 3531074664856275464, guid: 3bc1a2cc961534e4e972ad10e333de51, type: 3}
+    - {fileID: 802857254159732353, guid: 3bc1a2cc961534e4e972ad10e333de51, type: 3}
+    - {fileID: 1278475588773109743, guid: 3bc1a2cc961534e4e972ad10e333de51, type: 3}
+    _loop: 1
+    _allowNextClip: 0
+    _onComplete:
+      m_PersistentCalls:
+        m_Calls: []
