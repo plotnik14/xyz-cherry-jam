@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 4400349685238173117}
   - component: {fileID: 4400349685238173116}
   - component: {fileID: 4400349685238173115}
-  - component: {fileID: 4400349685238173104}
   - component: {fileID: -1365106557790415085}
   m_Layer: 0
   m_Name: SilverCoin
@@ -181,28 +180,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectToCollect: {fileID: 4400349685238173113}
   _inventory: {fileID: 0}
---- !u!114 &4400349685238173104
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4400349685238173113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e41daa4f42018a3458d4c2b107601b82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _frameRate: 10
-  _loop: 1
-  _sprites:
-  - {fileID: -2322180950842035098, guid: 6a8bb74ba8a9e0a4e8883ebcbe32ab54, type: 3}
-  - {fileID: -4893972260818282012, guid: 6a8bb74ba8a9e0a4e8883ebcbe32ab54, type: 3}
-  - {fileID: -6323751108524238166, guid: 6a8bb74ba8a9e0a4e8883ebcbe32ab54, type: 3}
-  - {fileID: 2722280177590742205, guid: 6a8bb74ba8a9e0a4e8883ebcbe32ab54, type: 3}
-  _onComplete:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &-1365106557790415085
 MonoBehaviour:
   m_ObjectHideFlags: 0
