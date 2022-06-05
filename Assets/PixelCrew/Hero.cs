@@ -159,6 +159,12 @@ namespace PixelCrew
                 SpawnCoinParticles();
             }
         }
+
+        public void Lift(float liftSpeed)
+        {
+            _isJumping = false;
+            _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, liftSpeed);
+        }
         
         private void SpawnCoinParticles()
         {
