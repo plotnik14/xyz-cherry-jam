@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8601528830447252146}
   - component: {fileID: 8601528830447252157}
   m_Layer: 8
-  m_Name: Geyser
+  m_Name: WaterGeyser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,8 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: -1438902853
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3887222674284272389, guid: c011482a0c343eb41bde7bb0a6db3dcc,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: ae153246ff781c94fb78a981669c23ad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,7 +100,7 @@ MonoBehaviour:
   _clips:
   - _name: Off
     _sprites:
-    - {fileID: 3887222674284272389, guid: c011482a0c343eb41bde7bb0a6db3dcc, type: 3}
+    - {fileID: 21300000, guid: ae153246ff781c94fb78a981669c23ad, type: 3}
     _loop: 0
     _allowNextClip: 0
     _onComplete:
@@ -109,15 +108,16 @@ MonoBehaviour:
         m_Calls: []
   - _name: On
     _sprites:
-    - {fileID: -8171165746068769472, guid: c011482a0c343eb41bde7bb0a6db3dcc, type: 3}
-    - {fileID: 6680559997187012143, guid: c011482a0c343eb41bde7bb0a6db3dcc, type: 3}
-    - {fileID: 684901178193663481, guid: c011482a0c343eb41bde7bb0a6db3dcc, type: 3}
-    - {fileID: -4544968436227533738, guid: c011482a0c343eb41bde7bb0a6db3dcc, type: 3}
-    - {fileID: -6875503040152820171, guid: c011482a0c343eb41bde7bb0a6db3dcc, type: 3}
-    - {fileID: 5114014437465201810, guid: c011482a0c343eb41bde7bb0a6db3dcc, type: 3}
-    - {fileID: -107014442118508802, guid: c011482a0c343eb41bde7bb0a6db3dcc, type: 3}
-    - {fileID: -3075661130840135998, guid: c011482a0c343eb41bde7bb0a6db3dcc, type: 3}
-    - {fileID: 4088425644458941327, guid: c011482a0c343eb41bde7bb0a6db3dcc, type: 3}
+    - {fileID: 21300000, guid: 7b937943b6637134096868235b375a02, type: 3}
+    - {fileID: 21300000, guid: 9782c87e9ae904b479adb32785f4bcd0, type: 3}
+    - {fileID: 21300000, guid: 596e5b17d7e73f44e9267089a45cf44a, type: 3}
+    - {fileID: 21300000, guid: c8fca8b79c224a44cbc53504031ae1be, type: 3}
+    - {fileID: 21300000, guid: f82568d067b8b5843bcab2b94a273348, type: 3}
+    - {fileID: 21300000, guid: 29d4648fab534c54b89f76bf6366058c, type: 3}
+    - {fileID: 21300000, guid: bfa8daeb1dafc1d4886acc6e7b86c266, type: 3}
+    - {fileID: 21300000, guid: 817e6cc444b662e46aa5f535f6377929, type: 3}
+    - {fileID: 21300000, guid: 8278543950af0ad469d63c9000520801, type: 3}
+    - {fileID: 21300000, guid: 14f9ca93a5104a7449e9b5d79c236414, type: 3}
     _loop: 1
     _allowNextClip: 0
     _onComplete:
@@ -148,12 +148,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.40523148, y: -0.28469062}
-      - {x: 0.3728199, y: -0.2865891}
-      - {x: 0.3722782, y: -0.22395778}
-      - {x: 0.27978182, y: -0.125382}
-      - {x: -0.31140518, y: -0.12499201}
-      - {x: -0.40556383, y: -0.2240395}
+    - - {x: 0.17444038, y: -0.2540186}
+      - {x: -0.19216251, y: -0.2536567}
+      - {x: -0.30922437, y: -0.38121867}
+      - {x: -0.31481576, y: -0.43870217}
+      - {x: 0.30736494, y: -0.43675047}
+      - {x: 0.30509806, y: -0.37876445}
 --- !u!1 &8601528832056411687
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,7 +199,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0093045235, y: 0.12561187}
+  m_Offset: {x: 0.0038393736, y: -0.06424543}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -210,7 +210,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.32076645, y: 0.48824865}
+  m_Size: {x: 0.27695298, y: 0.3714134}
   m_EdgeRadius: 0
 --- !u!114 &8601528832056411682
 MonoBehaviour:

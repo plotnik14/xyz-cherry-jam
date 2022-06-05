@@ -15863,7 +15863,7 @@ PrefabInstance:
     - target: {fileID: 8601528830447252145, guid: c11a7b387b1dc844898c0b303c7c5818,
         type: 3}
       propertyPath: m_Name
-      value: Geyser
+      value: WaterGeyser
       objectReference: {fileID: 0}
     - target: {fileID: 8601528830447252156, guid: c11a7b387b1dc844898c0b303c7c5818,
         type: 3}
@@ -15873,12 +15873,12 @@ PrefabInstance:
     - target: {fileID: 8601528830447252156, guid: c11a7b387b1dc844898c0b303c7c5818,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.033
+      value: 4.083
       objectReference: {fileID: 0}
     - target: {fileID: 8601528830447252156, guid: c11a7b387b1dc844898c0b303c7c5818,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.71
+      value: -0.564
       objectReference: {fileID: 0}
     - target: {fileID: 8601528830447252156, guid: c11a7b387b1dc844898c0b303c7c5818,
         type: 3}
