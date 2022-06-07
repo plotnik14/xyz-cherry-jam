@@ -4980,10 +4980,13 @@ MonoBehaviour:
   _jumpSpeed: 12
   _damageJumpSpeed: 10
   _interactionRadius: 1
-  _longFalling: 3
+  _fallingVelocity: 12
   _interactionLayer:
     serializedVersion: 2
     m_Bits: 512
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 256
   _groundCheck: {fileID: 8196759457562935808}
   _footPrintParticles: {fileID: 8196759456035982644}
   _jumpParticles: {fileID: 8196759457563810282}

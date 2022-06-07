@@ -1,4 +1,6 @@
 ﻿using PixelCrew.Components;
+using PixelCrew.Utils;
+using System;
 using UnityEngine;
 
 namespace PixelCrew
@@ -9,9 +11,12 @@ namespace PixelCrew
         [SerializeField] private float _jumpSpeed;
         [SerializeField] private float _damageJumpSpeed;
         [SerializeField] private float _interactionRadius;
-        [SerializeField] private float _longFalling;
+        [SerializeField] private float _fallingVelocity;
         [SerializeField] private LayerMask _interactionLayer;
+        [SerializeField] private LayerMask _groundLayer;
         [SerializeField] private LayerCheck _groundCheck;
+
+        [Space][Header("Particles")]
         [SerializeField] private SpawnComponent _footPrintParticles;
         [SerializeField] private SpawnComponent _jumpParticles;
         [SerializeField] private SpawnComponent _fallParticles;
@@ -50,8 +55,6 @@ namespace PixelCrew
 
         public void FixedUpdate()
         {
-            CalculateFalling();
-
             var xVelocity = _direction.x * _speed;
             var yVelocity = CalculateYVelocity();
             _rigidbody.velocity = new Vector2(xVelocity, yVelocity);
@@ -107,24 +110,16 @@ namespace PixelCrew
             return yVelocity;
         }
 
-        private void CalculateFalling()
+        private void OnCollisionEnter2D(Collision2D other)
         {
-            if (_isGrounded)
-            {             
-                var currentYPosition = transform.position.y;
-                var isLongFalling = Mathf.Abs(_maxJumpPositionY - currentYPosition) > _longFalling;
-                var isDoubleJumpLanding = _allowDoubleJump == false;
-
-                if (isLongFalling || isDoubleJumpLanding)
+            if (other.gameObject.IsInLayer(_groundLayer))
+            {
+                var contact = other.contacts[0];
+                if (contact.relativeVelocity.y >= _fallingVelocity)
                 {
                     SpawnLandingParticles();
                 }
-
-                _maxJumpPositionY = currentYPosition;
             }
-
-            _maxJumpPositionY = Mathf.Max(_maxJumpPositionY, transform.position.y);
-
         }
 
         public void Update()
