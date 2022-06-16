@@ -1,6 +1,5 @@
-﻿using System;
+﻿using PixelCrew.Utils;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace PixelCrew.Components
 {
@@ -15,12 +14,6 @@ namespace PixelCrew.Components
             {
                 _action?.Invoke(other.gameObject);
             }
-        }
-
-        [Serializable]
-        public class EnterEvent : UnityEvent<GameObject>
-        {
-
         }
     }
 }
