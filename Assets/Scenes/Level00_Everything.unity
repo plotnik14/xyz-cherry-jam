@@ -5274,10 +5274,13 @@ MonoBehaviour:
   _jumpSpeed: 12
   _damageJumpSpeed: 10
   _interactionRadius: 1
-  _longFalling: 3
+  _fallingVelocity: 0
   _interactionLayer:
     serializedVersion: 2
     m_Bits: 512
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
   _groundCheck: {fileID: 1281537603}
   _footPrintParticles: {fileID: 728185207}
   _jumpParticles: {fileID: 1280601513}
@@ -16006,7 +16009,7 @@ PrefabInstance:
     - target: {fileID: 6621298305610236037, guid: 96d8e479354e55f4c80477715725c072,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.2519519
+      value: -1.314
       objectReference: {fileID: 0}
     - target: {fileID: 6621298305610236037, guid: 96d8e479354e55f4c80477715725c072,
         type: 3}
