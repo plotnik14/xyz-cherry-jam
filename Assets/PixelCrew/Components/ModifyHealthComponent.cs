@@ -2,9 +2,9 @@
 
 namespace PixelCrew.Components
 {
-    public class HealthChangeComponent : MonoBehaviour
+    public class ModifyHealthComponent : MonoBehaviour
     {
-        [SerializeField] private int _healthPoints;
+        [SerializeField] private int _hpDelta;
 
         public void ApplyHealthChange(GameObject target)
         {
@@ -12,13 +12,13 @@ namespace PixelCrew.Components
 
             if (healthComponent == null) return;
 
-            if (_healthPoints > 0)
+            if (_hpDelta > 0)
             {
-                healthComponent.ApplyHealing(_healthPoints);
+                healthComponent.ApplyHealing(_hpDelta);
             }
-            else if (_healthPoints < 0)
+            else if (_hpDelta < 0)
             {
-                var damage = -_healthPoints;
+                var damage = -_hpDelta;
                 healthComponent.ApplyDamage(damage);
             }  
             
