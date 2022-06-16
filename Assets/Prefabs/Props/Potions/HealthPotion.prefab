@@ -114,15 +114,26 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1487283538}
-        m_MethodName: DestroyObject
-        m_Mode: 1
+      - m_Target: {fileID: 7031111701497865209}
+        m_MethodName: set_enabled
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2408404261999824071}
+        m_MethodName: SetClip
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Destroy
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &8203908399062767350
@@ -205,3 +216,25 @@ MonoBehaviour:
     _onComplete:
       m_PersistentCalls:
         m_Calls: []
+  - _name: Destroy
+    _sprites:
+    - {fileID: 6040734443530017722, guid: 765af0328984bb54391606d35e673daa, type: 3}
+    - {fileID: 8167133005111728920, guid: 765af0328984bb54391606d35e673daa, type: 3}
+    - {fileID: 2014349484240403859, guid: 765af0328984bb54391606d35e673daa, type: 3}
+    - {fileID: 6326803469982491369, guid: 765af0328984bb54391606d35e673daa, type: 3}
+    _loop: 0
+    _allowNextClip: 0
+    _onComplete:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1487283538}
+          m_MethodName: DestroyObject
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
