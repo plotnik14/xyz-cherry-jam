@@ -8,6 +8,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Tests/PlayMode/Scenes/SceneForTesting.unity
     guid: 0258382c5e4ffa041b87cd7c9b065602
+  - enabled: 1
+    path: Assets/Scenes/Level00_Everything.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Level01_Puzzle.unity
+    guid: ae9c91b6002229d428b8c706d6e542a8
+  - enabled: 1
+    path: Assets/Scenes/Level02.unity
+    guid: 24f9c2209eff9cb44a4145e6b62418e8
+  - enabled: 1
+    path: Assets/Scenes/Level03.unity
+    guid: a053248dfb5b0ae4f86799a5e7486b98
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: e44002d1587187c45a263a2b1cba1d71,
       type: 2}

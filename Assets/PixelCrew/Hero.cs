@@ -1,4 +1,5 @@
 ﻿using PixelCrew.Components;
+using PixelCrew.Model;
 using PixelCrew.Utils;
 using System;
 using UnityEditor;
@@ -42,7 +43,8 @@ namespace PixelCrew
         private bool _allowDoubleJump;
         private float _maxJumpPositionY;
         private bool _isJumping;
-        private bool _isArmed;
+
+        private GameSession _session;
 
         private static readonly int VerticalVelocityKey = Animator.StringToHash("vertical-velocity");
         private static readonly int IsRunningKey = Animator.StringToHash("is-running");
@@ -65,6 +67,21 @@ namespace PixelCrew
             _allowDoubleJump = true;
         }
 
+        public void Start()
+        {
+            _session = FindObjectOfType<GameSession>();
+            
+            var health = GetComponent<HealthComponent>();
+            health.SetHealth(_session.Data.Hp);
+
+            UpdateHeroWeapon();
+        }
+
+        public void OnHealthChanged(int currentHealth)
+        {
+            _session.Data.Hp = currentHealth;
+        }
+
         public void FixedUpdate()
         {
             var xVelocity = _direction.x * _speed;
@@ -80,7 +97,7 @@ namespace PixelCrew
 
         public void Attack()
         {
-            if (!_isArmed) return;
+            if (!_session.Data.IsArmed) return;
 
             _animator.SetTrigger(AttackKey);
         }
@@ -100,8 +117,13 @@ namespace PixelCrew
 
         public void ArmHero()
         {
-            _isArmed = true;
-            _animator.runtimeAnimatorController = _armed;
+            _session.Data.IsArmed = true;
+            UpdateHeroWeapon();
+        }
+
+        private void UpdateHeroWeapon()
+        {
+            _animator.runtimeAnimatorController = _session.Data.IsArmed ? _armed : _unarmed;
         }
 
         private float CalculateYVelocity()

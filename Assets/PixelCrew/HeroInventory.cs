@@ -1,36 +1,37 @@
-﻿using UnityEngine;
+﻿using PixelCrew.Model;
+using UnityEngine;
 
 namespace PixelCrew
 {
     public class HeroInventory : MonoBehaviour
     {
-        [SerializeField] private int _coins;
+        private GameSession _session;
 
-        public void Awake()
+        public void Start()
         {
-            _coins = 0;
+            _session = FindObjectOfType<GameSession>();
         }
 
         public void AddCoins(int coinsCount)
         {
-            _coins += coinsCount;
+            _session.Data.Coins += coinsCount;
             PrintCoinsCount();
         }
 
         public void LoseCoins(int coinsCount)
         {
-            _coins -= coinsCount;
+            _session.Data.Coins -= coinsCount;
             PrintCoinsCount();
         }
 
         public int GetCoinsCount()
         {
-            return _coins;
+            return _session.Data.Coins;
         }
 
         private void PrintCoinsCount()
         {
-            Debug.Log($"Coins count:{_coins}");
+            Debug.Log($"Coins count:{_session.Data.Coins}");
         }
     }
 }
