@@ -28,7 +28,9 @@ namespace PixelCrew
         [SerializeField] private SpawnComponent _footPrintParticles;
         [SerializeField] private SpawnComponent _jumpParticles;
         [SerializeField] private SpawnComponent _fallParticles;
+        [SerializeField] private SpawnComponent _attackParticles;
         [SerializeField] private ParticleSystem _hitParticles;
+        
 
         private Vector2 _direction;
         private Rigidbody2D _rigidbody;
@@ -247,6 +249,11 @@ namespace PixelCrew
         public void SpawnLandingParticles()
         {
             _fallParticles.Spawn();
+        }
+
+        public void SpawnAttackParticles()
+        {
+            _attackParticles.Spawn();
         }
 
 #if UNITY_EDITOR
