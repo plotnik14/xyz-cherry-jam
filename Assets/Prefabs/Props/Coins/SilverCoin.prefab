@@ -133,7 +133,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 4400349685238173115}
         m_MethodName: CollectCoin
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -190,7 +190,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectToCollect: {fileID: 4400349685238173113}
-  _inventory: {fileID: 0}
 --- !u!114 &-1365106557790415085
 MonoBehaviour:
   m_ObjectHideFlags: 0

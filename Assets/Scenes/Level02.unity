@@ -214,18 +214,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8196759456688534595}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &262238573 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8196759456510313774, guid: 4e14aff3690871145b3f014876609f99,
-    type: 3}
-  m_PrefabInstance: {fileID: 8196759456688534595}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3002f30c763131a4abc46b4a37e9ce43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &274309059
 GameObject:
   m_ObjectHideFlags: 3
@@ -604,7 +592,7 @@ PrefabInstance:
     - target: {fileID: 6621298305610236039, guid: 21d37353a43b3594799020f45ca6bda6,
         type: 3}
       propertyPath: m_Name
-      value: DestructableBarrel
+      value: DestructibleBarrel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21d37353a43b3594799020f45ca6bda6, type: 3}
@@ -1991,11 +1979,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GoldCoin
       objectReference: {fileID: 0}
-    - target: {fileID: 8667605773671818222, guid: a04f5c20cb14a5c41af7e82946a979d0,
-        type: 3}
-      propertyPath: _inventory
-      value: 
-      objectReference: {fileID: 262238573}
     - target: {fileID: 8667605773671818223, guid: a04f5c20cb14a5c41af7e82946a979d0,
         type: 3}
       propertyPath: m_RootOrder
@@ -2580,11 +2563,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4400349685238173115, guid: 52ceb3c5845f6b24e85ffffe03dab0b2,
-        type: 3}
-      propertyPath: _inventory
-      value: 
-      objectReference: {fileID: 262238573}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52ceb3c5845f6b24e85ffffe03dab0b2, type: 3}
 --- !u!4 &1865169617 stripped

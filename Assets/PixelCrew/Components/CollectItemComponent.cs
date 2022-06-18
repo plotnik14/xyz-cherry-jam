@@ -5,20 +5,21 @@ namespace PixelCrew.Components
     public class CollectItemComponent : MonoBehaviour
     {
         [SerializeField] private GameObject _objectToCollect;
-        [SerializeField] private HeroInventory _inventory;
 
         private const int SilverCoinValue = 1;
         private const int GoldCoinValue = 10;
 
-        public void CollectCoin()
+        public void CollectCoin(GameObject go)
         {
+            var inventory = go.GetComponent<HeroInventory>();
+
             if (_objectToCollect.CompareTag("SilverCoin"))
             {
-                _inventory.AddCoins(SilverCoinValue);
+                inventory.AddCoins(SilverCoinValue);
             }
             else if (_objectToCollect.CompareTag("GoldCoin"))
             {
-                _inventory.AddCoins(GoldCoinValue);
+                inventory.AddCoins(GoldCoinValue);
             }
             else
             {
