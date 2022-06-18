@@ -1,5 +1,8 @@
 ﻿using PixelCrew.Components;
 using PixelCrew.Utils;
+using System;
+using UnityEditor;
+using UnityEditor.Animations;
 using UnityEngine;
 
 namespace PixelCrew
@@ -14,6 +17,12 @@ namespace PixelCrew
         [SerializeField] private LayerMask _interactionLayer;
         [SerializeField] private LayerMask _groundLayer;
         [SerializeField] private LayerCheck _groundCheck;
+
+        [SerializeField] private AnimatorController _armed;
+        [SerializeField] private AnimatorController _unarmed;
+
+        [SerializeField] private int _damage;
+        [SerializeField] private CheckCircleOverlap _attackRange;
 
         [Space][Header("Particles")]
         [SerializeField] private SpawnComponent _footPrintParticles;
@@ -31,11 +40,13 @@ namespace PixelCrew
         private bool _allowDoubleJump;
         private float _maxJumpPositionY;
         private bool _isJumping;
+        private bool _isArmed;
 
         private static readonly int VerticalVelocityKey = Animator.StringToHash("vertical-velocity");
         private static readonly int IsRunningKey = Animator.StringToHash("is-running");
         private static readonly int IsOnGroundKey = Animator.StringToHash("is-on-ground");
         private static readonly int HitKey = Animator.StringToHash("hit");
+        private static readonly int AttackKey = Animator.StringToHash("attack");
 
 
         public void SetDirection(Vector2 direction)
@@ -63,6 +74,32 @@ namespace PixelCrew
             _animator.SetBool(IsOnGroundKey, _isGrounded);
 
             UpdateSpriteDirection();
+        }
+
+        public void Attack()
+        {
+            if (!_isArmed) return;
+
+            _animator.SetTrigger(AttackKey);
+        }
+
+        public void OnAttackAnimationTriggered()
+        {
+            var gos = _attackRange.GetObjectsInRange();
+            foreach (var go in gos)
+            {
+                var hp = go.GetComponent<HealthComponent>();
+                if (hp != null && go.CompareTag("Enemy"))
+                {
+                    hp.ApplyDamage(_damage);
+                }
+            }
+        }
+
+        public void ArmHero()
+        {
+            _isArmed = true;
+            _animator.runtimeAnimatorController = _armed;
         }
 
         private float CalculateYVelocity()
@@ -212,10 +249,13 @@ namespace PixelCrew
             _fallParticles.Spawn();
         }
 
+#if UNITY_EDITOR
         private void OnDrawGizmos()
         {
-            Gizmos.color = IsGrounded() ? Color.green : Color.red;
-            Gizmos.DrawSphere(transform.position + new Vector3(-0.5f, 0.5f, 0), 0.1f);
+            Handles.color = IsGrounded() ? HandlesUtils.TransparentGreen : HandlesUtils.TransparentRed;
+            Handles.DrawSolidDisc(transform.position + new Vector3(-0.5f, 0.5f, 0), Vector3.forward, 0.1f);
         }
+#endif
+
     }
 }
