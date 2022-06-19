@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 690870447}
   - component: {fileID: 690870448}
+  - component: {fileID: 5028035845309239624}
   m_Layer: 0
   m_Name: AttackRange
   m_TagString: Untagged
@@ -43,7 +44,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df197df15e108a340a587e68c9dd3369, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _radius: 0.3
+  _radius: 0.35
+--- !u!114 &5028035845309239624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690870446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 795144ac376cbde4ab60039acc020cfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 690870447}
+  _prefab: {fileID: 5527392513366398762, guid: 1b898295d73fa1a428122f56a94e099c, type: 3}
 --- !u!1 &8196759456035982646
 GameObject:
   m_ObjectHideFlags: 0
@@ -5040,6 +5055,7 @@ MonoBehaviour:
   _footPrintParticles: {fileID: 8196759456035982644}
   _jumpParticles: {fileID: 8196759457563810282}
   _fallParticles: {fileID: 8196759457531575969}
+  _attackParticles: {fileID: 5028035845309239624}
   _hitParticles: {fileID: 8196759456475123394}
 --- !u!114 &8196759456510313769
 MonoBehaviour:
@@ -5166,7 +5182,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3002f30c763131a4abc46b4a37e9ce43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _coins: 0
 --- !u!95 &8196759456510313773
 Animator:
   serializedVersion: 3
@@ -5222,6 +5237,20 @@ MonoBehaviour:
       - m_Target: {fileID: 0}
         m_MethodName: Reload
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onChange:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8196759456510313770}
+        m_MethodName: OnHealthChanged
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
