@@ -152,7 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data:
     Coins: 0
-    Hp: 10
+    Hp: 5
     IsArmed: 0
 --- !u!4 &30508820
 Transform:

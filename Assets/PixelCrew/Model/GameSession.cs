@@ -6,9 +6,12 @@ namespace PixelCrew.Model
     public class GameSession : MonoBehaviour
     {
         [SerializeField] private PlayerData _data;
+        
         public PlayerData Data => _data;
 
-        private void Awake()
+        private PlayerData _dataOnLevelStart;
+
+        public void Awake()
         {
             if (SessionExists())
             {
@@ -17,7 +20,18 @@ namespace PixelCrew.Model
             else
             {
                 DontDestroyOnLoad(this);
+                SaveProgress();
             }
+        }
+
+        public void SaveProgress()
+        {
+            _dataOnLevelStart = _data.GetCopy();
+        }
+
+        public void ResetToLevelStart()
+        {
+            _data = _dataOnLevelStart.GetCopy();
         }
 
         private bool SessionExists()
