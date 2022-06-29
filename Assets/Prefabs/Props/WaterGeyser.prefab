@@ -164,7 +164,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8601528832056411680}
   - component: {fileID: 8601528832056411681}
-  - component: {fileID: 8601528832056411682}
+  - component: {fileID: 4325872950565093810}
+  - component: {fileID: 1357436500}
   m_Layer: 0
   m_Name: LiftArea
   m_TagString: Untagged
@@ -212,7 +213,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.27695298, y: 0.3714134}
   m_EdgeRadius: 0
---- !u!114 &8601528832056411682
+--- !u!114 &4325872950565093810
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -228,14 +229,27 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1357436500}
         m_MethodName: Lift
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 23
+          m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1357436500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8601528832056411687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 524a36bf0c00355479912cf0fcd0503f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _liftSpeed: 23
