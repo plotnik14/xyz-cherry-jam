@@ -133,7 +133,7 @@ namespace PixelCrew.Creatures
 
         private void SetDeadBodyCollider()
         {
-            var colliders = GetComponents<CapsuleCollider2D>();
+            var colliders = GetComponents<Collider2D>();
 
             foreach (var collider in colliders)
             {
