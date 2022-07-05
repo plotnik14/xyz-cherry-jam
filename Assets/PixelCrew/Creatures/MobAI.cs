@@ -65,6 +65,8 @@ namespace PixelCrew.Creatures
 
             _particles.Spawn("MissHero");
             yield return new WaitForSeconds(_missHeroCooldown);
+
+            StartState(_patrol.DoPatrol());
         }
 
         private IEnumerator Attack()
