@@ -6,6 +6,7 @@ namespace PixelCrew.Creatures
     public class PlatformPatrol : Patrol
     {
         [SerializeField] private LayerCheck _platformCheck;
+        [SerializeField] private LayerCheck _wallCheck;
 
         private Creature _creature;
         private float _xDirection;
@@ -20,7 +21,7 @@ namespace PixelCrew.Creatures
         {
             while (enabled)
             {
-                if (!_platformCheck.IsTouchingLayer)
+                if (!_platformCheck.IsTouchingLayer || _wallCheck.IsTouchingLayer)
                 {
                     _xDirection = -_xDirection;
                 }
