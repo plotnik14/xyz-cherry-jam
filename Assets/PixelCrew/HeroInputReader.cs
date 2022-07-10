@@ -16,7 +16,7 @@ namespace PixelCrew.Creatures
 
         public void OnInteract(InputAction.CallbackContext context)
         {
-            if (context.canceled)
+            if (context.performed)
             {
                 _hero.Interact();
             }
@@ -24,9 +24,17 @@ namespace PixelCrew.Creatures
 
         public void OnAttack(InputAction.CallbackContext context)
         {
-            if (context.canceled)
+            if (context.performed)
             {
                 _hero.Attack();
+            }
+        }
+
+        public void OnThrow(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                _hero.Throw();
             }
         }
     }

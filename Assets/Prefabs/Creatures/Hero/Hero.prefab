@@ -168,6 +168,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a663f12b110dba41a93bba773c47dee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &6863705702541805059
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2477616180874453219}
+  - component: {fileID: 5183181124075089637}
+  m_Layer: 11
+  m_Name: ThrowSwordSpawnPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2477616180874453219
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6863705702541805059}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.432, y: -0.065, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8196759456510313764}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5183181124075089637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6863705702541805059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 795144ac376cbde4ab60039acc020cfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 2477616180874453219}
+  _prefab: {fileID: 6697911034157255995, guid: 85cd761ef6a5ae243a3839367aea0445, type: 3}
 --- !u!1 &8196759456035982646
 GameObject:
   m_ObjectHideFlags: 0
@@ -5069,6 +5114,7 @@ Transform:
   - {fileID: 8196759457531575970}
   - {fileID: 690870447}
   - {fileID: 1176791221}
+  - {fileID: 2477616180874453219}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5206,6 +5252,21 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 843eb8f7-8289-4702-849a-68c71631c667
     m_ActionName: Hero/Attack[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8196759456510313771}
+        m_MethodName: OnThrow
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d6373ec2-2350-4229-99c0-fb4ef52e220b
+    m_ActionName: Hero/Throw[/Keyboard/shift]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero
@@ -5350,6 +5411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707b09ffd4fbd8b418ef925c80b13641, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _invertScale: 0
   _speed: 4
   _jumpSpeed: 12
   _damageJumpSpeed: 10
@@ -5386,6 +5448,8 @@ MonoBehaviour:
     Component: {fileID: 8196759457531575969}
   - Id: Attack
     Component: {fileID: 5028035845309239624}
+  - Id: Throw
+    Component: {fileID: 5183181124075089637}
 --- !u!1 &8196759457531575971
 GameObject:
   m_ObjectHideFlags: 0

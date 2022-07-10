@@ -54,6 +54,13 @@ namespace PixelCrew.Creatures
             base.Attack();
         }
 
+        public override void Throw()
+        {
+            if (!_session.Data.IsArmed) return;
+
+            base.Throw();
+        }
+
         public void ArmHero()
         {
             _session.Data.IsArmed = true;

@@ -29,6 +29,8 @@ namespace PixelCrew.Creatures
         protected static readonly int IsOnGroundKey = Animator.StringToHash("is-on-ground");
         protected static readonly int HitKey = Animator.StringToHash("hit");
         protected static readonly int AttackKey = Animator.StringToHash("attack");
+        protected static readonly int ThrowKey = Animator.StringToHash("throw");
+
 
         protected virtual void Awake()
         {
@@ -121,9 +123,19 @@ namespace PixelCrew.Creatures
             Animator.SetTrigger(AttackKey);
         }
 
+        public virtual void Throw()
+        {
+            Animator.SetTrigger(ThrowKey);
+        }
+
         public virtual void OnAttackAnimationTriggered()
         {
             _attackRange.Check();
+        }
+
+        public virtual void OnThrowAnimationTriggered()
+        {
+            _particles.Spawn("Throw");
         }
 
         public void OnDie()
