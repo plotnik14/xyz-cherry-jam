@@ -63,6 +63,8 @@ namespace PixelCrew.Creatures
                 yield return null;
             }
 
+            StopHero();
+
             _particles.Spawn("MissHero");
             yield return new WaitForSeconds(_missHeroCooldown);
 
@@ -82,18 +84,37 @@ namespace PixelCrew.Creatures
 
         private void SetDirectionToTarget()
         {
+            var direction = GetDirectionToTarget();
+            _creature.SetDirection(direction);
+        }
+
+        private Vector2 GetDirectionToTarget()
+        {
             var direction = _target.transform.position - transform.position;
             direction.y = 0;
-            _creature.SetDirection(direction.normalized);
+            return direction.normalized;
         }
 
         private IEnumerator AgroToHero()
         {
+            LookAtHero();
             _particles.Spawn("Exclamation");
 
             yield return new WaitForSeconds(_alarmDelay);
 
             StartState(GoToHero());
+        }
+
+        private void LookAtHero()
+        {
+            StopHero();
+            var direction = GetDirectionToTarget();
+            _creature.UpdateSpriteDirection(direction);
+        }
+
+        private void StopHero()
+        {
+            _creature.SetDirection(Vector2.zero);
         }
 
         private void StartState(IEnumerator coroutine)
