@@ -21,7 +21,7 @@ TagManager:
   - Interactables
   - Trash
   - Hero
-  - 
+  - Wall
   - 
   - 
   - 
@@ -42,14 +42,20 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
   - name: Background
     uniqueID: 677848875
+    locked: 0
+  - name: TileMap
+    uniqueID: 3084107573
     locked: 0
   - name: Level
     uniqueID: 2856064443
     locked: 0
-  - name: Default
-    uniqueID: 0
+  - name: Props
+    uniqueID: 2421250405
     locked: 0
   - name: Creatures
     uniqueID: 3094268343
