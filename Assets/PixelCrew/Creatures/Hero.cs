@@ -12,6 +12,8 @@ namespace PixelCrew.Creatures
         [SerializeField] protected float _slamDownVelocity;
         [SerializeField] private CheckCircleOverlap _interactionCheck;
 
+        [SerializeField] private Cooldown _throwCooldown;
+
         [SerializeField] private AnimatorController _armed;
         [SerializeField] private AnimatorController _unarmed;
         
@@ -57,8 +59,11 @@ namespace PixelCrew.Creatures
         public override void Throw()
         {
             if (!_session.Data.IsArmed) return;
+            if (!_throwCooldown.IsReady) return;
 
             base.Throw();
+
+            _throwCooldown.Reset();
         }
 
         public void ArmHero()

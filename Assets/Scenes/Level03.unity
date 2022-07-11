@@ -13441,5 +13441,10 @@ PrefabInstance:
       propertyPath: _onDie.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 555740253}
+    - target: {fileID: 8843711502269923405, guid: 4e14aff3690871145b3f014876609f99,
+        type: 3}
+      propertyPath: _throwCooldown._value
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e14aff3690871145b3f014876609f99, type: 3}
