@@ -8,6 +8,7 @@ namespace PixelCrew.Model
         public int Coins;
         public int Hp;
         public bool IsArmed;
+        public int SwordsCount;
     
         public PlayerData GetCopy()
         {          
@@ -16,8 +17,10 @@ namespace PixelCrew.Model
             clonedData.Coins = Coins;
             clonedData.Hp = Hp;
             clonedData.IsArmed = IsArmed;
-           
+            clonedData.SwordsCount = SwordsCount;
+
             return clonedData;
         }
     }
 }
+

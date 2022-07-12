@@ -61,7 +61,15 @@ namespace PixelCrew.Creatures
             if (!_session.Data.IsArmed) return;
             if (!_throwCooldown.IsReady) return;
 
+            var swordsCount = _heroInventory.GetSwordsCount();
+            if (swordsCount <= 1)
+            {
+                Debug.Log("You cannot throw last sword");
+                return;
+            }
+
             base.Throw();
+            _heroInventory.DecreaseSwords(1);
 
             _throwCooldown.Reset();
         }
@@ -69,6 +77,7 @@ namespace PixelCrew.Creatures
         public void ArmHero()
         {
             _session.Data.IsArmed = true;
+            _heroInventory.AddSwords(1);
             UpdateHeroWeapon();
         }
 

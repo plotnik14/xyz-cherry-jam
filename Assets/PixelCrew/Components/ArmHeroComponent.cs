@@ -1,5 +1,4 @@
-﻿
-using PixelCrew.Creatures;
+﻿using PixelCrew.Creatures;
 using UnityEngine;
 
 namespace PixelCrew.Components

@@ -15,13 +15,30 @@ namespace PixelCrew
         public void AddCoins(int coinsCount)
         {
             _session.Data.Coins += coinsCount;
-            PrintCoinsCount();
+            //PrintCoinsCount();
         }
 
         public void LoseCoins(int coinsCount)
         {
             _session.Data.Coins -= coinsCount;
-            PrintCoinsCount();
+            //PrintCoinsCount();
+        }
+
+        public void AddSwords(int swordsCount)
+        {
+            _session.Data.SwordsCount += swordsCount;
+            PrintSwordsCount();
+        }
+
+        public void DecreaseSwords(int swordsCount)
+        {
+            _session.Data.SwordsCount -= swordsCount;
+            PrintSwordsCount();
+        }
+
+        public int GetSwordsCount()
+        {
+            return _session.Data.SwordsCount;
         }
 
         public int GetCoinsCount()
@@ -32,6 +49,11 @@ namespace PixelCrew
         private void PrintCoinsCount()
         {
             Debug.Log($"Coins count:{_session.Data.Coins}");
+        }
+
+        private void PrintSwordsCount()
+        {
+            Debug.Log($"Swords count:{_session.Data.SwordsCount}");
         }
     }
 }
