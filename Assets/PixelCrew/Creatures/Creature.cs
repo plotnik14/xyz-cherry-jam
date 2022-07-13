@@ -121,21 +121,11 @@ namespace PixelCrew.Creatures
         public virtual void Attack()
         {
             Animator.SetTrigger(AttackKey);
-        }
-
-        public virtual void Throw()
-        {
-            Animator.SetTrigger(ThrowKey);
-        }
+        } 
 
         public virtual void OnAttackAnimationTriggered()
         {
             _attackRange.Check();
-        }
-
-        public virtual void OnThrowAnimationTriggered()
-        {
-            _particles.Spawn("Throw");
         }
 
         public void OnDie()

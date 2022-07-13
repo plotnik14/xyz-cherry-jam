@@ -5424,6 +5424,11 @@ MonoBehaviour:
   _particles: {fileID: 8196759456688534597}
   _slamDownVelocity: 12
   _interactionCheck: {fileID: 1176791222}
+  _multiThrowPressDuration: 1
+  _multiThrowMaxCount: 3
+  _delayBetweenThrows: 0.2
+  _throwCooldown:
+    _value: 1
   _armed: {fileID: 9100000, guid: 3d60d365d82850f40b9e6296d005c120, type: 2}
   _unarmed: {fileID: 9100000, guid: 9d1ad497824f97d40b09b081f1062999, type: 2}
   _hitParticles: {fileID: 8196759456475123394}

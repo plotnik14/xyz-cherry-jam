@@ -1,8 +1,10 @@
 ﻿using PixelCrew.Components;
 using PixelCrew.Model;
 using PixelCrew.Utils;
+using System.Collections;
 using UnityEditor.Animations;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace PixelCrew.Creatures
 {
@@ -12,8 +14,14 @@ namespace PixelCrew.Creatures
         [SerializeField] protected float _slamDownVelocity;
         [SerializeField] private CheckCircleOverlap _interactionCheck;
 
+        [Header("Throw")]       
+        [SerializeField] private float _multiThrowPressDuration = 1;
+        [SerializeField] private int _multiThrowMaxCount = 3;
+        [SerializeField] private float _delayBetweenThrows = 0.3f;
         [SerializeField] private Cooldown _throwCooldown;
 
+        [Space]
+        [Header("AnimatorController")]
         [SerializeField] private AnimatorController _armed;
         [SerializeField] private AnimatorController _unarmed;
         
@@ -21,17 +29,21 @@ namespace PixelCrew.Creatures
         [Header("Particles")]
         [SerializeField] private ParticleSystem _hitParticles;
 
+        private PlayerInput _playerInput;
         private HeroInventory _heroInventory;
         private bool _allowDoubleJump;
         private GameSession _session;
+        private bool _isMultiThrow;
 
 
         protected override void Awake()
         {
             base.Awake();
 
+            _playerInput = GetComponent<PlayerInput>();
             _heroInventory = GetComponent<HeroInventory>();
             _allowDoubleJump = true;
+            _isMultiThrow = false;
         }
 
         protected void Start()
@@ -56,7 +68,7 @@ namespace PixelCrew.Creatures
             base.Attack();
         }
 
-        public override void Throw()
+        public void Throw(double pressDuration)
         {
             if (!_session.Data.IsArmed) return;
             if (!_throwCooldown.IsReady) return;
@@ -68,10 +80,54 @@ namespace PixelCrew.Creatures
                 return;
             }
 
-            base.Throw();
-            _heroInventory.DecreaseSwords(1);
+            _isMultiThrow = pressDuration >= _multiThrowPressDuration;
 
+            Animator.SetTrigger(ThrowKey);          
             _throwCooldown.Reset();
+        }
+
+        public void OnThrowAnimationTriggered()
+        {
+            if (_isMultiThrow)
+            {
+                var swordsToThrow = _heroInventory.GetSwordsCount() - 1;
+                swordsToThrow = Mathf.Min(swordsToThrow, _multiThrowMaxCount);
+
+                StartCoroutine(MultiThrow(swordsToThrow));
+                
+                _heroInventory.DecreaseSwords(swordsToThrow);
+                _isMultiThrow = false;
+            }
+            else
+            {
+                _particles.Spawn("Throw");
+                _heroInventory.DecreaseSwords(1);
+            }
+        }
+
+        private IEnumerator MultiThrow(int swordsToThrow)
+        {
+            LockInput();
+
+            for (int i = 0; i < swordsToThrow; i++)
+            {
+                _particles.Spawn("Throw");
+                yield return new WaitForSeconds(_delayBetweenThrows);
+            }
+
+            UnlockInput();
+
+            yield return null;
+        }
+
+        private void LockInput()
+        {
+            _playerInput.enabled = false;
+        }
+
+        private void UnlockInput()
+        {
+            _playerInput.enabled = true;
         }
 
         public void ArmHero()

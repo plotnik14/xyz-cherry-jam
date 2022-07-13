@@ -120,7 +120,7 @@
                     "name": "",
                     "id": "a740c001-feba-41b2-a052-cacc48965b47",
                     "path": "<Keyboard>/shift",
-                    "interactions": "",
+                    "interactions": "Press(behavior=1)",
                     "processors": "",
                     "groups": "",
                     "action": "Throw",

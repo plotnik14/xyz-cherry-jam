@@ -34,7 +34,7 @@ namespace PixelCrew.Creatures
         {
             if (context.performed)
             {
-                _hero.Throw();
+                _hero.Throw(context.duration);
             }
         }
     }
