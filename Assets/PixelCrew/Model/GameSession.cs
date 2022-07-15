@@ -9,7 +9,7 @@ namespace PixelCrew.Model
         
         public PlayerData Data => _data;
 
-        private PlayerData _dataOnLevelStart;
+        private PlayerData _save;
 
         public void Awake()
         {
@@ -20,18 +20,18 @@ namespace PixelCrew.Model
             else
             {
                 DontDestroyOnLoad(this);
-                SaveProgress();
+                Save();
             }
         }
 
-        public void SaveProgress()
+        public void Save()
         {
-            _dataOnLevelStart = _data.GetCopy();
+            _save = _data.Clone();
         }
 
-        public void ResetToLevelStart()
+        public void LoadLastSave()
         {
-            _data = _dataOnLevelStart.GetCopy();
+            _data = _save.Clone();
         }
 
         private bool SessionExists()

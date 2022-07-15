@@ -8,18 +8,12 @@ namespace PixelCrew.Components
     {
         [SerializeField] private string _sceneName;
 
-        private GameSession _session;
-
-        public void Start()
-        {
-            _session = FindObjectOfType<GameSession>();
-        }
-
         public void Exit()
         {
-            _session.SaveProgress();
+            GameSession session = FindObjectOfType<GameSession>();
+            session.Save();
+
             SceneManager.LoadScene(_sceneName);
         }
-
     }
 }

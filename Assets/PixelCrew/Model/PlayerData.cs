@@ -10,16 +10,15 @@ namespace PixelCrew.Model
         public bool IsArmed;
         public int SwordsCount;
     
-        public PlayerData GetCopy()
-        {          
-            var clonedData = new PlayerData();
-
-            clonedData.Coins = Coins;
-            clonedData.Hp = Hp;
-            clonedData.IsArmed = IsArmed;
-            clonedData.SwordsCount = SwordsCount;
-
-            return clonedData;
+        public PlayerData Clone()
+        {
+            return new PlayerData
+            {
+                Coins = Coins,
+                Hp = Hp,
+                IsArmed = IsArmed,
+                SwordsCount = SwordsCount
+            };
         }
     }
 }
