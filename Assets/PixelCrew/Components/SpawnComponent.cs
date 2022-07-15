@@ -11,6 +11,7 @@ namespace PixelCrew.Components
         {
             var instance = Instantiate(_prefab, _target.position, Quaternion.identity);
             instance.transform.localScale = transform.lossyScale;
+            instance.SetActive(true);
         }
 
         [ContextMenu("Spawn")]

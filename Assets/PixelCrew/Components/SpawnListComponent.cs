@@ -8,6 +8,15 @@ namespace PixelCrew.Components
     {
         [SerializeField] private SpawnData[] _spawners;
 
+
+        public void SpawnAll()
+        {
+            foreach (var spawnData in _spawners)
+            {
+                spawnData.Component.Spawn();
+            }
+        }
+
         public void Spawn(string id)
         {
             var spawner = _spawners.FirstOrDefault(element => element.Id == id);
