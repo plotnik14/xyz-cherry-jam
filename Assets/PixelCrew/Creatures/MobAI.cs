@@ -13,7 +13,7 @@ namespace PixelCrew.Creatures
         [SerializeField] private float _attackCooldown;
         [SerializeField] private float _missHeroCooldown;
 
-        private Coroutine _current;
+        private IEnumerator _current;
         private GameObject _target;
         private bool _isDead;
 
@@ -126,7 +126,8 @@ namespace PixelCrew.Creatures
                 StopCoroutine(_current);
             }
 
-            _current = StartCoroutine(coroutine);
+            _current = coroutine;
+            StartCoroutine(coroutine);
         }
 
         public void OnDie()
