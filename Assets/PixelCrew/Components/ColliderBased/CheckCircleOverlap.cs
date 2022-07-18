@@ -5,7 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace PixelCrew
+namespace PixelCrew.Components
 {
     public class CheckCircleOverlap : MonoBehaviour
     {

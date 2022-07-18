@@ -3,7 +3,7 @@ using UnityEditor;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace PixelCrew
+namespace PixelCrew.Components
 {
     public class RandomSpawner : MonoBehaviour
     {
