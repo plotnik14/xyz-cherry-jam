@@ -315,7 +315,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1438902853
-  m_SortingLayer: -1
+  m_SortingLayer: 3
   m_SortingOrder: 2
   m_RenderMode: 0
   m_SortMode: 0
@@ -5213,7 +5213,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1200698953
-  m_SortingLayer: 1
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1acd726c2842aac4cbeb7c67ae965cb5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5396,7 +5396,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3002f30c763131a4abc46b4a37e9ce43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _coins: 0
 --- !u!95 &262238574
 Animator:
   serializedVersion: 3
@@ -5460,6 +5459,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _onChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &274309059
 GameObject:
   m_ObjectHideFlags: 3
@@ -6033,6 +6035,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tag: Player
+  _layer:
+    serializedVersion: 2
+    m_Bits: 4294967295
   _action:
     m_PersistentCalls:
       m_Calls:
@@ -6226,7 +6231,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1438902853
-  m_SortingLayer: -1
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -8626,9 +8631,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21a1b56723b008a4c8e226d3941caee8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _groundLayer:
+  _layer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
+  _isTouchingLayer: 0
 --- !u!61 &1281537604
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8709,7 +8715,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 677848875
-  m_SortingLayer: -2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9df932aaf52448a41a0ce3443442db4a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8841,7 +8847,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -908732489
-  m_SortingLayer: 2
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -9501,7 +9507,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 677848875
-  m_SortingLayer: -2
+  m_SortingLayer: 1
   m_SortingOrder: 100
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -10633,7 +10639,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 677848875
-  m_SortingLayer: -2
+  m_SortingLayer: 1
   m_SortingOrder: 50
   m_RenderMode: 0
   m_SortMode: 0
