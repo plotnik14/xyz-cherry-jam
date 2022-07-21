@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 690870448}
   - component: {fileID: 5028035845309239624}
   - component: {fileID: 1869727689}
-  m_Layer: 11
+  m_Layer: 15
   m_Name: AttackRange
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -48,7 +48,7 @@ MonoBehaviour:
   _radius: 0.35
   _mask:
     serializedVersion: 2
-    m_Bits: 1847
+    m_Bits: 10039
   _tags:
   - Enemy
   _onOverlap:
@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 1176791221}
   - component: {fileID: 1176791222}
   - component: {fileID: 1176791223}
-  m_Layer: 11
+  m_Layer: 15
   m_Name: InteractionCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2477616180874453219}
   - component: {fileID: 5183181124075089637}
-  m_Layer: 11
+  m_Layer: 15
   m_Name: ThrowSwordSpawnPosition
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
@@ -223,7 +223,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8196759456035982645}
   - component: {fileID: 8196759456035982644}
-  m_Layer: 11
+  m_Layer: 15
   m_Name: FootPrintsPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 8196759456475123393}
   - component: {fileID: 8196759456475123394}
   - component: {fileID: 8196759456475123395}
-  m_Layer: 11
+  m_Layer: 15
   m_Name: HitParticleSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5373,8 +5373,7 @@ MonoBehaviour:
   _onDie:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3706491829790498517, guid: 508407ee65eafd54f853402de644c354,
-          type: 3}
+      - m_Target: {fileID: 0}
         m_MethodName: Reload
         m_Mode: 1
         m_Arguments:
@@ -5414,7 +5413,7 @@ MonoBehaviour:
   _invertScale: 0
   _speed: 4
   _jumpSpeed: 12
-  _damageJumpSpeed: 10
+  _damageJumpSpeed: 6
   _damage: 1
   _groundLayer:
     serializedVersion: 2
@@ -5465,7 +5464,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8196759457531575970}
   - component: {fileID: 8196759457531575969}
-  m_Layer: 11
+  m_Layer: 15
   m_Name: SlamDownParticlesPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5511,7 +5510,7 @@ GameObject:
   - component: {fileID: 8196759457562935809}
   - component: {fileID: 2664663739918191342}
   - component: {fileID: 8196759456688534598}
-  m_Layer: 11
+  m_Layer: 15
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5574,7 +5573,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8196759457563810283}
   - component: {fileID: 8196759457563810282}
-  m_Layer: 11
+  m_Layer: 15
   m_Name: JumpParticlesPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -152,7 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data:
     Coins: 0
-    Hp: 5
+    Hp: 10
     IsArmed: 1
     SwordsCount: 1
 --- !u!4 &30508820
@@ -14133,10 +14133,5 @@ PrefabInstance:
       propertyPath: _onDie.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 555740253}
-    - target: {fileID: 8843711502269923405, guid: 4e14aff3690871145b3f014876609f99,
-        type: 3}
-      propertyPath: _damageJumpSpeed
-      value: 6
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e14aff3690871145b3f014876609f99, type: 3}
