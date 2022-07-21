@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 0.05
   _invertX: 1
-  _frequency: 15
+  _frequency: 10
   _amplitude: 0.15
 --- !u!1001 &6755302934402846734
 PrefabInstance:

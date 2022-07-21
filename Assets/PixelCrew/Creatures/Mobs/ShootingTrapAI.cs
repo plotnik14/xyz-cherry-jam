@@ -6,6 +6,7 @@ namespace PixelCrew.Creatures
 {
     public class ShootingTrapAI : MonoBehaviour
     {
+        [SerializeField] protected bool _usedByGroup;
         [SerializeField] protected LayerCheck _vision;
 
         [Header("Range")]
@@ -23,8 +24,8 @@ namespace PixelCrew.Creatures
 
         private void Update()
         {
+            if (_usedByGroup) return;
             if (!_vision.IsTouchingLayer) return;
-
             if (PerformExtraActionAndStop()) return;
 
             if (_rangeCooldown.IsReady)
@@ -38,9 +39,13 @@ namespace PixelCrew.Creatures
             return false;
         }
 
-        private void RangeAttack()
+        public void RangeAttack()
         {
-            _rangeCooldown.Reset();
+            if (!_usedByGroup)
+            {
+                _rangeCooldown.Reset();
+            }
+            
             _animator.SetTrigger(Range);
         }
 
