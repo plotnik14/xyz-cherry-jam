@@ -1,29 +1,20 @@
 ﻿using PixelCrew.Utils;
 using PixelCrew.Components;
 using UnityEngine;
-using System;
 
 namespace PixelCrew.Creatures
 {
     public class ShootingTrapAI : MonoBehaviour
     {
-        [SerializeField] private LayerCheck _vision;
-
-        [Header("Melee")]
-        [SerializeField] private Cooldown _meleeCooldown;
-        [SerializeField] private CheckCircleOverlap _meleeAttack;
-        [SerializeField] private LayerCheck _meleeCanAttack;
+        [SerializeField] protected LayerCheck _vision;
 
         [Header("Range")]
-        [SerializeField] private Cooldown _rangeCooldown;
-        [SerializeField] private SpawnComponent _rangeAttack;
+        [SerializeField] protected Cooldown _rangeCooldown;
+        [SerializeField] protected SpawnComponent _rangeAttack;
 
-        private Animator _animator;
+        protected Animator _animator;
 
-        protected static readonly int Melee = Animator.StringToHash("melee");
         protected static readonly int Range = Animator.StringToHash("range");
-        
-
 
         private void Awake()
         {
@@ -32,39 +23,25 @@ namespace PixelCrew.Creatures
 
         private void Update()
         {
-            if (_vision.IsTouchingLayer)
-            {
-                if (_meleeCanAttack.IsTouchingLayer)
-                {
-                    if (_meleeCooldown.IsReady)
-                    {
-                        MeleeAttack();
-                    }
-                    return;
-                }
+            if (!_vision.IsTouchingLayer) return;
 
-                if (_rangeCooldown.IsReady)
-                {
-                    RangeAttack();
-                }
+            if (PerformExtraActionAndStop()) return;
+
+            if (_rangeCooldown.IsReady)
+            {
+                RangeAttack();
             }
+        }
+
+        public virtual bool PerformExtraActionAndStop()
+        {
+            return false;
         }
 
         private void RangeAttack()
         {
             _rangeCooldown.Reset();
             _animator.SetTrigger(Range);
-        }
-
-        private void MeleeAttack()
-        {
-            _meleeCooldown.Reset();
-            _animator.SetTrigger(Melee);
-        }
-
-        public void OnMeleeAttack()
-        {
-            _meleeAttack.Check();
         }
 
         public void OnRangeAttack()
