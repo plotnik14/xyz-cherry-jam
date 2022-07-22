@@ -43,7 +43,7 @@ namespace PixelCrew.Components
 
             for (int i = 0; i < transforms.Length; i++)
             {
-                var angle = i * 2 * Mathf.PI / transforms.Length;
+                var angle = i * 2f * Mathf.PI / transforms.Length;
                 var newX = transform.position.x + Mathf.Cos(angle) * _radius;
                 var newY = transform.position.y + Mathf.Sin(angle) * _radius;
                 transforms[i].position = new Vector3(newX, newY, transform.position.z);
