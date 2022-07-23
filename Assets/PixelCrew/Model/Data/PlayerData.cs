@@ -6,11 +6,12 @@ namespace PixelCrew.Model
     [Serializable]
     public class PlayerData
     {
-        public int Coins;
+        [SerializeField] private InventoryData _inventory;
+
+        public InventoryData Inventory => _inventory;
+
         public int Hp;
-        public bool IsArmed;
-        public int SwordsCount;
-    
+
         public PlayerData Clone()
         {
             var json = JsonUtility.ToJson(this);

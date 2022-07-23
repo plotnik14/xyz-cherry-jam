@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 4400349685238173118}
   - component: {fileID: 4400349685238173117}
   - component: {fileID: 4400349685238173116}
-  - component: {fileID: 4400349685238173115}
   - component: {fileID: -1365106557790415085}
   - component: {fileID: 7862458996865005123}
   - component: {fileID: -8280752753281895859}
+  - component: {fileID: 5284296235739906918}
   m_Layer: 14
   m_Name: SilverCoin
   m_TagString: SilverCoin
@@ -136,8 +136,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4400349685238173115}
-        m_MethodName: CollectCoin
+      - m_Target: {fileID: 5284296235739906918}
+        m_MethodName: Add
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -182,19 +182,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectToDestroy: {fileID: 4400349685238173113}
---- !u!114 &4400349685238173115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4400349685238173113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e69bc9e03b0e83f459de1826533c72a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _objectToCollect: {fileID: 4400349685238173113}
 --- !u!114 &-1365106557790415085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,6 +242,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _frequency: 5
   _amplitude: 0.1
+  _randomize: 0
+--- !u!114 &5284296235739906918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4400349685238173113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 697ddb2c316d7bb4db4a53a2c4d13ec8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: Coin
+  _count: 1
 --- !u!1 &4400349686920255410
 GameObject:
   m_ObjectHideFlags: 0

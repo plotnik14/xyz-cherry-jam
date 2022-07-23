@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 8667605773671818219}
   - component: {fileID: 8667605773671818216}
   - component: {fileID: 8667605773671818217}
-  - component: {fileID: 8667605773671818222}
   - component: {fileID: 1778706313656200901}
   - component: {fileID: 6633442847200018402}
   - component: {fileID: 7944009858409681288}
+  - component: {fileID: -3971514103387143911}
   m_Layer: 14
   m_Name: GoldCoin
   m_TagString: GoldCoin
@@ -136,8 +136,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8667605773671818222}
-        m_MethodName: CollectCoin
+      - m_Target: {fileID: -3971514103387143911}
+        m_MethodName: Add
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -182,19 +182,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectToDestroy: {fileID: 8667605773671818220}
---- !u!114 &8667605773671818222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8667605773671818220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e69bc9e03b0e83f459de1826533c72a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _objectToCollect: {fileID: 8667605773671818220}
 --- !u!114 &1778706313656200901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,6 +242,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _frequency: 5
   _amplitude: 0.1
+  _randomize: 0
+--- !u!114 &-3971514103387143911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8667605773671818220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 697ddb2c316d7bb4db4a53a2c4d13ec8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: Coin
+  _count: 10
 --- !u!1 &8667605774138669543
 GameObject:
   m_ObjectHideFlags: 0
