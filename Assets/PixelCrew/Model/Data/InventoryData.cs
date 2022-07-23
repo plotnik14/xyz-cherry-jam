@@ -9,9 +9,7 @@ namespace PixelCrew.Model
     {
         [SerializeField] private List<InventoryItemData> _inventory = new List<InventoryItemData>();
 
-        public delegate void OnInventoryChanged(string id, int value);
-
-        public OnInventoryChanged OnChange;
+        public Action<string, int> OnChange;
 
         public void Add(string id, int value)
         {
