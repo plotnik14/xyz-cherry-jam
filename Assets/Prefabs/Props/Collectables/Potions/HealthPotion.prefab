@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 4588559214526573520}
   - component: {fileID: 4588559214526573521}
   - component: {fileID: 159055195866403817}
-  - component: {fileID: 8203908399062767350}
   - component: {fileID: 1487283538}
   - component: {fileID: 7031111701497865209}
   - component: {fileID: 2408404261999824071}
+  - component: {fileID: 179888739800019688}
   m_Layer: 14
   m_Name: HealthPotion
   m_TagString: Untagged
@@ -103,8 +103,8 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8203908399062767350}
-        m_MethodName: ApplyHealthChange
+      - m_Target: {fileID: 179888739800019688}
+        m_MethodName: Add
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -136,19 +136,6 @@ MonoBehaviour:
           m_StringArgument: Destroy
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &8203908399062767350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4588559214526573522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ac3a445fcfdbab4e8bac31201724c28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _hpDelta: 5
 --- !u!114 &1487283538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,3 +225,17 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &179888739800019688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4588559214526573522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 697ddb2c316d7bb4db4a53a2c4d13ec8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: Health Potion
+  _count: 1
