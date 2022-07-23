@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PixelCrew.Model.Definition;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -78,7 +79,7 @@ namespace PixelCrew.Model
     [Serializable]
     public class InventoryItemData
     {
-        public string Id;
+        [InventoryId] public string Id;
         public int Value;
 
         public InventoryItemData(string id)
