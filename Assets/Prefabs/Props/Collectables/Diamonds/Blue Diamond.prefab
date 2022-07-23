@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3196316517163563758}
   - component: {fileID: 3196316517163563745}
   - component: {fileID: 3196316517163563744}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Blue Diamond
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,17 +190,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 3196316517163563756}
-        m_MethodName: SetClip
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Destroy
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &3196316517163563745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,6 +204,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: Diamond
   _count: 1
+  _onSuccess:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3196316517163563756}
+        m_MethodName: SetClip
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Destroy
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onFail:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &3196316517163563744
 MonoBehaviour:
   m_ObjectHideFlags: 0

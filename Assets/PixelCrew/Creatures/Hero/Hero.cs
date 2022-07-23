@@ -111,9 +111,9 @@ namespace PixelCrew.Creatures
             _session.Data.Inventory.Remove("Health Potion", 1);
         }
 
-        public void AddToInventory(string id, int value)
+        public bool AddToInventory(string id, int value)
         {
-            _session.Data.Inventory.Add(id, value);
+            return _session.Data.Inventory.Add(id, value);
         }
 
         public void OnThrowAnimationTriggered()
