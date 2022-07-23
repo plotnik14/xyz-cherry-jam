@@ -107,6 +107,7 @@ namespace PixelCrew.Creatures
         {
             var healingValue = 5; // ToDo Move to Defs later ??
             _healthComponent.ApplyHealing(healingValue);
+            _particles.Spawn("Heal");
             _session.Data.Inventory.Remove("Health Potion", 1);
         }
 

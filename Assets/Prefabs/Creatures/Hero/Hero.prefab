@@ -213,6 +213,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 2477616180874453219}
   _prefab: {fileID: 6697911034157255995, guid: 85cd761ef6a5ae243a3839367aea0445, type: 3}
+--- !u!1 &6926611394720723675
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1693574906368218394}
+  - component: {fileID: 7239372819522247622}
+  m_Layer: 15
+  m_Name: HealingParticlesPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1693574906368218394
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6926611394720723675}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8196759456510313764}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7239372819522247622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6926611394720723675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 795144ac376cbde4ab60039acc020cfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 1693574906368218394}
+  _prefab: {fileID: 715821786386003257, guid: 9749e8da8ba190648a9dfdcfbba02e26, type: 3}
 --- !u!1 &8196759456035982646
 GameObject:
   m_ObjectHideFlags: 0
@@ -5114,6 +5159,7 @@ Transform:
   - {fileID: 690870447}
   - {fileID: 1176791221}
   - {fileID: 2477616180874453219}
+  - {fileID: 1693574906368218394}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5456,6 +5502,8 @@ MonoBehaviour:
     Component: {fileID: 5028035845309239624}
   - Id: Throw
     Component: {fileID: 5183181124075089637}
+  - Id: Heal
+    Component: {fileID: 7239372819522247622}
 --- !u!1 &8196759457531575971
 GameObject:
   m_ObjectHideFlags: 0
