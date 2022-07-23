@@ -33,15 +33,18 @@ namespace PixelCrew.Creatures
         private bool _allowDoubleJump;
         private GameSession _session;
         private bool _isMultiThrow;
+        private HealthComponent _healthComponent;
 
         private int SwordsCount => _session.Data.Inventory.Count("Sword");
         private int CoinsCount => _session.Data.Inventory.Count("Coin");
+        private int HealthPotionsCount => _session.Data.Inventory.Count("Health Potion");
 
         protected override void Awake()
         {
             base.Awake();
 
             _playerInput = GetComponent<PlayerInput>();
+            _healthComponent = GetComponent<HealthComponent>();
             _allowDoubleJump = true;
             _isMultiThrow = false;
         }
@@ -91,6 +94,20 @@ namespace PixelCrew.Creatures
             _isMultiThrow = pressDuration >= _multiThrowPressDuration;
             Animator.SetTrigger(ThrowKey);          
             _throwCooldown.Reset();
+        }
+
+        public void Heal()
+        {
+            if (HealthPotionsCount <= 0) return;
+
+            UseHealthPotion();
+        }
+
+        private void UseHealthPotion()
+        {
+            var healingValue = 5; // ToDo Move to Defs later ??
+            _healthComponent.ApplyHealing(healingValue);
+            _session.Data.Inventory.Remove("Health Potion", 1);
         }
 
         public void AddToInventory(string id, int value)
