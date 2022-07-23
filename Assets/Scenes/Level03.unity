@@ -3988,6 +3988,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 835655937}
     m_Modifications:
+    - target: {fileID: 2553052423723181515, guid: e7a7c74a7b32cf742aa4e8bc07140623,
+        type: 3}
+      propertyPath: _id
+      value: Sword
+      objectReference: {fileID: 0}
     - target: {fileID: 2700051928468677997, guid: e7a7c74a7b32cf742aa4e8bc07140623,
         type: 3}
       propertyPath: m_RootOrder
