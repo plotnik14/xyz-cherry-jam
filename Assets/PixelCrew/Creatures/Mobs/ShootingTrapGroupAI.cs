@@ -8,7 +8,7 @@ namespace PixelCrew.Creatures
 {
     public class ShootingTrapGroupAI : MonoBehaviour
     {      
-        [SerializeField] private LayerCheck _vision;
+        [SerializeField] private ColliderCheck _vision;
         [SerializeField] private Cooldown _cooldown;
         [SerializeField] private ShootingTrapAI[] _shootingTraps;
         [SerializeField] private UnityEvent _onDie;

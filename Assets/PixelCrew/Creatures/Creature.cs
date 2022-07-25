@@ -14,7 +14,7 @@ namespace PixelCrew.Creatures
 
         [Header("Checkers")]
         [SerializeField] protected LayerMask _groundLayer;
-        [SerializeField] protected LayerCheck _groundCheck;
+        [SerializeField] protected ColliderCheck _groundCheck;
         [SerializeField] protected CheckCircleOverlap _attackRange;
         [SerializeField] protected SpawnListComponent _particles;
 

@@ -7,7 +7,7 @@ namespace PixelCrew.Creatures
     public class ShootingTrapAI : MonoBehaviour
     {
         [SerializeField] protected bool _usedByGroup;
-        [SerializeField] protected LayerCheck _vision;
+        [SerializeField] protected ColliderCheck _vision;
 
         [Header("Range")]
         [SerializeField] protected Cooldown _rangeCooldown;
