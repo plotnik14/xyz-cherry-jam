@@ -135,8 +135,6 @@ namespace PixelCrew.Creatures
             StopHero();
             _isDead = true;
             _animator.SetBool(IsDeadKey, true);
-
-            _creature.OnDie();
             
             if (_current != null)
             {

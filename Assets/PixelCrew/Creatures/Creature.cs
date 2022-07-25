@@ -127,20 +127,5 @@ namespace PixelCrew.Creatures
         {
             _attackRange.Check();
         }
-
-        public void OnDie()
-        {
-            SetDeadBodyCollider();
-        }
-
-        private void SetDeadBodyCollider()
-        {
-            var colliders = GetComponents<Collider2D>();
-
-            foreach (var collider in colliders)
-            {
-                collider.enabled = !collider.enabled;
-            }
-        }
     }
 }

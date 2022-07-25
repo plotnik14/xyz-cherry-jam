@@ -340,6 +340,53 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 1757061468967043246}
   _prefab: {fileID: 5527392513366398762, guid: 1cc4d7c8b17cf404a87efe008e7aed98, type: 3}
+--- !u!1 &4345774741817470581
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6969581021940802087}
+  - component: {fileID: 1172172185674217119}
+  m_Layer: 0
+  m_Name: DeadBodyCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6969581021940802087
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4345774741817470581}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8196759456510313764}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1172172185674217119
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4345774741817470581}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.09758651}
+  serializedVersion: 2
+  m_Radius: 0.27274978
 --- !u!1 &6847312007630125412
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,7 +508,6 @@ GameObject:
   - component: {fileID: 8196759456510313765}
   - component: {fileID: 8196759456510313768}
   - component: {fileID: 8196759456510313775}
-  - component: {fileID: 9182032439329613959}
   - component: {fileID: 8196759456510313773}
   - component: {fileID: 8196759456510313772}
   - component: {fileID: 8196759456688534597}
@@ -495,6 +541,7 @@ Transform:
   - {fileID: 1559563091107233652}
   - {fileID: 1856421975895718832}
   - {fileID: 833426560837383649}
+  - {fileID: 6969581021940802087}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -585,22 +632,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.011187881, y: -0.03114739}
   m_Size: {x: 0.5816341, y: 0.7433366}
   m_Direction: 0
---- !u!70 &9182032439329613959
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8196759456510313766}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.042946286, y: 0.025918452}
-  m_Size: {x: 0.71163106, y: 0.51412165}
-  m_Direction: 1
 --- !u!95 &8196759456510313773
 Animator:
   serializedVersion: 3
@@ -663,6 +694,28 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8196759456510313775}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1172172185674217119}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
   _onChange:
     m_PersistentCalls:
