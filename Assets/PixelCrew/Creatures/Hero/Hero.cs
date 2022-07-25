@@ -24,10 +24,9 @@ namespace PixelCrew.Creatures
         [Header("AnimatorController")]
         [SerializeField] private AnimatorController _armed;
         [SerializeField] private AnimatorController _unarmed;
-        
+
         [Space]
-        [Header("Particles")]
-        [SerializeField] private ParticleSystem _hitParticles;
+        [SerializeField] private ProbabilityDropComponent _hitDrop;
 
         private PlayerInput _playerInput;
         private bool _allowDoubleJump;
@@ -214,17 +213,9 @@ namespace PixelCrew.Creatures
         {
             var numCoinsToDispose = Mathf.Min(CoinsCount, 5);
             _session.Data.Inventory.Remove("Coin", numCoinsToDispose);
-            var burst = _hitParticles.emission.GetBurst(0);
-            burst.count = numCoinsToDispose;
-            _hitParticles.emission.SetBurst(0, burst);
 
-            _hitParticles.gameObject.SetActive(true);
-            _hitParticles.Play();
-        }
-
-        public void OnDisable()
-        {
-            _hitParticles.gameObject.SetActive(false);
+            _hitDrop.SetCount(numCoinsToDispose);
+            _hitDrop.CalculateDrop();
         }
 
         public void Interact()

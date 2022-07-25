@@ -112,7 +112,7 @@ namespace PixelCrew.Model
     }
 
     [Serializable]
-    public class InventoryItemData
+    public class InventoryItemData : IEquatable<InventoryItemData>
     {
         [InventoryId] public string Id;
         public int Value;
@@ -126,6 +126,11 @@ namespace PixelCrew.Model
         {
             Id = id;
             Value = value;
+        }
+
+        public bool Equals(InventoryItemData other)
+        {
+            return Id == other.Id && Value == other.Value;
         }
     }
 }

@@ -46,6 +46,7 @@ namespace PixelCrew.Components
             for (var i = 0; i < particles.Length; i++)
             {
                 Spawn(particles[i]);
+                i++;
 
                 for (var j = 0; j < _itemPerBurst && i < particles.Length; j++)
                 {
