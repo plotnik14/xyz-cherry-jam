@@ -401,6 +401,7 @@ GameObject:
   - component: {fileID: 8196759456510313772}
   - component: {fileID: 8843711502269923405}
   - component: {fileID: 8196759456688534597}
+  - component: {fileID: 6670649246497721084}
   m_Layer: 11
   m_Name: Hero
   m_TagString: Player
@@ -772,6 +773,14 @@ MonoBehaviour:
     Component: {fileID: 5183181124075089637}
   - Id: Heal
     Component: {fileID: 7239372819522247622}
+--- !u!81 &6670649246497721084
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8196759456510313766}
+  m_Enabled: 1
 --- !u!1 &8196759457531575971
 GameObject:
   m_ObjectHideFlags: 0
