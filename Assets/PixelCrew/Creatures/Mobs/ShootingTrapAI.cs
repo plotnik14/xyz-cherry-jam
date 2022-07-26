@@ -14,12 +14,14 @@ namespace PixelCrew.Creatures
         [SerializeField] protected SpawnComponent _rangeAttack;
 
         protected Animator _animator;
+        protected PlaySoundsComponent Sounds;
 
         protected static readonly int Range = Animator.StringToHash("range");
 
         private void Awake()
         {
             _animator = GetComponent<Animator>();
+            Sounds = GetComponent<PlaySoundsComponent>();
         }
 
         private void Update()
@@ -47,6 +49,7 @@ namespace PixelCrew.Creatures
             }
             
             _animator.SetTrigger(Range);
+            Sounds.Play("Range");
         }
 
         public void OnRangeAttack()

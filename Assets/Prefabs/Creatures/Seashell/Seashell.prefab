@@ -236,6 +236,7 @@ GameObject:
   - component: {fileID: 4922904840998705600}
   - component: {fileID: 3688941354140660668}
   - component: {fileID: 815321738277440351}
+  - component: {fileID: 7105380223535163155}
   m_Layer: 13
   m_Name: Seashell
   m_TagString: Enemy
@@ -257,6 +258,7 @@ Transform:
   - {fileID: 7651697397431080391}
   - {fileID: 7651697397636318107}
   - {fileID: 7651697399175155561}
+  - {fileID: 4287720166888228804}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -374,14 +376,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a042d0a8ea257940bafd9420b0253ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _usedByGroup: 0
   _vision: {fileID: 7651697397636318109}
+  _rangeCooldown:
+    _value: 1
+  _rangeAttack: {fileID: 7651697399175155562}
   _meleeCooldown:
     _value: 1
   _meleeAttack: {fileID: 7651697397431080396}
   _meleeCanAttack: {fileID: 7651697397431080392}
-  _rangeCooldown:
-    _value: 1
-  _rangeAttack: {fileID: 7651697399175155562}
 --- !u!114 &4922904840998705600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -410,6 +413,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: hit
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7105380223535163155}
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Hurt
           m_BoolArgument: 0
         m_CallState: 2
   _onDie:
@@ -467,6 +481,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 7651697398146973708}
   _prefab: {fileID: 7650807159271785187, guid: 352bdc804b48b1b46826944274228e2f, type: 3}
+--- !u!114 &7105380223535163155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7651697398146973707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83c0ffe6fdb99e04ab4dcf4b23f8359c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _source: {fileID: 728448053420645100}
+  _sounds:
+  - _id: Melee
+    _clip: {fileID: 8300000, guid: 2d3e7142a374efa41a2df842b213e579, type: 3}
+  - _id: Range
+    _clip: {fileID: 8300000, guid: 4841ab5605bcd9c468348c5a06d2a44e, type: 3}
+  - _id: Hurt
+    _clip: {fileID: 8300000, guid: 71afbd4773d04614883e8fbe43ca15ea, type: 3}
 --- !u!1 &7651697399175155560
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,3 +546,131 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 7651697399175155561}
   _prefab: {fileID: 8522323159571927324, guid: 506c3333497b301488d2f3d352ec379b, type: 3}
+--- !u!1 &9031551621081980532
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4287720166888228804}
+  - component: {fileID: 728448053420645100}
+  m_Layer: 13
+  m_Name: Vfx
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4287720166888228804
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9031551621081980532}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7651697398146973708}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &728448053420645100
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9031551621081980532}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 10f489fc7492b9147a26f8dfcf03d712,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

@@ -31,6 +31,7 @@ namespace PixelCrew.Creatures
         {
             _meleeCooldown.Reset();
             _animator.SetTrigger(Melee);
+            Sounds.Play("Melee");
         }
 
         public void OnMeleeAttack()
