@@ -156,6 +156,8 @@ MonoBehaviour:
       _inventory:
       - Id: Coin
         Value: 7
+      - Id: Sword
+        Value: 7
     Hp: 10
 --- !u!4 &30508820
 Transform:
