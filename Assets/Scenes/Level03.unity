@@ -152,7 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data:
     _inventory:
-      _inventoryMaxSize: 8
+      _inventoryMaxSize: 50
       _inventory:
       - Id: Coin
         Value: 7
@@ -4570,70 +4570,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 835655937}
     m_Modifications:
-    - target: {fileID: 2553052423723181515, guid: e7a7c74a7b32cf742aa4e8bc07140623,
-        type: 3}
-      propertyPath: _id
-      value: Sword
-      objectReference: {fileID: 0}
-    - target: {fileID: 2700051928468677986, guid: e7a7c74a7b32cf742aa4e8bc07140623,
-        type: 3}
-      propertyPath: _clips.Array.data[0]._sprites.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2700051928468677986, guid: e7a7c74a7b32cf742aa4e8bc07140623,
-        type: 3}
-      propertyPath: _clips.Array.data[0]._sprites.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: fa35dbf14c2ae8a4fba2960dad425d34,
-        type: 3}
-    - target: {fileID: 2700051928468677986, guid: e7a7c74a7b32cf742aa4e8bc07140623,
-        type: 3}
-      propertyPath: _clips.Array.data[0]._sprites.Array.data[2]
-      value: 
-      objectReference: {fileID: 21300000, guid: 761bcfa51f343dc4f9a0baaf2b779074,
-        type: 3}
-    - target: {fileID: 2700051928468677986, guid: e7a7c74a7b32cf742aa4e8bc07140623,
-        type: 3}
-      propertyPath: _clips.Array.data[0]._sprites.Array.data[3]
-      value: 
-      objectReference: {fileID: 21300000, guid: 4220f60e4dc8fa045bd3fcd6e2ae6728,
-        type: 3}
-    - target: {fileID: 2700051928468677986, guid: e7a7c74a7b32cf742aa4e8bc07140623,
-        type: 3}
-      propertyPath: _clips.Array.data[0]._sprites.Array.data[4]
-      value: 
-      objectReference: {fileID: 21300000, guid: fccdc977d3ba9704dba71750b88d4627,
-        type: 3}
-    - target: {fileID: 2700051928468677986, guid: e7a7c74a7b32cf742aa4e8bc07140623,
-        type: 3}
-      propertyPath: _clips.Array.data[0]._sprites.Array.data[5]
-      value: 
-      objectReference: {fileID: 21300000, guid: 07439d0f98bb0f04eaf887d66511a507,
-        type: 3}
-    - target: {fileID: 2700051928468677986, guid: e7a7c74a7b32cf742aa4e8bc07140623,
-        type: 3}
-      propertyPath: _clips.Array.data[0]._sprites.Array.data[6]
-      value: 
-      objectReference: {fileID: 21300000, guid: c42ad07d25ae75445ab548def3f9423c,
-        type: 3}
-    - target: {fileID: 2700051928468677986, guid: e7a7c74a7b32cf742aa4e8bc07140623,
-        type: 3}
-      propertyPath: _clips.Array.data[0]._sprites.Array.data[7]
-      value: 
-      objectReference: {fileID: 21300000, guid: 6c231056d7294314eab5e8d44c612442,
-        type: 3}
-    - target: {fileID: 2700051928468677986, guid: e7a7c74a7b32cf742aa4e8bc07140623,
-        type: 3}
-      propertyPath: _clips.Array.data[0]._sprites.Array.data[8]
-      value: 
-      objectReference: {fileID: 21300000, guid: 6c231056d7294314eab5e8d44c612442,
-        type: 3}
-    - target: {fileID: 2700051928468677986, guid: e7a7c74a7b32cf742aa4e8bc07140623,
-        type: 3}
-      propertyPath: _clips.Array.data[0]._sprites.Array.data[9]
-      value: 
-      objectReference: {fileID: 21300000, guid: 6c231056d7294314eab5e8d44c612442,
-        type: 3}
     - target: {fileID: 2700051928468677997, guid: e7a7c74a7b32cf742aa4e8bc07140623,
         type: 3}
       propertyPath: m_RootOrder
