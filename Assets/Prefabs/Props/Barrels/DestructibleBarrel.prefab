@@ -308,7 +308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _silverCoinPrefab: {fileID: 4400349685238173113, guid: 52ceb3c5845f6b24e85ffffe03dab0b2,
     type: 3}
-  _goldCoinPrefab: {fileID: 8667605773671818220, guid: a04f5c20cb14a5c41af7e82946a979d0,
+  _goldCoinPrefab: {fileID: 5442125699535463254, guid: bbac0c9b3c67dff4aae85f93c8dfb0ed,
     type: 3}
   _coinsCount: 4
   _chanceOfGoldCoin: 15
