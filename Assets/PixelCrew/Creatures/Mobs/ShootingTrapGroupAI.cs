@@ -10,21 +10,19 @@ namespace PixelCrew.Creatures
     {      
         [SerializeField] private ColliderCheck _vision;
         [SerializeField] private Cooldown _cooldown;
-        [SerializeField] private ShootingTrapAI[] _shootingTraps;
+        [SerializeField] private List<ShootingTrapAI> _shootingTraps;
         [SerializeField] private UnityEvent _onDie;
 
-        private List<ShootingTrapAI> _activeTraps;
         private int _index;
 
         private void Start()
         {
-            _activeTraps = new List<ShootingTrapAI>(_shootingTraps);
             _index = 0;
         }
 
         private void Update()
         {
-            if (_activeTraps.Count == 0)
+            if (_shootingTraps.Count == 0)
             {
                 _onDie?.Invoke();
                 return;
@@ -39,10 +37,10 @@ namespace PixelCrew.Creatures
         
         private void PerformAttack()
         {
-            var activeTrap = _activeTraps[_index];
+            var activeTrap = _shootingTraps[_index];
             if (activeTrap == null) // It was killed by player
             {
-                _activeTraps.RemoveAt(_index);
+                _shootingTraps.RemoveAt(_index);
                 return;
             }
 
@@ -53,7 +51,7 @@ namespace PixelCrew.Creatures
         private void NextTrap()
         {
             _index++;
-            if (_index >= _activeTraps.Count)
+            if (_index >= _shootingTraps.Count)
             {
                 _index = 0;
             }

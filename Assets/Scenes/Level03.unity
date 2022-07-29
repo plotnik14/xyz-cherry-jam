@@ -21121,6 +21121,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5539273537861153564, guid: 80c66bb05fa47a544af7a4633e90bfbe,
+        type: 3}
+      propertyPath: _shootingTrapsList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80c66bb05fa47a544af7a4633e90bfbe, type: 3}
 --- !u!1001 &6128223008606576523
