@@ -18,7 +18,19 @@ namespace PixelCrew.Creatures
         private void Start()
         {
             _index = 0;
+
+            // Another option of remove logic
+            //foreach (var trap in _shootingTraps)
+            //{
+            //    var health = trap.GetComponent<HealthComponent>();
+            //    health.OnDie.AddListener( () => OnTrapDie(trap));
+            //}
         }
+
+        //private void OnTrapDie(ShootingTrapAI trap)
+        //{
+        //    _shootingTraps.Remove(trap);
+        //}
 
         private void Update()
         {

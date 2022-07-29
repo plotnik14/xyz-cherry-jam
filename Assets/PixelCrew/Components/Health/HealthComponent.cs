@@ -12,6 +12,8 @@ namespace PixelCrew.Components
         [SerializeField] private UnityEvent _onDie;
         [SerializeField] private HealthChangeEvent _onChange;
 
+        public UnityEvent OnDie => _onDie;
+
         public void ApplyDamage(int damageValue)
         {
             if (_health <= 0) return;
