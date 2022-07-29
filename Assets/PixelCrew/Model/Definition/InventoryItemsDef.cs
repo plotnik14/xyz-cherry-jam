@@ -29,10 +29,10 @@ namespace PixelCrew.Model
     public struct ItemDef
     {
         [SerializeField] private string _id;
-        [SerializeField] private bool _notStackable;
+        [SerializeField] private bool _isStackable;
 
         public string Id => _id;
-        public bool NotStackable => _notStackable;
+        public bool IsStackable => _isStackable;
 
         public bool IsVoid => string.IsNullOrEmpty(_id);
     }

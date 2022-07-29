@@ -20,13 +20,14 @@ namespace PixelCrew.Model
             var itemDef = DefsFacade.I.Items.Get(id);
             if (itemDef.IsVoid) return false;
 
-            if (itemDef.NotStackable)
+            if (itemDef.IsStackable)
             {
-                if (!AddNotStackable(id, value)) return false;
+                if (!AddStackable(id, value)) return false;
             }
             else
             {
-                if(!AddStackable(id, value)) return false;
+                
+                if (!AddNotStackable(id, value)) return false;
             }
 
             OnChange?.Invoke(id, Count(id));

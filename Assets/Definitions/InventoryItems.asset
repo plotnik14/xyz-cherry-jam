@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: PixelCrewAssembly:PixelCrew.Model:InventoryItemsDef
   _items:
   - _id: Coin
-    _notStackable: 0
+    _isStackable: 1
   - _id: Sword
-    _notStackable: 0
+    _isStackable: 1
   - _id: Key
-    _notStackable: 0
+    _isStackable: 1
   - _id: Health Potion
-    _notStackable: 0
+    _isStackable: 1
   - _id: Diamond
-    _notStackable: 1
+    _isStackable: 0
