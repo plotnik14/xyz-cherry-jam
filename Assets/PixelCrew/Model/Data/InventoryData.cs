@@ -8,7 +8,6 @@ namespace PixelCrew.Model
     [Serializable]
     public class InventoryData
     {
-        [SerializeField] private int _inventoryMaxSize = 10;
         [SerializeField] private List<InventoryItemData> _inventory = new List<InventoryItemData>();
 
         public Action<string, int> OnChange;
@@ -40,9 +39,9 @@ namespace PixelCrew.Model
 
             if (item == null)
             {
-                if (_inventory.Count >= _inventoryMaxSize)
+                if (_inventory.Count >= DefsFacade.I.Player.InventorySize)
                 {
-                    Debug.Log($"Inventory is full. Max size:{_inventoryMaxSize}");
+                    Debug.Log($"Inventory is full. Max size:{DefsFacade.I.Player.InventorySize}");
                     return false;
                 }
 
@@ -56,9 +55,9 @@ namespace PixelCrew.Model
 
         private bool AddNotStackable(string id, int value)
         {
-            if (_inventory.Count >= _inventoryMaxSize)
+            if (_inventory.Count >= DefsFacade.I.Player.InventorySize)
             {
-                Debug.Log($"Inventory is full. Max size:{_inventoryMaxSize}");
+                Debug.Log($"Inventory is full. Max size:{DefsFacade.I.Player.InventorySize}");
                 return false;
             }
 
