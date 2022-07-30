@@ -63,7 +63,7 @@ namespace PixelCrew.Creatures
                 yield return null;
             }
 
-            StopHero();
+            StopCreature();
 
             _particles.Spawn("MissHero");
             yield return new WaitForSeconds(_missHeroCooldown);
@@ -107,12 +107,12 @@ namespace PixelCrew.Creatures
 
         private void LookAtHero()
         {
-            StopHero();
+            StopCreature();
             var direction = GetDirectionToTarget();
             _creature.UpdateSpriteDirection(direction);
         }
 
-        private void StopHero()
+        private void StopCreature()
         {
             _creature.SetDirection(Vector2.zero);
         }
@@ -132,7 +132,7 @@ namespace PixelCrew.Creatures
 
         public void OnDie()
         {
-            StopHero();
+            StopCreature();
             _isDead = true;
             _animator.SetBool(IsDeadKey, true);
             
