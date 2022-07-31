@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7651697397431080394}
   - component: {fileID: 7651697397431080393}
   - component: {fileID: 7651697397431080392}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: AttackRange
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 7651697397636318110}
   - component: {fileID: 7651697397636318109}
   - component: {fileID: 7651697397636318108}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: Vision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -378,6 +378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _usedByGroup: 0
   _vision: {fileID: 7651697397636318109}
+  _shootAlways: 0
   _rangeCooldown:
     _value: 1
   _rangeAttack: {fileID: 7651697399175155562}
@@ -511,7 +512,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7651697399175155561}
   - component: {fileID: 7651697399175155562}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: PearlThrowPosition
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
@@ -556,7 +557,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4287720166888228804}
   - component: {fileID: 728448053420645100}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: Vfx
   m_TagString: Untagged
   m_Icon: {fileID: 0}

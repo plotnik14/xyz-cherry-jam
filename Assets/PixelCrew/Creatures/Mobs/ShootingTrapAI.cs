@@ -8,6 +8,7 @@ namespace PixelCrew.Creatures
     {
         [SerializeField] protected bool _usedByGroup;
         [SerializeField] protected ColliderCheck _vision;
+        [SerializeField] protected bool _shootAlways;
 
         [Header("Range")]
         [SerializeField] protected Cooldown _rangeCooldown;
@@ -27,7 +28,7 @@ namespace PixelCrew.Creatures
         private void Update()
         {
             if (_usedByGroup) return;
-            if (!_vision.IsTouchingLayer) return;
+            if (!_vision.IsTouchingLayer && !_shootAlways) return;
             if (PerformExtraActionAndStop()) return;
 
             if (_rangeCooldown.IsReady)

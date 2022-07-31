@@ -53,9 +53,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 10
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 1
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -88,7 +88,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -393,6 +393,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _usedByGroup: 0
   _vision: {fileID: 7651697397636318109}
+  _shootAlways: 0
   _rangeCooldown:
     _value: 1
   _rangeAttack: {fileID: 7651697399175155562}
