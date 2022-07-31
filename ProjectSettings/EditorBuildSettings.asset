@@ -9,14 +9,14 @@ EditorBuildSettings:
     path: Assets/Tests/PlayMode/Scenes/SceneForTesting.unity
     guid: 0258382c5e4ffa041b87cd7c9b065602
   - enabled: 1
-    path: Assets/Scenes/Level00_Everything.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
     path: Assets/Scenes/Level01_Puzzle.unity
     guid: ae9c91b6002229d428b8c706d6e542a8
   - enabled: 1
     path: Assets/Scenes/Level02_Armed_Hero.unity
     guid: 24f9c2209eff9cb44a4145e6b62418e8
+  - enabled: 1
+    path: Assets/Scenes/Level03_Enemies.unity
+    guid: 92fa74f66aab6794ba7b7bc13dfb4658
   - enabled: 1
     path: Assets/Scenes/Level99_Testing.unity
     guid: a053248dfb5b0ae4f86799a5e7486b98
