@@ -6,25 +6,26 @@ namespace PixelCrew.Creatures
 {
     public class MobAI : MonoBehaviour
     {
-        [SerializeField] private ColliderCheck _vision;
-        [SerializeField] private ColliderCheck _canAttack;
+        [Header("MobAI")]
+        [SerializeField] protected ColliderCheck _vision;
+        [SerializeField] protected ColliderCheck _canAttack;
 
-        [SerializeField] private float _alarmDelay;
-        [SerializeField] private float _attackCooldown;
-        [SerializeField] private float _missHeroCooldown;
+        [SerializeField] protected float _alarmDelay;
+        [SerializeField] protected float _attackCooldown;
+        [SerializeField] protected float _missHeroCooldown;
 
-        private IEnumerator _current;
-        private GameObject _target;
-        private bool _isDead;
+        protected IEnumerator _current;
+        protected GameObject _target;
+        protected bool _isDead;
 
-        private SpawnListComponent _particles;
-        private Creature _creature;
-        private Animator _animator;
-        private Patrol _patrol;
+        protected SpawnListComponent _particles;
+        protected Creature _creature;
+        protected Animator _animator;
+        protected Patrol _patrol;
 
         protected static readonly int IsDeadKey = Animator.StringToHash("is-dead");
 
-        private void Awake()
+        protected virtual void Awake()
         {
             _particles = GetComponent<SpawnListComponent>();
             _creature = GetComponent<Creature>();
@@ -46,7 +47,7 @@ namespace PixelCrew.Creatures
             StartState(AgroToHero());
         }
 
-        private IEnumerator GoToHero()
+        protected virtual IEnumerator GoToHero()
         {
             while (_vision.IsTouchingLayer)
             {
@@ -71,7 +72,7 @@ namespace PixelCrew.Creatures
             StartState(_patrol.DoPatrol());
         }
 
-        private IEnumerator Attack()
+        protected IEnumerator Attack()
         {
             while (_canAttack.IsTouchingLayer)
             {
@@ -82,13 +83,13 @@ namespace PixelCrew.Creatures
             StartState(GoToHero());
         }
 
-        private void SetDirectionToTarget()
+        protected virtual void SetDirectionToTarget()
         {
             var direction = GetDirectionToTarget();
             _creature.SetDirection(direction);
         }
 
-        private Vector2 GetDirectionToTarget()
+        protected Vector2 GetDirectionToTarget()
         {
             var direction = _target.transform.position - transform.position;
             direction.y = 0;
@@ -112,12 +113,12 @@ namespace PixelCrew.Creatures
             _creature.UpdateSpriteDirection(direction);
         }
 
-        private void StopCreature()
+        protected void StopCreature()
         {
             _creature.SetDirection(Vector2.zero);
         }
 
-        private void StartState(IEnumerator coroutine)
+        protected void StartState(IEnumerator coroutine)
         {
             _creature.SetDirection(Vector2.zero);
 

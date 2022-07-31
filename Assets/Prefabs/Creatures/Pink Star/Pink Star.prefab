@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1869727689}
   - component: {fileID: 2136022511}
   - component: {fileID: 2136022512}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: AttackRange
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 690870446}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.329, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.124, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8196759456510313764}
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df197df15e108a340a587e68c9dd3369, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _radius: 0.45
+  _radius: 0.55
   _mask:
     serializedVersion: 2
     m_Bits: 2048
@@ -107,9 +107,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.012716949, y: -0.02861318}
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 0.38092452
 --- !u!114 &2136022512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 1857073678}
   - component: {fileID: 1857073679}
   - component: {fileID: 1857073680}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Vision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1, y: 0.23468971}
+  m_Offset: {x: -2.8957608, y: 0.23468971}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -183,7 +183,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4, y: 1.2936511}
+  m_Size: {x: 5.7898765, y: 1.2936511}
   m_EdgeRadius: 0
 --- !u!114 &1857073679
 MonoBehaviour:
@@ -220,7 +220,7 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1288067869}
+      - m_Target: {fileID: 897947531}
         m_MethodName: OnHeroInVision
         m_Mode: 0
         m_Arguments:
@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 1856421975895718832}
   - component: {fileID: 1737462495096962753}
   - component: {fileID: 990473220549691289}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: PlatformCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -398,8 +398,8 @@ GameObject:
   - component: {fileID: 833426560837383649}
   - component: {fileID: 8265326066189649199}
   - component: {fileID: 934075363693512090}
-  m_Layer: 0
-  m_Name: WallCheck
+  m_Layer: 15
+  m_Name: ObstacleCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -413,7 +413,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6847312007630125412}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.689, y: -0.1, z: 0}
+  m_LocalPosition: {x: -0.396, y: -0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8196759456510313764}
@@ -449,7 +449,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 14592
   _isTouchingLayer: 0
 --- !u!1 &7903236360705142847
 GameObject:
@@ -639,11 +639,11 @@ GameObject:
   - component: {fileID: 8196759456510313773}
   - component: {fileID: 8196759456510313772}
   - component: {fileID: 8196759456688534597}
-  - component: {fileID: 1442171945}
-  - component: {fileID: 1288067869}
   - component: {fileID: 7116715449670555679}
   - component: {fileID: 2735478288936714773}
-  m_Layer: 0
+  - component: {fileID: 897947532}
+  - component: {fileID: 897947531}
+  m_Layer: 13
   m_Name: Pink Star
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -772,7 +772,7 @@ Animator:
   m_GameObject: {fileID: 8196759456510313766}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 2b0e27d825ba9d44fab515aced29c04a, type: 2}
+  m_Controller: {fileID: 9100000, guid: 844d809d9dc8f6e4eb1f98e767a109a9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -800,7 +800,7 @@ MonoBehaviour:
   _onDamage:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1442171945}
+      - m_Target: {fileID: 897947532}
         m_MethodName: TakeDamage
         m_Mode: 1
         m_Arguments:
@@ -825,7 +825,7 @@ MonoBehaviour:
   _onDie:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1288067869}
+      - m_Target: {fileID: 897947531}
         m_MethodName: OnDie
         m_Mode: 1
         m_Arguments:
@@ -895,46 +895,6 @@ MonoBehaviour:
     Component: {fileID: 7074728816788766457}
   - Id: MissHero
     Component: {fileID: 2387234332128977080}
---- !u!114 &1442171945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8196759456510313766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65df3163a276f1b41a7569ab26046e85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _invertScale: 1
-  _speed: 3
-  _jumpSpeed: 12
-  _damageJumpSpeed: 5
-  _damage: 1
-  _groundLayer:
-    serializedVersion: 2
-    m_Bits: 256
-  _groundCheck: {fileID: 8196759456688534598}
-  _attackRange: {fileID: 690870448}
-  _particles: {fileID: 8196759456688534597}
---- !u!114 &1288067869
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8196759456510313766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 496c519fa5d119646a0e02495e30636b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _vision: {fileID: 1857073679}
-  _canAttack: {fileID: 2136022512}
-  _alarmDelay: 0.5
-  _attackCooldown: 1
-  _missHeroCooldown: 0.5
 --- !u!114 &7116715449670555679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -969,6 +929,48 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _platformCheck: {fileID: 990473220549691289}
   _wallCheck: {fileID: 934075363693512090}
+--- !u!114 &897947532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8196759456510313766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3830c961f3c935449f7c5bc6fd0393d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _invertScale: 1
+  _speed: 3
+  _jumpSpeed: 12
+  _damageJumpSpeed: 5
+  _damage: 1
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  _groundCheck: {fileID: 8196759456688534598}
+  _attackRange: {fileID: 690870448}
+  _particles: {fileID: 8196759456688534597}
+  _rollingSpeed: 6
+--- !u!114 &897947531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8196759456510313766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b39ca04f4f4fd243b31b7564ee4b41a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _vision: {fileID: 1857073679}
+  _canAttack: {fileID: 2136022512}
+  _alarmDelay: 0.5
+  _attackCooldown: 1
+  _missHeroCooldown: 0.5
+  _obstacleCheck: {fileID: 934075363693512090}
 --- !u!1 &8196759457562935810
 GameObject:
   m_ObjectHideFlags: 0
@@ -980,7 +982,7 @@ GameObject:
   - component: {fileID: 8196759457562935809}
   - component: {fileID: 2664663739918191342}
   - component: {fileID: 8196759456688534598}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
