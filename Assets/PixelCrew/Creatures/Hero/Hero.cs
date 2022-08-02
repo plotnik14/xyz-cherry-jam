@@ -48,6 +48,16 @@ namespace PixelCrew.Creatures
             _isMultiThrow = false;
         }
 
+
+        // ToDo Move to a new controller
+        public void ShowMainMenuInGame()
+        {
+            var window = Resources.Load<GameObject>("UI/MainMenuWindowInGame");
+            var canvas = FindObjectOfType<Canvas>();
+            Instantiate(window, canvas.transform);
+        }
+
+
         protected void Start()
         {
             _session = FindObjectOfType<GameSession>();

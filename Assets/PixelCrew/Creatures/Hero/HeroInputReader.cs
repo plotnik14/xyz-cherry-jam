@@ -45,5 +45,13 @@ namespace PixelCrew.Creatures
                 _hero.Heal();
             }
         }
+
+        public void OnShowMenu(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                _hero.ShowMainMenuInGame();
+            }
+        }
     }
 }
