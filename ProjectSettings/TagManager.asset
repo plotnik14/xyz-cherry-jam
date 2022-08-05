@@ -8,6 +8,7 @@ TagManager:
   - GoldCoin
   - Enemy
   - Interactable
+  - SfxAudioSource
   layers:
   - Default
   - TransparentFX

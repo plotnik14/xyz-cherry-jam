@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace PixelCrew.Model.Data.Properties
 {
+    [Serializable]
     public abstract class PersistentProperty<TPropetryType>
     {
         [SerializeField] protected TPropetryType _value; // for display
