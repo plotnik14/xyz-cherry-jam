@@ -52,6 +52,8 @@ namespace PixelCrew.Creatures
         // ToDo Move to a new controller
         public void ShowMainMenuInGame()
         {
+            // ToDo check that menu is not created
+
             var window = Resources.Load<GameObject>("UI/MainMenuWindowInGame");
             var canvas = FindObjectOfType<Canvas>();
             Instantiate(window, canvas.transform);

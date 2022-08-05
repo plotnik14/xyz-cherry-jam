@@ -123,8 +123,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 632668153}
+  - component: {fileID: 751021426664179419}
   m_Layer: 5
-  m_Name: VolumeItem (1)
+  m_Name: SFXOption
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,6 +153,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 75.22966, y: 26.031662}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &751021426664179419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632668152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa62e31911803084bb1dfa732bf146a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slider: {fileID: 1043303554}
+  _value: {fileID: 562774558}
 --- !u!1 &790237751
 GameObject:
   m_ObjectHideFlags: 0
@@ -966,8 +981,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 295614252553184685}
+  - component: {fileID: 7862241689097212839}
   m_Layer: 5
-  m_Name: VolumeItem
+  m_Name: MusicOption
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -995,6 +1011,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 75.22966, y: 26.031662}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &7862241689097212839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526918480412089306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa62e31911803084bb1dfa732bf146a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slider: {fileID: 940220715}
+  _value: {fileID: 2015118459}
 --- !u!1 &5588570183842351465
 GameObject:
   m_ObjectHideFlags: 0
@@ -1163,7 +1193,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5588570184839729129}
   - component: {fileID: 5588570184839729131}
-  - component: {fileID: 5588570184839729128}
+  - component: {fileID: 2542373960027254349}
   m_Layer: 5
   m_Name: SettingsWindow
   m_TagString: Untagged
@@ -1210,7 +1240,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5588570184839729128
+--- !u!114 &2542373960027254349
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1219,9 +1249,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5588570184839729134}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53db8c083afaf8d4bb0bcdec0fb230a0, type: 3}
+  m_Script: {fileID: 11500000, guid: a6d92afbeb78f4c41bdf4aa73c273617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _music: {fileID: 7862241689097212839}
+  _sfx: {fileID: 751021426664179419}
 --- !u!1 &5588570184959068710
 GameObject:
   m_ObjectHideFlags: 0
@@ -1343,7 +1375,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5588570184839729128}
+      - m_Target: {fileID: 2542373960027254349}
         m_MethodName: Close
         m_Mode: 1
         m_Arguments:
