@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace PixelCrew.Model
 {
@@ -13,6 +14,8 @@ namespace PixelCrew.Model
 
         public void Awake()
         {
+            LoadHud();
+
             if (SessionExists())
             {
                 Destroy(gameObject);
@@ -22,6 +25,11 @@ namespace PixelCrew.Model
                 DontDestroyOnLoad(this);
                 Save();
             }
+        }
+
+        private void LoadHud()
+        {
+            SceneManager.LoadScene("Hud", LoadSceneMode.Additive);
         }
 
         public void Save()
