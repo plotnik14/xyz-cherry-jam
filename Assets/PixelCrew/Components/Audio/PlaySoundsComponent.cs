@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using System;
+using PixelCrew.Utils;
 
 namespace PixelCrew.Components
 {
     public class PlaySoundsComponent : MonoBehaviour
-    {
+    {      
         [SerializeField] private AudioData[] _sounds;
 
         private AudioSource _source;
@@ -17,7 +18,7 @@ namespace PixelCrew.Components
 
                 if (_source == null)
                 {
-                    _source = GameObject.FindGameObjectWithTag("SfxAudioSource").GetComponent<AudioSource>();
+                    _source = AudioUtils.FindSfxSource();
                 }
 
                 _source.PlayOneShot(audioData.Clip);
