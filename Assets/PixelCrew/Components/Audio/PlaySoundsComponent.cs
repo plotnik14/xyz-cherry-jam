@@ -5,7 +5,8 @@ using PixelCrew.Utils;
 namespace PixelCrew.Components
 {
     public class PlaySoundsComponent : MonoBehaviour
-    {      
+    {
+        [SerializeField] private bool _useLocalAudioSource;
         [SerializeField] private AudioData[] _sounds;
 
         private AudioSource _source;
@@ -18,7 +19,14 @@ namespace PixelCrew.Components
 
                 if (_source == null)
                 {
-                    _source = AudioUtils.FindSfxSource();
+                    if (_useLocalAudioSource)
+                    {
+                        _source = GetComponent<AudioSource>();
+                    }
+                    else
+                    {
+                        _source = AudioUtils.FindSfxSource();
+                    }
                 }
 
                 _source.PlayOneShot(audioData.Clip);
