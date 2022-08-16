@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Interactable
   - SfxAudioSource
+  - MenuCanvas
   layers:
   - Default
   - TransparentFX

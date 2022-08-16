@@ -55,7 +55,7 @@ namespace PixelCrew.Creatures
             // ToDo check that menu is not created
 
             var window = Resources.Load<GameObject>("UI/MainMenuWindowInGame");
-            var canvas = FindObjectOfType<Canvas>();
+            var canvas = GameObject.FindGameObjectWithTag("MenuCanvas").GetComponent<Canvas>();
             Instantiate(window, canvas.transform);
         }
 
