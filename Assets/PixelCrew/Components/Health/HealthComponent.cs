@@ -13,7 +13,19 @@ namespace PixelCrew.Components
         [SerializeField] private UnityEvent _onDie;
         [SerializeField] private HealthChangeEvent _onChange;
 
+        private int _maxHealth;
+
+
+        public HealthChangeEvent OnChange => _onChange;
         public UnityEvent OnDie => _onDie;
+        public int Health => _health;
+        public int MaxHealth => _maxHealth;
+
+
+        public void Start()
+        {
+            _maxHealth = _health;
+        }
 
         public void ApplyDamage(int damageValue)
         {
