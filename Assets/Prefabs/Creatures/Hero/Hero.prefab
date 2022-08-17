@@ -639,7 +639,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8196759456510313771}
-        m_MethodName: OnHeal
+        m_MethodName: OnNextItem
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -867,7 +867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83c0ffe6fdb99e04ab4dcf4b23f8359c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _source: {fileID: 0}
+  _useLocalAudioSource: 0
   _sounds:
   - _id: Jump
     _clip: {fileID: 8300000, guid: f34671bbad1436545a359649a51087fa, type: 3}

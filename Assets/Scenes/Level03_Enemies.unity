@@ -157,6 +157,10 @@ MonoBehaviour:
         Value: 5
       - Id: Sword
         Value: 5
+      - Id: Key
+        Value: 1
+      - Id: Health Potion
+        Value: 3
     Hp:
       _value: 10
 --- !u!4 &30508820

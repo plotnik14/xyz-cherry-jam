@@ -14,12 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: PixelCrewAssembly:PixelCrew.Model:InventoryItemsDef
   _items:
   - _id: Coin
-    _isStackable: 1
+    _icon: {fileID: -2322180950842035098, guid: 6a8bb74ba8a9e0a4e8883ebcbe32ab54,
+      type: 3}
+    _tags: 00000000
   - _id: Sword
-    _isStackable: 1
+    _icon: {fileID: 21300000, guid: 8769b36b6e69c2140972239ba4b7d3d6, type: 3}
+    _tags: 000000000100000002000000
   - _id: Key
-    _isStackable: 1
+    _icon: {fileID: 21300000, guid: 0717fabab7148e04d9dba8fbb85583c9, type: 3}
+    _tags: 
   - _id: Health Potion
-    _isStackable: 1
+    _icon: {fileID: 3714227102187029162, guid: 765af0328984bb54391606d35e673daa, type: 3}
+    _tags: 0000000001000000
   - _id: Diamond
-    _isStackable: 0
+    _icon: {fileID: 0}
+    _tags: 

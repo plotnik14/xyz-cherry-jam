@@ -236,5 +236,10 @@ namespace PixelCrew.Creatures
         {
             _interactionCheck.Check();
         }
+
+        public void NextItem()
+        {
+            _session.QuickInventory.SetNextItem();
+        }
     }
 }
