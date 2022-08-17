@@ -1,9 +1,9 @@
-﻿using PixelCrew.Utils;
+﻿using System.Linq;
+using PixelCrew.Utils;
 using UnityEditor;
 using UnityEngine;
-using System.Linq;
 
-namespace PixelCrew.Components
+namespace PixelCrew.Components.Movement
 {
     public class CircularMovement : MonoBehaviour
     {

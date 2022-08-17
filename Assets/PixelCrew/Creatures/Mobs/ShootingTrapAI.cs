@@ -1,8 +1,10 @@
-﻿using PixelCrew.Utils;
-using PixelCrew.Components;
+﻿using PixelCrew.Components.Audio;
+using PixelCrew.Components.ColliderBased;
+using PixelCrew.Components.GoBased;
+using PixelCrew.Utils;
 using UnityEngine;
 
-namespace PixelCrew.Creatures
+namespace PixelCrew.Creatures.Mobs
 {
     public class ShootingTrapAI : MonoBehaviour
     {

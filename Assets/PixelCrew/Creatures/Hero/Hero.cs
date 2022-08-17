@@ -1,12 +1,14 @@
-﻿using PixelCrew.Components;
+﻿using System.Collections;
+using PixelCrew.Components;
+using PixelCrew.Components.ColliderBased;
+using PixelCrew.Components.Health;
 using PixelCrew.Model;
 using PixelCrew.Utils;
-using System.Collections;
 using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace PixelCrew.Creatures
+namespace PixelCrew.Creatures.Hero
 {
     public class Hero : Creature
     {

@@ -1,8 +1,8 @@
-﻿using PixelCrew.Model.Data.Properties;
-using System;
+﻿using System;
+using PixelCrew.Model.Data.Properties;
 using UnityEngine;
 
-namespace PixelCrew.Model
+namespace PixelCrew.Model.Data
 {
     [Serializable]
     public class PlayerData

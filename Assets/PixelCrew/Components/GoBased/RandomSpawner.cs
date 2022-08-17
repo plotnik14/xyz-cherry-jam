@@ -1,10 +1,10 @@
-﻿using PixelCrew.Utils;
-using System.Collections;
+﻿using System.Collections;
+using PixelCrew.Utils;
 using UnityEditor;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace PixelCrew.Components
+namespace PixelCrew.Components.GoBased
 {
     public class RandomSpawner : MonoBehaviour
     {

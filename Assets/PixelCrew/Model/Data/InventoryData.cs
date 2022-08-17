@@ -1,10 +1,10 @@
-﻿using PixelCrew.Model.Definition;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using PixelCrew.Model.Definition;
 using UnityEngine;
 
-namespace PixelCrew.Model
+namespace PixelCrew.Model.Data
 {
     [Serializable]
     public class InventoryData

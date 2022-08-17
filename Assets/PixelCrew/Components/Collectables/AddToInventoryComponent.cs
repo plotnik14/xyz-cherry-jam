@@ -1,10 +1,9 @@
-﻿using PixelCrew.Creatures;
+﻿using PixelCrew.Creatures.Hero;
 using PixelCrew.Model.Definition;
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace PixelCrew.Components
+namespace PixelCrew.Components.Collectables
 {
     public class AddToInventoryComponent : MonoBehaviour
     {

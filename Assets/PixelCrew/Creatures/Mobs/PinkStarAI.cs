@@ -1,8 +1,8 @@
-﻿using PixelCrew.Components;
-using System.Collections;
+﻿using System.Collections;
+using PixelCrew.Components.ColliderBased;
 using UnityEngine;
 
-namespace PixelCrew.Creatures
+namespace PixelCrew.Creatures.Mobs
 {
     public class PinkStarAI : MobAI
     {

@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace PixelCrew.Components
+namespace PixelCrew.Components.Animations
 {
     [RequireComponent(typeof(SpriteRenderer))]
     public class SpriteAnimationComponent : MonoBehaviour

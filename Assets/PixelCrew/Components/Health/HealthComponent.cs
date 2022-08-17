@@ -1,9 +1,9 @@
-﻿using PixelCrew.Model;
-using System;
+﻿using System;
+using PixelCrew.Model.Definition;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace PixelCrew.Components
+namespace PixelCrew.Components.Health
 {
     public class HealthComponent : MonoBehaviour
     {

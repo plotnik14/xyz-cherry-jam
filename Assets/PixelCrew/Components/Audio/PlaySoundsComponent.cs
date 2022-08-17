@@ -1,8 +1,8 @@
-﻿using UnityEngine;
-using System;
+﻿using System;
 using PixelCrew.Utils;
+using UnityEngine;
 
-namespace PixelCrew.Components
+namespace PixelCrew.Components.Audio
 {
     public class PlaySoundsComponent : MonoBehaviour
     {

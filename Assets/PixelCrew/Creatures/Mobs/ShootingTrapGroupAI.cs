@@ -1,10 +1,10 @@
-﻿using UnityEngine;
-using UnityEngine.Events;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using PixelCrew.Components.ColliderBased;
 using PixelCrew.Utils;
-using PixelCrew.Components;
+using UnityEngine;
+using UnityEngine.Events;
 
-namespace PixelCrew.Creatures 
+namespace PixelCrew.Creatures.Mobs 
 {
     public class ShootingTrapGroupAI : MonoBehaviour
     {      

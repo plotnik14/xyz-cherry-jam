@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Audio;
 
-namespace PixelCrew.Components
+namespace PixelCrew.Components.Audio
 {
     public class SoundEffectZoneComponent : MonoBehaviour
     {

@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Linq;
-using PixelCrew.Model.Definition;
 using UnityEngine;
 
-namespace PixelCrew.Model
+namespace PixelCrew.Model.Definition
 {
     [CreateAssetMenu(menuName = "Defs/InventoryItems", fileName = "InventoryItems")]
     public class InventoryItemsDef : ScriptableObject
