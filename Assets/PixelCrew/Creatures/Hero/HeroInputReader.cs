@@ -38,19 +38,19 @@ namespace PixelCrew.Creatures.Hero
             }
         }
 
-        public void OnHeal(InputAction.CallbackContext context)
-        {
-            if (context.performed)
-            {
-                _hero.Heal();
-            }
-        }
-        
         public void OnNextItem(InputAction.CallbackContext context)
         {
             if (context.performed)
             {
                 _hero.NextItem();
+            }
+        }
+        
+        public void OnUseItem(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                _hero.UseItem();
             }
         }
 

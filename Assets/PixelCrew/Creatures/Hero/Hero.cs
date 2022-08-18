@@ -38,12 +38,12 @@ namespace PixelCrew.Creatures.Hero
         private GameSession _session;
         private bool _isMultiThrow;
         private HealthComponent _healthComponent;
+        private float _speedMod;
 
         private const string SwordId = "Sword";
         
         private int SwordsCount => _session.Data.Inventory.Count(SwordId);
         private int CoinsCount => _session.Data.Inventory.Count("Coin");
-        private int HealthPotionsCount => _session.Data.Inventory.Count("Health Potion");
 
         private string SelectedItemId => _session.QuickInventory.SelectedItem.Id;
         private bool CanThrow
@@ -68,6 +68,7 @@ namespace PixelCrew.Creatures.Hero
             _healthComponent = GetComponent<HealthComponent>();
             _allowDoubleJump = true;
             _isMultiThrow = false;
+            _speedMod = 1;
         }
 
 
@@ -80,8 +81,7 @@ namespace PixelCrew.Creatures.Hero
             var canvas = GameObject.FindGameObjectWithTag("MenuCanvas").GetComponent<Canvas>();
             Instantiate(window, canvas.transform);
         }
-
-
+        
         protected void Start()
         {
             _session = FindObjectOfType<GameSession>();
@@ -128,22 +128,7 @@ namespace PixelCrew.Creatures.Hero
             Animator.SetTrigger(ThrowKey);          
             _throwCooldown.Reset();
         }
-
-        public void Heal()
-        {
-            if (HealthPotionsCount <= 0) return;
-
-            UseHealthPotion();
-        }
-
-        private void UseHealthPotion()
-        {
-            var healingValue = 5; // ToDo Move to Defs later ??
-            _healthComponent.ApplyHealing(healingValue);
-            _particles.Spawn("Heal");
-            _session.Data.Inventory.Remove("Health Potion", 1);
-        }
-
+        
         public bool AddToInventory(string id, int value)
         {
             return _session.Data.Inventory.Add(id, value);
@@ -274,6 +259,61 @@ namespace PixelCrew.Creatures.Hero
         public void NextItem()
         {
             _session.QuickInventory.SetNextItem();
+        }
+        
+        public void UseItem()
+        {
+            var usableItemId = _session.QuickInventory.SelectedItem.Id;
+            var usableItemDef = DefsFacade.I.UsableItems.Get(usableItemId);
+            if (usableItemDef.IsVoid)
+            {
+                Debug.Log($"{usableItemId} is not usable item");
+                return;
+            }
+            
+            // ToDo rework to allow choose action in definition
+            switch (usableItemDef.Id)
+            {
+                case "Health Potion":
+                    UseHealthPotion((int)usableItemDef.Value);
+                    break;
+                case "Health Potion Strong":
+                    UseHealthPotion((int)usableItemDef.Value);
+                    break;
+                case "Speed Potion":
+                    UseSpeedPotion(usableItemDef.Value);
+                    break;
+                default:
+                    Debug.Log($"Unsupported usable item: {usableItemDef.Id}");
+                    break;
+            }
+            
+            _session.Data.Inventory.Remove(usableItemId, 1);
+        }
+
+        private void UseHealthPotion(int healingValue)
+        {
+            _healthComponent.ApplyHealing(healingValue);
+            _particles.Spawn("Heal");
+        }
+        
+        private void UseSpeedPotion(float speedMod)
+        {
+            _speedMod = speedMod;
+            _particles.Spawn("Heal");
+            StartCoroutine(SpeedModifier());
+        }
+
+        private IEnumerator SpeedModifier()
+        {
+            yield return new WaitForSeconds(10);
+            _speedMod = 1;
+            yield return null;
+        }
+        
+        protected override float CalculateXVelocity()
+        {
+            return base.CalculateXVelocity() * _speedMod;
         }
     }
 }

@@ -38,14 +38,6 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Heal",
-                    "type": "Button",
-                    "id": "2fb9548b-37dd-41fc-8e3a-fb5d86eefd79",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
                     "name": "NextItem",
                     "type": "Button",
                     "id": "1ab8456c-1e5b-4dc1-8747-306f09b9ab9d",
@@ -57,6 +49,14 @@
                     "name": "ShowMenu",
                     "type": "Button",
                     "id": "f290378d-1fdd-40e2-8056-10e5bb63c90e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "UseItem",
+                    "type": "Button",
+                    "id": "610a5142-c33c-4b90-a25e-b96525764782",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -153,17 +153,6 @@
                 },
                 {
                     "name": "",
-                    "id": "6fc234b1-ef79-4407-8873-82c1c6f4b5dc",
-                    "path": "<Keyboard>/h",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Heal",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "2df45596-4e7b-4ac7-9379-b89112926c0e",
                     "path": "<Keyboard>/q",
                     "interactions": "",
@@ -181,6 +170,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "ShowMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6acf1676-fd06-4264-981b-1ceb2c52c081",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UseItem",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
