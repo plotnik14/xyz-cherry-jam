@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using PixelCrew.Components;
 using PixelCrew.Components.ColliderBased;
+using PixelCrew.Components.GoBased;
 using PixelCrew.Components.Health;
 using PixelCrew.Model;
+using PixelCrew.Model.Definition;
 using PixelCrew.Utils;
 using UnityEditor.Animations;
 using UnityEngine;
@@ -21,6 +23,7 @@ namespace PixelCrew.Creatures.Hero
         [SerializeField] private int _multiThrowMaxCount = 3;
         [SerializeField] private float _delayBetweenThrows = 0.3f;
         [SerializeField] private Cooldown _throwCooldown;
+        [SerializeField] private SpawnComponent _throwSpawner;
 
         [Space]
         [Header("AnimatorController")]
@@ -36,10 +39,27 @@ namespace PixelCrew.Creatures.Hero
         private bool _isMultiThrow;
         private HealthComponent _healthComponent;
 
-        private int SwordsCount => _session.Data.Inventory.Count("Sword");
+        private const string SwordId = "Sword";
+        
+        private int SwordsCount => _session.Data.Inventory.Count(SwordId);
         private int CoinsCount => _session.Data.Inventory.Count("Coin");
         private int HealthPotionsCount => _session.Data.Inventory.Count("Health Potion");
 
+        private string SelectedItemId => _session.QuickInventory.SelectedItem.Id;
+        private bool CanThrow
+        {
+            get
+            {
+                if (SelectedItemId == SwordId)
+                {
+                    return SwordsCount > 1;
+                }
+                
+                var def = DefsFacade.I.Items.Get(SelectedItemId);
+                return def.HasTag(ItemTag.Throwable);
+            }
+        }
+        
         protected override void Awake()
         {
             base.Awake();
@@ -81,7 +101,7 @@ namespace PixelCrew.Creatures.Hero
 
         private void OnInventoryChanged(string id, int value)        
         {
-            if (id == "Sword")
+            if (id == SwordId)
             {
                 UpdateHeroWeapon();
             }
@@ -101,7 +121,7 @@ namespace PixelCrew.Creatures.Hero
 
         public void Throw(double pressDuration)
         {
-            if (SwordsCount <= 1) return;
+            if (!CanThrow) return;
             if (!_throwCooldown.IsReady) return;
 
             _isMultiThrow = pressDuration >= _multiThrowPressDuration;
@@ -133,36 +153,48 @@ namespace PixelCrew.Creatures.Hero
         {
             if (_isMultiThrow)
             {
-                var swordsToThrow = SwordsCount - 1;
-                swordsToThrow = Mathf.Min(swordsToThrow, _multiThrowMaxCount);
+                var itemsCount = _session.Data.Inventory.Count(SelectedItemId);
+                var possibleCountToThrow = SelectedItemId == SwordId ? itemsCount - 1 : itemsCount;
+                var countToThrow = Mathf.Min(possibleCountToThrow, _multiThrowMaxCount);
 
-                StartCoroutine(MultiThrow(swordsToThrow));
+                StartCoroutine(MultiThrow(countToThrow));
                 
-                _session.Data.Inventory.Remove("Sword", swordsToThrow);
+                _session.Data.Inventory.Remove(SelectedItemId, countToThrow);
                 _isMultiThrow = false;
             }
             else
             {
-                _particles.Spawn("Throw");
-                Sounds.Play("Range");
-                _session.Data.Inventory.Remove("Sword", 1);
+                var throwableId = _session.QuickInventory.SelectedItem.Id;
+                var throwableDef = DefsFacade.I.ThrowableItems.Get(throwableId);
+                SpawnThrownParticle(throwableDef.Projectile);
+                _session.Data.Inventory.Remove(throwableId, 1);
             }
         }
 
-        private IEnumerator MultiThrow(int swordsToThrow)
+        
+        private IEnumerator MultiThrow(int countToThrow)
         {
             LockInput();
-
-            for (int i = 0; i < swordsToThrow; i++)
+            
+            var throwableId = _session.QuickInventory.SelectedItem.Id;
+            var throwableDef = DefsFacade.I.ThrowableItems.Get(throwableId);
+            
+            for (int i = 0; i < countToThrow; i++)
             {
-                _particles.Spawn("Throw");
-                Sounds.Play("Range");
+                SpawnThrownParticle(throwableDef.Projectile);
                 yield return new WaitForSeconds(_delayBetweenThrows);
             }
 
             UnlockInput();
 
             yield return null;
+        }
+
+        private void SpawnThrownParticle(GameObject projectile)
+        {
+            _throwSpawner.SetPrefab(projectile);
+            _throwSpawner.Spawn();
+            Sounds.Play("Range");
         }
 
         private void LockInput()

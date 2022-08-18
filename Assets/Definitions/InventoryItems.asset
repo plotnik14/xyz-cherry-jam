@@ -29,3 +29,6 @@ MonoBehaviour:
   - _id: Diamond
     _icon: {fileID: 0}
     _tags: 
+  - _id: Pearl
+    _icon: {fileID: 21300000, guid: 25769e707a73c764e99544935958468c, type: 3}
+    _tags: 000000000100000002000000

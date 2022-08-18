@@ -298,7 +298,7 @@ GameObject:
   - component: {fileID: 2477616180874453219}
   - component: {fileID: 5183181124075089637}
   m_Layer: 15
-  m_Name: ThrowSwordSpawnPosition
+  m_Name: ThrowSpawnPosition
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -827,6 +827,7 @@ MonoBehaviour:
   _delayBetweenThrows: 0.2
   _throwCooldown:
     _value: 1
+  _throwSpawner: {fileID: 5183181124075089637}
   _armed: {fileID: 9100000, guid: 3d60d365d82850f40b9e6296d005c120, type: 2}
   _unarmed: {fileID: 9100000, guid: 9d1ad497824f97d40b09b081f1062999, type: 2}
   _hitDrop: {fileID: 4489812277440056117}

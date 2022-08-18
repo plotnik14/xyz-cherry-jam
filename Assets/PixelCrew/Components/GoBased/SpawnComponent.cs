@@ -15,5 +15,10 @@ namespace PixelCrew.Components.GoBased
             instance.transform.localScale = transform.lossyScale;
             instance.SetActive(true);
         }
+
+        public void SetPrefab(GameObject prefab)
+        {
+            _prefab = prefab;
+        }
     }
 }
