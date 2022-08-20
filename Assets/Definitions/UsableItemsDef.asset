@@ -15,7 +15,10 @@ MonoBehaviour:
   _items:
   - _id: Health Potion
     _value: 3
+    _action: 0
   - _id: Health Potion Strong
     _value: 10
+    _action: 0
   - _id: Speed Potion
     _value: 3
+    _action: 1

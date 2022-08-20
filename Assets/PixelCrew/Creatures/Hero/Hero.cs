@@ -1,8 +1,10 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using PixelCrew.Components;
 using PixelCrew.Components.ColliderBased;
 using PixelCrew.Components.GoBased;
 using PixelCrew.Components.Health;
+using PixelCrew.Creatures.UsableItems;
 using PixelCrew.Model;
 using PixelCrew.Model.Definition;
 using PixelCrew.Utils;
@@ -40,6 +42,9 @@ namespace PixelCrew.Creatures.Hero
         private HealthComponent _healthComponent;
         private float _speedMod;
 
+        // ToDo move to proper place
+        private Dictionary<UseActionDef, AbstractUseAction> _useActions;
+
         private const string SwordId = "Sword";
         
         private int SwordsCount => _session.Data.Inventory.Count(SwordId);
@@ -69,6 +74,13 @@ namespace PixelCrew.Creatures.Hero
             _allowDoubleJump = true;
             _isMultiThrow = false;
             _speedMod = 1;
+
+            // ToDo move to proper place. Some config in scriptable object&
+            _useActions = new Dictionary<UseActionDef, AbstractUseAction>
+            {
+                { UseActionDef.Heal, new HealingAction(this) },
+                { UseActionDef.BoostSpeed, new BoostSpeedAction(this) }
+            };
         }
 
 
@@ -270,34 +282,21 @@ namespace PixelCrew.Creatures.Hero
                 Debug.Log($"{usableItemId} is not usable item");
                 return;
             }
-            
-            // ToDo rework to allow choose action in definition
-            switch (usableItemDef.Id)
-            {
-                case "Health Potion":
-                    UseHealthPotion((int)usableItemDef.Value);
-                    break;
-                case "Health Potion Strong":
-                    UseHealthPotion((int)usableItemDef.Value);
-                    break;
-                case "Speed Potion":
-                    UseSpeedPotion(usableItemDef.Value);
-                    break;
-                default:
-                    Debug.Log($"Unsupported usable item: {usableItemDef.Id}");
-                    break;
-            }
+
+            var actionDef = usableItemDef.Action;
+            var action = _useActions[actionDef];
+            action.Use(usableItemDef.Value);
             
             _session.Data.Inventory.Remove(usableItemId, 1);
         }
 
-        private void UseHealthPotion(int healingValue)
+        public void Heal(int healingValue)
         {
             _healthComponent.ApplyHealing(healingValue);
             _particles.Spawn("Heal");
         }
         
-        private void UseSpeedPotion(float speedMod)
+        public void BoostSpeed(float speedMod)
         {
             _speedMod = speedMod;
             _particles.Spawn("Heal");
