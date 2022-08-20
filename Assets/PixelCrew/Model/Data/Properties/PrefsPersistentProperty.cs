@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace PixelCrew.Model.Data.Properties
+﻿namespace PixelCrew.Model.Data.Properties
 {
     public abstract class PrefsPersistentProperty<TPropetryType> : PersistentProperty<TPropetryType>
     {

@@ -1,5 +1,4 @@
-﻿using PixelCrew.Components;
-using PixelCrew.Components.Health;
+﻿using PixelCrew.Components.Health;
 using PixelCrew.UI.Widgets;
 using UnityEngine;
 

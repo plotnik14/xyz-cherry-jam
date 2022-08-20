@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using PixelCrew.Model;
-using PixelCrew.Model.Definition;
 using PixelCrew.Utils.Disposables;
 using UnityEngine;
 

@@ -1,5 +1,4 @@
-﻿using System;
-using PixelCrew.Model.Data;
+﻿using PixelCrew.Model.Data;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 

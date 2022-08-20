@@ -1,6 +1,5 @@
 ﻿using PixelCrew.Model;
 using PixelCrew.UI.Widgets;
-using System;
 using PixelCrew.Model.Definition;
 using UnityEngine;
 

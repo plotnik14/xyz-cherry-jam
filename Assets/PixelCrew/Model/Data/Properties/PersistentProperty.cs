@@ -1,8 +1,4 @@
-﻿using PixelCrew.Utils.Disposables;
-using System;
-using UnityEngine;
-
-namespace PixelCrew.Model.Data.Properties
+﻿namespace PixelCrew.Model.Data.Properties
 {
     public abstract class PersistentProperty<TPropertyType> : ObservableProperty<TPropertyType>
     {
