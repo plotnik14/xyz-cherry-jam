@@ -1,4 +1,6 @@
-﻿using PixelCrew.Model.Data;
+﻿using System;
+using PixelCrew.Model.Data;
+using PixelCrew.Utils.Disposables;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,6 +15,8 @@ namespace PixelCrew.Model
         private PlayerData _save;
 
         public QuickInventoryModel QuickInventory { get; private set; }
+
+        private readonly CompositeDisposable _trash = new CompositeDisposable();
 
         public void Awake()
         {
@@ -33,6 +37,7 @@ namespace PixelCrew.Model
         private void InitModels()
         {
             QuickInventory = new QuickInventoryModel(_data);
+            _trash.Retain(QuickInventory);
         }
 
         private void LoadHud()
@@ -61,6 +66,11 @@ namespace PixelCrew.Model
             }
 
             return false;
+        }
+
+        private void OnDestroy()
+        {
+            _trash.Dispose();
         }
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace PixelCrew.Model.Data
 {
-    public class QuickInventoryModel
+    public class QuickInventoryModel : IDisposable
     {
         private readonly PlayerData _data;
 
@@ -34,20 +34,19 @@ namespace PixelCrew.Model.Data
         
         private void OnInventoryChanged(string id, int value)
         {
-            // ToDo fix?  Temporary committed to fix quick inventory update
-            // var indexFound = Array.FindIndex(Inventory, x => x.Id == id);
-            //
-            // if (indexFound != -1)
-            // {
-                Inventory = _data.Inventory.GetAll(ItemTag.Usable);
-                SelectedIndex.Value = Mathf.Clamp(SelectedIndex.Value, 0, Inventory.Length - 1);
-                OnChanged?.Invoke();
-            // }
+            Inventory = _data.Inventory.GetAll(ItemTag.Usable);
+            SelectedIndex.Value = Mathf.Clamp(SelectedIndex.Value, 0, Inventory.Length - 1);
+            OnChanged?.Invoke();
         }
 
         public void SetNextItem()
         {
             SelectedIndex.Value = (int) Mathf.Repeat(SelectedIndex.Value + 1, Inventory.Length);
+        }
+        
+        public void Dispose()
+        {
+            _data.Inventory.OnChange -= OnInventoryChanged;
         }
     }
 }
