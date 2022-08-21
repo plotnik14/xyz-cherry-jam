@@ -1,5 +1,4 @@
-﻿using System;
-using PixelCrew.Utils.Editor;
+﻿using PixelCrew.Utils.Editor;
 using UnityEditor;
 
 namespace PixelCrew.Components.Dialogs.Editor
