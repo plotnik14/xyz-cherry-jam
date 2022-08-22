@@ -88,10 +88,7 @@ namespace PixelCrew.Creatures.Hero
         public void ShowMainMenuInGame()
         {
             // ToDo check that menu is not created
-
-            var window = Resources.Load<GameObject>("UI/MainMenuWindowInGame");
-            var canvas = GameObject.FindGameObjectWithTag("MenuCanvas").GetComponent<Canvas>();
-            Instantiate(window, canvas.transform);
+            WindowUtils.CreateWindow("UI/InGameMenuWindow");
         }
         
         protected void Start()
