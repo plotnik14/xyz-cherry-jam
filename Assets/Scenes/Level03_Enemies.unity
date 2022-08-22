@@ -231,7 +231,7 @@ MonoBehaviour:
       - Id: Sword
         Value: 5
     Hp:
-      _value: 3
+      _value: 9
 --- !u!4 &30508820
 Transform:
   m_ObjectHideFlags: 0

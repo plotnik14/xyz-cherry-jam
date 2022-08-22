@@ -32,6 +32,11 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 0.9375
       objectReference: {fileID: 0}
+    - target: {fileID: 6722658525014103694, guid: c20b1fb1fc0bc6b4b83ee137c30bef03,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.216
+      objectReference: {fileID: 0}
     - target: {fileID: 7651697397636318110, guid: c20b1fb1fc0bc6b4b83ee137c30bef03,
         type: 3}
       propertyPath: m_Size.y

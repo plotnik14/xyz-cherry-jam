@@ -6,7 +6,7 @@ namespace PixelCrew.UI.Hud
 {
     public class CreatureHudController : MonoBehaviour
     {
-        [SerializeField] private ProgressBarWidget _heathBar;
+        [SerializeField] private ProgressBarWidget _healthBar;
 
         private HealthComponent _health;
 
@@ -29,7 +29,7 @@ namespace PixelCrew.UI.Hud
         private void OnHealthChanged(int newValue)
         {
             var barValue = (float)newValue / _health.MaxHealth;
-            _heathBar.SetProgress(barValue);
+            _healthBar.SetProgress(barValue);
         }
 
         private void OnDestroy()
