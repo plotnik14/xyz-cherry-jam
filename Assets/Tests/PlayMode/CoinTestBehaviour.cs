@@ -1,26 +1,29 @@
 ﻿using UnityEngine;
 using UnityEngine.TestTools;
 
-public class CoinTestBehaviour : MonoBehaviour, IMonoBehaviourTest
+namespace Tests.PlayMode
 {
-    public bool IsTestFinished => _timeToLive < 0;
-
-    private float _timeToLive = 1.5f;
-    private GameObject _hero;
-
-
-    private void Awake()
+    public class CoinTestBehaviour : MonoBehaviour, IMonoBehaviourTest
     {
-        _hero = GameObject.FindWithTag("Player");
-    }
+        public bool IsTestFinished => _timeToLive < 0;
 
-    void Update()
-    {
-        _timeToLive -= Time.deltaTime;
+        private float _timeToLive = 1.5f;
+        private GameObject _hero;
 
-        if (_timeToLive > 0)
+
+        private void Awake()
         {
-            _hero.SendMessage("SetDirection", new Vector2(1, 0));
+            _hero = GameObject.FindWithTag("Player");
+        }
+
+        void Update()
+        {
+            _timeToLive -= Time.deltaTime;
+
+            if (_timeToLive > 0)
+            {
+                _hero.SendMessage("SetDirection", new Vector2(1, 0));
+            }
         }
     }
 }

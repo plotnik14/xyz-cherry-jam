@@ -1110,6 +1110,7 @@ GameObject:
   - component: {fileID: 5588570183842351464}
   - component: {fileID: 5588570183842351466}
   - component: {fileID: 5588570183842351467}
+  - component: {fileID: 1348811260655913928}
   m_Layer: 5
   m_Name: NormalText
   m_TagString: Untagged
@@ -1179,6 +1180,20 @@ MonoBehaviour:
   m_Text: 'OK
 
 '
+--- !u!114 &1348811260655913928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5588570183842351465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aaac45a04c746eaa43fe040e7d4c46e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: button_back
+  _capitalize: 1
 --- !u!1 &5588570184011965863
 GameObject:
   m_ObjectHideFlags: 0
@@ -1190,6 +1205,7 @@ GameObject:
   - component: {fileID: 5588570184011965862}
   - component: {fileID: 5588570184011965856}
   - component: {fileID: 5588570184011965857}
+  - component: {fileID: 1999537726247763180}
   m_Layer: 5
   m_Name: Header
   m_TagString: Untagged
@@ -1257,6 +1273,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Options
+--- !u!114 &1999537726247763180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5588570184011965863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aaac45a04c746eaa43fe040e7d4c46e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: options_title
+  _capitalize: 0
 --- !u!1 &5588570184839729134
 GameObject:
   m_ObjectHideFlags: 0
@@ -1343,7 +1373,7 @@ GameObject:
   - component: {fileID: 5588570184959068704}
   - component: {fileID: 2859216371688076575}
   m_Layer: 5
-  m_Name: OK Button
+  m_Name: Back Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1488,6 +1518,7 @@ GameObject:
   - component: {fileID: 5588570185300664131}
   - component: {fileID: 5588570185300664141}
   - component: {fileID: 5588570185300664130}
+  - component: {fileID: 1890110088764853560}
   m_Layer: 5
   m_Name: PressedText
   m_TagString: Untagged
@@ -1557,6 +1588,20 @@ MonoBehaviour:
   m_Text: 'OK
 
 '
+--- !u!114 &1890110088764853560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5588570185300664128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aaac45a04c746eaa43fe040e7d4c46e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: button_back
+  _capitalize: 1
 --- !u!1 &5588570185330238377
 GameObject:
   m_ObjectHideFlags: 0
