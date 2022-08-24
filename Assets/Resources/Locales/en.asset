@@ -31,4 +31,12 @@ MonoBehaviour:
   - Key: options_title
     Value: "Options\r"
   - Key: language_title
-    Value: Language
+    Value: "Language\r"
+  - Key: music_title
+    Value: "Music\r"
+  - Key: sfx_title
+    Value: "SFX\r"
+  - Key: pause_menu_title
+    Value: "Pause\r"
+  - Key: button_restart
+    Value: restart

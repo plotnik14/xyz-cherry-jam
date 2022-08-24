@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 562774559}
   - component: {fileID: 562774558}
   m_Layer: 5
-  m_Name: Music Value
+  m_Name: SFX Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -502,6 +502,7 @@ GameObject:
   - component: {fileID: 1229238461}
   - component: {fileID: 1229238463}
   - component: {fileID: 1229238462}
+  - component: {fileID: 5865269083434691609}
   m_Layer: 5
   m_Name: Label Music
   m_TagString: Untagged
@@ -525,8 +526,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -19.073986, y: -8.7}
-  m_SizeDelta: {x: 34.92859, y: 14.039185}
+  m_AnchoredPosition: {x: -7.6144, y: -8.7}
+  m_SizeDelta: {x: 57.847862, y: 14.039185}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1229238463
 CanvasRenderer:
@@ -569,6 +570,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Music:'
+--- !u!114 &5865269083434691609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229238460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aaac45a04c746eaa43fe040e7d4c46e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: music_title
+  _capitalize: 0
 --- !u!1 &1236666676
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,8 +768,9 @@ GameObject:
   - component: {fileID: 1370858809}
   - component: {fileID: 1370858811}
   - component: {fileID: 1370858810}
+  - component: {fileID: 130442785991571151}
   m_Layer: 5
-  m_Name: Label Music
+  m_Name: Label SFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -776,8 +792,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -19.073986, y: -8.7}
-  m_SizeDelta: {x: 34.92859, y: 14.039185}
+  m_AnchoredPosition: {x: -7.6144, y: -8.7}
+  m_SizeDelta: {x: 57.847862, y: 14.039185}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1370858811
 CanvasRenderer:
@@ -820,6 +836,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'SFX:'
+--- !u!114 &130442785991571151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370858808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aaac45a04c746eaa43fe040e7d4c46e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: sfx_title
+  _capitalize: 0
 --- !u!1 &1448162862
 GameObject:
   m_ObjectHideFlags: 0
