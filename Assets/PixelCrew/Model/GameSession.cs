@@ -1,4 +1,7 @@
-﻿using PixelCrew.Model.Data;
+﻿using System.Collections.Generic;
+using System.Linq;
+using PixelCrew.Components.LevelManagement;
+using PixelCrew.Model.Data;
 using PixelCrew.Utils.Disposables;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,6 +11,7 @@ namespace PixelCrew.Model
     public class GameSession : MonoBehaviour
     {
         [SerializeField] private PlayerData _data;
+        [SerializeField] private string _defaultCheckpoint;
         
         public PlayerData Data => _data;
 
@@ -17,12 +21,14 @@ namespace PixelCrew.Model
 
         private readonly CompositeDisposable _trash = new CompositeDisposable();
 
+        private List<string> _checkpoints = new List<string>();
+
         public void Awake()
         {
-            LoadHud();
-
-            if (SessionExists())
+            var existingSession = GetExistingSession();
+            if (existingSession != null)
             {
+                existingSession.StartSession(_defaultCheckpoint);
                 Destroy(gameObject);
             }
             else
@@ -30,6 +36,29 @@ namespace PixelCrew.Model
                 Save();
                 InitModels();
                 DontDestroyOnLoad(this);
+                StartSession(_defaultCheckpoint);
+            }
+        }
+
+        private void StartSession(string defaultCheckpoint)
+        {
+            SetChecked(defaultCheckpoint);
+            
+            LoadHud();
+            SpawnHero();
+        }
+
+        private void SpawnHero()
+        {
+            var checkpoints = FindObjectsOfType<CheckPointComponent>();
+            var lastCheckpointId = _checkpoints.Last();
+            foreach (var checkpoint in checkpoints)
+            {
+                if (checkpoint.Id == lastCheckpointId)
+                {
+                    checkpoint.SpawnHero();
+                    break;
+                }
             }
         }
 
@@ -57,22 +86,36 @@ namespace PixelCrew.Model
             InitModels();
         }
 
-        private bool SessionExists()
+        private GameSession GetExistingSession()
         {
             var sessions = FindObjectsOfType<GameSession>();
 
             foreach (var session in sessions)
             {
                 if (session != this)
-                    return true;
+                    return session;
             }
 
-            return false;
+            return null;
         }
 
         private void OnDestroy()
         {
             _trash.Dispose();
+        }
+
+        public bool IsChecked(string checkpointId)
+        {
+            return _checkpoints.Contains(checkpointId);
+        }
+
+        public void SetChecked(string checkpointId)
+        {
+            if (!IsChecked(checkpointId))
+            {
+                Save();
+                _checkpoints.Add(checkpointId);
+            }
         }
     }
 }
