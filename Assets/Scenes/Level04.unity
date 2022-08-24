@@ -3157,6 +3157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mode: 1
+  _useLocalization: 1
   _boundDialog:
     _sentences: []
   _externalDialog: {fileID: 0}
@@ -3376,10 +3377,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mode: 0
+  _useLocalization: 1
   _boundDialog:
     _sentences:
-    - You need a key...
-    - Try to search nearby...
+    - closed_door_1
+    - closed_door_2
   _externalDialog: {fileID: 0}
 --- !u!114 &865380717
 MonoBehaviour:

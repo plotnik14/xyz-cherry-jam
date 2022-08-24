@@ -16,7 +16,8 @@ namespace PixelCrew.Components.Dialogs.Editor
         public override void OnInspectorGUI()
         {
             EditorGUILayout.PropertyField(_modeProperty);
-
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("_useLocalization"));
+            
             if (_modeProperty.TryGetEnum(out ShowDialogComponent.Mode mode))
             {
                 switch (mode)

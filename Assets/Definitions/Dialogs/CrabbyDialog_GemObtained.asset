@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data:
     _sentences:
-    - And now The Miracle!
-    - I have a Gem...
-    - And you are not!!
-    - Ahahahahaha!
+    - CrabbyDialog_GemObtained_1
+    - CrabbyDialog_GemObtained_2
+    - CrabbyDialog_GemObtained_3
+    - CrabbyDialog_GemObtained_4

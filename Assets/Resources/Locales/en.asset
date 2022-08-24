@@ -39,4 +39,20 @@ MonoBehaviour:
   - Key: pause_menu_title
     Value: "Pause\r"
   - Key: button_restart
-    Value: restart
+    Value: "restart\r"
+  - Key: closed_door_1
+    Value: "You need a key...\r"
+  - Key: closed_door_2
+    Value: "Try to search nearby...\r"
+  - Key: CrabbyDialog_GetGem_1
+    Value: "Get me a Gem..\r"
+  - Key: CrabbyDialog_GetGem_2
+    Value: "And I will show you a miracle!\r"
+  - Key: CrabbyDialog_GemObtained_1
+    Value: "And now The Miracle!\r"
+  - Key: CrabbyDialog_GemObtained_2
+    Value: "I have a Gem...\r"
+  - Key: CrabbyDialog_GemObtained_3
+    Value: "And you are not!!\r"
+  - Key: CrabbyDialog_GemObtained_4
+    Value: Ahahahahaha!

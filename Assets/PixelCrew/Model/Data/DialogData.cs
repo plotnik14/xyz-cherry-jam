@@ -9,5 +9,14 @@ namespace PixelCrew.Model.Data
         [SerializeField] private string[] _sentences;
 
         public string[] Sentences => _sentences;
+
+        public DialogData()
+        {
+        }
+
+        public DialogData(string[] sentences)
+        {
+            _sentences = sentences;
+        }
     }
 }

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data:
     _sentences:
-    - Get me a Gem..
-    - And I will show you a miracle!
+    - CrabbyDialog_GetGem_1
+    - CrabbyDialog_GetGem_2
