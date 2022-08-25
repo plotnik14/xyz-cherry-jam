@@ -34,7 +34,10 @@ namespace PixelCrew.UI.Hud
 
         private void OnDestroy()
         {
-            _health.OnChange.RemoveListener(OnHealthChanged);
+            if (_health != null)
+            {
+                _health.OnChange.RemoveListener(OnHealthChanged);
+            }
         }
     }
 }

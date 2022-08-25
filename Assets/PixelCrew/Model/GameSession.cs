@@ -23,6 +23,9 @@ namespace PixelCrew.Model
 
         private List<string> _checkpoints = new List<string>();
 
+        private HashSet<string> permanentlyDestroyed = new HashSet<string>();
+        private HashSet<string> markedToBeDestroyed = new HashSet<string>();
+
         public void Awake()
         {
             var existingSession = GetExistingSession();
@@ -76,11 +79,13 @@ namespace PixelCrew.Model
         public void Save()
         {
             _save = _data.Clone();
+            permanentlyDestroyed.UnionWith(markedToBeDestroyed);
         }
 
         public void LoadLastSave()
         {
             _data = _save.Clone();
+            markedToBeDestroyed.Clear();
             
             _trash.Dispose();
             InitModels();
@@ -116,6 +121,16 @@ namespace PixelCrew.Model
                 Save();
                 _checkpoints.Add(checkpointId);
             }
+        }
+
+        public bool ObjectHasBeenDestroyed(string id)
+        {
+            return permanentlyDestroyed.Contains(id);
+        }
+
+        public void MarkObjectAsDestroyed(string id)
+        {
+            markedToBeDestroyed.Add(id);
         }
     }
 }
