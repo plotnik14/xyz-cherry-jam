@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using PixelCrew.Components;
 using PixelCrew.Components.ColliderBased;
@@ -6,7 +7,10 @@ using PixelCrew.Components.GoBased;
 using PixelCrew.Components.Health;
 using PixelCrew.Creatures.UsableItems;
 using PixelCrew.Model;
+using PixelCrew.Model.Data;
 using PixelCrew.Model.Definition;
+using PixelCrew.Model.Definition.Repositories;
+using PixelCrew.Model.Definition.Repositories.Items;
 using PixelCrew.Utils;
 using UnityEditor.Animations;
 using UnityEngine;
@@ -128,7 +132,49 @@ namespace PixelCrew.Creatures.Hero
             base.Attack();
         }
 
-        public void Throw(double pressDuration)
+        public void UseInventory(double pressDuration)
+        {
+            if (IsSelectedItem(ItemTag.Throwable))
+                PerformThrowing(pressDuration);
+            else if (IsSelectedItem(ItemTag.Potion))
+                UsePotion();
+        }
+
+        private void UsePotion()
+        {
+            var potion = DefsFacade.I.Potions.Get(SelectedItemId);
+
+            switch (potion.Effect)
+            {
+                case Effect.AddHp:
+                    Heal((int)potion.Value);
+                    break;
+                case Effect.SpeedUp:
+                    SpeedUp(potion.Value, potion.Time);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+            
+            _session.Data.Inventory.Remove(potion.Id, 1);
+        }
+
+        private readonly Cooldown _speedUpCooldown = new Cooldown();
+        private float _additionalSpeed;
+
+        private void SpeedUp(float value, float time)
+        {
+            _speedUpCooldown.Value = _speedUpCooldown.TimeLasts + time;
+            _additionalSpeed = Mathf.Max(_additionalSpeed, value);
+            _speedUpCooldown.Reset();
+        }
+
+        private bool IsSelectedItem(ItemTag tag)
+        {
+            return _session.QuickInventory.SelectedDef.HasTag(tag);
+        }
+
+        private void PerformThrowing(double pressDuration)
         {
             if (!CanThrow) return;
             if (!_throwCooldown.IsReady) return;
@@ -270,6 +316,7 @@ namespace PixelCrew.Creatures.Hero
             _session.QuickInventory.SetNextItem();
         }
         
+        // My implementation of usable items
         public void UseItem()
         {
             var usableItemId = _session.QuickInventory.SelectedItem.Id;
@@ -293,6 +340,7 @@ namespace PixelCrew.Creatures.Hero
             _particles.Spawn("Heal");
         }
         
+        // My implementation
         public void BoostSpeed(float speedMod)
         {
             _speedMod = speedMod;
@@ -310,6 +358,14 @@ namespace PixelCrew.Creatures.Hero
         protected override float CalculateXVelocity()
         {
             return base.CalculateXVelocity() * _speedMod;
+        }
+
+        protected override float CalculateSpeed()
+        {
+            if (_speedUpCooldown.IsReady)
+                _additionalSpeed = 0f;
+            
+            return base.CalculateSpeed() + _additionalSpeed;
         }
     }
 }

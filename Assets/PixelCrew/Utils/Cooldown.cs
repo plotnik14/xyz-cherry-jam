@@ -10,6 +10,12 @@ namespace PixelCrew.Utils
 
         private float _timesUp;
 
+        public float Value
+        {
+            get => _value;
+            set => _value = value;
+        }
+
         public void Reset()
         {
             _timesUp = Time.time + _value;
@@ -17,5 +23,6 @@ namespace PixelCrew.Utils
 
         public bool IsReady => _timesUp <= Time.time;
 
+        public float TimeLasts => Mathf.Max(_timesUp - Time.deltaTime, 0);
     }
 }

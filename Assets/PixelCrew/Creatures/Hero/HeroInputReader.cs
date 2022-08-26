@@ -30,11 +30,12 @@ namespace PixelCrew.Creatures.Hero
             }
         }
 
+        // ToDo rename action to UseInventory
         public void OnThrow(InputAction.CallbackContext context)
         {
             if (context.performed)
             {
-                _hero.Throw(context.duration);
+                _hero.UseInventory(context.duration);
             }
         }
 
