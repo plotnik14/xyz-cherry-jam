@@ -1,9 +1,10 @@
 ﻿using System;
+using PixelCrew.Model.Definition.Repositories.Items;
 using UnityEngine;
 
-namespace PixelCrew.Model.Definition.Repositories.Items
+namespace PixelCrew.Model.Definition.Repositories
 {
-    [CreateAssetMenu(menuName = "Defs/UsableItems", fileName = "UsableItems")]
+    [CreateAssetMenu(menuName = "Defs/Repositories/UsableItems", fileName = "UsableItems")]
     public class UsableRepository : DefRepository<UsableDef>
     {
     }

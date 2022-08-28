@@ -7,7 +7,6 @@ using PixelCrew.Components.GoBased;
 using PixelCrew.Components.Health;
 using PixelCrew.Creatures.UsableItems;
 using PixelCrew.Model;
-using PixelCrew.Model.Data;
 using PixelCrew.Model.Definition;
 using PixelCrew.Model.Definition.Repositories;
 using PixelCrew.Model.Definition.Repositories.Items;
@@ -191,7 +190,7 @@ namespace PixelCrew.Creatures.Hero
 
         public void OnThrowAnimationTriggered()
         {
-            if (_isMultiThrow)
+            if (_isMultiThrow && _session.PerksModel.IsSuperThrowSupported)
             {
                 var itemsCount = _session.Data.Inventory.Count(SelectedItemId);
                 var possibleCountToThrow = SelectedItemId == SwordId ? itemsCount - 1 : itemsCount;
@@ -211,7 +210,6 @@ namespace PixelCrew.Creatures.Hero
             }
         }
 
-        
         private IEnumerator MultiThrow(int countToThrow)
         {
             LockInput();
@@ -265,7 +263,7 @@ namespace PixelCrew.Creatures.Hero
 
         protected override float CalculateJumpVelocity(float yVelocity)
         {
-            if (!IsGrounded && _allowDoubleJump)
+            if (!IsGrounded && _allowDoubleJump && _session.PerksModel.IsDoubleJumpSupported)
             {
                 DoJumpVfx();
                 _allowDoubleJump = false;

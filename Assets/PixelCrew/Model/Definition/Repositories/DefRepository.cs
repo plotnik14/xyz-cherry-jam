@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace PixelCrew.Model.Definition.Repositories
 {
@@ -17,5 +18,7 @@ namespace PixelCrew.Model.Definition.Repositories
             
             return default;
         }
+
+        public TDefType[] All => new List<TDefType>(_collection).ToArray();
     }
 }

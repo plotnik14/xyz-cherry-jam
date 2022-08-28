@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using PixelCrew.Model.Definition;
+using PixelCrew.Model.Definition.Repositories;
 using PixelCrew.Model.Definition.Repositories.Items;
 using UnityEngine;
 
@@ -127,6 +128,27 @@ namespace PixelCrew.Model.Data
                 }
             }
             return count;
+        }
+
+        public bool HasEnough(params ItemWithCount[] items)
+        {
+            var joinedItems = new Dictionary<string, int>();
+            
+            foreach (var item in items)
+            {
+                if (joinedItems.ContainsKey(item.ItemId))
+                    joinedItems[item.ItemId] += item.Count;
+                else 
+                    joinedItems.Add(item.ItemId, item.Count);
+            }
+
+            foreach (var kvp in joinedItems)
+            {
+                var count = Count(kvp.Key);
+                if (count < kvp.Value) return false;
+            }
+
+            return true;
         }
     }
 

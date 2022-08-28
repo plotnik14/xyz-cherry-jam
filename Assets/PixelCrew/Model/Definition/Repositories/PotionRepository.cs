@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace PixelCrew.Model.Definition.Repositories
 {
-    [CreateAssetMenu(menuName = "Defs/Potions", fileName = "Potions")]
+    [CreateAssetMenu(menuName = "Defs/Repositories/Potions", fileName = "Potions")]
     public class PotionRepository : DefRepository<PotionDef>
     {
     }

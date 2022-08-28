@@ -3,7 +3,7 @@
 namespace PixelCrew.Model.Data.Properties
 {
     [Serializable]
-    public class IntProperty : ObservableProperty<int>
+    public class StringProperty : ObservableProperty<string>
     {
     }
 }

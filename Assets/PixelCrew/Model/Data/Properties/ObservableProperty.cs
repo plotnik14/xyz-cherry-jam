@@ -31,7 +31,9 @@ namespace PixelCrew.Model.Data.Properties
             get => _value;
             set
             {
-                var isSame = _value.Equals(value);
+                // var isSame = _value.Equals(value); // Nullpointer for string
+                var isSame = Equals(_value, value);
+                
                 if (isSame) return;
 
                 var oldValue = _value;

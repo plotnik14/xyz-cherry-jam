@@ -33,8 +33,8 @@ MonoBehaviour:
     _icon: {fileID: 1185527514606905908, guid: 765af0328984bb54391606d35e673daa, type: 3}
     _tags: 000000000100000003000000
   - _id: Diamond
-    _icon: {fileID: 0}
-    _tags: 
+    _icon: {fileID: 21300000, guid: 62fcfeb9e38275c4a97371cfb0e126c9, type: 3}
+    _tags: 00000000
   - _id: Pearl
     _icon: {fileID: 21300000, guid: 25769e707a73c764e99544935958468c, type: 3}
     _tags: 000000000100000002000000
