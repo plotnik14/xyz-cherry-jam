@@ -14,7 +14,9 @@ namespace PixelCrew.Components.Health
         [SerializeField] private HealthChangeEvent _onChange;
 
         private int _maxHealth;
+        private bool _isInvincible;
 
+        public bool IsInvincible => _isInvincible;
 
         public HealthChangeEvent OnChange => _onChange;
         public UnityEvent OnDie => _onDie;
@@ -24,11 +26,13 @@ namespace PixelCrew.Components.Health
 
         public void Start()
         {
+            _isInvincible = false;
             _maxHealth = _health;
         }
 
         public void ApplyDamage(int damageValue)
         {
+            if (_isInvincible) return;
             if (_health <= 0) return;
             
             _health -= damageValue;
@@ -49,6 +53,16 @@ namespace PixelCrew.Components.Health
 
             _onChange?.Invoke(_health);
             _onHealing?.Invoke();
+        }
+
+        public void MakeInvincible()
+        {
+            _isInvincible = true;
+        }
+
+        public void MakeVulnerable()
+        {
+            _isInvincible = false;
         }
 
 #if UNITY_EDITOR

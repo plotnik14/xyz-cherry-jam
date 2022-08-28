@@ -60,6 +60,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "ActivateShield",
+                    "type": "Button",
+                    "id": "8d6c09a2-b5bb-4f2b-9124-06d98dda4e23",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -181,6 +189,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "UseItem",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "65c6d193-6031-43cc-9780-f376219866aa",
+                    "path": "<Keyboard>/alt",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ActivateShield",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

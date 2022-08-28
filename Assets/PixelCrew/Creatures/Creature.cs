@@ -52,6 +52,12 @@ namespace PixelCrew.Creatures
         protected virtual void Update()
         {
             IsGrounded = _groundCheck.IsTouchingLayer;
+            CheckActiveBuffs();
+        }
+
+        protected virtual void CheckActiveBuffs()
+        {
+            
         }
 
         protected virtual void FixedUpdate()

@@ -31,6 +31,11 @@ namespace PixelCrew.Creatures.Hero
         [SerializeField] private SpawnComponent _throwSpawner;
 
         [Space]
+        [Header("Perks")]
+        [SerializeField] private GameObject _magicShield;
+        [SerializeField] private Cooldown _magicShieldCooldown;
+        
+        [Space]
         [Header("AnimatorController")]
         [SerializeField] private AnimatorController _armed;
         [SerializeField] private AnimatorController _unarmed;
@@ -44,6 +49,11 @@ namespace PixelCrew.Creatures.Hero
         private bool _isMultiThrow;
         private HealthComponent _healthComponent;
         private float _speedMod;
+        
+        private readonly Cooldown _speedUpCooldown = new Cooldown();
+        private float _additionalSpeed;
+        
+        private readonly Cooldown _activeMagicShieldCooldown = new Cooldown();
 
         // ToDo move to proper place
         private Dictionary<UseActionDef, AbstractUseAction> _useActions;
@@ -157,10 +167,7 @@ namespace PixelCrew.Creatures.Hero
             
             _session.Data.Inventory.Remove(potion.Id, 1);
         }
-
-        private readonly Cooldown _speedUpCooldown = new Cooldown();
-        private float _additionalSpeed;
-
+        
         private void SpeedUp(float value, float time)
         {
             _speedUpCooldown.Value = _speedUpCooldown.TimeLasts + time;
@@ -364,6 +371,38 @@ namespace PixelCrew.Creatures.Hero
                 _additionalSpeed = 0f;
             
             return base.CalculateSpeed() + _additionalSpeed;
+        }
+
+        public void ActivateMagicShield()
+        {
+            if (!_session.PerksModel.IsMagicShieldSupported) return;
+            if (!_magicShieldCooldown.IsReady) return;
+
+            Debug.Log("Activated Magic Shield");
+            
+            _healthComponent.MakeInvincible();
+            _magicShield.SetActive(true);
+            
+            _activeMagicShieldCooldown.Value = 10f; // ToDo move to perk config (when it is created)
+            _activeMagicShieldCooldown.Reset();
+            _magicShieldCooldown.Reset();
+        }
+
+        protected override void CheckActiveBuffs()
+        {
+            base.CheckActiveBuffs();
+            
+            CheckMagicShield();
+        }
+
+        private void CheckMagicShield()
+        {
+            if (_healthComponent.IsInvincible && _activeMagicShieldCooldown.IsReady )
+            {
+                Debug.Log("Shield Deactivated");
+                _healthComponent.MakeVulnerable();
+                _magicShield.SetActive(false);
+            }
         }
     }
 }
