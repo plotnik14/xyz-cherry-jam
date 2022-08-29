@@ -11,6 +11,7 @@ using PixelCrew.Model.Definition;
 using PixelCrew.Model.Definition.Repositories;
 using PixelCrew.Model.Definition.Repositories.Items;
 using PixelCrew.Utils;
+using PixelCrew.Utils.Disposables;
 using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -33,8 +34,7 @@ namespace PixelCrew.Creatures.Hero
         [Space]
         [Header("Perks")]
         [SerializeField] private GameObject _magicShield;
-        [SerializeField] private Cooldown _magicShieldCooldown;
-        
+
         [Space]
         [Header("AnimatorController")]
         [SerializeField] private AnimatorController _armed;
@@ -53,7 +53,12 @@ namespace PixelCrew.Creatures.Hero
         private readonly Cooldown _speedUpCooldown = new Cooldown();
         private float _additionalSpeed;
         
+        private readonly Cooldown _superThrowCooldown = new Cooldown();
+        private readonly Cooldown _magicShieldCooldown = new Cooldown();
+        
         private readonly Cooldown _activeMagicShieldCooldown = new Cooldown();
+
+        private event Action<string> _onPerkUsed;
 
         // ToDo move to proper place
         private Dictionary<UseActionDef, AbstractUseAction> _useActions;
@@ -114,6 +119,16 @@ namespace PixelCrew.Creatures.Hero
             health.SetHealth(_session.Data.Hp.Value);
 
             UpdateHeroWeapon();
+            UpdateCooldown();
+        }
+
+        private void UpdateCooldown()
+        {
+            var superThrowPerkDef = DefsFacade.I.Perks.Get("super-throw");
+            _superThrowCooldown.Value = superThrowPerkDef.Cooldown;
+            
+            var magicShieldThrowPerkDef = DefsFacade.I.Perks.Get("magic-shield");
+            _magicShieldCooldown.Value = magicShieldThrowPerkDef.Cooldown;
         }
 
         private void OnDestroy()
@@ -183,11 +198,23 @@ namespace PixelCrew.Creatures.Hero
         private void PerformThrowing(double pressDuration)
         {
             if (!CanThrow) return;
-            if (!_throwCooldown.IsReady) return;
+            
+            _isMultiThrow = pressDuration >= _multiThrowPressDuration && _session.PerksModel.IsSuperThrowSupported;
 
-            _isMultiThrow = pressDuration >= _multiThrowPressDuration;
-            Animator.SetTrigger(ThrowKey);          
-            _throwCooldown.Reset();
+            if (_isMultiThrow)
+                if (!_superThrowCooldown.IsReady) return;
+            else
+                if (!_throwCooldown.IsReady) return;
+            
+            Animator.SetTrigger(ThrowKey);
+
+            if (_isMultiThrow)
+            {
+                _superThrowCooldown.Reset();
+                _onPerkUsed?.Invoke("super-throw");
+            }
+            else
+                _throwCooldown.Reset();
         }
         
         public bool AddToInventory(string id, int value)
@@ -386,6 +413,7 @@ namespace PixelCrew.Creatures.Hero
             _activeMagicShieldCooldown.Value = 10f; // ToDo move to perk config (when it is created)
             _activeMagicShieldCooldown.Reset();
             _magicShieldCooldown.Reset();
+            _onPerkUsed?.Invoke("magic-shield");
         }
 
         protected override void CheckActiveBuffs()
@@ -403,6 +431,12 @@ namespace PixelCrew.Creatures.Hero
                 _healthComponent.MakeVulnerable();
                 _magicShield.SetActive(false);
             }
+        }
+        
+        public IDisposable SubscribePerkUse(Action<string> call)
+        {
+            _onPerkUsed += call;
+            return new ActionDisposable(() => _onPerkUsed -= call);
         }
     }
 }

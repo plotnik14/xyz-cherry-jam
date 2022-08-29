@@ -10,6 +10,7 @@ TagManager:
   - Interactable
   - SfxAudioSource
   - MenuCanvas
+  - ActivePerksWidget
   layers:
   - Default
   - TransparentFX
