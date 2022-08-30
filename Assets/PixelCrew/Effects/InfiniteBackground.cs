@@ -1,5 +1,4 @@
-﻿using System;
-using PixelCrew.Utils;
+﻿using PixelCrew.Utils;
 using UnityEngine;
 
 namespace PixelCrew.Effects
@@ -19,6 +18,7 @@ namespace PixelCrew.Effects
         private void Start()
         {
             var sprites = _container.GetComponentsInChildren<SpriteRenderer>();
+            _containerBounds = sprites[0].bounds;
             foreach (var sprite in sprites)
             {
                 _containerBounds.Encapsulate(sprite.bounds);
@@ -32,8 +32,8 @@ namespace PixelCrew.Effects
 
         private void LateUpdate()
         {
-            var min = _camera.ViewportToWorldPoint(Vector3.zero); // left and bottom
-            var max = _camera.ViewportToWorldPoint(Vector3.one); // right and top
+            var min = _camera.ViewportToWorldPoint(Vector3.zero); // bottom left 
+            var max = _camera.ViewportToWorldPoint(Vector3.one); // top right
 
             _screenSize = new Vector3(max.x - min.x, max.y - min.y);
             _allBounds.center = transform.position - _boundsToTransformDelta;
@@ -48,7 +48,7 @@ namespace PixelCrew.Effects
             
             if (!_allBounds.Contains(screenRight))
             {
-                InstantiateContainer(_allBounds.max.x + _containerBounds.extents.x); // extent - половина размера bound ?
+                InstantiateContainer(_allBounds.max.x + _containerBounds.extents.x);
             }
         }
 
