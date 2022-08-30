@@ -1,4 +1,5 @@
-﻿using PixelCrew.Model.Definition.Repositories;
+﻿using PixelCrew.Model.Definition.Player;
+using PixelCrew.Model.Definition.Repositories;
 using PixelCrew.Model.Definition.Repositories.Items;
 using UnityEngine;
 

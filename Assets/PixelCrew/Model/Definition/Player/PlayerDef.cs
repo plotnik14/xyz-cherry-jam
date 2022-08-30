@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace PixelCrew.Model.Definition
+namespace PixelCrew.Model.Definition.Player
 {
     [CreateAssetMenu(menuName = "Defs/PlayerDef", fileName = "PlayerDef")]
     public class PlayerDef : ScriptableObject
