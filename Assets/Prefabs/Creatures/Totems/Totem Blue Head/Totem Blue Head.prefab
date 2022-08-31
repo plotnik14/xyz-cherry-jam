@@ -387,7 +387,7 @@ GameObject:
   - component: {fileID: -2372450387271377058}
   - component: {fileID: 982424988458134436}
   - component: {fileID: 6235871344019567723}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Totem Blue Head
   m_TagString: Enemy
   m_Icon: {fileID: 0}

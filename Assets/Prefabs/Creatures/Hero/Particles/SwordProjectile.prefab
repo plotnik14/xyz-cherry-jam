@@ -223,6 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 4
+  _invertX: 0
 --- !u!114 &2732317491477533312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,6 +277,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ac3a445fcfdbab4e8bac31201724c28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isHeroAttack: 1
+  _isRangeAttack: 1
   _hpDelta: -1
 --- !u!114 &7623954677996252946
 MonoBehaviour:
