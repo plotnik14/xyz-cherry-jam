@@ -33,6 +33,8 @@ namespace PixelCrew.Model.Definition.Player
         Hp,
         Speed,
         MeleeDamage,
-        RangeDamage
+        RangeDamage,
+        MeleeDamageCritical,
+        RangeDamageCritical
     }
 }

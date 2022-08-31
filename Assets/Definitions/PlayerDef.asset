@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: PlayerDef
   m_EditorClassIdentifier: 
   _inventorySize: 20
-  _maxHealth: 10
   _stats:
   - _name: Health
     _id: 0
@@ -75,3 +74,35 @@ MonoBehaviour:
       _price:
         _itemId: Coin
         _count: 100
+  - _name: Melee Crit. (%)
+    _id: 4
+    _icon: {fileID: 21300000, guid: 6f88b11c4ae29a5488919925cac37e0b, type: 3}
+    _levels:
+    - _value: 0
+      _price:
+        _itemId: Coin
+        _count: 0
+    - _value: 50
+      _price:
+        _itemId: Coin
+        _count: 100
+    - _value: 100
+      _price:
+        _itemId: Coin
+        _count: 200
+  - _name: Range Crit. (%)
+    _id: 5
+    _icon: {fileID: 21300000, guid: f5e61f8dc39ed2e41b9b315698560e56, type: 3}
+    _levels:
+    - _value: 0
+      _price:
+        _itemId: 
+        _count: 0
+    - _value: 50
+      _price:
+        _itemId: Coin
+        _count: 100
+    - _value: 100
+      _price:
+        _itemId: Coin
+        _count: 200

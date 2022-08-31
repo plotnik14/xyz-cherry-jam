@@ -91,6 +91,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ac3a445fcfdbab4e8bac31201724c28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isHeroAttack: 1
+  _isRangeAttack: 0
   _hpDelta: -1
 --- !u!1 &1176791220
 GameObject:
@@ -953,8 +955,6 @@ MonoBehaviour:
     _value: 1
   _throwSpawner: {fileID: 5183181124075089637}
   _magicShield: {fileID: 5711960363354125185}
-  _magicShieldCooldown:
-    _value: 30
   _armed: {fileID: 9100000, guid: 3d60d365d82850f40b9e6296d005c120, type: 2}
   _unarmed: {fileID: 9100000, guid: 9d1ad497824f97d40b09b081f1062999, type: 2}
   _hitDrop: {fileID: 4489812277440056117}

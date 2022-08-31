@@ -1,6 +1,8 @@
-﻿using PixelCrew.Model;
+﻿using System;
+using PixelCrew.Model;
 using PixelCrew.Model.Definition.Player;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace PixelCrew.Components.Health
 {
@@ -11,6 +13,14 @@ namespace PixelCrew.Components.Health
         
         // ToDo hide field if it is Hero attack
         [SerializeField] private int _hpDelta;
+
+        private GameSession _session;
+        
+        private void Start()
+        {
+            if (_isHeroAttack)
+                _session = FindObjectOfType<GameSession>();
+        }
 
         public void ApplyHealthChange(GameObject target)
         {
@@ -27,16 +37,38 @@ namespace PixelCrew.Components.Health
             }
             else if (_hpDelta < 0)
             {
-                var damage = -_hpDelta;
+                var damage = -_hpDelta * CalculateCriticalDamageModifier();
                 healthComponent.ApplyDamage(damage);
             }  
         }
 
         private void UpdateHpDelta(StatId statId)
         {
-            var session = FindObjectOfType<GameSession>();
-            var damage = session.StatsModel.GetValue(statId);
+            var damage = _session.StatsModel.GetValue(statId);
             _hpDelta = - (int) damage;
+        }
+
+        private int CalculateCriticalDamageModifier()
+        {
+            if (!_isHeroAttack) return 1;
+
+            return IsCriticalAttack() ? 2 : 1;
+        }
+
+        private bool IsCriticalAttack()
+        {
+            var attackType = _isRangeAttack ? StatId.RangeDamageCritical : StatId.MeleeDamageCritical;
+            var criticalAttackChance = _session.StatsModel.GetValue(attackType);
+            var maxChance = 100;
+            var chanceRoll = Random.Range(0, maxChance + 1);
+            var isCriticalAttack = criticalAttackChance >= chanceRoll;
+
+            if (isCriticalAttack)
+            {
+                Debug.Log($"Critical Attack! Damage x2. (Chance:{criticalAttackChance} Roll:{chanceRoll})");
+            }
+            
+            return isCriticalAttack;
         }
     }
 }
