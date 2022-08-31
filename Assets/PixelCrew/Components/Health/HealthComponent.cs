@@ -1,5 +1,4 @@
 ﻿using System;
-using PixelCrew.Model.Definition;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -49,7 +48,7 @@ namespace PixelCrew.Components.Health
         public void ApplyHealing(int healingValue)
         {
             _health += healingValue;
-            _health = Mathf.Min(_health, DefsFacade.I.Player.MaxHealth);
+            _health = Mathf.Min(_health, _maxHealth);
 
             _onChange?.Invoke(_health);
             _onHealing?.Invoke();
@@ -76,6 +75,7 @@ namespace PixelCrew.Components.Health
         public void SetHealth(int health)
         {
             _health = health;
+            _maxHealth = _health;
         }
 
         [Serializable]

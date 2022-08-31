@@ -154,7 +154,7 @@ MonoBehaviour:
     _inventory:
       _inventory:
       - Id: Coin
-        Value: 5
+        Value: 9999
       - Id: Sword
         Value: 30
       - Id: Diamond
@@ -165,6 +165,8 @@ MonoBehaviour:
       _used:
         _value: 
       _unlocked: []
+    Levels:
+      _progress: []
   _defaultCheckpoint: Level4-Checkpoint1
 --- !u!4 &30508820
 Transform:

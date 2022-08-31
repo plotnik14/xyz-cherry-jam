@@ -8,6 +8,7 @@ using PixelCrew.Components.Health;
 using PixelCrew.Creatures.UsableItems;
 using PixelCrew.Model;
 using PixelCrew.Model.Definition;
+using PixelCrew.Model.Definition.Player;
 using PixelCrew.Model.Definition.Repositories;
 using PixelCrew.Model.Definition.Repositories.Items;
 using PixelCrew.Utils;
@@ -116,10 +117,23 @@ namespace PixelCrew.Creatures.Hero
             var health = GetComponent<HealthComponent>();
             _session.Data.Inventory.OnChange += OnInventoryChanged;
 
+            _session.StatsModel.OnUpgraded += OnHeroUpgraded;
             health.SetHealth(_session.Data.Hp.Value);
 
             UpdateHeroWeapon();
             UpdateCooldown();
+        }
+
+        private void OnHeroUpgraded(StatId statId)
+        {
+            switch (statId)
+            {
+                case StatId.Hp:
+                    var health = (int)_session.StatsModel.GetValue(statId);
+                    _session.Data.Hp.Value = health;
+                    _healthComponent.SetHealth(health);
+                    break;
+            }
         }
 
         private void UpdateCooldown()
@@ -396,8 +410,9 @@ namespace PixelCrew.Creatures.Hero
         {
             if (_speedUpCooldown.IsReady)
                 _additionalSpeed = 0f;
-            
-            return base.CalculateSpeed() + _additionalSpeed;
+
+            var defaultSpeed = _session.StatsModel.GetValue(StatId.Speed);
+            return defaultSpeed + _additionalSpeed;
         }
 
         public void ActivateMagicShield()

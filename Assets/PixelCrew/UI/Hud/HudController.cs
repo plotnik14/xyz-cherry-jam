@@ -1,6 +1,6 @@
 ﻿using PixelCrew.Model;
 using PixelCrew.UI.Widgets;
-using PixelCrew.Model.Definition;
+using PixelCrew.Model.Definition.Player;
 using PixelCrew.Utils;
 using UnityEngine;
 
@@ -22,7 +22,7 @@ namespace PixelCrew.UI.Hud
 
         private void OnHealthChanged(int newValue, int oldValue)
         {
-            var maxHealth = DefsFacade.I.Player.MaxHealth;
+            var maxHealth = _session.StatsModel.GetValue(StatId.Hp);
             var value = (float)newValue / maxHealth;
             _heathBar.SetProgress(value);
         }
@@ -35,6 +35,11 @@ namespace PixelCrew.UI.Hud
         private void OnDestroy()
         {
             _session.Data.Hp.OnChanged -= OnHealthChanged;
+        }
+        
+        public void OnShowPlayerStats()
+        {
+            WindowUtils.CreateWindow("UI/PlayerStatsWindow");
         }
     }
 }
