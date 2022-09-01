@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: CrabbyDialog_GemObtained
   m_EditorClassIdentifier: 
   _data:
-    _sentences:
-    - CrabbyDialog_GemObtained_1
-    - CrabbyDialog_GemObtained_2
-    - CrabbyDialog_GemObtained_3
-    - CrabbyDialog_GemObtained_4
+    Sentences:
+    - _value: 
+      _icon: {fileID: 0}
+      _side: 0
+    _type: 0

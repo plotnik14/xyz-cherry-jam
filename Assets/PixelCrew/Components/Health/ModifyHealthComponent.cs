@@ -1,5 +1,4 @@
-﻿using System;
-using PixelCrew.Model;
+﻿using PixelCrew.Model;
 using PixelCrew.Model.Definition.Player;
 using UnityEngine;
 using Random = UnityEngine.Random;

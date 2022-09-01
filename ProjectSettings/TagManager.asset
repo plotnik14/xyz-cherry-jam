@@ -11,6 +11,8 @@ TagManager:
   - SfxAudioSource
   - MenuCanvas
   - ActivePerksWidget
+  - SimpleDialog
+  - PersonalizedDialog
   layers:
   - Default
   - TransparentFX

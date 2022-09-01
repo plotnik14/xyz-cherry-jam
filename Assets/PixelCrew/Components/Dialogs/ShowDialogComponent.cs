@@ -19,12 +19,23 @@ namespace PixelCrew.Components.Dialogs
         
         public void Show()
         {
-            if (_dialogBox == null)
-            {
-                _dialogBox = FindObjectOfType<DialogBoxController>();
-            }
-            
+            _dialogBox = FindDialogBoxController();
             _dialogBox.ShowDialog(Data);
+        }
+
+        private DialogBoxController FindDialogBoxController()
+        {
+            if (_dialogBox != null) return _dialogBox;
+            
+            switch (Data.Type)
+            {
+                case DialogType.Simple:
+                    return GameObject.FindWithTag("SimpleDialog").GetComponent<DialogBoxController>();
+                case DialogType.Personalized:
+                    return GameObject.FindWithTag("PersonalizedDialog").GetComponent<DialogBoxController>();
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
         }
 
         public void Show(DialogDef dialogDef)
@@ -55,14 +66,22 @@ namespace PixelCrew.Components.Dialogs
 
         private DialogData LocalizeData(DialogData data)
         {
-            var localizedSentences = new List<string>();
+            var localizedData = data;
+            var localizedSentences = new List<Sentence>();
 
-            foreach (var sentenceKey in data.Sentences)
+            foreach (var sentence in localizedData.Sentences)
             {
-                localizedSentences.Add(LocalizationManager.I.Localize(sentenceKey));
+                var localizedSentence = new Sentence(
+                    LocalizationManager.I.Localize(sentence.Value),
+                    sentence.Icon, 
+                    sentence.Side
+                );      
+                
+                localizedSentences.Add(localizedSentence);
             }
 
-            return new DialogData(localizedSentences.ToArray());
+            localizedData.Sentences = localizedSentences.ToArray();
+            return localizedData;
         }
 
         public enum Mode

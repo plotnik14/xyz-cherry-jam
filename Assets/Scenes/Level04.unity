@@ -4351,8 +4351,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 861197003}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -18.03, y: -4.23, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -1.87, y: -4.23, z: 0}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1823752867}
   m_RootOrder: 0
@@ -4369,10 +4369,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b025b3152f14b1da581ee74994698dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mode: 1
-  _useLocalization: 1
+  _mode: 0
+  _useLocalization: 0
   _boundDialog:
-    _sentences: []
+    Sentences:
+    - _value: Hey you!
+      _icon: {fileID: 21300000, guid: 09f271819b800a94fa9bc277ed2601fb, type: 3}
+      _side: 1
+    - _value: What?
+      _icon: {fileID: 21300000, guid: acf21aa2ee8b2114498cee5c7bde2e77, type: 3}
+      _side: 0
+    - _value: Bring me a diamond! And I will show you a miracle..
+      _icon: {fileID: 21300000, guid: 09f271819b800a94fa9bc277ed2601fb, type: 3}
+      _side: 1
+    _type: 1
   _externalDialog: {fileID: 0}
 --- !u!114 &861197008
 MonoBehaviour:
@@ -4592,9 +4602,14 @@ MonoBehaviour:
   _mode: 0
   _useLocalization: 1
   _boundDialog:
-    _sentences:
-    - closed_door_1
-    - closed_door_2
+    Sentences:
+    - _value: You need a key..
+      _icon: {fileID: 0}
+      _side: 0
+    - _value: Try to search nearby..
+      _icon: {fileID: 0}
+      _side: 0
+    _type: 0
   _externalDialog: {fileID: 0}
 --- !u!114 &865380717
 MonoBehaviour:
