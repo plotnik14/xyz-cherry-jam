@@ -59,7 +59,7 @@ namespace PixelCrew.Components.Health
             var attackType = _isRangeAttack ? StatId.RangeDamageCritical : StatId.MeleeDamageCritical;
             var criticalAttackChance = _session.StatsModel.GetValue(attackType);
             var maxChance = 100;
-            var chanceRoll = Random.Range(0, maxChance + 1);
+            var chanceRoll = Random.Range(1, maxChance + 1);
             var isCriticalAttack = criticalAttackChance >= chanceRoll;
 
             if (isCriticalAttack)
