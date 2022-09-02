@@ -74,16 +74,15 @@ namespace PixelCrew.Components.GoBased
             var position = transform.position;
 
             var middleAngleDelta = (180 - _sectorRotation - _sectorAngle) / 2;
-
             var rightBound = GetUnitOnCircle(middleAngleDelta);
             Handles.DrawLine(position, position + rightBound);
 
             var leftBound = GetUnitOnCircle(middleAngleDelta + _sectorAngle);
             Handles.DrawLine(position, position + leftBound);
-            Handles.DrawWireArc(position, Vector3.forward, rightBound, _sectorAngle, _sectorRotation);
+            Handles.DrawWireArc(position, Vector3.forward, rightBound, _sectorAngle, 1);
 
             Handles.color = new Color(1f, 1f, 1f, 0.1f);
-            Handles.DrawSolidArc(position, Vector3.forward, rightBound, _sectorAngle, _sectorRotation);
+            Handles.DrawSolidArc(position, Vector3.forward, rightBound, _sectorAngle, 1);
         }
 
         private Vector2 AngleToVectorInSector(float angle)
