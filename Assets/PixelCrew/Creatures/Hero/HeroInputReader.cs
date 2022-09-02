@@ -63,11 +63,11 @@ namespace PixelCrew.Creatures.Hero
             }
         }
 
-        public void OnActivateShield(InputAction.CallbackContext context)
+        public void OnUseMagic(InputAction.CallbackContext context)
         {
             if (context.performed)
             {
-                _hero.ActivateMagicShield();
+                _hero.UseMagic();
             }
         }
     }

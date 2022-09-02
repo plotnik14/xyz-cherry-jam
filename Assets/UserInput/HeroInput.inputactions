@@ -62,7 +62,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "ActivateShield",
+                    "name": "UseMagic",
                     "type": "Button",
                     "id": "8d6c09a2-b5bb-4f2b-9124-06d98dda4e23",
                     "expectedControlType": "Button",
@@ -199,7 +199,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "ActivateShield",
+                    "action": "UseMagic",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

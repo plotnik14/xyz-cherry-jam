@@ -415,12 +415,15 @@ namespace PixelCrew.Creatures.Hero
             return defaultSpeed + _additionalSpeed;
         }
 
+        public void UseMagic()
+        {
+            ActivateMagicShield();
+        }
+        
         public void ActivateMagicShield()
         {
             if (!_session.PerksModel.IsMagicShieldSupported) return;
             if (!_magicShieldCooldown.IsReady) return;
-
-            Debug.Log("Activated Magic Shield");
             
             _healthComponent.MakeInvincible();
             _magicShield.SetActive(true);
@@ -442,7 +445,6 @@ namespace PixelCrew.Creatures.Hero
         {
             if (_healthComponent.IsInvincible && _activeMagicShieldCooldown.IsReady )
             {
-                Debug.Log("Shield Deactivated");
                 _healthComponent.MakeVulnerable();
                 _magicShield.SetActive(false);
             }
