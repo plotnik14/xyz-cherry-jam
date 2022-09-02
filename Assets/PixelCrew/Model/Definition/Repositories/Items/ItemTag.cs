@@ -5,6 +5,7 @@
         Stackable,
         Usable,
         Throwable,
-        Potion
+        Potion,
+        ForSale
     }
 }
