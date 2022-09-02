@@ -5,6 +5,7 @@ using PixelCrew.Model.Definition;
 using PixelCrew.Model.Definition.Localization;
 using PixelCrew.UI.Hud.Dialogs;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace PixelCrew.Components.Dialogs
 {
@@ -12,15 +13,25 @@ namespace PixelCrew.Components.Dialogs
     {
         [SerializeField] private Mode _mode;
         [SerializeField] private bool _useLocalization = true;
+        [SerializeField] private bool _oneTimeDialog = true;
         [SerializeField] private DialogData _boundDialog;
         [SerializeField] private DialogDef _externalDialog;
+        [SerializeField] private UnityEvent _onComplete;
 
         private DialogBoxController _dialogBox;
+        private bool _hasBeenShown = false;
         
         public void Show()
         {
+            if (_oneTimeDialog && _hasBeenShown)
+            {
+                _onComplete?.Invoke();
+                return;
+            }
+            
             _dialogBox = FindDialogBoxController();
-            _dialogBox.ShowDialog(Data);
+            _dialogBox.ShowDialog(Data, _onComplete);
+            _hasBeenShown = true;
         }
 
         private DialogBoxController FindDialogBoxController()

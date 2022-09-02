@@ -3,6 +3,7 @@ using System.Collections;
 using PixelCrew.Model.Data;
 using PixelCrew.Utils;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace PixelCrew.UI.Hud.Dialogs
 {
@@ -24,6 +25,7 @@ namespace PixelCrew.UI.Hud.Dialogs
         private int _currentSentenceIndex;
         private AudioSource _sfxSource;
         private Coroutine _typingRoutine;
+        private UnityEvent _callback;
 
         private static readonly int IsOpen = Animator.StringToHash("IsOpen");
 
@@ -43,7 +45,12 @@ namespace PixelCrew.UI.Hud.Dialogs
             _container.SetActive(true);
             _sfxSource.PlayOneShot(_open);
             _animator.SetBool(IsOpen, true);
-            
+        }
+
+        public void ShowDialog(DialogData data, UnityEvent callback)
+        {
+            _callback = callback;
+            ShowDialog(data);
         }
 
         protected virtual DialogContent CurrentContent => _content;
@@ -109,7 +116,7 @@ namespace PixelCrew.UI.Hud.Dialogs
 
         private void OnCloseAnimationComplete()
         {
-            
+            _callback?.Invoke();
         }
         
         

@@ -17,6 +17,7 @@ namespace PixelCrew.Components.Dialogs.Editor
         {
             EditorGUILayout.PropertyField(_modeProperty);
             EditorGUILayout.PropertyField(serializedObject.FindProperty("_useLocalization"));
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("_oneTimeDialog"));
             
             if (_modeProperty.TryGetEnum(out ShowDialogComponent.Mode mode))
             {
@@ -30,6 +31,8 @@ namespace PixelCrew.Components.Dialogs.Editor
                         break;
                 }
             }
+            
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("_onComplete"));
             
             serializedObject.ApplyModifiedProperties();
         }
