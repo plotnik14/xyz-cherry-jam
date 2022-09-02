@@ -93,6 +93,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ac3a445fcfdbab4e8bac31201724c28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isHeroAttack: 0
+  _isRangeAttack: 0
   _hpDelta: -1
 --- !u!58 &2136022511
 CircleCollider2D:
@@ -806,7 +808,7 @@ GameObject:
   - component: {fileID: 1288067869}
   - component: {fileID: 7116715449670555679}
   - component: {fileID: 1722848639}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Sharky
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1102,6 +1104,7 @@ MonoBehaviour:
     m_Bits: 256
   _groundCheck: {fileID: 8196759456688534598}
   _attackRange: {fileID: 690870448}
+  _magicRange: {fileID: 0}
   _particles: {fileID: 8196759456688534597}
 --- !u!114 &1288067869
 MonoBehaviour:

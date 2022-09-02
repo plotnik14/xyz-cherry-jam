@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using PixelCrew.Components.ColliderBased;
 using PixelCrew.Components.GoBased;
 using PixelCrew.Creatures.Mobs.Patrolling;
@@ -133,10 +134,19 @@ namespace PixelCrew.Creatures.Mobs
             StartCoroutine(coroutine);
         }
 
+        public void DisableAI()
+        {
+            StopCreature();
+            _vision.gameObject.SetActive(false);
+            StopCoroutine(_current);
+        }
+
         public void OnDie()
         {
             StopCreature();
             _isDead = true;
+
+            _animator.enabled = true;
             _animator.SetBool(IsDeadKey, true);
             
             if (_current != null)

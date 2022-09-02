@@ -1,6 +1,7 @@
 ﻿using PixelCrew.Components.Audio;
 using PixelCrew.Components.ColliderBased;
 using PixelCrew.Components.GoBased;
+using PixelCrew.Creatures.Mobs;
 using UnityEngine;
 
 namespace PixelCrew.Creatures
@@ -18,6 +19,7 @@ namespace PixelCrew.Creatures
         [SerializeField] protected LayerMask _groundLayer;
         [SerializeField] protected ColliderCheck _groundCheck;
         [SerializeField] protected CheckCircleOverlap _attackRange;
+        [SerializeField] protected CheckCircleOverlap _magicRange;
         [SerializeField] protected SpawnListComponent _particles;
 
         protected Rigidbody2D Rigidbody;
@@ -154,6 +156,19 @@ namespace PixelCrew.Creatures
         public virtual void OnAttackAnimationTriggered()
         {
             _attackRange.Check();
+        }
+
+        public void Freeze()
+        {   
+            Animator.enabled = false;
+            
+            var sprite = GetComponent<SpriteRenderer>();
+            var freezedColor = new Color(0f, 255f, 255f);
+            sprite.color = freezedColor;
+
+            var mobAI = GetComponent<MobAI>();
+            if (mobAI != null)
+                mobAI.DisableAI();
         }
     }
 }

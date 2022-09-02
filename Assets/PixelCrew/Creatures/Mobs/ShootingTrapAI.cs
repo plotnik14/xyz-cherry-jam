@@ -59,5 +59,17 @@ namespace PixelCrew.Creatures.Mobs
         {
             _rangeAttack.Spawn();
         }
+
+        public void Freeze()
+        {
+            _animator.enabled = false;
+            
+            var sprite = GetComponent<SpriteRenderer>();
+            var freezedColor = new Color(0f, 255f, 255f);
+            sprite.color = freezedColor;
+            
+            _vision.gameObject.SetActive(false);
+            _shootAlways = false;
+        }
     }
 }

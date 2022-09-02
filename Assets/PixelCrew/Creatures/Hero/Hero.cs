@@ -56,6 +56,7 @@ namespace PixelCrew.Creatures.Hero
         
         private readonly Cooldown _superThrowCooldown = new Cooldown();
         private readonly Cooldown _magicShieldCooldown = new Cooldown();
+        private readonly Cooldown _freezeEnemiesCooldown = new Cooldown();
         
         private readonly Cooldown _activeMagicShieldCooldown = new Cooldown();
 
@@ -143,6 +144,9 @@ namespace PixelCrew.Creatures.Hero
             
             var magicShieldThrowPerkDef = DefsFacade.I.Perks.Get("magic-shield");
             _magicShieldCooldown.Value = magicShieldThrowPerkDef.Cooldown;
+            
+            var freezeEnemiesThrowPerkDef = DefsFacade.I.Perks.Get("freezing-enemies");
+            _freezeEnemiesCooldown.Value = freezeEnemiesThrowPerkDef.Cooldown;
         }
 
         private void OnDestroy()
@@ -417,12 +421,14 @@ namespace PixelCrew.Creatures.Hero
 
         public void UseMagic()
         {
-            ActivateMagicShield();
+            if (_session.PerksModel.IsMagicShieldSupported)
+                ActivateMagicShield();
+            else if (_session.PerksModel.IsFreezeEnemiesSupported)
+                FreezeEnemies();
         }
         
         public void ActivateMagicShield()
         {
-            if (!_session.PerksModel.IsMagicShieldSupported) return;
             if (!_magicShieldCooldown.IsReady) return;
             
             _healthComponent.MakeInvincible();
@@ -432,6 +438,16 @@ namespace PixelCrew.Creatures.Hero
             _activeMagicShieldCooldown.Reset();
             _magicShieldCooldown.Reset();
             _onPerkUsed?.Invoke("magic-shield");
+        }
+
+        private void FreezeEnemies()
+        {
+            if (!_freezeEnemiesCooldown.IsReady) return;
+        
+            _magicRange.Check();
+
+            _freezeEnemiesCooldown.Reset();
+            _onPerkUsed?.Invoke("freezing-enemies");
         }
 
         protected override void CheckActiveBuffs()

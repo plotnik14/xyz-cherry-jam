@@ -73,5 +73,6 @@ namespace PixelCrew.Model.Models
         public bool IsSuperThrowSupported => IsUsed("super-throw");
         public bool IsDoubleJumpSupported => IsUsed("double-jump");
         public bool IsMagicShieldSupported => IsUsed("magic-shield");
+        public bool IsFreezeEnemiesSupported => IsUsed("freezing-enemies");
     }
 }
