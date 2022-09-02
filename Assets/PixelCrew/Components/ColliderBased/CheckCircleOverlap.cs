@@ -13,6 +13,7 @@ namespace PixelCrew.Components.ColliderBased
         [SerializeField] private LayerMask _mask;
         [SerializeField] private string[] _tags;
         [SerializeField] private OnOverlapEvent _onOverlap;
+        [SerializeField] private UnityEvent _onCheckComplete;
 
         private readonly Collider2D[] _interactionResult = new Collider2D[10];
 
@@ -34,6 +35,8 @@ namespace PixelCrew.Components.ColliderBased
                     _onOverlap?.Invoke(overlapResult.gameObject);
                 }
             }
+            
+            _onCheckComplete?.Invoke();
         }
 
 #if UNITY_EDITOR
