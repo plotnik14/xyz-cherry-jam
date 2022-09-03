@@ -18,6 +18,10 @@ namespace PixelCrew.Creatures.Mobs
 
         protected Animator _animator;
         protected PlaySoundsComponent Sounds;
+        protected bool IsFrozen;
+        protected readonly Cooldown FreezeCooldown = new Cooldown();
+        
+        private Color _colorBeforeFreezing;
 
         protected static readonly int Range = Animator.StringToHash("range");
 
@@ -29,6 +33,10 @@ namespace PixelCrew.Creatures.Mobs
 
         private void Update()
         {
+            CheckActiveBuffs();
+            
+            if (IsFrozen) return;
+            
             if (_usedByGroup) return;
             if (!_vision.IsTouchingLayer && !_shootAlways) return;
             if (PerformExtraActionAndStop()) return;
@@ -37,6 +45,12 @@ namespace PixelCrew.Creatures.Mobs
             {
                 RangeAttack();
             }
+        }
+
+        private void CheckActiveBuffs()
+        {
+            if (IsFrozen && FreezeCooldown.IsReady)
+                Unfreeze();
         }
 
         public virtual bool PerformExtraActionAndStop()
@@ -65,11 +79,23 @@ namespace PixelCrew.Creatures.Mobs
             _animator.enabled = false;
             
             var sprite = GetComponent<SpriteRenderer>();
-            var freezedColor = new Color(0f, 255f, 255f);
-            sprite.color = freezedColor;
+            _colorBeforeFreezing = sprite.color;
+            var frozenColor = new Color(0f, 255f, 255f);
+            sprite.color = frozenColor;
+
+            FreezeCooldown.Value = 10; // ToDo Move for defs
+            FreezeCooldown.Reset();
+            IsFrozen = true;
+        }
+        
+        private void Unfreeze()
+        {
+            IsFrozen = false;
             
-            _vision.gameObject.SetActive(false);
-            _shootAlways = false;
+            var sprite = GetComponent<SpriteRenderer>();
+            sprite.color = _colorBeforeFreezing;
+            
+            _animator.enabled = true;
         }
     }
 }

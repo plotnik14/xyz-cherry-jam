@@ -139,6 +139,12 @@ namespace PixelCrew.Creatures.Mobs
             _vision.gameObject.SetActive(false);
             StopCoroutine(_current);
         }
+        
+        public void EnableAI()
+        {
+            _vision.gameObject.SetActive(true);
+            StartState(_patrol.DoPatrol());
+        }
 
         public void OnDie()
         {

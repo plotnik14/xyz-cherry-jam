@@ -2,6 +2,7 @@
 using PixelCrew.Components.ColliderBased;
 using PixelCrew.Components.GoBased;
 using PixelCrew.Creatures.Mobs;
+using PixelCrew.Utils;
 using UnityEngine;
 
 namespace PixelCrew.Creatures
@@ -28,7 +29,12 @@ namespace PixelCrew.Creatures
         protected PlaySoundsComponent Sounds;
         protected bool IsGrounded;
         protected bool IsJumping;
+        protected bool IsFrozen;
 
+        protected readonly Cooldown FreezeCooldown = new Cooldown();
+
+        private Color _colorBeforeFreezing;
+        
         protected static readonly int VerticalVelocityKey = Animator.StringToHash("vertical-velocity");
         protected static readonly int IsRunningKey = Animator.StringToHash("is-running");
         protected static readonly int IsOnGroundKey = Animator.StringToHash("is-on-ground");
@@ -59,7 +65,8 @@ namespace PixelCrew.Creatures
 
         protected virtual void CheckActiveBuffs()
         {
-            
+            if (IsFrozen && FreezeCooldown.IsReady)
+                Unfreeze();
         }
 
         protected virtual void FixedUpdate()
@@ -163,12 +170,31 @@ namespace PixelCrew.Creatures
             Animator.enabled = false;
             
             var sprite = GetComponent<SpriteRenderer>();
-            var freezedColor = new Color(0f, 255f, 255f);
-            sprite.color = freezedColor;
+            _colorBeforeFreezing = sprite.color;
+            var frozenColor = new Color(0f, 255f, 255f);
+            sprite.color = frozenColor;
 
             var mobAI = GetComponent<MobAI>();
             if (mobAI != null)
                 mobAI.DisableAI();
+
+            FreezeCooldown.Value = 10; // ToDo Move for defs
+            FreezeCooldown.Reset();
+            IsFrozen = true;
+        }
+        
+        private void Unfreeze()
+        {
+            IsFrozen = false;
+            
+            var mobAI = GetComponent<MobAI>();
+            if (mobAI != null)
+                mobAI.EnableAI();
+            
+            var sprite = GetComponent<SpriteRenderer>();
+            sprite.color = _colorBeforeFreezing;
+
+            Animator.enabled = true;
         }
     }
 }
