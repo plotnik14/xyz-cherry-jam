@@ -22,7 +22,7 @@ MonoBehaviour:
     _cooldown: 0
   - _id: super-throw
     _icon: {fileID: 21300000, guid: bbe6b5ec0b4104e4c88fd8e266f7e8a2, type: 3}
-    _info: Hold Shift and throw 3 items in a time
+    _info: Hold Shift and throw 3 items at a time
     _price:
       _itemId: Diamond
       _count: 10
