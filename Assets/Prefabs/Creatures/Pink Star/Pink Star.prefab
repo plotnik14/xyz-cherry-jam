@@ -67,6 +67,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _onCheckComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5028035845309239624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,6 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ac3a445fcfdbab4e8bac31201724c28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isHeroAttack: 0
+  _isRangeAttack: 0
   _hpDelta: -1
 --- !u!58 &2136022511
 CircleCollider2D:
@@ -841,7 +846,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1121,6 +1126,7 @@ MonoBehaviour:
     m_Bits: 256
   _groundCheck: {fileID: 8196759456688534598}
   _attackRange: {fileID: 690870448}
+  _magicRange: {fileID: 0}
   _particles: {fileID: 8196759456688534597}
   _rollingSpeed: 6
 --- !u!114 &897947531
