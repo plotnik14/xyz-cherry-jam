@@ -29,9 +29,8 @@ namespace PixelCrew.Creatures.Hero
                 _hero.Attack();
             }
         }
-
-        // ToDo rename action to UseInventory
-        public void OnThrow(InputAction.CallbackContext context)
+        
+        public void OnUseInventory(InputAction.CallbackContext context)
         {
             if (context.performed)
             {
@@ -68,6 +67,14 @@ namespace PixelCrew.Creatures.Hero
             if (context.performed)
             {
                 _hero.UseMagic();
+            }
+        }
+        
+        public void OnLight(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                _hero.SwitchLight();
             }
         }
     }

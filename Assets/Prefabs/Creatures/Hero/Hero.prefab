@@ -510,7 +510,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7082921967478055803
 Transform:
   m_ObjectHideFlags: 0
@@ -910,7 +910,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8196759456510313771}
-        m_MethodName: OnThrow
+        m_MethodName: OnUseInventory
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -982,6 +982,21 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 8d6c09a2-b5bb-4f2b-9124-06d98dda4e23
     m_ActionName: Hero/ActivateShield[/Keyboard/alt]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8196759456510313771}
+        m_MethodName: OnLight
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b44d44d5-fd3a-4765-a58f-cbb4bdb33d34
+    m_ActionName: Hero/Light[/Keyboard/l]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero
@@ -1149,6 +1164,7 @@ MonoBehaviour:
   _armed: {fileID: 9100000, guid: 3d60d365d82850f40b9e6296d005c120, type: 2}
   _unarmed: {fileID: 9100000, guid: 9d1ad497824f97d40b09b081f1062999, type: 2}
   _hitDrop: {fileID: 4489812277440056117}
+  _lightSource: {fileID: 7082921967478055801}
 --- !u!114 &8196759456688534597
 MonoBehaviour:
   m_ObjectHideFlags: 0

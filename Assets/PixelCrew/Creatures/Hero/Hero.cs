@@ -43,6 +43,9 @@ namespace PixelCrew.Creatures.Hero
 
         [Space]
         [SerializeField] private ProbabilityDropComponent _hitDrop;
+        
+        [Space]
+        [SerializeField] private GameObject _lightSource;
 
         private PlayerInput _playerInput;
         private bool _allowDoubleJump;
@@ -470,6 +473,11 @@ namespace PixelCrew.Creatures.Hero
         {
             _onPerkUsed += call;
             return new ActionDisposable(() => _onPerkUsed -= call);
+        }
+
+        public void SwitchLight()
+        {
+            _lightSource.SetActive(!_lightSource.activeSelf);
         }
     }
 }
