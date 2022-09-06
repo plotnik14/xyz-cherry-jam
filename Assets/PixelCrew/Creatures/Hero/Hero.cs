@@ -5,6 +5,7 @@ using PixelCrew.Components;
 using PixelCrew.Components.ColliderBased;
 using PixelCrew.Components.GoBased;
 using PixelCrew.Components.Health;
+using PixelCrew.Components.Light;
 using PixelCrew.Creatures.UsableItems;
 using PixelCrew.Model;
 using PixelCrew.Model.Definition;
@@ -53,6 +54,7 @@ namespace PixelCrew.Creatures.Hero
         private bool _isMultiThrow;
         private HealthComponent _healthComponent;
         private float _speedMod;
+        private LightSourceComponent _lightComponent;
         
         private readonly Cooldown _speedUpCooldown = new Cooldown();
         private float _additionalSpeed;
@@ -478,6 +480,14 @@ namespace PixelCrew.Creatures.Hero
         public void SwitchLight()
         {
             _lightSource.SetActive(!_lightSource.activeSelf);
+        }
+
+        public void RefillLightFuel()
+        {
+            if (_lightComponent == null)
+                _lightComponent = _lightSource.GetComponent<LightSourceComponent>();
+            
+            _lightComponent.Refill();
         }
     }
 }
