@@ -9,10 +9,10 @@ TagManager:
   - Enemy
   - Interactable
   - SfxAudioSource
-  - MenuCanvas
   - ActivePerksWidget
   - SimpleDialog
   - PersonalizedDialog
+  - MainUICanvas
   layers:
   - Default
   - TransparentFX
