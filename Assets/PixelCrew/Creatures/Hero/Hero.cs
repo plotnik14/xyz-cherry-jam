@@ -211,7 +211,7 @@ namespace PixelCrew.Creatures.Hero
         
         private void SpeedUp(float value, float time)
         {
-            _speedUpCooldown.Value = _speedUpCooldown.TimeLasts + time;
+            _speedUpCooldown.Value = _speedUpCooldown.RemainingTime + time;
             _additionalSpeed = Mathf.Max(_additionalSpeed, value);
             _speedUpCooldown.Reset();
         }
