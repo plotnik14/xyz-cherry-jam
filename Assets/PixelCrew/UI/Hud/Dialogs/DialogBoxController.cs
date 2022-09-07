@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using PixelCrew.Model.Data;
 using PixelCrew.Utils;
 using UnityEngine;
@@ -20,6 +19,7 @@ namespace PixelCrew.UI.Hud.Dialogs
         [SerializeField] private AudioClip _close;
 
         [Space] [SerializeField] protected DialogContent _content;
+        [Space] [SerializeField] protected GameObject _dialogCameraEffects;
         
         private DialogData _data;
         private int _currentSentenceIndex;
@@ -40,8 +40,9 @@ namespace PixelCrew.UI.Hud.Dialogs
         {
             _data = data;
             _currentSentenceIndex = 0;
-            CurrentContent.Text.text = String.Empty;
+            CurrentContent.Text.text = string.Empty;
             
+            _dialogCameraEffects.SetActive(true);
             _container.SetActive(true);
             _sfxSource.PlayOneShot(_open);
             _animator.SetBool(IsOpen, true);
@@ -112,6 +113,7 @@ namespace PixelCrew.UI.Hud.Dialogs
         {
             _animator.SetBool(IsOpen, false);
             _sfxSource.PlayOneShot(_close);
+            _dialogCameraEffects.SetActive(false);
         }
 
         private void OnCloseAnimationComplete()
