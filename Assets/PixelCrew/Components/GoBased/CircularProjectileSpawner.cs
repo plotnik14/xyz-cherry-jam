@@ -6,13 +6,13 @@ using UnityEngine;
 
 namespace PixelCrew.Components.GoBased
 {
-    public class CircularProjectileSpawner : MonoBehaviour
+    public class CircularProjectileSpawner : MonoBehaviour, IProjectileSpawner
     {
         [SerializeField] private CircularProjectileSettings[] _settings;
         public int Stage { get; set; }
         
         [ContextMenu("Launch!")]
-        public void LaunchProjectile()
+        public void LaunchProjectiles()
         {
             StartCoroutine(SpawnProjectiles());
         }

@@ -1,5 +1,53 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1025562679
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1025562680}
+  - component: {fileID: 1025562681}
+  m_Layer: 13
+  m_Name: CannonBallsSpawnArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1025562680
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025562679}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.669, y: 1.412, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8330356933021233606}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1025562681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025562679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2847287691ea4a5f893762cf66b513d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _width: 10
+  _projectilePrefab: {fileID: 6025158693191510421, guid: 21a2fd4252df31e4ba7f89ee23c67ab4,
+    type: 3}
+  _count: 7
+  _delay: 0.1
 --- !u!1 &1025799270
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,6 +268,7 @@ Transform:
   m_Children:
   - {fileID: 1118259983}
   - {fileID: 1025799271}
+  - {fileID: 1025562680}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -362,7 +411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 563f84473009f3b44aecfe9bc8c19884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 10
+  _health: 12
   _onHealing:
     m_PersistentCalls:
       m_Calls: []

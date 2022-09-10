@@ -9,5 +9,10 @@ namespace PixelCrew.Creatures.Weapons
             Rigidbody = GetComponent<Rigidbody2D>();
             Rigidbody.AddForce(direction * _speed, ForceMode2D.Impulse);
         }
+
+        public void Stop()
+        {
+            Rigidbody.velocity = Vector2.zero;
+        }
     }
 }
