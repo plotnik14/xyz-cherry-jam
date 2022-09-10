@@ -21,7 +21,7 @@ namespace PixelCrew.Components.Health
                 _session = FindObjectOfType<GameSession>();
         }
 
-        public void ApplyHealthChange(GameObject target)
+        public virtual void ApplyHealthChange(GameObject target)
         {
             if (_isHeroAttack && _isRangeAttack)
                 UpdateHpDelta(StatId.RangeDamage);
