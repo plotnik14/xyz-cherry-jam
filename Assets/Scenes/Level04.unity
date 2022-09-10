@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -154,7 +154,7 @@ MonoBehaviour:
     _inventory:
       _inventory:
       - Id: Coin
-        Value: 9999
+        Value: 5
       - Id: Sword
         Value: 30
       - Id: Diamond
@@ -170,7 +170,7 @@ MonoBehaviour:
     Levels:
       _progress:
       - Id: 0
-        Level: 3
+        Level: 2
   _defaultCheckpoint: Level4-Checkpoint1
 --- !u!4 &30508820
 Transform:
@@ -4329,6 +4329,7 @@ Transform:
   - {fileID: 2077092938}
   - {fileID: 2138346907}
   - {fileID: 1703709945}
+  - {fileID: 1815991249}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5122,6 +5123,75 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1037337258
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 835655937}
+    m_Modifications:
+    - target: {fileID: 4588559214526573520, guid: 38509139f54feb74482923998fb7dddb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588559214526573520, guid: 38509139f54feb74482923998fb7dddb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588559214526573520, guid: 38509139f54feb74482923998fb7dddb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588559214526573520, guid: 38509139f54feb74482923998fb7dddb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588559214526573520, guid: 38509139f54feb74482923998fb7dddb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588559214526573520, guid: 38509139f54feb74482923998fb7dddb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588559214526573520, guid: 38509139f54feb74482923998fb7dddb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588559214526573520, guid: 38509139f54feb74482923998fb7dddb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588559214526573520, guid: 38509139f54feb74482923998fb7dddb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588559214526573520, guid: 38509139f54feb74482923998fb7dddb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588559214526573520, guid: 38509139f54feb74482923998fb7dddb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588559214526573522, guid: 38509139f54feb74482923998fb7dddb,
+        type: 3}
+      propertyPath: m_Name
+      value: HealthPotion
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 38509139f54feb74482923998fb7dddb, type: 3}
 --- !u!1 &1045648079
 GameObject:
   m_ObjectHideFlags: 0
@@ -12154,6 +12224,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _camera: {fileID: 519420031}
   _container: {fileID: 1336335604}
+--- !u!4 &1815991249 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4588559214526573520, guid: 38509139f54feb74482923998fb7dddb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1037337258}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1823752866
 GameObject:
   m_ObjectHideFlags: 0
