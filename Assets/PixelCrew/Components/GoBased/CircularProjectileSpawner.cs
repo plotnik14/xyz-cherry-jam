@@ -27,11 +27,20 @@ namespace PixelCrew.Components.GoBased
                 var angle = sectorAngle * i;
                 var direction = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
 
+                StartCoroutine(SpawnBurst(direction, setting));
+                
+                yield return new WaitForSeconds(setting.DelayBetweenBursts);
+            }
+        }
+
+        private IEnumerator SpawnBurst(Vector2 direction, CircularProjectileSettings setting)
+        {
+            for (var j = 0; j < setting.ItemsPerBurst; j++)
+            {
                 var instance = SpawnUtils.Spawn(setting.Prefab.gameObject, transform.position);
                 var projectile = instance.GetComponent<DirectionalProjectile>();
                 projectile.Launch(direction);
-
-                yield return new WaitForSeconds(setting.Delay);
+                yield return new WaitForSeconds(setting.DelayBetweenItems);
             }
         }
         
@@ -40,11 +49,17 @@ namespace PixelCrew.Components.GoBased
         {
             [SerializeField] private DirectionalProjectile _prefab;
             [SerializeField] private int _burstCount;
-            [SerializeField] private float _delay;
+            [SerializeField] private float _delayBetweenBursts;
+            
+            [Space][Header("Burst Config")]
+            [SerializeField] private int _itemsPerBurst;
+            [SerializeField] private float _delayBetweenItems;
 
             public DirectionalProjectile Prefab => _prefab;
             public int BurstCount => _burstCount;
-            public float Delay => _delay;
+            public int ItemsPerBurst => _itemsPerBurst;
+            public float DelayBetweenBursts => _delayBetweenBursts;
+            public float DelayBetweenItems => _delayBetweenItems;
         }
     }
 }

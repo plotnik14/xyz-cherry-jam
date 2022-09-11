@@ -441,11 +441,15 @@ MonoBehaviour:
   - _prefab: {fileID: 6025158693191510421, guid: f426cae930604b14c917d393f05a923a,
       type: 3}
     _burstCount: 10
-    _delay: 0.1
+    _delayBetweenBursts: 0.2
+    _itemsPerBurst: 1
+    _delayBetweenItems: 0
   - _prefab: {fileID: 6025158693191510421, guid: f426cae930604b14c917d393f05a923a,
       type: 3}
     _burstCount: 20
-    _delay: 0.03
+    _delayBetweenBursts: 0.2
+    _itemsPerBurst: 3
+    _delayBetweenItems: 0.15
 --- !u!114 &958555981
 MonoBehaviour:
   m_ObjectHideFlags: 0
