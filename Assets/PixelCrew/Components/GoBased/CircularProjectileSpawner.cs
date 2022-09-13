@@ -2,12 +2,15 @@
 using System.Collections;
 using PixelCrew.Creatures.Weapons;
 using PixelCrew.Utils;
+using PixelCrew.Utils.ObjectPool;
 using UnityEngine;
+using UnityEngine.Profiling;
 
 namespace PixelCrew.Components.GoBased
 {
     public class CircularProjectileSpawner : MonoBehaviour, IProjectileSpawner
     {
+        [SerializeField] private bool _usePool = true;
         [SerializeField] private CircularProjectileSettings[] _settings;
         public int Stage { get; set; }
         
@@ -37,9 +40,17 @@ namespace PixelCrew.Components.GoBased
         {
             for (var j = 0; j < setting.ItemsPerBurst; j++)
             {
-                var instance = SpawnUtils.Spawn(setting.Prefab.gameObject, transform.position);
+                
+                Profiler.BeginSample("BossSpawnBurst");
+                var instance = _usePool 
+                    ? Pool.Instance.Get(setting.Prefab.gameObject, transform.position) 
+                    : SpawnUtils.Spawn(setting.Prefab.gameObject, transform.position);
+                
+                
                 var projectile = instance.GetComponent<DirectionalProjectile>();
                 projectile.Launch(direction);
+                Profiler.EndSample();
+                
                 yield return new WaitForSeconds(setting.DelayBetweenItems);
             }
         }

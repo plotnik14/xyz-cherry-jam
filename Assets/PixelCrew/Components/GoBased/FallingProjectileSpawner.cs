@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using PixelCrew.Creatures.Weapons;
 using PixelCrew.Utils;
+using PixelCrew.Utils.ObjectPool;
 using UnityEditor;
 using UnityEngine;
 
@@ -8,6 +9,8 @@ namespace PixelCrew.Components.GoBased
 {
     public class FallingProjectileSpawner : MonoBehaviour, IProjectileSpawner
     {
+        [SerializeField] private bool _usePool = true;
+        
         [Space][Header("Area Config")]
         [SerializeField] private float _width;
 
@@ -32,7 +35,10 @@ namespace PixelCrew.Components.GoBased
             for (var i = 0; i < _count; i++)
             {
                 var spawnPosition = new Vector3(positionX, areaPosition.y, areaPosition.z);
-                var instance = SpawnUtils.Spawn(_projectilePrefab.gameObject, spawnPosition);
+                
+                var instance = _usePool 
+                    ? Pool.Instance.Get(_projectilePrefab.gameObject, spawnPosition) 
+                    : SpawnUtils.Spawn(_projectilePrefab.gameObject, spawnPosition);
                 
                 var projectile = instance.GetComponent<DirectionalProjectile>();
                 projectile.Launch(Vector2.down);
