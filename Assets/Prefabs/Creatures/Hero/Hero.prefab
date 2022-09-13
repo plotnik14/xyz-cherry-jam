@@ -82,7 +82,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 690870447}
   _prefab: {fileID: 5527392513366398762, guid: 1b898295d73fa1a428122f56a94e099c, type: 3}
-  _usePool: 0
+  _usePool: 1
 --- !u!114 &1869727689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,6 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df6deb6fd7262cd458fd949d94e7bac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _usePool: 1
   _sectorAngle: 190
   _sectorRotation: 0
   _waitTime: 0.1
@@ -449,7 +450,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 2477616180874453219}
   _prefab: {fileID: 6697911034157255995, guid: 85cd761ef6a5ae243a3839367aea0445, type: 3}
-  _usePool: 0
+  _usePool: 1
 --- !u!1 &6926611394720723675
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,7 +496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 1693574906368218394}
   _prefab: {fileID: 715821786386003257, guid: 9749e8da8ba190648a9dfdcfbba02e26, type: 3}
-  _usePool: 0
+  _usePool: 1
 --- !u!1 &7082921967741098856
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,7 +710,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 8196759456035982645}
   _prefab: {fileID: 5527392513366398762, guid: 0c1ac1d514aeeb849ac6ad1563087e1b, type: 3}
-  _usePool: 0
+  _usePool: 1
 --- !u!1 &8196759456510313766
 GameObject:
   m_ObjectHideFlags: 0
@@ -1247,7 +1248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 8196759457531575970}
   _prefab: {fileID: 6697911034157255995, guid: 72af479b6249f854eac6a4ca4e4b2d2c, type: 3}
-  _usePool: 0
+  _usePool: 1
 --- !u!1 &8196759457562935810
 GameObject:
   m_ObjectHideFlags: 0
@@ -1451,7 +1452,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 1979382518381545969}
   _prefab: {fileID: 5527392513366398762, guid: 68d973ece5e11ad438a40723d0234b17, type: 3}
-  _usePool: 0
+  _usePool: 1
 --- !u!114 &1923801838422369631
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -98,6 +98,11 @@ PrefabInstance:
       propertyPath: m_BodyType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7862801511795732953, guid: 1cb68b0ca02ab8643a9cab1ffb7cec3d,
+        type: 3}
+      propertyPath: _onRestart.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3169117936097083756, guid: 1cb68b0ca02ab8643a9cab1ffb7cec3d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1cb68b0ca02ab8643a9cab1ffb7cec3d, type: 3}

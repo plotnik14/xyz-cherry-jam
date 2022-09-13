@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using PixelCrew.Utils;
+using PixelCrew.Utils.ObjectPool;
 using UnityEditor;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -8,6 +9,8 @@ namespace PixelCrew.Components.GoBased
 {
     public class RandomSpawner : MonoBehaviour
     {
+        [SerializeField] private bool _usePool = true;
+        
         [Header("Spawn bound:")]
         [SerializeField] private float _sectorAngle = 60;
         [SerializeField] private float _sectorRotation;
@@ -61,7 +64,11 @@ namespace PixelCrew.Components.GoBased
 
         private void Spawn(GameObject particle)
         {
-            var instance = SpawnUtils.Spawn(particle, transform.position);
+            var instance = _usePool 
+                ? Pool.Instance.Get(particle, transform.position) 
+                : SpawnUtils.Spawn(particle, transform.position);
+            
+            
             var rigidBody = instance.GetComponent<Rigidbody2D>();
 
             var randomAngle = Random.Range(0, _sectorAngle);

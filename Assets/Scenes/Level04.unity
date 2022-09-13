@@ -154,7 +154,7 @@ MonoBehaviour:
     _inventory:
       _inventory:
       - Id: Coin
-        Value: 5
+        Value: 8888
       - Id: Sword
         Value: 30
       - Id: Diamond
@@ -1263,7 +1263,7 @@ MonoBehaviour:
   m_NoiseProfile: {fileID: 0}
   m_PivotOffset: {x: 0, y: 0, z: 0}
   m_AmplitudeGain: 1
-  m_FrequencyGain: 1
+  m_FrequencyGain: 0
   mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &276688049
 GameObject:
@@ -12472,7 +12472,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1442163695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12926,7 +12926,7 @@ PrefabInstance:
     - target: {fileID: 2476059054234824259, guid: b4087aaf2bbe31c49ac1c7174f688462,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.87
+      value: -2.31
       objectReference: {fileID: 0}
     - target: {fileID: 2476059054234824259, guid: b4087aaf2bbe31c49ac1c7174f688462,
         type: 3}
@@ -15059,6 +15059,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sharky
+      objectReference: {fileID: 0}
+    - target: {fileID: 8196759456510313766, guid: 68a15f330ee284649bb3be0e4af3a87e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8196759456510313772, guid: 68a15f330ee284649bb3be0e4af3a87e,
         type: 3}

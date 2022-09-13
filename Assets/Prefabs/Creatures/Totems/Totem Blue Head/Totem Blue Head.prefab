@@ -701,3 +701,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 7651697399175155561}
   _prefab: {fileID: 3169117936097083666, guid: 3f9154fb02493364082fec133b9d42ea, type: 3}
+  _usePool: 1

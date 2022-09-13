@@ -360,6 +360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 7651697397431080391}
   _prefab: {fileID: 5527392513366398762, guid: 1b898295d73fa1a428122f56a94e099c, type: 3}
+  _usePool: 1
 --- !u!114 &7651697397431080394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -785,6 +786,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 7651697398146973708}
   _prefab: {fileID: 7650807159271785187, guid: 352bdc804b48b1b46826944274228e2f, type: 3}
+  _usePool: 0
 --- !u!114 &7105380223535163155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -850,3 +852,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 7651697399175155561}
   _prefab: {fileID: 8522323159571927324, guid: 506c3333497b301488d2f3d352ec379b, type: 3}
+  _usePool: 1
