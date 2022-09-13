@@ -1,4 +1,5 @@
 ﻿using PixelCrew.Utils;
+using PixelCrew.Utils.ObjectPool;
 using UnityEngine;
 
 namespace PixelCrew.Components.GoBased
@@ -7,11 +8,15 @@ namespace PixelCrew.Components.GoBased
     {
         [SerializeField] private Transform _target;
         [SerializeField] private GameObject _prefab;
+        [SerializeField] private bool _usePool;
 
         [ContextMenu("Spawn")]
         public void Spawn()
         {
-            var instance = SpawnUtils.Spawn(_prefab, _target.position);
+            var instance = _usePool
+            ? Pool.Instance.Get(_prefab, _target.position)
+            : SpawnUtils.Spawn(_prefab, _target.position);
+            
             instance.transform.localScale = transform.lossyScale;
             instance.SetActive(true);
         }
