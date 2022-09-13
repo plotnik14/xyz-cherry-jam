@@ -14,7 +14,7 @@ namespace PixelCrew.Components.GoBased
         public void Spawn()
         {
             var instance = _usePool
-            ? Pool.Instance.Get(_prefab, _target.position)
+            ? Pool.Instance.Get(_prefab, _target.position, transform.lossyScale)
             : SpawnUtils.Spawn(_prefab, _target.position);
             
             instance.transform.localScale = transform.lossyScale;

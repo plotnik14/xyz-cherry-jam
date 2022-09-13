@@ -21,7 +21,17 @@ namespace PixelCrew.Utils.ObjectPool
             }
         }
         
+        public GameObject Get(GameObject go, Vector3 position, Vector3 scale)
+        {
+            return GetOrCreateItem(go, position, scale);
+        }
+        
         public GameObject Get(GameObject go, Vector3 position)
+        {
+            return GetOrCreateItem(go, position, Vector3.zero);
+        }
+
+        private GameObject GetOrCreateItem(GameObject go, Vector3 position, Vector3 scale)
         {
             var id = go.GetInstanceID();
             var queue = RequireQueue(id);
@@ -30,6 +40,10 @@ namespace PixelCrew.Utils.ObjectPool
             {
                 var pooledItem = queue.Dequeue();
                 pooledItem.transform.position = position;
+
+                if (scale != Vector3.zero)
+                    pooledItem.transform.localScale = scale;
+                
                 pooledItem.gameObject.SetActive(true);
                 pooledItem.Restart();
                 return pooledItem.gameObject;

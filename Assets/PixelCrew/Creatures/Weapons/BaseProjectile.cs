@@ -13,9 +13,13 @@ namespace PixelCrew.Creatures.Weapons
         protected virtual void Start()
         {
             Rigidbody = GetComponent<Rigidbody2D>();
+            SetDirection();
+        }
 
+        protected void SetDirection()
+        {
             var mod = _invertX ? -1 : 1;
-            Direction = transform.lossyScale.x * mod > 0 ? 1 : -1;        
+            Direction = transform.lossyScale.x * mod > 0 ? 1 : -1;     
         }
     }
 }
