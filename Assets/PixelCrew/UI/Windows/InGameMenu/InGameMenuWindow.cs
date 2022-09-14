@@ -26,7 +26,7 @@ namespace PixelCrew.UI.Windows.InGameMenu
         {
             SceneManager.LoadScene("MainMenu");
             
-            var session = FindObjectOfType<GameSession>();
+            var session = GameSession.Instance;
             Destroy(session.gameObject);
         }
 

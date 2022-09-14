@@ -120,7 +120,7 @@ namespace PixelCrew.Creatures.Hero
         
         protected void Start()
         {
-            _session = FindObjectOfType<GameSession>();
+            _session = GameSession.Instance;
             _cameraShake = FindObjectOfType<CameraShakeEffect>();
 
             var health = GetComponent<HealthComponent>();

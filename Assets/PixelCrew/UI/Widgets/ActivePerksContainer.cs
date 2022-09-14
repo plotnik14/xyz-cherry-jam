@@ -17,7 +17,7 @@ namespace PixelCrew.UI.Widgets
 
         public void Start()
         {
-            _session = FindObjectOfType<GameSession>();
+            _session = GameSession.Instance;
             _dataGroup = new DataGroup<PerkDef, ActivePerkWidget>(_prefab, transform);
             _disposable.Retain(_session.PerksModel.Subscribe(OnPerksChanged));
         }

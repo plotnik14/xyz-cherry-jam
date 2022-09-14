@@ -21,7 +21,7 @@ namespace PixelCrew.UI.Windows.Shop
         protected override void Start()
         {
             base.Start();
-            _session = FindObjectOfType<GameSession>();
+            _session = GameSession.Instance;
             
             _disposable.Retain(_buyButton.onClick.Subscribe(OnBuy));
             _disposable.Retain(_session.ShopModel.Subscribe(OnSelectionChanged));

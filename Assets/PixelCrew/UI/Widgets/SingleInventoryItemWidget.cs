@@ -16,7 +16,7 @@ namespace PixelCrew.UI.Widgets
         
         private void Start()
         {
-            _session = FindObjectOfType<GameSession>();
+            _session = GameSession.Instance;
             _session.Data.Inventory.OnChange += OnInventoryChanged;
 
              _session.Data.Inventory.Count(_itemId);

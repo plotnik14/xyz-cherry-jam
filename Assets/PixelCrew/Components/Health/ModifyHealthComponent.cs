@@ -18,7 +18,7 @@ namespace PixelCrew.Components.Health
         private void Start()
         {
             if (_isHeroAttack)
-                _session = FindObjectOfType<GameSession>();
+                _session = GameSession.Instance;
         }
 
         public virtual void ApplyHealthChange(GameObject target)

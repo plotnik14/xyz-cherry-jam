@@ -33,7 +33,7 @@ namespace PixelCrew.Components.LevelManagement
                 Debug.LogWarning("Found PermanentlyDestructibleObject with empty id");
             }
             
-            _session = FindObjectOfType<GameSession>();
+            _session = GameSession.Instance;
             
             if (HasBeenDestroyed())
             {

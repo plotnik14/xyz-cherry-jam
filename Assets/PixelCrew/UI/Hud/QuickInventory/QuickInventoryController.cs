@@ -17,7 +17,7 @@ namespace PixelCrew.UI.Hud.QuickInventory
         
         private void Start()
         {
-            _session = FindObjectOfType<GameSession>();
+            _session = GameSession.Instance;
             _trash.Retain(_session.QuickInventory.Subscribe(Rebuild));
             Rebuild();
         }

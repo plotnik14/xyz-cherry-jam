@@ -10,7 +10,7 @@ namespace PixelCrew.Components.LevelManagement
 
         public void Exit()
         {
-            var session = FindObjectOfType<GameSession>();
+            var session = GameSession.Instance;
             session.Save();
             
             var loader = FindObjectOfType<LevelLoader>();

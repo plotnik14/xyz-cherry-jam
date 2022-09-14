@@ -14,7 +14,7 @@ namespace PixelCrew.UI.Hud
 
         private void Start()
         {
-            _session = FindObjectOfType<GameSession>();
+            _session = GameSession.Instance;
             _session.Data.Hp.OnChanged += OnHealthChanged;
 
             OnHealthChanged(_session.Data.Hp.Value, 0);

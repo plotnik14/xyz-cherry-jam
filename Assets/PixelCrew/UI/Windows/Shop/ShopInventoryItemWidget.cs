@@ -17,7 +17,7 @@ namespace PixelCrew.UI.Windows.Shop
 
         private void Start()
         {
-            _session = FindObjectOfType<GameSession>();
+            _session = GameSession.Instance;
             
             if (_session != null)
                 UpdateView();
