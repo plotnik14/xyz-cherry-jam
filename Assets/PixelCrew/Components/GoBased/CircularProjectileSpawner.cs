@@ -4,7 +4,6 @@ using PixelCrew.Creatures.Weapons;
 using PixelCrew.Utils;
 using PixelCrew.Utils.ObjectPool;
 using UnityEngine;
-using UnityEngine.Profiling;
 
 namespace PixelCrew.Components.GoBased
 {
@@ -40,8 +39,6 @@ namespace PixelCrew.Components.GoBased
         {
             for (var j = 0; j < setting.ItemsPerBurst; j++)
             {
-                
-                Profiler.BeginSample("BossSpawnBurst");
                 var instance = _usePool 
                     ? Pool.Instance.Get(setting.Prefab.gameObject, transform.position) 
                     : SpawnUtils.Spawn(setting.Prefab.gameObject, transform.position);
@@ -49,8 +46,7 @@ namespace PixelCrew.Components.GoBased
                 
                 var projectile = instance.GetComponent<DirectionalProjectile>();
                 projectile.Launch(direction);
-                Profiler.EndSample();
-                
+
                 yield return new WaitForSeconds(setting.DelayBetweenItems);
             }
         }

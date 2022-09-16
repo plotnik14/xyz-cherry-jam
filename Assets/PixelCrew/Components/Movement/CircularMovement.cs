@@ -1,6 +1,5 @@
 ﻿using System.Linq;
 using PixelCrew.Utils;
-using UnityEditor;
 using UnityEngine;
 
 namespace PixelCrew.Components.Movement
@@ -22,8 +21,8 @@ namespace PixelCrew.Components.Movement
 
         private void FixedUpdate()
         {
-           for (int i = 0; i < _rigidbodies.Length; i++)
-            {
+           for (var i = 0; i < _rigidbodies.Length; i++)
+           {
                 if (_rigidbodies[i] == null) continue;
 
                 var position = _rigidbodies[i].position;
@@ -31,7 +30,7 @@ namespace PixelCrew.Components.Movement
                 position.x = transform.position.x + Mathf.Cos(angle + Time.time * _speed * _directionMod) * _radius;
                 position.y = transform.position.y + Mathf.Sin(angle + Time.time * _speed * _directionMod) * _radius;
                 _rigidbodies[i].MovePosition(position);
-            }
+           }
         }
 
 #if UNITY_EDITOR
@@ -52,9 +51,10 @@ namespace PixelCrew.Components.Movement
 
         private void OnDrawGizmos()
         {
-            Handles.color = HandlesUtils.Green;
-            Handles.DrawWireDisc(transform.position, Vector3.forward, _radius);
+            UnityEditor.Handles.color = HandlesUtils.Green;
+            UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, _radius);
         }
-    }
 #endif
+        
+    }
 }

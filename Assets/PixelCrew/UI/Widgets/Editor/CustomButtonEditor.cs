@@ -1,4 +1,5 @@
-﻿using UnityEditor.UI;
+﻿#if  UNITY_EDITOR
+using UnityEditor.UI;
 using UnityEditor;
 
 namespace PixelCrew.UI.Widgets.Editor
@@ -17,3 +18,4 @@ namespace PixelCrew.UI.Widgets.Editor
         }
     }
 }
+#endif

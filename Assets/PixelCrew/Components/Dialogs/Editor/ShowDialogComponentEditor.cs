@@ -1,4 +1,5 @@
-﻿using PixelCrew.Utils.Editor;
+﻿#if  UNITY_EDITOR
+using PixelCrew.Utils.Editor;
 using UnityEditor;
 
 namespace PixelCrew.Components.Dialogs.Editor
@@ -38,3 +39,4 @@ namespace PixelCrew.Components.Dialogs.Editor
         }
     }
 }
+#endif

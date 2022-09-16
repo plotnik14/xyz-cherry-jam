@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if  UNITY_EDITOR
+using System;
 using UnityEditor;
 
 namespace PixelCrew.Utils.Editor
@@ -21,3 +22,4 @@ namespace PixelCrew.Utils.Editor
         }
     }
 }
+#endif

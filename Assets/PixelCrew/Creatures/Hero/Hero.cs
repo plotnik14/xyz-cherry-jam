@@ -15,7 +15,6 @@ using PixelCrew.Model.Definition.Repositories;
 using PixelCrew.Model.Definition.Repositories.Items;
 using PixelCrew.Utils;
 using PixelCrew.Utils.Disposables;
-using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -40,8 +39,8 @@ namespace PixelCrew.Creatures.Hero
 
         [Space]
         [Header("AnimatorController")]
-        [SerializeField] private AnimatorController _armed;
-        [SerializeField] private AnimatorController _unarmed;
+        [SerializeField] private RuntimeAnimatorController _armed;
+        [SerializeField] private RuntimeAnimatorController _unarmed;
 
         [Space]
         [SerializeField] private ProbabilityDropComponent _hitDrop;

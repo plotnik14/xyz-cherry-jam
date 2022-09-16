@@ -2,7 +2,6 @@
 using PixelCrew.Creatures.Weapons;
 using PixelCrew.Utils;
 using PixelCrew.Utils.ObjectPool;
-using UnityEditor;
 using UnityEngine;
 
 namespace PixelCrew.Components.GoBased
@@ -54,7 +53,7 @@ namespace PixelCrew.Components.GoBased
         {
             var areaPosition = transform.position;
             
-            Handles.DrawLine(areaPosition, areaPosition + new Vector3(_width, 0, 0));
+            UnityEditor.Handles.DrawLine(areaPosition, areaPosition + new Vector3(_width, 0, 0));
             
             var positionX = areaPosition.x;
             var positionXDelta = _width / (_count - 1);
@@ -64,9 +63,9 @@ namespace PixelCrew.Components.GoBased
                 var spawnPosition = new Vector3(positionX, areaPosition.y, areaPosition.z);
                 var arrowVertex = spawnPosition + new Vector3(0, -0.5f, 0);
                 
-                Handles.DrawLine(spawnPosition, arrowVertex);
-                Handles.DrawLine(arrowVertex + new Vector3(-0.1f, 0.2f, 0), arrowVertex);
-                Handles.DrawLine(arrowVertex + new Vector3(0.1f, 0.2f, 0), arrowVertex);
+                UnityEditor.Handles.DrawLine(spawnPosition, arrowVertex);
+                UnityEditor.Handles.DrawLine(arrowVertex + new Vector3(-0.1f, 0.2f, 0), arrowVertex);
+                UnityEditor.Handles.DrawLine(arrowVertex + new Vector3(0.1f, 0.2f, 0), arrowVertex);
                     
                 positionX += positionXDelta;
             }
