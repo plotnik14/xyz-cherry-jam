@@ -82,6 +82,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 5a7fac99f13e78a4e88546b51c160fbe, type: 3}
   - {fileID: 21300000, guid: 60b7fad9c59f64347ab254a9f33deb03, type: 3}
   - {fileID: 21300000, guid: fccb2f3a48740944083848a2ede66d09, type: 3}
+  - {fileID: 21300000, guid: eaf3e19a0590506468b8f83b9309cdb4, type: 3}
   - {fileID: 21300000, guid: fe12244b22333bc438359964b8cf7f1b, type: 3}
   - {fileID: 21300000, guid: a152adfb5121a414bac524565bb25b19, type: 3}
   - {fileID: 21300000, guid: 6f88b11c4ae29a5488919925cac37e0b, type: 3}
@@ -141,6 +142,7 @@ SpriteAtlas:
   - yellow-box-large
   - green-box-large
   - papper
+  - 0
   - slider-vertical-handle
   - slider-horizontal
   - 'MeleeDamageCritical '

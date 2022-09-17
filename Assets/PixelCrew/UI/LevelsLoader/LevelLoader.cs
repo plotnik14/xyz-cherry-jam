@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
 
 namespace PixelCrew.UI.LevelsLoader
@@ -14,6 +15,8 @@ namespace PixelCrew.UI.LevelsLoader
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         private static void OnAfterSceneLoad()
         {
+            AnalyticsEvent.debugMode = true;
+            
             InitLoader();
         }
 

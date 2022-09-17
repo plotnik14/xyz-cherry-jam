@@ -13149,12 +13149,27 @@ PrefabInstance:
       objectReference: {fileID: 1703709947}
     - target: {fileID: 2476059054234824262, guid: b4087aaf2bbe31c49ac1c7174f688462,
         type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2476059054234824262, guid: b4087aaf2bbe31c49ac1c7174f688462,
+        type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Exit
       objectReference: {fileID: 0}
     - target: {fileID: 2476059054234824262, guid: b4087aaf2bbe31c49ac1c7174f688462,
         type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: TriggerEvent
+      objectReference: {fileID: 0}
+    - target: {fileID: 2476059054234824262, guid: b4087aaf2bbe31c49ac1c7174f688462,
+        type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2476059054234824262, guid: b4087aaf2bbe31c49ac1c7174f688462,
+        type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
