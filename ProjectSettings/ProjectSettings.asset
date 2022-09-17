@@ -693,7 +693,8 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLWasmStreaming: 0
   scriptingDefineSymbols:
-    1: 
+    1: USE_ONSCREEN_CONTROLS
+    7: USE_ONSCREEN_CONTROLS
   platformArchitecture: {}
   scriptingBackend: {}
   il2cppCompilerConfiguration: {}

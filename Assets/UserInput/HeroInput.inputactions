@@ -11,7 +11,8 @@
                     "id": "a615dec7-df34-463c-ad59-0acbe7444e01",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Interact",
@@ -19,7 +20,8 @@
                     "id": "b9c0d1c1-34c7-465c-97d8-eff6cbced2a3",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Attack",
@@ -27,7 +29,8 @@
                     "id": "843eb8f7-8289-4702-849a-68c71631c667",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Throw",
@@ -35,7 +38,8 @@
                     "id": "d6373ec2-2350-4229-99c0-fb4ef52e220b",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "NextItem",
@@ -43,7 +47,8 @@
                     "id": "1ab8456c-1e5b-4dc1-8747-306f09b9ab9d",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "ShowMenu",
@@ -51,7 +56,8 @@
                     "id": "f290378d-1fdd-40e2-8056-10e5bb63c90e",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "UseItem",
@@ -59,7 +65,8 @@
                     "id": "610a5142-c33c-4b90-a25e-b96525764782",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "UseMagic",
@@ -67,7 +74,8 @@
                     "id": "8d6c09a2-b5bb-4f2b-9124-06d98dda4e23",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Light",
@@ -75,7 +83,8 @@
                     "id": "b44d44d5-fd3a-4765-a58f-cbb4bdb33d34",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -136,8 +145,30 @@
                 },
                 {
                     "name": "",
+                    "id": "f6ba4170-97df-492a-bd6e-7825b05b8a3d",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "StickDeadzone(min=0.4)",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "57b687f9-95b8-4001-b8cb-325b2f1d99c4",
                     "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "62d9de87-3fc7-442b-86c3-412f008bc8ae",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -158,6 +189,17 @@
                 },
                 {
                     "name": "",
+                    "id": "dcbc929e-30e3-4299-b81f-71ffc61c0cfe",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "a740c001-feba-41b2-a052-cacc48965b47",
                     "path": "<Keyboard>/shift",
                     "interactions": "Press(behavior=1)",
@@ -169,8 +211,30 @@
                 },
                 {
                     "name": "",
+                    "id": "ff6e807f-8faa-4ea5-b1ac-0e4e80298bb5",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Throw",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "2df45596-4e7b-4ac7-9379-b89112926c0e",
                     "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "NextItem",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7d745c98-5b52-47f9-85a5-d2880325a23a",
+                    "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

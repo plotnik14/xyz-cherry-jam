@@ -46,18 +46,23 @@ SpriteAtlas:
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: dc5c0000fcb173b4889c93e381cf6334, type: 3}
   - {fileID: 21300000, guid: 46eaeb4062bec4c4a8397bd83e8fc59c, type: 3}
   - {fileID: 21300000, guid: a3cf0f5080214ef419de7ea5fd6f15c5, type: 3}
   - {fileID: 21300000, guid: 1b422260b3bdd0646a8f93df65041aa7, type: 3}
   - {fileID: 21300000, guid: 7eab4960cb591b24b916a7254c716f68, type: 3}
+  - {fileID: 21300000, guid: cae4d90178fdc774c8e1abdc6fc3a16c, type: 3}
   - {fileID: 21300000, guid: 4d00de91bae93654398a2dfe65522f91, type: 3}
   - {fileID: 21300000, guid: bfd87502da607ec4e9427598fadb72ab, type: 3}
   - {fileID: 21300000, guid: df77e29207325164da8f038b195d220b, type: 3}
   - {fileID: 21300000, guid: 5006c2c2d1336534ca54d985d3a7d57d, type: 3}
+  - {fileID: 21300000, guid: 450d9e738991ac144af2999c82c6637a, type: 3}
   - {fileID: 21300000, guid: 4f1eed83d0c65004994a029261665a84, type: 3}
   - {fileID: 21300000, guid: 478d8593b91798e4cab9802eedd38d65, type: 3}
   - {fileID: 21300000, guid: ebef46b39312bc84a87420cf911d0f9f, type: 3}
+  - {fileID: 21300000, guid: 8ac7cab3fa4573f4386d7a883755a905, type: 3}
   - {fileID: 21300000, guid: 0693d704129123d4b80adc9e900b4638, type: 3}
+  - {fileID: 21300000, guid: f864cc24e82c5834aac081e1afd86e3c, type: 3}
   - {fileID: 21300000, guid: 6fb8af94ff7ef2645975b1ce4ffa43e5, type: 3}
   - {fileID: 21300000, guid: f3f9ac15ed793194db4cf56c31598153, type: 3}
   - {fileID: 21300000, guid: 5db3b135336f16b4fa0a905082511d8f, type: 3}
@@ -69,6 +74,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 636b7f2752040e944bc301704229b627, type: 3}
   - {fileID: 21300000, guid: b4cc8818a0365494a82d6eac51f9d510, type: 3}
   - {fileID: 21300000, guid: 56eb0a5814ca81f43832fee057a2cea8, type: 3}
+  - {fileID: 21300000, guid: 0d5227a8db19db542b8c7eb3a88876d0, type: 3}
   - {fileID: 21300000, guid: 06fad8b847d85484c88d2dd6f0091334, type: 3}
   - {fileID: 21300000, guid: 855a4509f0ade9c488b7833b384d9c5f, type: 3}
   - {fileID: 21300000, guid: b8900649f31762f4983991236e80bb3d, type: 3}
@@ -90,25 +96,32 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 6300de0e4210f07449076cbc444cb533, type: 3}
   - {fileID: 21300000, guid: 98f6616ea78bec54eba8c031e13af0d0, type: 3}
   - {fileID: 21300000, guid: f2ee7abe18d4e994ab751ef9e752322b, type: 3}
+  - {fileID: 21300000, guid: 53fe560f22b6b6c458f4d97382c2994b, type: 3}
   - {fileID: 21300000, guid: 1a18786f81075dc44b3361bcb7d9ec77, type: 3}
   - {fileID: 21300000, guid: d299007f639a09b46a419803dc7870ef, type: 3}
   - {fileID: 21300000, guid: ae9d057f16783ac4fa00d0b0c654b9be, type: 3}
+  - {fileID: 21300000, guid: 4c539edfde242c143a1e5e84503f78c3, type: 3}
   - {fileID: 21300000, guid: 419a00ff2dd89e545bab119af075b0f8, type: 3}
   - {fileID: 21300000, guid: 41d8ceff8d47d1e4dbac8d95762ab15d, type: 3}
   - {fileID: 21300000, guid: 75926fff0ed1f8046a521766c8cc784a, type: 3}
   m_PackedSpriteNamesToIndex:
+  - 6
   - hp-big
   - menu
   - green
   - item-selection
+  - 8
   - slider-vertical
   - green-button
   - inventory-large
   - green-box-widel
+  - 5
   - blue
   - item-small
   - yellow-box-small
+  - 3
   - item-selection-common
+  - 1
   - I_Clover
   - common-button
   - common-button-pressed
@@ -120,6 +133,7 @@ SpriteAtlas:
   - yellow
   - enemy-big
   - inventory-tall
+  - 7
   - small-hp-bar
   - stretchable-slider
   - geen-box-small
@@ -141,9 +155,11 @@ SpriteAtlas:
   - S_Buff04
   - yellow-box-wide
   - level-menu
+  - 4
   - yellow-panel
   - green-box-tall
   - yellow-box-tall
+  - 2
   - force-shiled
   - S_Holy03
   - Check_Mark
