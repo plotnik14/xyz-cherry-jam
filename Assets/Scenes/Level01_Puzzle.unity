@@ -10156,7 +10156,7 @@ PrefabInstance:
     - target: {fileID: 2490357133750630708, guid: e7b50e624e1ad90409e922b1007d1c39,
         type: 3}
       propertyPath: m_Text
-      value: E - Interaction with objects
+      value: E - Interaction
       objectReference: {fileID: 0}
     - target: {fileID: 2490357133750630714, guid: e7b50e624e1ad90409e922b1007d1c39,
         type: 3}
