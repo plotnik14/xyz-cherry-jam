@@ -41,6 +41,7 @@ namespace PixelCrew.Creatures
         protected static readonly int HitKey = Animator.StringToHash("hit");
         protected static readonly int AttackKey = Animator.StringToHash("attack");
         protected static readonly int ThrowKey = Animator.StringToHash("throw");
+        protected static readonly int IsDeadKey = Animator.StringToHash("is-dead");
 
 
         protected virtual void Awake()
@@ -152,6 +153,11 @@ namespace PixelCrew.Creatures
             IsJumping = false;
             Animator.SetTrigger(HitKey);
             Rigidbody.velocity = new Vector2(Rigidbody.velocity.x, _damageJumpSpeed);
+        }
+
+        public virtual void OnDie()
+        {
+            Animator.SetTrigger(IsDeadKey);
         }
 
         public virtual void Attack()

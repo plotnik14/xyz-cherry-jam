@@ -730,6 +730,7 @@ GameObject:
   - component: {fileID: 8843711502269923405}
   - component: {fileID: 8196759456688534597}
   - component: {fileID: 6841627013947824799}
+  - component: {fileID: 1259470812783388501}
   m_Layer: 11
   m_Name: Hero
   m_TagString: Player
@@ -1093,9 +1094,30 @@ MonoBehaviour:
   _onDie:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3706491829790498517, guid: 508407ee65eafd54f853402de644c354,
-          type: 3}
-        m_MethodName: Reload
+      - m_Target: {fileID: 6841627013947824799}
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Dead
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8843711502269923405}
+        m_MethodName: OnDie
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1259470812783388501}
+        m_MethodName: Show
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1203,6 +1225,21 @@ MonoBehaviour:
     _clip: {fileID: 8300000, guid: 4841ab5605bcd9c468348c5a06d2a44e, type: 3}
   - _id: Hurt
     _clip: {fileID: 8300000, guid: 71afbd4773d04614883e8fbe43ca15ea, type: 3}
+  - _id: Dead
+    _clip: {fileID: 8300000, guid: 6c38a07691d165546afeab8c416ecdab, type: 3}
+--- !u!114 &1259470812783388501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8196759456510313766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6d166d17f4d43c1bdcbd8b2571470f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _path: UI/GameOverWindow
 --- !u!1 &8196759457531575971
 GameObject:
   m_ObjectHideFlags: 0

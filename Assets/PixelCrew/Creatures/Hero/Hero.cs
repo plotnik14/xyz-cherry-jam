@@ -294,7 +294,7 @@ namespace PixelCrew.Creatures.Hero
             Sounds.Play("Range");
         }
 
-        private void LockInput()
+        public void LockInput()
         {
             _playerInput.enabled = false;
         }
@@ -355,6 +355,13 @@ namespace PixelCrew.Creatures.Hero
                 SpawnCoinParticles();
             }
         }
+
+        public override void OnDie()
+        {
+            LockInput();
+            base.OnDie();
+        }
+
 
         private void SpawnCoinParticles()
         {
