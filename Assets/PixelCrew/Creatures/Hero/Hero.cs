@@ -25,6 +25,7 @@ namespace PixelCrew.Creatures.Hero
         [Header("Hero Params")]
         [SerializeField] protected float _slamDownVelocity;
         [SerializeField] private CheckCircleOverlap _interactionCheck;
+        [SerializeField] private CheckCircleOverlap _platformCheck;
 
         [Header("Throw")]       
         [SerializeField] private float _multiThrowPressDuration = 1;
@@ -317,7 +318,16 @@ namespace PixelCrew.Creatures.Hero
                 IsJumping = false;
             }
 
+            var isJumpingDown = Direction.y < 0;
+            if (isJumpingDown)
+                TryJumpDown();
+
             return base.CalculateYVelocity();
+        }
+
+        private void TryJumpDown()
+        {
+            _platformCheck.Check();
         }
 
         protected override float CalculateJumpVelocity(float yVelocity)
