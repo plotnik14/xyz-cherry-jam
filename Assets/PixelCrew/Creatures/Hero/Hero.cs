@@ -73,24 +73,26 @@ namespace PixelCrew.Creatures.Hero
         private Dictionary<UseActionDef, AbstractUseAction> _useActions;
 
         private const string SwordId = "Sword";
+        private const string CoinId = "Coin";
         
         private int SwordsCount => _session.Data.Inventory.Count(SwordId);
-        private int CoinsCount => _session.Data.Inventory.Count("Coin");
+        private int CoinsCount => _session.Data.Inventory.Count(CoinId);
 
         private string SelectedItemId => _session.QuickInventory.SelectedItem.Id;
-        private bool CanThrow
-        {
-            get
-            {
-                if (SelectedItemId == SwordId)
-                {
-                    return SwordsCount > 1;
-                }
-                
-                var def = DefsFacade.I.Items.Get(SelectedItemId);
-                return def.HasTag(ItemTag.Throwable);
-            }
-        }
+        private bool CanThrow => SwordsCount > 1;
+        // private bool CanThrow
+        // {
+        //     get
+        //     {
+        //         if (SelectedItemId == SwordId)
+        //         {
+        //             return SwordsCount > 1;
+        //         }
+        //         
+        //         var def = DefsFacade.I.Items.Get(SelectedItemId);
+        //         return def.HasTag(ItemTag.Throwable);
+        //     }
+        // }
         
         protected override void Awake()
         {
@@ -182,12 +184,9 @@ namespace PixelCrew.Creatures.Hero
             base.Attack();
         }
 
-        public void UseInventory(double pressDuration)
+        public void Throw(double pressDuration)
         {
-            if (IsSelectedItem(ItemTag.Throwable))
-                PerformThrowing(pressDuration);
-            else if (IsSelectedItem(ItemTag.Potion))
-                UsePotion();
+            PerformThrowing(pressDuration);
         }
 
         private void UsePotion()
@@ -252,18 +251,20 @@ namespace PixelCrew.Creatures.Hero
         {
             if (_isMultiThrow && _session.PerksModel.IsSuperThrowSupported)
             {
-                var itemsCount = _session.Data.Inventory.Count(SelectedItemId);
-                var possibleCountToThrow = SelectedItemId == SwordId ? itemsCount - 1 : itemsCount;
+                var itemsCount = _session.Data.Inventory.Count(SwordId);
+                // var possibleCountToThrow = SelectedItemId == SwordId ? itemsCount - 1 : itemsCount;
+                var possibleCountToThrow =  itemsCount - 1;
                 var countToThrow = Mathf.Min(possibleCountToThrow, _multiThrowMaxCount);
 
                 StartCoroutine(MultiThrow(countToThrow));
                 
-                _session.Data.Inventory.Remove(SelectedItemId, countToThrow);
+                _session.Data.Inventory.Remove(SwordId, countToThrow);
                 _isMultiThrow = false;
             }
             else
             {
-                var throwableId = _session.QuickInventory.SelectedItem.Id;
+                // var throwableId = _session.QuickInventory.SelectedItem.Id;
+                var throwableId = SwordId;
                 var throwableDef = DefsFacade.I.ThrowableItems.Get(throwableId);
                 SpawnThrownParticle(throwableDef.Projectile);
                 _session.Data.Inventory.Remove(throwableId, 1);
@@ -274,10 +275,11 @@ namespace PixelCrew.Creatures.Hero
         {
             LockInput();
             
-            var throwableId = _session.QuickInventory.SelectedItem.Id;
+            // var throwableId = _session.QuickInventory.SelectedItem.Id;
+            var throwableId = SwordId;
             var throwableDef = DefsFacade.I.ThrowableItems.Get(throwableId);
             
-            for (int i = 0; i < countToThrow; i++)
+            for (var i = 0; i < countToThrow; i++)
             {
                 SpawnThrownParticle(throwableDef.Projectile);
                 yield return new WaitForSeconds(_delayBetweenThrows);
@@ -372,7 +374,6 @@ namespace PixelCrew.Creatures.Hero
             base.OnDie();
         }
 
-
         private void SpawnCoinParticles()
         {
             var numCoinsToDispose = Mathf.Min(CoinsCount, 5);
@@ -391,9 +392,15 @@ namespace PixelCrew.Creatures.Hero
         {
             _session.QuickInventory.SetNextItem();
         }
-        
-        // My implementation of usable items
+
         public void UseItem()
+        {
+            if (IsSelectedItem(ItemTag.Potion))
+                UsePotion();
+        }
+
+        // Alternative implementation of usable items
+        public void UseItem2()
         {
             var usableItemId = _session.QuickInventory.SelectedItem.Id;
             var usableItemDef = DefsFacade.I.UsableItems.Get(usableItemId);

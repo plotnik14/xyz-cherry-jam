@@ -45,6 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 567630186}
   _prefab: {fileID: 625902382}
+  _usePool: 0
 --- !u!1 &625902382
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df6deb6fd7262cd458fd949d94e7bac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _usePool: 1
   _sectorAngle: 60
   _sectorRotation: 0
   _waitTime: 0.1
@@ -330,11 +332,11 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 6843526506643299937}
-          m_MethodName: DestroyObject
-          m_Mode: 1
+          m_MethodName: ReleaseOrDestroy
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 6044750573777138822}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -436,6 +438,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 6044750573777138820}
   _prefab: {fileID: 8170189512205979825, guid: 8f883bf9265009248973f5bc943f78f4, type: 3}
+  _usePool: 0
 --- !u!114 &1495335267
 MonoBehaviour:
   m_ObjectHideFlags: 0
