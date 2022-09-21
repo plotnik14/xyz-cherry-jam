@@ -12,10 +12,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Hud.unity
     guid: ba8fb0d4dda4ff14cade5931bdef2f6c
   - enabled: 1
-    path: Assets/Scenes/Level99_Testing.unity
+    path: Assets/Scenes/Test_Level99_Testing.unity
     guid: a053248dfb5b0ae4f86799a5e7486b98
   - enabled: 1
-    path: Assets/Scenes/Level04.unity
+    path: Assets/Scenes/Test_Level04.unity
     guid: 82d82ccf110ba6f4db6afbff397f9369
   - enabled: 1
     path: Assets/Tests/PlayMode/Scenes/SceneForTesting.unity
@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level03_Enemies.unity
     guid: 92fa74f66aab6794ba7b7bc13dfb4658
+  - enabled: 1
+    path: Assets/Scenes/Level04_Patric.unity
+    guid: f528c5cf287e21349aa0abe67c46317d
   - enabled: 1
     path: Assets/Scenes/Level05.unity
     guid: 8c58f10da780c4b4b9ab97451d0025b0

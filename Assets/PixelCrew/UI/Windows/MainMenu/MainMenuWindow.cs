@@ -19,8 +19,7 @@ namespace PixelCrew.UI.Windows.MainMenu
             _closeAction = () =>
             {
                 var loader = FindObjectOfType<LevelLoader>();
-                // loader.LoadLevel("Level01_Puzzle");
-                loader.LoadLevel("Level04");
+                loader.LoadLevel("Level01_Puzzle");
             };
             
             Close();
