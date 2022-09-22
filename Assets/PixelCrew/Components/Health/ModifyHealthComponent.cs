@@ -62,10 +62,10 @@ namespace PixelCrew.Components.Health
             var chanceRoll = Random.Range(1, maxChance + 1);
             var isCriticalAttack = criticalAttackChance >= chanceRoll;
 
-            if (isCriticalAttack)
-            {
-                Debug.Log($"Critical Attack! Damage x2. (Chance:{criticalAttackChance} Roll:{chanceRoll})");
-            }
+            // if (isCriticalAttack)
+            // {
+            //     Debug.Log($"Critical Attack! Damage x2. (Chance:{criticalAttackChance} Roll:{chanceRoll})");
+            // }
             
             return isCriticalAttack;
         }

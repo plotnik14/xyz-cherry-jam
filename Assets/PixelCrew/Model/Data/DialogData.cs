@@ -6,9 +6,9 @@ namespace PixelCrew.Model.Data
     [Serializable]
     public struct DialogData
     {
-        [SerializeField] public Sentence[] Sentences;
         [SerializeField] private DialogType _type;
-        
+        [SerializeField] public Sentence[] Sentences;
+
         public DialogType Type => _type;  
     }
     

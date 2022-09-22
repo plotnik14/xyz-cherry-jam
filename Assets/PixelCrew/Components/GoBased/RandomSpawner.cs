@@ -8,7 +8,7 @@ namespace PixelCrew.Components.GoBased
 {
     public class RandomSpawner : MonoBehaviour
     {
-        [SerializeField] private bool _usePool = true;
+        [SerializeField] private bool _usePool;
         
         [Header("Spawn bound:")]
         [SerializeField] private float _sectorAngle = 60;
