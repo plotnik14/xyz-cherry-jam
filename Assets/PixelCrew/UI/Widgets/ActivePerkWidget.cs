@@ -36,6 +36,8 @@ namespace PixelCrew.UI.Widgets
 
         private void OnPerkUsed(string perkId)
         {
+            if (perkId != _data.Id) return;
+
             _curretCooldown = _data.Cooldown;
             _cooldownCounter.text = _curretCooldown.ToString("0.0");
             _isCooldownActive = true;

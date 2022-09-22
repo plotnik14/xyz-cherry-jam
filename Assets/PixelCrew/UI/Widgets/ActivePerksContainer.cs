@@ -24,11 +24,11 @@ namespace PixelCrew.UI.Widgets
         
         private void OnPerksChanged()
         {
-            var perkId = _session.PerksModel.Used;
-            if (string.IsNullOrEmpty(perkId)) return;
+            var perks = _session.PerksModel.GetActivePerks();
+            if (perks.Count == 0) return;
             
-            var perkDef = DefsFacade.I.Perks.Get(perkId);
-            _dataGroup.SetData(new List<PerkDef> {perkDef});
+            var perkDefs = DefsFacade.I.Perks.Get(perks);
+            _dataGroup.SetData(perkDefs);
         }
 
         private void OnDestroy()

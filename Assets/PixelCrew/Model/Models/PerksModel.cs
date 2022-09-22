@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using PixelCrew.Model.Data;
 using PixelCrew.Model.Data.Properties;
 using PixelCrew.Model.Definition;
@@ -70,9 +71,14 @@ namespace PixelCrew.Model.Models
             return _data.Inventory.HasEnough(def.Price);
         }
 
-        public bool IsSuperThrowSupported => IsUsed("super-throw");
-        public bool IsDoubleJumpSupported => IsUsed("double-jump");
-        public bool IsMagicShieldSupported => IsUsed("magic-shield");
-        public bool IsFreezeEnemiesSupported => IsUsed("freezing-enemies");
+        public List<string> GetActivePerks()
+        {
+            return _data.Perks.GetUnlocked();
+        }
+
+        public bool IsSuperThrowSupported => IsUnlocked("super-throw");
+        public bool IsDoubleJumpSupported => IsUnlocked("double-jump");
+        public bool IsMagicShieldSupported => IsUnlocked("magic-shield");
+        public bool IsFreezeEnemiesSupported => IsUnlocked("freezing-enemies");
     }
 }

@@ -4335,6 +4335,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UseButton
       objectReference: {fileID: 0}
+    - target: {fileID: 1430290385186407408, guid: 12e37ef9374cea44a948dc798e9aa276,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3420028924577614241, guid: 12e37ef9374cea44a948dc798e9aa276,
         type: 3}
       propertyPath: m_Pivot.x
@@ -4517,7 +4522,7 @@ PrefabInstance:
     - target: {fileID: 3420028924577614241, guid: 12e37ef9374cea44a948dc798e9aa276,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3420028924577614241, guid: 12e37ef9374cea44a948dc798e9aa276,
         type: 3}
@@ -4527,7 +4532,7 @@ PrefabInstance:
     - target: {fileID: 3420028924577614241, guid: 12e37ef9374cea44a948dc798e9aa276,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3420028924577614241, guid: 12e37ef9374cea44a948dc798e9aa276,
         type: 3}
@@ -4537,7 +4542,7 @@ PrefabInstance:
     - target: {fileID: 3420028924577614241, guid: 12e37ef9374cea44a948dc798e9aa276,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 40
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 3420028924577614241, guid: 12e37ef9374cea44a948dc798e9aa276,
         type: 3}
@@ -4582,7 +4587,7 @@ PrefabInstance:
     - target: {fileID: 3420028924577614241, guid: 12e37ef9374cea44a948dc798e9aa276,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -80
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 3420028924577614241, guid: 12e37ef9374cea44a948dc798e9aa276,
         type: 3}

@@ -23,5 +23,10 @@ namespace PixelCrew.Model.Data
         {
             return _unlocked.Contains(id);
         }
+
+        public List<string> GetUnlocked()
+        {
+            return new List<string>(_unlocked);
+        }
     }
 }

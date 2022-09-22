@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using PixelCrew.Model.Definition.Repositories.Items;
 using UnityEngine;
 
@@ -7,6 +8,19 @@ namespace PixelCrew.Model.Definition.Repositories
     [CreateAssetMenu(menuName = "Defs/Repositories/Perks", fileName = "Perks")]
     public class PerkRepository : DefRepository<PerkDef>
     {
+        public List<PerkDef> Get(List<string> ids)
+        {
+            // if (ids.Count == 0) return default;
+            var perkDefs = new List<PerkDef>();
+
+            foreach (var itemDef in _collection)
+            {
+                if (ids.Contains(itemDef.Id)) 
+                    perkDefs.Add(itemDef);
+            }
+            
+            return perkDefs;
+        }
     }
     
     [Serializable]

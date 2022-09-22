@@ -38,8 +38,8 @@ namespace PixelCrew.UI.Windows.Perks
             _dataGroup.SetData(DefsFacade.I.Perks.All);
 
             var selected = _session.PerksModel.InterfaceSelection.Value;
-            _useButton.gameObject.SetActive(_session.PerksModel.IsUnlocked(selected));
-            _useButton.interactable = _session.PerksModel.Used != selected;
+            // _useButton.gameObject.SetActive(_session.PerksModel.IsUnlocked(selected));
+            // _useButton.interactable = _session.PerksModel.Used != selected;
             
             _buyButton.gameObject.SetActive(!_session.PerksModel.IsUnlocked(selected));
             _buyButton.interactable = _session.PerksModel.CanBuy(selected);
