@@ -34,10 +34,3 @@ MonoBehaviour:
       _itemId: Diamond
       _count: 10
     _cooldown: 30
-  - _id: freezing-enemies
-    _icon: {fileID: 21300000, guid: 889c7c8c635b70b42b284fe9b5d26f90, type: 3}
-    _info: Press Alt to freeze nearby enemies for 10 seconds
-    _price:
-      _itemId: Diamond
-      _count: 20
-    _cooldown: 30
