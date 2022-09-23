@@ -9,17 +9,14 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 5090f090021847849bb7094ea8ede275
   - enabled: 1
+    path: Assets/Scenes/Controls.unity
+    guid: 345436b0b6041e047afce01280e37a0f
+  - enabled: 1
     path: Assets/Scenes/Hud.unity
     guid: ba8fb0d4dda4ff14cade5931bdef2f6c
   - enabled: 1
-    path: Assets/Scenes/Test_Level99_Testing.unity
-    guid: a053248dfb5b0ae4f86799a5e7486b98
-  - enabled: 1
-    path: Assets/Scenes/Test_Level04.unity
-    guid: 82d82ccf110ba6f4db6afbff397f9369
-  - enabled: 1
-    path: Assets/Tests/PlayMode/Scenes/SceneForTesting.unity
-    guid: 0258382c5e4ffa041b87cd7c9b065602
+    path: Assets/Scenes/LevelLoader.unity
+    guid: 95e17091feff28b428de996564cb30a7
   - enabled: 1
     path: Assets/Scenes/Level01_Puzzle.unity
     guid: ae9c91b6002229d428b8c706d6e542a8
@@ -36,14 +33,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Level05_Village.unity
     guid: 0fc12fe1e2d417c498f077d7e4a9a17d
   - enabled: 1
-    path: Assets/Scenes/Level05.unity
+    path: Assets/Scenes/Level06_TheDark.unity
     guid: 8c58f10da780c4b4b9ab97451d0025b0
   - enabled: 1
-    path: Assets/Scenes/LevelLoader.unity
-    guid: 95e17091feff28b428de996564cb30a7
-  - enabled: 1
-    path: Assets/Scenes/Controls.unity
-    guid: 345436b0b6041e047afce01280e37a0f
+    path: Assets/Scenes/Level07_TheTreasure.unity
+    guid: ac0ae4691cd50024bb43180212f886d1
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: e44002d1587187c45a263a2b1cba1d71,
       type: 2}

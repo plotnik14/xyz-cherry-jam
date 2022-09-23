@@ -33,4 +33,4 @@ MonoBehaviour:
     _price:
       _itemId: Diamond
       _count: 10
-    _cooldown: 30
+    _cooldown: 20

@@ -6488,7 +6488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 706964cc22f2d9e4380868eea31b42ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneName: 
+  _sceneName: Level06_TheDark
 --- !u!1 &1841139262
 GameObject:
   m_ObjectHideFlags: 0
