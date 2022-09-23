@@ -5229,7 +5229,7 @@ PrefabInstance:
     - target: {fileID: 8460971871556006421, guid: ec9f74d91d1310d47b360d21426a9794,
         type: 3}
       propertyPath: _sceneName
-      value: Level05
+      value: Level05_Village
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 980085006, guid: ec9f74d91d1310d47b360d21426a9794, type: 3}
