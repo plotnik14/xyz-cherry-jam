@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework;
-using PixelCrew;
+using CherryJam;
 
 namespace Tests.EditMode
 {
