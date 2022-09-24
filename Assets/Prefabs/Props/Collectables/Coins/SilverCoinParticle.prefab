@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1920765487022971391}
   - component: {fileID: 1896136019944314156}
   - component: {fileID: 1293435347536743743}
+  - component: {fileID: 838759520943105076}
   m_Layer: 14
   m_Name: SilverCoinParticle
   m_TagString: SilverCoin
@@ -141,12 +142,12 @@ MonoBehaviour:
     _onComplete:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1293435347536743743}
-          m_MethodName: Release
-          m_Mode: 1
+        - m_Target: {fileID: 838759520943105076}
+          m_MethodName: ReleaseOrDestroy
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 4400349685238173113}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -306,3 +307,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &838759520943105076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4400349685238173113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c15a6552d76e0443817419f3dc04fd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectToDestroy: {fileID: 0}

@@ -137,14 +137,15 @@ namespace PixelCrew.Creatures
         public void UpdateSpriteDirection(Vector2 direction)
         {
             var multiplier = _invertScale ? -1 : 1;
-
+            var localScale = transform.localScale;
+            
             if (direction.x > 0)
             {
-                transform.localScale = new Vector3(1 * multiplier, 1, 1);
+                transform.localScale = new Vector3( Mathf.Abs(localScale.x) * multiplier, localScale.y, localScale.z);
             }
             else if (direction.x < 0)
             {
-                transform.localScale = new Vector3(-1 * multiplier, 1, 1);
+                transform.localScale = new Vector3(-1 * Mathf.Abs(localScale.x) * multiplier, localScale.y, localScale.z);
             }
         }
 

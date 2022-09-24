@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace PixelCrew.Components.GoBased
 {
-    public class FallingProjectileSpawner : MonoBehaviour, IProjectileSpawner
+    public class GroupProjectileSpawner : MonoBehaviour, IProjectileSpawner
     {
         [SerializeField] private bool _usePool = true;
         
@@ -17,6 +17,7 @@ namespace PixelCrew.Components.GoBased
         [SerializeField] private DirectionalProjectile _projectilePrefab;
         [SerializeField] private float _count;
         [SerializeField] private float _delay;
+        [SerializeField] private Direction _direction;
         
         [ContextMenu("Spawn")]
         public void LaunchProjectiles()
@@ -26,6 +27,7 @@ namespace PixelCrew.Components.GoBased
         
         private IEnumerator SpawnProjectiles()
         {
+            var direction = _direction == Direction.Up ? Vector2.up : Vector2.down;
             var areaPosition = transform.position;
             
             var positionX = areaPosition.x;
@@ -40,7 +42,7 @@ namespace PixelCrew.Components.GoBased
                     : SpawnUtils.Spawn(_projectilePrefab.gameObject, spawnPosition);
                 
                 var projectile = instance.GetComponent<DirectionalProjectile>();
-                projectile.Launch(Vector2.down);
+                projectile.Launch(direction);
 
                 yield return new WaitForSeconds(_delay);
                 
@@ -61,15 +63,39 @@ namespace PixelCrew.Components.GoBased
             for (var i = 0; i < _count; i++)
             {
                 var spawnPosition = new Vector3(positionX, areaPosition.y, areaPosition.z);
-                var arrowVertex = spawnPosition + new Vector3(0, -0.5f, 0);
-                
-                UnityEditor.Handles.DrawLine(spawnPosition, arrowVertex);
-                UnityEditor.Handles.DrawLine(arrowVertex + new Vector3(-0.1f, 0.2f, 0), arrowVertex);
-                UnityEditor.Handles.DrawLine(arrowVertex + new Vector3(0.1f, 0.2f, 0), arrowVertex);
+
+                if (_direction == Direction.Up)
+                    DrawUpArrows(spawnPosition);
+                else
+                    DrawDownArrows(spawnPosition);
                     
                 positionX += positionXDelta;
             }
         }
+
+        private void DrawUpArrows(Vector3 spawnPosition)
+        {
+            var arrowVertex = spawnPosition + new Vector3(0, 0.5f, 0);
+                
+            UnityEditor.Handles.DrawLine(spawnPosition, arrowVertex);
+            UnityEditor.Handles.DrawLine(arrowVertex + new Vector3(-0.1f, -0.2f, 0), arrowVertex);
+            UnityEditor.Handles.DrawLine(arrowVertex + new Vector3(0.1f, -0.2f, 0), arrowVertex);
+        }
+        
+        private void DrawDownArrows(Vector3 spawnPosition)
+        {
+            var arrowVertex = spawnPosition + new Vector3(0, -0.5f, 0);
+                
+            UnityEditor.Handles.DrawLine(spawnPosition, arrowVertex);
+            UnityEditor.Handles.DrawLine(arrowVertex + new Vector3(-0.1f, 0.2f, 0), arrowVertex);
+            UnityEditor.Handles.DrawLine(arrowVertex + new Vector3(0.1f, 0.2f, 0), arrowVertex);
+        }
 #endif
+    }
+    
+    public enum Direction
+    {
+        Up,
+        Down
     }
 }

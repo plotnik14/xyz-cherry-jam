@@ -18,7 +18,7 @@ namespace PixelCrew.Creatures.Mobs.Boss.States
         private IProjectileSpawner GetSpawner(Animator animator)
         {
             if (_isCannonBallsShootingStage)
-                return animator.GetComponentInChildren<FallingProjectileSpawner>();
+                return animator.GetComponentInChildren<GroupProjectileSpawner>();
             
             if (_isPerlShootingStage)
                  return animator.GetComponent<CircularProjectileSpawner>();
