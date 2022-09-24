@@ -1,3 +1,3 @@
-# platformer-xyz
+# xyz-cherry-jam
 
-Unity project for XYZ School
+XYZ Game Jam
