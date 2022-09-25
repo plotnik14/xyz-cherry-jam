@@ -32,7 +32,7 @@ namespace CherryJam.Creatures.Hero
         [SerializeField] private int _multiThrowMaxCount = 3;
         [SerializeField] private float _delayBetweenThrows = 0.3f;
         [SerializeField] private Cooldown _throwCooldown;
-        [SerializeField] private SpawnComponent _throwSpawner;
+        [SerializeField] private DirectionalSpawnComponent _rangeProjectileSpawner;
 
         [Space]
         [Header("Perks")]
@@ -71,6 +71,7 @@ namespace CherryJam.Creatures.Hero
 
         // ToDo move to proper place
         private Dictionary<UseActionDef, AbstractUseAction> _useActions;
+        private static readonly int IsLeftDirectionKey = Animator.StringToHash("is-left-direction");
 
         private const string SwordId = "Sword";
         private const string CoinId = "Coin";
@@ -131,7 +132,7 @@ namespace CherryJam.Creatures.Hero
             _session.StatsModel.OnUpgraded += OnHeroUpgraded;
             health.SetHealth(_session.Data.Hp.Value);
 
-            UpdateHeroWeapon();
+            // UpdateHeroWeapon();
             UpdateCooldown();
         }
 
@@ -166,10 +167,10 @@ namespace CherryJam.Creatures.Hero
 
         private void OnInventoryChanged(string id, int value)        
         {
-            if (id == SwordId)
-            {
-                UpdateHeroWeapon();
-            }
+            // if (id == SwordId)
+            // {
+            //     UpdateHeroWeapon();
+            // }
         }
 
         public void OnHealthChanged(int currentHealth)
@@ -292,8 +293,8 @@ namespace CherryJam.Creatures.Hero
 
         private void SpawnThrownParticle(GameObject projectile)
         {
-            _throwSpawner.SetPrefab(projectile);
-            _throwSpawner.Spawn();
+            _rangeProjectileSpawner.SetPrefab(projectile);
+            _rangeProjectileSpawner.Spawn();
             Sounds.Play("Range");
         }
 
@@ -516,6 +517,34 @@ namespace CherryJam.Creatures.Hero
                 _lightComponent = _lightSource.GetComponent<LightSourceComponent>();
             
             _lightComponent.Refill();
+        }
+
+        public void RangeAttack(Vector3 target)
+        {
+            var direction = target - _rangeProjectileSpawner.gameObject.transform.position;
+            direction.z = 0;
+            _rangeProjectileSpawner.Spawn(direction.normalized);
+        }
+
+        public override void UpdateSpriteDirection(Vector2 _)
+        {
+            var mousePosition = Mouse.current.position.ReadValue();
+            var target = Camera.main.ScreenToWorldPoint(mousePosition);
+            var direction = target - transform.position;
+            
+            // var multiplier = _invertScale ? -1 : 1;
+            var localScale = transform.localScale;
+            
+            if (direction.x > 0)
+            {
+                transform.localScale = new Vector3( Mathf.Abs(localScale.x), localScale.y, localScale.z);
+                Animator.SetBool(IsLeftDirectionKey, false);
+            }
+            else if (direction.x < 0)
+            {
+                transform.localScale = new Vector3(-1 * Mathf.Abs(localScale.x), localScale.y, localScale.z);
+                Animator.SetBool(IsLeftDirectionKey, true);
+            }
         }
     }
 }

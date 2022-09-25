@@ -30,6 +30,16 @@ namespace CherryJam.Creatures.Hero
             }
         }
         
+        public void OnRangeAttack(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                var mousePosition = Mouse.current.position.ReadValue();
+                var target = Camera.main.ScreenToWorldPoint(mousePosition);
+                _hero.RangeAttack(target);
+            }
+        }
+        
         public void OnThrow(InputAction.CallbackContext context)
         {
             if (context.performed)

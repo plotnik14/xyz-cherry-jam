@@ -85,6 +85,7 @@ namespace CherryJam.Creatures
 
         protected virtual float CalculateXVelocity()
         {
+            Debug.Log($"CalculateXVelocity:{Direction.x * CalculateSpeed()}");
             return Direction.x * CalculateSpeed();
         }
 
@@ -134,7 +135,7 @@ namespace CherryJam.Creatures
             Sounds.Play("Jump");
         }
 
-        public void UpdateSpriteDirection(Vector2 direction)
+        public virtual void UpdateSpriteDirection(Vector2 direction)
         {
             var multiplier = _invertScale ? -1 : 1;
             var localScale = transform.localScale;

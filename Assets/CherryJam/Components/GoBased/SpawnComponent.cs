@@ -6,9 +6,9 @@ namespace CherryJam.Components.GoBased
 {
     public class SpawnComponent : MonoBehaviour
     {
-        [SerializeField] private Transform _target;
-        [SerializeField] private GameObject _prefab;
-        [SerializeField] private bool _usePool;
+        [SerializeField] protected Transform _target;
+        [SerializeField] protected GameObject _prefab;
+        [SerializeField] protected bool _usePool;
 
         [ContextMenu("Spawn")]
         public void Spawn()
