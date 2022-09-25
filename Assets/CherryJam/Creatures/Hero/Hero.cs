@@ -180,8 +180,6 @@ namespace CherryJam.Creatures.Hero
       
         public override void Attack()
         {
-            if (SwordsCount <= 0) return;
-
             base.Attack();
         }
 
@@ -449,7 +447,8 @@ namespace CherryJam.Creatures.Hero
             if (_speedUpCooldown.IsReady)
                 _additionalSpeed = 0f;
 
-            var defaultSpeed = _session.StatsModel.GetValue(StatId.Speed);
+            // var defaultSpeed = _session.StatsModel.GetValue(StatId.Speed);
+            var defaultSpeed = _speed;
             return defaultSpeed + _additionalSpeed;
         }
 

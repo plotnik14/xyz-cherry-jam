@@ -85,7 +85,6 @@ namespace CherryJam.Creatures
 
         protected virtual float CalculateXVelocity()
         {
-            Debug.Log($"CalculateXVelocity:{Direction.x * CalculateSpeed()}");
             return Direction.x * CalculateSpeed();
         }
 
