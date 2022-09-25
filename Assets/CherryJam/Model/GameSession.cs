@@ -94,7 +94,7 @@ namespace CherryJam.Model
         private void LoadUIs()
         {
             LoadOnScreenControls();
-            SceneManager.LoadScene("Hud", LoadSceneMode.Additive);
+            //SceneManager.LoadScene("Hud", LoadSceneMode.Additive);
         }
 
         [Conditional("USE_ONSCREEN_CONTROLS")]

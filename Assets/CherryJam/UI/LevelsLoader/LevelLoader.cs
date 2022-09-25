@@ -24,7 +24,7 @@ namespace CherryJam.UI.LevelsLoader
 
         private static void InitLoader()
         {
-            SceneManager.LoadScene("LevelLoader", LoadSceneMode.Additive);
+            //SceneManager.LoadScene("LevelLoader", LoadSceneMode.Additive);
         }
 
         public void LoadLevel(string sceneName)
