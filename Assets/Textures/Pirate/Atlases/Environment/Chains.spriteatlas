@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Chains
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 6758f444908e94b4dab4bc7115a013e2, type: 3}
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 6a02e9116998ad64e94bdec9a29f6d2a, type: 3}
+  - {fileID: 21300000, guid: 4250ad638ccd1f048a25f7979625ce84, type: 3}
+  - {fileID: 21300000, guid: bd450183735c4a84e9308d6854d8736e, type: 3}
+  - {fileID: 21300000, guid: bf3937e31f0278d4886a4282ba0894b1, type: 3}
+  - {fileID: 21300000, guid: 7f6492a6183ad2049ba5782829c974f7, type: 3}
+  - {fileID: 21300000, guid: 46c25b9802952794eae1873cefbcf80a, type: 3}
+  - {fileID: 21300000, guid: de587a1b78821064d8317c6ba30b4acd, type: 3}
+  - {fileID: 21300000, guid: c7956b7b22d56bd4691de3fef4013879, type: 3}
+  - {fileID: 21300000, guid: f0cf0dfb17c9b7e4b899a43368b77db3, type: 3}
+  - {fileID: 21300000, guid: 9077009db11da2540a9703a4a7b36437, type: 3}
+  - {fileID: 21300000, guid: c9214a1e1aa5bf34f81ec58cd09a228f, type: 3}
+  - {fileID: 21300000, guid: 0edb347ea1bbaf24b8d49c05b3f788e7, type: 3}
+  - {fileID: 21300000, guid: f7494e7e062eb7a48b2b1d6260e6bbcd, type: 3}
+  - {fileID: 21300000, guid: 5fdeef9e06b18de46bff94279d2dab25, type: 3}
+  - {fileID: 21300000, guid: 502f9cae8f316404ca0e7191170a3466, type: 3}
+  - {fileID: 21300000, guid: a530dc0f5add39a4fae925fb8e80f32c, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - 03
+  - 08
+  - 07
+  - 06
+  - 03
+  - 04
+  - 01
+  - 05
+  - 05
+  - 04
+  - 01
+  - 02
+  - 08
+  - 02
+  - 06
+  - 07
+  m_Tag: Chains
+  m_IsVariant: 0
