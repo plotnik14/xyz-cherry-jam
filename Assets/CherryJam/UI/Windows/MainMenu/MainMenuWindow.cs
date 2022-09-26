@@ -19,7 +19,7 @@ namespace CherryJam.UI.Windows.MainMenu
             _closeAction = () =>
             {
                 var loader = FindObjectOfType<LevelLoader>();
-                loader.LoadLevel("Level01_Puzzle");
+                loader.LoadLevel("Level1");
             };
             
             Close();
