@@ -63,8 +63,14 @@ TagManager:
   - name: Creatures
     uniqueID: 3094268343
     locked: 0
+  - name: TileMapBefore
+    uniqueID: 1998623141
+    locked: 0
   - name: TileMap
     uniqueID: 3084107573
+    locked: 0
+  - name: TileMapAfter
+    uniqueID: 2987962559
     locked: 0
   - name: Foreground
     uniqueID: 3386234807
