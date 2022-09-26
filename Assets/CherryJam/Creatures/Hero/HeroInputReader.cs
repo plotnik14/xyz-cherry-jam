@@ -40,14 +40,6 @@ namespace CherryJam.Creatures.Hero
             }
         }
         
-        public void OnThrow(InputAction.CallbackContext context)
-        {
-            if (context.performed)
-            {
-                _hero.Throw(context.duration);
-            }
-        }
-
         public void OnNextItem(InputAction.CallbackContext context)
         {
             if (context.performed)

@@ -57,17 +57,19 @@ namespace CherryJam.Creatures.Hero
         private float _speedMod;
         private LightSourceComponent _lightComponent;
         private CameraShakeEffect _cameraShake;
-        
+        private Vector3 _rangeAttackTarget;
+
         private readonly Cooldown _speedUpCooldown = new Cooldown();
         private float _additionalSpeed;
-        
+
         private readonly Cooldown _superThrowCooldown = new Cooldown();
         private readonly Cooldown _magicShieldCooldown = new Cooldown();
         private readonly Cooldown _freezeEnemiesCooldown = new Cooldown();
-        
+
         private readonly Cooldown _activeMagicShieldCooldown = new Cooldown();
 
         private event Action<string> _onPerkUsed;
+
 
         // ToDo move to proper place
         private Dictionary<UseActionDef, AbstractUseAction> _useActions;
@@ -182,12 +184,7 @@ namespace CherryJam.Creatures.Hero
         {
             base.Attack();
         }
-
-        public void Throw(double pressDuration)
-        {
-            PerformThrowing(pressDuration);
-        }
-
+        
         private void UsePotion()
         {
             var potion = DefsFacade.I.Potions.Get(SelectedItemId);
@@ -219,81 +216,16 @@ namespace CherryJam.Creatures.Hero
             return _session.QuickInventory.SelectedDef.HasTag(tag);
         }
 
-        private void PerformThrowing(double pressDuration)
-        {
-            if (!CanThrow) return;
-            
-            _isMultiThrow = pressDuration >= _multiThrowPressDuration && _session.PerksModel.IsSuperThrowSupported;
-
-            if (_isMultiThrow)
-                if (!_superThrowCooldown.IsReady) return;
-            else
-                if (!_throwCooldown.IsReady) return;
-            
-            Animator.SetTrigger(ThrowKey);
-
-            if (_isMultiThrow)
-            {
-                _superThrowCooldown.Reset();
-                _onPerkUsed?.Invoke("super-throw");
-            }
-            else
-                _throwCooldown.Reset();
-        }
-        
         public bool AddToInventory(string id, int value)
         {
             return _session.Data.Inventory.Add(id, value);
         }
-
-        public void OnThrowAnimationTriggered()
-        {
-            if (_isMultiThrow && _session.PerksModel.IsSuperThrowSupported)
-            {
-                var itemsCount = _session.Data.Inventory.Count(SwordId);
-                // var possibleCountToThrow = SelectedItemId == SwordId ? itemsCount - 1 : itemsCount;
-                var possibleCountToThrow =  itemsCount - 1;
-                var countToThrow = Mathf.Min(possibleCountToThrow, _multiThrowMaxCount);
-
-                StartCoroutine(MultiThrow(countToThrow));
-                
-                _session.Data.Inventory.Remove(SwordId, countToThrow);
-                _isMultiThrow = false;
-            }
-            else
-            {
-                // var throwableId = _session.QuickInventory.SelectedItem.Id;
-                var throwableId = SwordId;
-                var throwableDef = DefsFacade.I.ThrowableItems.Get(throwableId);
-                SpawnThrownParticle(throwableDef.Projectile);
-                _session.Data.Inventory.Remove(throwableId, 1);
-            }
-        }
-
-        private IEnumerator MultiThrow(int countToThrow)
-        {
-            LockInput();
-            
-            // var throwableId = _session.QuickInventory.SelectedItem.Id;
-            var throwableId = SwordId;
-            var throwableDef = DefsFacade.I.ThrowableItems.Get(throwableId);
-            
-            for (var i = 0; i < countToThrow; i++)
-            {
-                SpawnThrownParticle(throwableDef.Projectile);
-                yield return new WaitForSeconds(_delayBetweenThrows);
-            }
-
-            UnlockInput();
-
-            yield return null;
-        }
-
+        
         private void SpawnThrownParticle(GameObject projectile)
         {
-            _rangeProjectileSpawner.SetPrefab(projectile);
-            _rangeProjectileSpawner.Spawn();
-            Sounds.Play("Range");
+            // _rangeProjectileSpawner.SetPrefab(projectile);
+            // _rangeProjectileSpawner.Spawn();
+            // Sounds.Play("Range");
         }
 
         public void LockInput()
@@ -520,7 +452,17 @@ namespace CherryJam.Creatures.Hero
 
         public void RangeAttack(Vector3 target)
         {
-            var direction = target - _rangeProjectileSpawner.gameObject.transform.position;
+            // if (!CanThrow) return;
+            // if (!_throwCooldown.IsReady) return;
+            _rangeAttackTarget = target;
+            Animator.SetTrigger(RangeAttackKey);
+            
+            // _throwCooldown.Reset();
+        }
+        
+        public void OnRangeAttackAnimationTriggered()
+        {
+            var direction = _rangeAttackTarget - _rangeProjectileSpawner.gameObject.transform.position;
             direction.z = 0;
             _rangeProjectileSpawner.Spawn(direction.normalized);
         }

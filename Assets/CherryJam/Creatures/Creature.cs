@@ -40,7 +40,7 @@ namespace CherryJam.Creatures
         protected static readonly int IsOnGroundKey = Animator.StringToHash("is-on-ground");
         protected static readonly int HitKey = Animator.StringToHash("hit");
         protected static readonly int AttackKey = Animator.StringToHash("attack");
-        protected static readonly int ThrowKey = Animator.StringToHash("throw");
+        protected static readonly int RangeAttackKey = Animator.StringToHash("range-attack");
         protected static readonly int IsDeadKey = Animator.StringToHash("is-dead");
 
 
