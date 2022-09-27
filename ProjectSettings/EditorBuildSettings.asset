@@ -18,8 +18,14 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelTest.unity
     guid: 226b15b37e593fb4ba1fab70fcbc8ed1
   - enabled: 1
-    path: Assets/Scenes/Level1.unity
-    guid: 36c421094df01e74b9c3bc8f43d6fc19
+    path: Assets/Scenes/Level2_Garden.unity
+    guid: 92a1b477a56cdbc4d904428da75ba08f
+  - enabled: 1
+    path: Assets/Scenes/Level3_Shrine.unity
+    guid: 79fba61789d0df04ebd203f8ab08d1b5
+  - enabled: 1
+    path: Assets/Scenes/Level4_MountainPeak.unity
+    guid: 2dbbf69b7a840b740976a00f52efffb1
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: e44002d1587187c45a263a2b1cba1d71,
       type: 2}
