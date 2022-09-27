@@ -22,6 +22,8 @@ namespace CherryJam.Creatures
         [SerializeField] protected CheckCircleOverlap _attackRange;
         [SerializeField] protected CheckCircleOverlap _magicRange;
         [SerializeField] protected SpawnListComponent _particles;
+        
+        [SerializeField] private DirectionalSpawnComponent _rangeProjectileSpawnerCreature;
 
         protected Rigidbody2D Rigidbody;
         protected Vector2 Direction;
@@ -30,6 +32,8 @@ namespace CherryJam.Creatures
         protected bool IsGrounded;
         protected bool IsJumping;
         protected bool IsFrozen;
+
+        private Hero.Hero _hero;
 
         protected readonly Cooldown FreezeCooldown = new Cooldown();
 
@@ -166,10 +170,38 @@ namespace CherryJam.Creatures
             Animator.SetTrigger(AttackKey);
             Sounds.Play("Melee");
         } 
+        
+        public void RangeAttack()
+        {
+            Animator.SetTrigger(RangeAttackKey);
+            Sounds.Play("Range");
+        } 
 
         public virtual void OnAttackAnimationTriggered()
         {
             _attackRange.Check();
+        }
+        
+        public void OnRangeAttackAnimationTriggered()
+        {
+            if (_hero == null)
+                _hero = FindObjectOfType<Hero.Hero>();
+
+            var rangeAttackTarget = _hero.transform.position;
+            
+            var directionToHero = GetDirectionToTarget(_hero.gameObject);
+            UpdateSpriteDirection(directionToHero);
+            
+            var direction = rangeAttackTarget - _rangeProjectileSpawnerCreature.gameObject.transform.position;
+            direction.z = 0;
+            _rangeProjectileSpawnerCreature.Spawn(direction.normalized);
+        }
+        
+        protected Vector2 GetDirectionToTarget(GameObject target)
+        {
+            var direction = target.transform.position - transform.position;
+            direction.y = 0;
+            return direction.normalized;
         }
 
         public void Freeze()

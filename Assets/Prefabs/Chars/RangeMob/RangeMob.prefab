@@ -178,7 +178,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.63487244, y: 0.04016614}
+  m_Offset: {x: -0.17622566, y: -0.13623714}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -189,7 +189,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 22.428917, y: 10.848032}
+  m_Size: {x: 33.365627, y: 19.809084}
   m_EdgeRadius: 0
 --- !u!114 &1857073679
 MonoBehaviour:
@@ -226,7 +226,7 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1288067869}
+      - m_Target: {fileID: 7986551536112821836}
         m_MethodName: OnHeroInVision
         m_Mode: 0
         m_Arguments:
@@ -362,6 +362,52 @@ MonoBehaviour:
   _target: {fileID: 1757061468967043246}
   _prefab: {fileID: 5527392513366398762, guid: 1cc4d7c8b17cf404a87efe008e7aed98, type: 3}
   _usePool: 1
+--- !u!1 &6570562394086533125
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7027671445851589668}
+  - component: {fileID: 85658159490289863}
+  m_Layer: 15
+  m_Name: RangeAttackSpawnPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7027671445851589668
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6570562394086533125}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.09, y: -0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8196759456510313764}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &85658159490289863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6570562394086533125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 810e0c0670474b198fe0510e3685ad22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 7027671445851589668}
+  _prefab: {fileID: 3169117936097083666, guid: 879189889e5d2754a994001dcdd412ff, type: 3}
+  _usePool: 1
 --- !u!1 &6847312007630125412
 GameObject:
   m_ObjectHideFlags: 0
@@ -488,7 +534,7 @@ GameObject:
   - component: {fileID: 8196759456510313772}
   - component: {fileID: 8196759456688534597}
   - component: {fileID: 1442171945}
-  - component: {fileID: 1288067869}
+  - component: {fileID: 7986551536112821836}
   - component: {fileID: 7116715449670555679}
   - component: {fileID: 1722848639}
   m_Layer: 13
@@ -518,6 +564,7 @@ Transform:
   - {fileID: 1559563091107233652}
   - {fileID: 1856421975895718832}
   - {fileID: 833426560837383649}
+  - {fileID: 7027671445851589668}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -671,7 +718,7 @@ MonoBehaviour:
   _onDie:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1288067869}
+      - m_Target: {fileID: 7986551536112821836}
         m_MethodName: OnDie
         m_Mode: 1
         m_Arguments:
@@ -765,7 +812,8 @@ MonoBehaviour:
   _attackRange: {fileID: 690870448}
   _magicRange: {fileID: 0}
   _particles: {fileID: 8196759456688534597}
---- !u!114 &1288067869
+  _rangeProjectileSpawnerCreature: {fileID: 85658159490289863}
+--- !u!114 &7986551536112821836
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -774,13 +822,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 8196759456510313766}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 496c519fa5d119646a0e02495e30636b, type: 3}
+  m_Script: {fileID: 11500000, guid: 3bb5d831c5bb42869b291bf5fe2bf305, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _vision: {fileID: 1857073679}
   _canAttack: {fileID: 2136022512}
-  _alarmDelay: 0.5
-  _attackCooldown: 1
+  _platformCheck: {fileID: 1848102005}
+  _wallCheck: {fileID: 934075363693512090}
+  _alarmDelay: 0
+  _attackCooldown: 3
   _missHeroCooldown: 0.5
 --- !u!114 &7116715449670555679
 MonoBehaviour:

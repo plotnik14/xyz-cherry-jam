@@ -11,6 +11,8 @@ namespace CherryJam.Creatures.Mobs
         [Header("MobAI")]
         [SerializeField] protected ColliderCheck _vision;
         [SerializeField] protected ColliderCheck _canAttack;
+        [SerializeField] private LayerCheck _platformCheck;
+        [SerializeField] private LayerCheck _wallCheck;
 
         [SerializeField] protected float _alarmDelay;
         [SerializeField] protected float _attackCooldown;
@@ -59,8 +61,10 @@ namespace CherryJam.Creatures.Mobs
                 }
                 else
                 {
-                    SetDirectionToTarget();
-
+                    if (_platformCheck.IsTouchingLayer && !_wallCheck.IsTouchingLayer)
+                        SetDirectionToTarget();
+                    else
+                        StopCreature();
                 }
 
                 yield return null;
@@ -74,7 +78,7 @@ namespace CherryJam.Creatures.Mobs
             StartState(_patrol.DoPatrol());
         }
 
-        protected IEnumerator Attack()
+        protected virtual IEnumerator Attack()
         {
             while (_canAttack.IsTouchingLayer)
             {
@@ -98,7 +102,7 @@ namespace CherryJam.Creatures.Mobs
             return direction.normalized;
         }
 
-        private IEnumerator AgroToHero()
+        protected virtual IEnumerator AgroToHero()
         {
             LookAtHero();
             // _particles.Spawn("Exclamation");
@@ -108,7 +112,7 @@ namespace CherryJam.Creatures.Mobs
             StartState(GoToHero());
         }
 
-        private void LookAtHero()
+        protected void LookAtHero()
         {
             StopCreature();
             var direction = GetDirectionToTarget();

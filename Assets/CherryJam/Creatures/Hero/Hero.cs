@@ -74,6 +74,7 @@ namespace CherryJam.Creatures.Hero
         // ToDo move to proper place
         private Dictionary<UseActionDef, AbstractUseAction> _useActions;
         private static readonly int IsLeftDirectionKey = Animator.StringToHash("is-left-direction");
+        private static readonly int IsHeroKey = Animator.StringToHash("is-hero");
 
         private const string SwordId = "Sword";
         private const string CoinId = "Coin";
@@ -135,6 +136,8 @@ namespace CherryJam.Creatures.Hero
             _session = GameSession.Instance;
             
             UpdatePosition();
+            
+            Animator.SetBool(IsHeroKey, true);
             
             // _cameraShake = FindObjectOfType<CameraShakeEffect>();
 
