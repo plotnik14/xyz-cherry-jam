@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: _MeleeMob
+  m_Controller: {fileID: 9100000, guid: 3d60d365d82850f40b9e6296d005c120, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 886b8afe4219f0f4c8ed7bd43d9eb9b8, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 07e81bfcf9fd07a43a9e4f015dd10a87, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: ecf479fd6b9e0cd4b80fdb893cb9c029, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 62e2effc2aca40b48a30d019cca7bab2, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 27ae1705186bcbd43b8a51e64fe5129c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 0844b4950427ca5489d2caecadb5f7d7, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 8922ca6b32661574cb7b96570da5fa74, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 7ff3062341335ba4596df7d6ec2a5b69, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 7965bd84109e1ca44b8ab3ed08686218, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3f8e3a763f01c25438bd2be8cebc25df, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 89f31d975a5686b4d9b5bd5857a0ebf6, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d58b3bf150e03f7449599590d7907cda, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 512e50489553c874e8843fa77e378017, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: aec2badc31cf61e44be375acce409097, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 936d49f36e4c135459bf3b51b5816606, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 141e751b254509542a8791dcbf96ff51, type: 2}

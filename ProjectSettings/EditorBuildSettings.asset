@@ -15,8 +15,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Hud.unity
     guid: ba8fb0d4dda4ff14cade5931bdef2f6c
   - enabled: 1
-    path: Assets/Scenes/LevelTest.unity
-    guid: 226b15b37e593fb4ba1fab70fcbc8ed1
+    path: Assets/Scenes/Level0_Intro.unity
+    guid: e7a5e318c27f35146b439223e93933f4
+  - enabled: 1
+    path: Assets/Scenes/Level1_Hub.unity
+    guid: e1c002ceac2d7c24fa2c4d15e04efa2a
   - enabled: 1
     path: Assets/Scenes/Level2_Garden.unity
     guid: 92a1b477a56cdbc4d904428da75ba08f
@@ -26,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level4_MountainPeak.unity
     guid: 2dbbf69b7a840b740976a00f52efffb1
+  - enabled: 1
+    path: Assets/Scenes/Level5_BossArena.unity
+    guid: 23a83d47958e7414fb123f28d52a348e
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: e44002d1587187c45a263a2b1cba1d71,
       type: 2}

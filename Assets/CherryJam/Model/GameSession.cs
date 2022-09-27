@@ -26,6 +26,8 @@ namespace CherryJam.Model
         public PerksModel PerksModel { get; private set; }
         public StatsModel StatsModel { get; private set; }
         public ShopModel ShopModel { get; private set; }
+        
+        public Vector3 SpawnPosition { get; set; }
 
         private readonly CompositeDisposable _trash = new CompositeDisposable();
 

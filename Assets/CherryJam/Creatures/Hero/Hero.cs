@@ -115,6 +115,13 @@ namespace CherryJam.Creatures.Hero
             };
         }
 
+        private void UpdatePosition()
+        {
+            var spawnPosition = GameSession.Instance.SpawnPosition;
+            if (spawnPosition == Vector3.zero) return;
+
+            transform.position = spawnPosition;
+        }
 
         // ToDo Move to a new controller
         public void ShowMainMenuInGame()
@@ -126,7 +133,10 @@ namespace CherryJam.Creatures.Hero
         protected void Start()
         {
             _session = GameSession.Instance;
-            _cameraShake = FindObjectOfType<CameraShakeEffect>();
+            
+            UpdatePosition();
+            
+            // _cameraShake = FindObjectOfType<CameraShakeEffect>();
 
             var health = GetComponent<HealthComponent>();
             _session.Data.Inventory.OnChange += OnInventoryChanged;
