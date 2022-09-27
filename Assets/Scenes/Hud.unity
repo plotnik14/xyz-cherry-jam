@@ -1556,7 +1556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d81964c2b57130a4eb3dbb0aa2c1096c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _heathBar: {fileID: 789826046}
+  _heathBar: {fileID: 1348779488}
 --- !u!1 &382455345
 GameObject:
   m_ObjectHideFlags: 0
@@ -3692,6 +3692,7 @@ GameObject:
   - component: {fileID: 1348779485}
   - component: {fileID: 1348779487}
   - component: {fileID: 1348779486}
+  - component: {fileID: 1348779488}
   m_Layer: 5
   m_Name: HP
   m_TagString: Untagged
@@ -3737,11 +3738,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c9cd89f40eb92844eabfc9aff2ba23ae, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 02a30bcc4e68c234cacee1bcbd4659dd, type: 3}
+  m_Type: 3
   m_PreserveAspect: 1
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -3755,6 +3756,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1348779484}
   m_CullTransparentMesh: 0
+--- !u!114 &1348779488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348779484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fef84f31dc1a1204eba0adf93f1e40ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bar: {fileID: 1348779486}
 --- !u!1 &1393654737
 GameObject:
   m_ObjectHideFlags: 0
