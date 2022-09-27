@@ -68,7 +68,7 @@ namespace CherryJam.Creatures.Mobs
 
             StopCreature();
 
-            _particles.Spawn("MissHero");
+            // _particles.Spawn("MissHero");
             yield return new WaitForSeconds(_missHeroCooldown);
 
             StartState(_patrol.DoPatrol());
@@ -101,7 +101,7 @@ namespace CherryJam.Creatures.Mobs
         private IEnumerator AgroToHero()
         {
             LookAtHero();
-            _particles.Spawn("Exclamation");
+            // _particles.Spawn("Exclamation");
 
             yield return new WaitForSeconds(_alarmDelay);
 

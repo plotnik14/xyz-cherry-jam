@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 2640006319330652215}
   - component: {fileID: 4314015886355339110}
   - component: {fileID: 1126890014}
+  - component: {fileID: 8823033645964818758}
   m_Layer: 0
   m_Name: MagicDirectionalProjectile
   m_TagString: Untagged
@@ -74,10 +75,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1438902853
-  m_SortingLayer: 3
+  m_SortingLayerID: -1200698953
+  m_SortingLayer: 4
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 25769e707a73c764e99544935958468c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 91a4ab503e7de3340a7b8ea982878ec8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,7 +104,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.015578285, y: 0.014747083}
   serializedVersion: 2
-  m_Radius: 0.10604195
+  m_Radius: 0.77
 --- !u!50 &3169117936097083758
 Rigidbody2D:
   serializedVersion: 4
@@ -169,8 +170,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4314015886355339110}
-        m_MethodName: Release
+      - m_Target: {fileID: 8823033645964818758}
+        m_MethodName: SetClip
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: destroy
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6025158693191510421}
+        m_MethodName: Stop
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -209,7 +221,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _onRestart:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3169117936097083759}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 8823033645964818758}
+        m_MethodName: SetClip
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: idle
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1126890014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,7 +262,7 @@ MonoBehaviour:
   m_Color: {r: 0, g: 0.15004349, b: 1, a: 1}
   m_Intensity: 5.61
   m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 000000002b27672835bfd3b7bb153caa65595190b7c96eb8b7d7d5c9631b096a
+  m_ApplyToSortingLayers: 2b276728bb153caa65595190b7c96eb835bfd3b7
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
   m_LightOrder: 0
@@ -251,3 +285,47 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &8823033645964818758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3169117936097083666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96a7b47a1cbe6e048a7bc444b9d27bed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _frameRate: 10
+  _clips:
+  - _name: idle
+    _sprites:
+    - {fileID: 21300000, guid: 91a4ab503e7de3340a7b8ea982878ec8, type: 3}
+    _loop: 1
+    _allowNextClip: 0
+    _onComplete:
+      m_PersistentCalls:
+        m_Calls: []
+  - _name: destroy
+    _sprites:
+    - {fileID: 21300000, guid: 79e402b0c2a2b2f458008557951f47f2, type: 3}
+    - {fileID: 21300000, guid: 9c62443c3fd50994d983118d4baa5c1d, type: 3}
+    - {fileID: 21300000, guid: d45f3a2b7c4fd694f89ee09be1442ee0, type: 3}
+    - {fileID: 21300000, guid: 8e2690b7c5932ac43a84899b2d01ea56, type: 3}
+    _loop: 0
+    _allowNextClip: 0
+    _onComplete:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4314015886355339110}
+          m_MethodName: Release
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

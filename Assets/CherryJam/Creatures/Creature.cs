@@ -130,7 +130,7 @@ namespace CherryJam.Creatures
 
         protected void DoJumpVfx()
         {
-            _particles.Spawn("Jump");
+            // _particles.Spawn("Jump");
             Sounds.Play("Jump");
         }
 

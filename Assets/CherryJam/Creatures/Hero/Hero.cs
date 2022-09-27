@@ -275,23 +275,23 @@ namespace CherryJam.Creatures.Hero
             return base.CalculateJumpVelocity(yVelocity);
         }
 
-        private void OnCollisionEnter2D(Collision2D other)
-        {
-            if (other.gameObject.IsInLayer(_groundLayer))
-            {
-                var contact = other.contacts[0];
-                if (contact.relativeVelocity.y >= _slamDownVelocity)
-                {
-                    _particles.Spawn("SlamDown");
-                }
-            }
-        }
+        // private void OnCollisionEnter2D(Collision2D other)
+        // {
+        //     if (other.gameObject.IsInLayer(_groundLayer))
+        //     {
+        //         var contact = other.contacts[0];
+        //         if (contact.relativeVelocity.y >= _slamDownVelocity)
+        //         {
+        //             _particles.Spawn("SlamDown");
+        //         }
+        //     }
+        // }
 
         public override void TakeDamage()
         {
             base.TakeDamage();
 
-            _cameraShake.Shake();
+            // _cameraShake.Shake();
             
             if (CoinsCount > 0)
             {
@@ -351,14 +351,14 @@ namespace CherryJam.Creatures.Hero
         public void Heal(int healingValue)
         {
             _healthComponent.ApplyHealing(healingValue);
-            _particles.Spawn("Heal");
+            // _particles.Spawn("Heal");
         }
         
         // My implementation
         public void BoostSpeed(float speedMod)
         {
             _speedMod = speedMod;
-            _particles.Spawn("Heal");
+            // _particles.Spawn("Heal");
             StartCoroutine(SpeedModifier());
         }
 
