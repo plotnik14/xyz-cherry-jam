@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using CherryJam.Creatures.Hero;
 using CherryJam.Model.Data;
 using CherryJam.Model.Definition;
 using CherryJam.Model.Definition.Localization;

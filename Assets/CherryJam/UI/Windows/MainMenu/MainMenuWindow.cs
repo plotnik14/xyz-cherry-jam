@@ -25,6 +25,19 @@ namespace CherryJam.UI.Windows.MainMenu
             
             Close();
         }
+        
+        
+        public void OnCredsGame()
+        {
+            _closeAction = () =>
+            {
+                var loader = FindObjectOfType<LevelLoader>();
+                // loader.LoadLevel("Level0_Intro");
+                loader.LoadLevel("Level6_Credits");
+            };
+            
+            Close();
+        }
 
         public void OnLanguage()
         {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using CherryJam.Utils;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -13,6 +14,9 @@ namespace CherryJam.UI.Hud
         [SerializeField] private float _delay;
         [SerializeField] private UnityEvent _beforeStart;
         [SerializeField] private UnityEvent _afterFinish;
+        [SerializeField] private AudioClip _sound;
+        
+        private AudioSource _source;
 
         private AtrCutSceneBox _atrCutScene;
         private Image _image;
@@ -27,6 +31,8 @@ namespace CherryJam.UI.Hud
         {
             yield return Init();
             
+            Play();
+
             foreach (var picture in _pictures)
             {
                 if (!_image.gameObject.activeSelf) _image.gameObject.SetActive(true);
@@ -48,6 +54,19 @@ namespace CherryJam.UI.Hud
             }
             
             _image = _atrCutScene.Image;
+        }
+        
+        public void Play()
+        {
+            if (_source == null)
+            {
+                _source = AudioUtils.FindSfxSource();
+            }
+
+            if (_sound != null)
+            {
+                _source.PlayOneShot(_sound);
+            }
         }
     }
 }

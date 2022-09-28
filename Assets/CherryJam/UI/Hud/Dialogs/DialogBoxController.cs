@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using CherryJam.Creatures.Hero;
 using CherryJam.Model.Data;
 using CherryJam.Utils;
 using UnityEngine;
@@ -27,6 +28,8 @@ namespace CherryJam.UI.Hud.Dialogs
         private Coroutine _typingRoutine;
         private UnityEvent _callback;
 
+        private Hero _hero;
+        
         private static readonly int IsOpen = Animator.StringToHash("IsOpen");
 
         protected Sentence CurrentSentence => _data.Sentences[_currentSentenceIndex];
@@ -38,6 +41,11 @@ namespace CherryJam.UI.Hud.Dialogs
 
         public void ShowDialog(DialogData data)
         {
+            if (_hero == null)
+                _hero = FindObjectOfType<Hero>();
+            _hero.LockInput();
+            
+            
             _data = data;
             _currentSentenceIndex = 0;
             CurrentContent.Text.text = string.Empty;
@@ -118,6 +126,10 @@ namespace CherryJam.UI.Hud.Dialogs
 
         private void OnCloseAnimationComplete()
         {
+            if (_hero == null)
+                _hero = FindObjectOfType<Hero>();
+            _hero.UnlockInput();
+            
             _callback?.Invoke();
         }
         

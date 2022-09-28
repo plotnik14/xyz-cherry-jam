@@ -29,7 +29,7 @@ namespace CherryJam.Creatures.Hero
             
             if (context.performed)
             {
-                _hero.Attack();
+                _hero.MeleeAttack();
             }
         }
         

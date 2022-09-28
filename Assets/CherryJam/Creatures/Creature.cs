@@ -23,7 +23,7 @@ namespace CherryJam.Creatures
         [SerializeField] protected CheckCircleOverlap _magicRange;
         [SerializeField] protected SpawnListComponent _particles;
         
-        [SerializeField] private DirectionalSpawnComponent _rangeProjectileSpawnerCreature;
+        [SerializeField] public DirectionalSpawnComponent _rangeProjectileSpawnerCreature;
 
         protected Rigidbody2D Rigidbody;
         protected Vector2 Direction;
@@ -166,24 +166,32 @@ namespace CherryJam.Creatures
             Animator.SetTrigger(IsDeadKey);
         }
 
-        public virtual void Attack()
+        public virtual void MeleeAttack()
         {
             Animator.SetTrigger(AttackKey);
+        }
+
+        public void AttackSound()
+        {
             Sounds.Play("Melee");
-        } 
+        }
         
         public void RangeAttack()
         {
             Animator.SetTrigger(RangeAttackKey);
-            Sounds.Play("Range");
         } 
+        
+        public void RangeAttackSound()
+        {
+            Sounds.Play("Range");
+        }
 
         public virtual void OnAttackAnimationTriggered()
         {
             _attackRange.Check();
         }
         
-        public void OnRangeAttackAnimationTriggered()
+        protected virtual void OnRangeAttackAnimationTriggered()
         {
             if (_hero == null)
                 _hero = FindObjectOfType<Hero.Hero>();

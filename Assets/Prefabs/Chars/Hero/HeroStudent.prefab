@@ -950,8 +950,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 0.9921569, b: 0.7607844, a: 1}
+  m_FalloffIntensity: 0.604
+  m_Color: {r: 0.8349056, g: 0.8936247, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.15
   m_ApplyToSortingLayers: 2b276728bb153caa65595190b7c96eb835bfd3b7
@@ -964,7 +964,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 5.5
+  m_PointLightOuterRadius: 8.37
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -1676,7 +1676,7 @@ MonoBehaviour:
   _throwCooldown:
     _value: 1
   _rangeProjectileSpawner: {fileID: 6841404923878943885}
-  _fireflyHeal: 5
+  _fireflyHeal: 10
   _magicShield: {fileID: 5689664606783346958}
   _armed: {fileID: 9100000, guid: 8af4b5f38880c2f44be4abbea3902066, type: 2}
   _unarmed: {fileID: 9100000, guid: 8af4b5f38880c2f44be4abbea3902066, type: 2}

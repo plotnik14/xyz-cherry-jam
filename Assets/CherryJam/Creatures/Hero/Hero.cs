@@ -197,9 +197,9 @@ namespace CherryJam.Creatures.Hero
             _session.Data.Hp.Value = currentHealth;
         }
       
-        public override void Attack()
+        public override void MeleeAttack()
         {
-            base.Attack();
+            base.MeleeAttack();
         }
         
         private void UsePotion()
@@ -250,7 +250,7 @@ namespace CherryJam.Creatures.Hero
             _playerInput.enabled = false;
         }
 
-        private void UnlockInput()
+        public void UnlockInput()
         {
             _playerInput.enabled = true;
         }

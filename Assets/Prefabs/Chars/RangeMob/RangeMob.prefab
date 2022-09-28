@@ -852,6 +852,8 @@ MonoBehaviour:
     _clip: {fileID: 8300000, guid: 71afbd4773d04614883e8fbe43ca15ea, type: 3}
   - _id: Die
     _clip: {fileID: 8300000, guid: 6c38a07691d165546afeab8c416ecdab, type: 3}
+  - _id: Range
+    _clip: {fileID: 8300000, guid: 422ba1bf10bdd5c42a5f28458ca9cd1b, type: 3}
 --- !u!114 &1722848639
 MonoBehaviour:
   m_ObjectHideFlags: 0

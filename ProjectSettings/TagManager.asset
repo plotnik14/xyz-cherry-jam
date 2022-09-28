@@ -15,6 +15,7 @@ TagManager:
   - MainUICanvas
   - Platform
   - AtrCutSceneImage
+  - Credentials
   layers:
   - Default
   - TransparentFX

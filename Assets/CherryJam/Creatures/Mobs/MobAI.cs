@@ -82,7 +82,7 @@ namespace CherryJam.Creatures.Mobs
         {
             while (_canAttack.IsTouchingLayer)
             {
-                _creature.Attack();
+                _creature.MeleeAttack();
                 yield return new WaitForSeconds(_attackCooldown);
             }
 

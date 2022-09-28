@@ -8,8 +8,8 @@ namespace CherryJam.Components
     public class FirefliesComponent : MonoBehaviour
     {
         [SerializeField] private List<SpriteRenderer> _fireflies;
-        [SerializeField] private Color _activeColor = Color.white;
-        [SerializeField] private Color _inactiveColor = Color.black;
+        // [SerializeField] private Color _activeColor = Color.white;
+        // [SerializeField] private Color _inactiveColor = Color.black;
 
         private int _firefliesMax;
         private int _currentFireflies;
@@ -46,7 +46,8 @@ namespace CherryJam.Components
             // Deactivate all
             foreach (var firefly in _fireflies)
             {
-                firefly.color = _inactiveColor;
+                // firefly.color = _inactiveColor;
+                firefly.color = new Color(255, 255, 255, 0);
                 firefly.gameObject.SetActive(false);
             }
 
@@ -59,7 +60,7 @@ namespace CherryJam.Components
             
             for (var i = 0; i < _currentFireflies; i++)
             {
-                _fireflies[i].color = _activeColor;
+                _fireflies[i].color = new Color(255, 255, 255, 1);;
             }
         }
 

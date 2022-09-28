@@ -20,75 +20,57 @@ namespace CherryJam.Creatures.Mobs.Boss.Goblin
         [SerializeField] private GroupProjectileSpawner _perlsUpSpawner;
         [SerializeField] private GroupProjectileSpawner _perlsDownSpawner;
         
+        [SerializeField] public DirectionalSpawnComponent _rangeProjectileSpawnerCreatureRight;
+        
         private Coroutine _current;
         private HealthComponent _health;
         private int _targetPointIndex = 0;
         
         private static readonly int IsOnPointKey = Animator.StringToHash("is-on-point");
 
+        private Hero.Hero _heroStudent;
+        
         protected override void Awake()
         {
             base.Awake();
 
             _health = GetComponent<HealthComponent>();
+            _heroStudent = FindObjectOfType<Hero.Hero>();
         }
         
-        public void Jump()
-        {
-            if (_current == null)
-                _current = StartCoroutine(Jumping());
-        }
-
-        private IEnumerator Jumping()
-        {
-            SetDirection(Vector2.up);
-            yield return new WaitForSeconds(_jumpDuration);
-            SetDirection(Vector2.zero);
-            _current = null;
-        }
-
-        public void FallAction()
-        {
-            _perlsUpSpawner.LaunchProjectiles();
-        }
 
         public void LaunchPerlsDown()
         {
             _perlsDownSpawner.LaunchProjectiles();
         }
-
-        public void Eat()
-        {
-            _health.ApplyHealing(_hpRestoredByEating);
-        }
-
+        
         public void Run()
         {
             if (_current != null) return;
 
-            _current = StartCoroutine(RunToPoint());
+            _current = StartCoroutine(RunToHero());
         }
         
-        private IEnumerator RunToPoint()
+        private IEnumerator RunToHero()
         {
-            var point = _runPoints[_targetPointIndex];
+            var point = _heroStudent.transform;
             
             while (!IsOnPoint(point))
             {
                 UpdateRunDirection(point);
                 yield return null;
             }
-            
-            // Turn to the next point
-            _targetPointIndex = (int)Mathf.Repeat(_targetPointIndex + 1, _runPoints.Length);
-            point = _runPoints[_targetPointIndex];
-            UpdateRunDirection(point);
-            yield return null;
 
+            StopCreature();
             _current = null;
             Animator.SetTrigger(IsOnPointKey);
         }
-
+        
+        private void StopCreature()
+        {
+            SetDirection(Vector2.zero);
+        }
+        
         private void UpdateRunDirection(Transform point)
         {
             var direction = point.position - transform.position;
@@ -99,6 +81,17 @@ namespace CherryJam.Creatures.Mobs.Boss.Goblin
         private bool IsOnPoint(Transform point)
         {
             return (point.position - transform.position).magnitude < _treshold;
+        }
+
+        public void Spawn()
+        {
+            throw new System.NotImplementedException();
+        }
+        
+        protected override void OnRangeAttackAnimationTriggered()
+        {
+            _rangeProjectileSpawnerCreature.Spawn(Vector2.left);
+            _rangeProjectileSpawnerCreatureRight.Spawn2(Vector2.right);
         }
     }
 }
