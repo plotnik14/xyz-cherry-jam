@@ -65,12 +65,12 @@ namespace CherryJam.UI.Hud.Dialogs
         {
             CurrentContent.Text.text = string.Empty;
             var sentence = CurrentSentence;
-            CurrentContent.TrySetIcon(sentence.Icon);
+            //CurrentContent.TrySetIcon(sentence.Icon);
             
             foreach (var letter in sentence.Value)
             {
                 CurrentContent.Text.text += letter;
-                _sfxSource.PlayOneShot(_typing);
+                // _sfxSource.PlayOneShot(_typing);
                 yield return new WaitForSeconds(_textSpeed);
             }
 

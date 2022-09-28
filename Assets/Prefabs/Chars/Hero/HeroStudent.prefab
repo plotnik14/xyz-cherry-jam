@@ -1722,15 +1722,15 @@ MonoBehaviour:
   _useLocalAudioSource: 0
   _sounds:
   - _id: Jump
-    _clip: {fileID: 8300000, guid: f34671bbad1436545a359649a51087fa, type: 3}
+    _clip: {fileID: 8300000, guid: 50f2dbe265963564aa53b33f852dac21, type: 3}
   - _id: Melee
-    _clip: {fileID: 8300000, guid: 2d3e7142a374efa41a2df842b213e579, type: 3}
+    _clip: {fileID: 8300000, guid: 3df4e1b6bd948aa4694d2ee25f411cc3, type: 3}
   - _id: Range
-    _clip: {fileID: 8300000, guid: 4841ab5605bcd9c468348c5a06d2a44e, type: 3}
+    _clip: {fileID: 8300000, guid: 422ba1bf10bdd5c42a5f28458ca9cd1b, type: 3}
   - _id: Hurt
-    _clip: {fileID: 8300000, guid: 71afbd4773d04614883e8fbe43ca15ea, type: 3}
+    _clip: {fileID: 8300000, guid: e8dc62103592eca41bdbf919fb998395, type: 3}
   - _id: Dead
-    _clip: {fileID: 8300000, guid: 6c38a07691d165546afeab8c416ecdab, type: 3}
+    _clip: {fileID: 8300000, guid: e8dc62103592eca41bdbf919fb998395, type: 3}
 --- !u!114 &1210272544332402138
 MonoBehaviour:
   m_ObjectHideFlags: 0

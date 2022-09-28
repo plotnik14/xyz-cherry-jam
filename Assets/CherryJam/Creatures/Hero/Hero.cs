@@ -481,6 +481,8 @@ namespace CherryJam.Creatures.Hero
         {
             if (ProjectilesCount <= 0) return;
             
+            Sounds.Play("Range");
+            
             var direction = _rangeAttackTarget - _rangeProjectileSpawner.gameObject.transform.position;
             direction.z = 0;
             _rangeProjectileSpawner.Spawn(direction.normalized);
