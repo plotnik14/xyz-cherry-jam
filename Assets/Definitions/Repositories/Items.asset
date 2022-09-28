@@ -62,3 +62,21 @@ MonoBehaviour:
     _price:
       _itemId: Coin
       _count: 5
+  - _id: Firefly
+    _icon: {fileID: 0}
+    _tags: 00000000
+    _price:
+      _itemId: Coin
+      _count: 5
+  - _id: FireflyMax
+    _icon: {fileID: 0}
+    _tags: 00000000
+    _price:
+      _itemId: Coin
+      _count: 5
+  - _id: Projectile
+    _icon: {fileID: 0}
+    _tags: 00000000
+    _price:
+      _itemId: Coin
+      _count: 5

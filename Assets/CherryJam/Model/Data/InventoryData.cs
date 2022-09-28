@@ -39,6 +39,9 @@ namespace CherryJam.Model.Data
         {
             var item = GetItem(id);
 
+            var currentFireflyMax = Count("FireflyMax");
+            var projectileMax = 20;
+            
             if (item == null)
             {
                 if (_inventory.Count >= DefsFacade.I.Player.InventorySize)
@@ -47,11 +50,48 @@ namespace CherryJam.Model.Data
                     return false;
                 }
 
+                // Hack 1
+                if (id == "FireflyMax" && value > 3)
+                {
+                    value = 3;
+                }
+                
+                if (id == "Firefly" && value > currentFireflyMax)
+                {
+                    value = currentFireflyMax;
+                }
+
+                if (id == "Projectile" && value > projectileMax)
+                {
+                    value = projectileMax;
+                }
+                
+                
+                
+                
                 item = new InventoryItemData(id);
                 _inventory.Add(item);
             }
-
+            
             item.Value += value;
+            
+            
+            // Hack2 грязь
+            if (id == "FireflyMax" && item.Value > 3)
+            {
+                item.Value = 3;
+            }
+                
+            if (id == "Firefly" &&  item.Value > currentFireflyMax)
+            {
+                item.Value = currentFireflyMax;
+            }
+
+            if (id == "Projectile" && item.Value > projectileMax)
+            {
+                item.Value = projectileMax;
+            }
+            
             return true;
         }
 

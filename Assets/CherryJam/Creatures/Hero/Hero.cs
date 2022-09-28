@@ -78,9 +78,11 @@ namespace CherryJam.Creatures.Hero
 
         private const string SwordId = "Sword";
         private const string CoinId = "Coin";
+        private const string ProjectileItemId = "Projectile";
         
         private int SwordsCount => _session.Data.Inventory.Count(SwordId);
         private int CoinsCount => _session.Data.Inventory.Count(CoinId);
+        private int ProjectilesCount => _session.Data.Inventory.Count(ProjectileItemId);
 
         private string SelectedItemId => _session.QuickInventory.SelectedItem.Id;
         private bool CanThrow => SwordsCount > 1;
@@ -475,9 +477,12 @@ namespace CherryJam.Creatures.Hero
         
         public void OnRangeAttackAnimationTriggered()
         {
+            if (ProjectilesCount <= 0) return;
+            
             var direction = _rangeAttackTarget - _rangeProjectileSpawner.gameObject.transform.position;
             direction.z = 0;
             _rangeProjectileSpawner.Spawn(direction.normalized);
+            GameSession.Instance.Data.Inventory.Remove(ProjectileItemId, 1);
         }
 
         public override void UpdateSpriteDirection(Vector2 _)

@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 7563099323508495555}
   - component: {fileID: 7563099323508495554}
   - component: {fileID: 7563099323508495564}
+  - component: {fileID: 672271297907496354}
+  - component: {fileID: 5843638309928755105}
   m_Layer: 0
   m_Name: "\u0422\u043E\u0440\u0447\u0430\u0449\u0438\u0435\u041E\u0431\u043B\u043E\u043C\u043A\u0438"
   m_TagString: Untagged
@@ -107,18 +109,61 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 1.625, y: 0.453125}
-      - {x: 1.40625, y: 0.546875}
-      - {x: 0.71875, y: -0.171875}
-      - {x: 0.625, y: 0.328125}
-      - {x: 0.15625, y: 0.515625}
-      - {x: 0.09375, y: 0.578125}
-      - {x: -0.8125, y: 0.578125}
-      - {x: -1.15625, y: 0.328125}
-      - {x: -1.625, y: 0.453125}
-      - {x: -1.8125, y: 0.296875}
-      - {x: -2, y: -0.203125}
-      - {x: -2, y: -0.578125}
-      - {x: 2, y: -0.578125}
-      - {x: 2, y: -0.203125}
-      - {x: 1.90625, y: 0.015625}
+    - - {x: 1.515213, y: 0.49886858}
+      - {x: 1.834816, y: -0.052034676}
+      - {x: 1.8499603, y: -0.5692695}
+      - {x: -1.9136658, y: -0.5530354}
+      - {x: -1.6938171, y: 0.37355974}
+      - {x: -1.4109344, y: -0.291838}
+      - {x: -0.5608139, y: 0.56231356}
+      - {x: -0.29117584, y: -0.1623568}
+      - {x: 0.033699036, y: 0.29396197}
+      - {x: 0.25454712, y: -0.025090188}
+      - {x: 0.3217163, y: 0.4481185}
+      - {x: 0.67315674, y: -0.23072654}
+      - {x: 0.8925781, y: -0.19474679}
+--- !u!114 &672271297907496354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7563099323508495553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2841f108d685e364da99fdc04aea9290, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tag: 
+  _layer:
+    serializedVersion: 2
+    m_Bits: 2048
+  _action:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5843638309928755105}
+        m_MethodName: ApplyHealthChange
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5843638309928755105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7563099323508495553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ac3a445fcfdbab4e8bac31201724c28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isHeroAttack: 0
+  _isRangeAttack: 0
+  _hpDelta: -1

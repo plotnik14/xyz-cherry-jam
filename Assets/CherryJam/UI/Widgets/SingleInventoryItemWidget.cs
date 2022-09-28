@@ -39,14 +39,14 @@ namespace CherryJam.UI.Widgets
             _value.text = value.ToString("0");
         }
 
-#if UNITY_EDITOR
-        private void OnValidate()
-        {
-            var itemDef = DefsFacade.I.Items.Get(_itemId);
-            _icon.sprite = itemDef.Icon;
-            UpdateValue(0);
-        }
-#endif
+// #if UNITY_EDITOR
+//         private void OnValidate()
+//         {
+//             var itemDef = DefsFacade.I.Items.Get(_itemId);
+//             _icon.sprite = itemDef.Icon;
+//             UpdateValue(0);
+//         }
+// #endif
         
     }
 }
