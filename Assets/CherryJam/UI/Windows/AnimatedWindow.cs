@@ -15,7 +15,7 @@ namespace CherryJam.UI.Windows
             _animator.SetTrigger(ShowKey);
         }
 
-        public void Close()
+        public virtual void Close()
         {
             _animator.SetTrigger(HideKey);
         }

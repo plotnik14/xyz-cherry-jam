@@ -28,6 +28,8 @@ namespace CherryJam.Model
         public ShopModel ShopModel { get; private set; }
         
         public Vector3 SpawnPosition { get; set; }
+        
+        public bool IsInGameMenuOpened { get; set; }
 
         private readonly CompositeDisposable _trash = new CompositeDisposable();
 

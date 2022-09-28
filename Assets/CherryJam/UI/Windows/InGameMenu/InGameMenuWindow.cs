@@ -15,6 +15,14 @@ namespace CherryJam.UI.Windows.InGameMenu
             
             _defaultTimeScale = Time.timeScale;
             Time.timeScale = 0;
+
+            GameSession.Instance.IsInGameMenuOpened = true;
+        }
+
+        public override void Close()
+        {
+            base.Close();
+            GameSession.Instance.IsInGameMenuOpened = false;
         }
 
         public void OnShowSettings()

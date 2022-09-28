@@ -36,6 +36,7 @@ namespace CherryJam.Creatures.Hero
 
         [Space]
         [Header("Perks")]
+        [SerializeField] private int _fireflyHeal;
         [SerializeField] private GameObject _magicShield;
 
         [Space]
@@ -129,7 +130,8 @@ namespace CherryJam.Creatures.Hero
         // ToDo Move to a new controller
         public void ShowMainMenuInGame()
         {
-            // ToDo check that menu is not created
+            if (GameSession.Instance.IsInGameMenuOpened) return;
+            
             WindowUtils.CreateWindow("UI/InGameMenuWindow");
         }
         
@@ -504,6 +506,17 @@ namespace CherryJam.Creatures.Hero
                 transform.localScale = new Vector3(-1 * Mathf.Abs(localScale.x), localScale.y, localScale.z);
                 Animator.SetBool(IsLeftDirectionKey, true);
             }
+        }
+
+        private const string FireflyId = "Firefly";
+        public void HealWithFirefly()
+        {
+            var firefliesCount = _session.Data.Inventory.Count(FireflyId);
+            if (firefliesCount <= 0) return;
+            
+            Animator.SetTrigger(HealKey);
+            _healthComponent.ApplyHealing(_fireflyHeal);
+            _session.Data.Inventory.Remove(FireflyId, 1);
         }
     }
 }

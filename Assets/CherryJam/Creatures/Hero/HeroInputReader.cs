@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using CherryJam.Model;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace CherryJam.Creatures.Hero
@@ -24,6 +25,8 @@ namespace CherryJam.Creatures.Hero
 
         public void OnAttack(InputAction.CallbackContext context)
         {
+            if (GameSession.Instance.IsInGameMenuOpened) return;
+            
             if (context.performed)
             {
                 _hero.Attack();
@@ -32,6 +35,8 @@ namespace CherryJam.Creatures.Hero
         
         public void OnRangeAttack(InputAction.CallbackContext context)
         {
+            if (GameSession.Instance.IsInGameMenuOpened) return;
+            
             if (context.performed)
             {
                 var mousePosition = Mouse.current.position.ReadValue();
@@ -77,6 +82,14 @@ namespace CherryJam.Creatures.Hero
             if (context.performed)
             {
                 _hero.SwitchLight();
+            }
+        }
+        
+        public void OnHeal(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                _hero.HealWithFirefly();
             }
         }
     }

@@ -807,7 +807,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &213308440
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2898,6 +2898,7 @@ GameObject:
   - component: {fileID: 900655940}
   - component: {fileID: 900655939}
   - component: {fileID: 900655941}
+  - component: {fileID: 900655942}
   m_Layer: 5
   m_Name: Fireflies
   m_TagString: Untagged
@@ -2980,6 +2981,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &900655942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900655937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aadad50bbc6346eda781ae6e4f3f7e37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 900655941}
 --- !u!1 &987868008
 GameObject:
   m_ObjectHideFlags: 0

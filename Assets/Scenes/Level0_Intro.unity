@@ -5519,6 +5519,31 @@ PrefabInstance:
       propertyPath: m_ApplyToSortingLayers.Array.data[4]
       value: -1210859723
       objectReference: {fileID: 0}
+    - target: {fileID: 5547550590967538627, guid: bc82d05006bd5c9449a8725b0c027602,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.2500018
+      objectReference: {fileID: 0}
+    - target: {fileID: 5547550590967538627, guid: bc82d05006bd5c9449a8725b0c027602,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.165066
+      objectReference: {fileID: 0}
+    - target: {fileID: 5587268905842603621, guid: bc82d05006bd5c9449a8725b0c027602,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.2500018
+      objectReference: {fileID: 0}
+    - target: {fileID: 5587268905842603621, guid: bc82d05006bd5c9449a8725b0c027602,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.1650732
+      objectReference: {fileID: 0}
+    - target: {fileID: 5946769159062268032, guid: bc82d05006bd5c9449a8725b0c027602,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.499998
+      objectReference: {fileID: 0}
     - target: {fileID: 8102529004577583017, guid: bc82d05006bd5c9449a8725b0c027602,
         type: 3}
       propertyPath: m_Name
