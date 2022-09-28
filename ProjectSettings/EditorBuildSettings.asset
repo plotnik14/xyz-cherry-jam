@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Hud.unity
     guid: ba8fb0d4dda4ff14cade5931bdef2f6c
   - enabled: 1
+    path: Assets/Scenes/Level0__CutScene1.unity
+    guid: d36ce64a04093604a87be1a935d315db
+  - enabled: 1
     path: Assets/Scenes/Level0_Intro.unity
     guid: e7a5e318c27f35146b439223e93933f4
   - enabled: 1
@@ -30,8 +33,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Level4_MountainPeak.unity
     guid: 2dbbf69b7a840b740976a00f52efffb1
   - enabled: 1
+    path: Assets/Scenes/Level5__CutScene1.unity
+    guid: e7af6056437a9db438e3eeae06a69ccb
+  - enabled: 1
     path: Assets/Scenes/Level5_BossArena.unity
     guid: 23a83d47958e7414fb123f28d52a348e
+  - enabled: 1
+    path: Assets/Scenes/Level5__CutScene2.unity
+    guid: 6f310828da085464c91e194499480165
+  - enabled: 1
+    path: Assets/Scenes/Level6_Credits.unity
+    guid: ba5413cc464e51041802d906addcad12
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: e44002d1587187c45a263a2b1cba1d71,
       type: 2}

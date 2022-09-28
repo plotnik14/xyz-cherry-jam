@@ -19,7 +19,8 @@ namespace CherryJam.UI.Windows.MainMenu
             _closeAction = () =>
             {
                 var loader = FindObjectOfType<LevelLoader>();
-                loader.LoadLevel("Level0_Intro");
+                // loader.LoadLevel("Level0_Intro");
+                loader.LoadLevel("Level0__CutScene1");
             };
             
             Close();
