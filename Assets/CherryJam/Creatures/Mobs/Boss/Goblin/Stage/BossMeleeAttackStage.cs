@@ -4,14 +4,14 @@ namespace CherryJam.Creatures.Mobs.Boss.Goblin.Stage
 {
     public class BossMeleeAttackStage : StateMachineBehaviour
     {
-        private GoblinBoss _boss;
+        private BossMaster _bossMaster;
         
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            if (_boss == null)
-                _boss = animator.GetComponent<GoblinBoss>();
+            if (_bossMaster == null)
+                _bossMaster = animator.GetComponent<BossMaster>();
             
-            _boss.MeleeAttack();
+            _bossMaster.MeleeAttack();
         }
     }
 }

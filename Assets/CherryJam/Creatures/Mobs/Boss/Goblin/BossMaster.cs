@@ -6,9 +6,9 @@ using UnityEngine;
 
 namespace CherryJam.Creatures.Mobs.Boss.Goblin
 {
-    public class GoblinBoss : Creature
+    public class BossMaster : Creature
     {
-        [Space][Header("Goblin Params")]
+        [Space][Header("Boss Params")]
         [SerializeField] private float _jumpDuration;
         [SerializeField] private int _hpRestoredByEating;
         
@@ -90,8 +90,9 @@ namespace CherryJam.Creatures.Mobs.Boss.Goblin
         
         protected override void OnRangeAttackAnimationTriggered()
         {
-            _rangeProjectileSpawnerCreature.Spawn(Vector2.left);
-            _rangeProjectileSpawnerCreatureRight.Spawn2(Vector2.right);
+            var direction = new Vector2( - transform.localScale.x, 0);
+            _rangeProjectileSpawnerCreature.Spawn(direction);
+            // _rangeProjectileSpawnerCreatureRight.Spawn(Vector2.right);
         }
     }
 }
