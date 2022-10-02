@@ -1844,7 +1844,8 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.4027154, y: 1.8624523}
+    - - {x: 0.091544606, y: 2.032279}
+      - {x: 0.4027154, y: 1.8624523}
       - {x: 1.763377, y: 0.82445467}
       - {x: 2.160998, y: -0.58479035}
       - {x: 0.9527249, y: -0.90298575}
@@ -1853,6 +1854,10 @@ PolygonCollider2D:
       - {x: -2.1711545, y: -0.39139116}
       - {x: -1.7665622, y: 0.28278673}
       - {x: -1.7425265, y: 1.8995544}
+      - {x: -1.2369478, y: 1.8096969}
+      - {x: -1.0710917, y: 0.76730657}
+      - {x: -0.16753936, y: 0.9629513}
+      - {x: -0.14828025, y: 1.7113143}
       - {x: -0.23970574, y: 2.0274744}
 --- !u!1 &712698492
 GameObject:
@@ -6172,16 +6177,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1823752867}
     m_Modifications:
-    - target: {fileID: 121960576350018771, guid: bc82d05006bd5c9449a8725b0c027602,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.7607843
-      objectReference: {fileID: 0}
-    - target: {fileID: 121960576350018771, guid: bc82d05006bd5c9449a8725b0c027602,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.92530227
-      objectReference: {fileID: 0}
     - target: {fileID: 5547550590967538627, guid: bc82d05006bd5c9449a8725b0c027602,
         type: 3}
       propertyPath: m_LocalPosition.x
