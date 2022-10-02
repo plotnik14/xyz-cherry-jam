@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace CherryJam.Creatures.Mobs.Boss.Goblin.Stage
+namespace CherryJam.Creatures.Mobs.Boss.Master.Stage
 {
     public class BossRangeAttackStage : StateMachineBehaviour
     {

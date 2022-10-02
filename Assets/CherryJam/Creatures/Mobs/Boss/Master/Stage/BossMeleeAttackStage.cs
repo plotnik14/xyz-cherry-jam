@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-namespace CherryJam.Creatures.Mobs.Boss.Goblin.Stage
+namespace CherryJam.Creatures.Mobs.Boss.Master.Stage
 {
-    public class BossSpawnStage : StateMachineBehaviour
+    public class BossMeleeAttackStage : StateMachineBehaviour
     {
         private BossMaster _bossMaster;
         
@@ -11,7 +11,7 @@ namespace CherryJam.Creatures.Mobs.Boss.Goblin.Stage
             if (_bossMaster == null)
                 _bossMaster = animator.GetComponent<BossMaster>();
             
-            _bossMaster.Spawn();
+            _bossMaster.MeleeAttack();
         }
     }
 }

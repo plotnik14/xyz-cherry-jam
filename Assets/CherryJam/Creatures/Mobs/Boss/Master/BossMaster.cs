@@ -1,10 +1,9 @@
-﻿
-using System.Collections;
+﻿using System.Collections;
 using CherryJam.Components.GoBased;
 using CherryJam.Components.Health;
 using UnityEngine;
 
-namespace CherryJam.Creatures.Mobs.Boss.Goblin
+namespace CherryJam.Creatures.Mobs.Boss.Master
 {
     public class BossMaster : Creature
     {
