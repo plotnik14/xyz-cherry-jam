@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 5450049049838910616}
   m_Layer: 8
   m_Name: Platform
-  m_TagString: Untagged
+  m_TagString: Lift
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -278,6 +278,7 @@ MonoBehaviour:
   _speed: 4
   _treshold: 1
   _wait: 2
+  _invertDirection: 0
   _up: {fileID: 4515248483555735632}
   _bottom: {fileID: 250583343280776754}
   _onComplete:

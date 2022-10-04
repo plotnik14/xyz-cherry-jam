@@ -31,6 +31,7 @@ namespace CherryJam.Creatures
         protected PlaySoundsComponent Sounds;
         protected bool IsGrounded;
         protected bool IsJumping;
+        protected bool IsJumpActivated;
         protected bool IsFrozen;
 
         private Hero.Hero _hero;
@@ -101,22 +102,27 @@ namespace CherryJam.Creatures
         protected virtual float CalculateYVelocity()
         {
             var yVelocity = Rigidbody.velocity.y;
-            bool isJumpPressed = Direction.y > 0;
+            var isUpDirection = Direction.y > 0;
 
             if (IsGrounded)
-            {
                 IsJumping = false;
-            }
+            
 
-            if (isJumpPressed)
+            if (isUpDirection)
             {
                 IsJumping = true;
-                var isFalling = Rigidbody.velocity.y <= 0.01;
-                yVelocity = isFalling ? CalculateJumpVelocity(yVelocity) : yVelocity;
+                
+                if (IsJumpActivated) return yVelocity;
+                
+                IsJumpActivated = true;
+                return CalculateJumpVelocity(yVelocity);
             }
-            else if (IsJumping && Rigidbody.velocity.y > 0)
+
+            IsJumpActivated = false;
+            
+            if (IsJumping && Rigidbody.velocity.y > 0)
             {
-                yVelocity *= 0.5f;
+                return yVelocity * 0.5f;
             }
 
             return yVelocity;
