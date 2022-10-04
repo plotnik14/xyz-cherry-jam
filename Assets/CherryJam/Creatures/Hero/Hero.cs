@@ -481,7 +481,6 @@ namespace CherryJam.Creatures.Hero
         {
             if (ProjectilesCount <= 0) return;
             
-            Sounds.Play("Range");
             UpdateSpriteDirectionToCursor();
             
             var direction = _rangeAttackTarget - _rangeProjectileSpawner.gameObject.transform.position;
