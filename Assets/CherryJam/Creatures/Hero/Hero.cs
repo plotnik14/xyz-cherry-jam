@@ -482,6 +482,7 @@ namespace CherryJam.Creatures.Hero
             if (ProjectilesCount <= 0) return;
             
             Sounds.Play("Range");
+            UpdateSpriteDirectionToCursor();
             
             var direction = _rangeAttackTarget - _rangeProjectileSpawner.gameObject.transform.position;
             direction.z = 0;
@@ -489,13 +490,12 @@ namespace CherryJam.Creatures.Hero
             GameSession.Instance.Data.Inventory.Remove(ProjectileItemId, 1);
         }
 
-        public override void UpdateSpriteDirection(Vector2 _)
+        private void UpdateSpriteDirectionToCursor()
         {
             var mousePosition = Mouse.current.position.ReadValue();
             var target = Camera.main.ScreenToWorldPoint(mousePosition);
             var direction = target - transform.position;
             
-            // var multiplier = _invertScale ? -1 : 1;
             var localScale = transform.localScale;
             
             if (direction.x > 0)
@@ -509,6 +509,28 @@ namespace CherryJam.Creatures.Hero
                 Animator.SetBool(IsLeftDirectionKey, true);
             }
         }
+
+        // Hero is always turned to the cursor
+        // public override void UpdateSpriteDirection(Vector2 _)
+        // {
+        //     var mousePosition = Mouse.current.position.ReadValue();
+        //     var target = Camera.main.ScreenToWorldPoint(mousePosition);
+        //     var direction = target - transform.position;
+        //     
+        //     // var multiplier = _invertScale ? -1 : 1;
+        //     var localScale = transform.localScale;
+        //     
+        //     if (direction.x > 0)
+        //     {
+        //         transform.localScale = new Vector3( Mathf.Abs(localScale.x), localScale.y, localScale.z);
+        //         Animator.SetBool(IsLeftDirectionKey, false);
+        //     }
+        //     else if (direction.x < 0)
+        //     {
+        //         transform.localScale = new Vector3(-1 * Mathf.Abs(localScale.x), localScale.y, localScale.z);
+        //         Animator.SetBool(IsLeftDirectionKey, true);
+        //     }
+        // }
 
         private const string FireflyId = "Firefly";
         public void HealWithFirefly()
