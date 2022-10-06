@@ -284,7 +284,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2844249419142584623}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2500018, y: -2.1650732, z: 0}
+  m_LocalPosition: {x: -1.2499636, y: -2.1650636, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7204302000287035876}
@@ -418,7 +418,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4129701005083872253}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2500018, y: 2.165066, z: 0}
+  m_LocalPosition: {x: -1.2499636, y: 2.1650565, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7204302000287035876}
@@ -791,7 +791,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7151701312425754166}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.499998, y: -0.0000035762787, z: 0}
+  m_LocalPosition: {x: 2.5000362, y: -0.0000035762787, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7204302000287035876}
@@ -1195,7 +1195,7 @@ GameObject:
   - component: {fileID: 8102529004577583015}
   - component: {fileID: 8102529004577583008}
   - component: {fileID: 8102529004577583010}
-  - component: {fileID: 8102529004577583011}
+  - component: {fileID: 1121995199133966561}
   - component: {fileID: 8866011783239805634}
   - component: {fileID: 8102529004432793290}
   - component: {fileID: 6864363217471795216}
@@ -1549,7 +1549,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8102529004577583011
+--- !u!114 &1121995199133966561
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1558,7 +1558,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8102529004577583017}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 563f84473009f3b44aecfe9bc8c19884, type: 3}
+  m_Script: {fileID: 11500000, guid: 1437bef04f6f471485ac79d9bc831898, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 5

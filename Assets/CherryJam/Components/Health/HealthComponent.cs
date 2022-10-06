@@ -6,14 +6,14 @@ namespace CherryJam.Components.Health
 {
     public class HealthComponent : MonoBehaviour
     {
-        [SerializeField] private int _health;
+        [SerializeField] protected int _health;
         [SerializeField] private UnityEvent _onHealing;
         [SerializeField] private UnityEvent _onDamage;
         [SerializeField] private UnityEvent _onDie;
         [SerializeField] private HealthChangeEvent _onChange;
 
-        private int _maxHealth;
-        private bool _isInvincible;
+        protected int _maxHealth;
+        protected bool _isInvincible;
 
         public bool IsInvincible => _isInvincible;
 
@@ -23,7 +23,7 @@ namespace CherryJam.Components.Health
         public int MaxHealth => _maxHealth;
 
 
-        public void Start()
+        protected virtual void Start()
         {
             _isInvincible = false;
             _maxHealth = _health;
@@ -71,13 +71,7 @@ namespace CherryJam.Components.Health
             _onChange?.Invoke(_health);
         }
 #endif
-
-        public void SetHealth(int health)
-        {
-            _health = health;
-            _maxHealth = _health;
-        }
-
+        
         [Serializable]
         public class HealthChangeEvent : UnityEvent<int>
         {
