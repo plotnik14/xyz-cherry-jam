@@ -1,4 +1,5 @@
-﻿using CherryJam.Model;
+﻿using CherryJam.Creatures.Hero;
+using CherryJam.Model;
 using CherryJam.Utils;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,24 +8,20 @@ namespace CherryJam.UI.Windows.InGameMenu
 {
     public class InGameMenuWindow : AnimatedWindow
     {
+        [SerializeField] private InputEnableComponent _input;
+        
         private float _defaultTimeScale;
         
         protected override void Start()
         {
             base.Start();
             
+            _input.SetInput(false);
             _defaultTimeScale = Time.timeScale;
             Time.timeScale = 0;
-
-            GameSession.Instance.IsInGameMenuOpened = true;
+            
         }
-
-        public override void Close()
-        {
-            base.Close();
-            GameSession.Instance.IsInGameMenuOpened = false;
-        }
-
+        
         public void OnShowSettings()
         {
             WindowUtils.CreateWindow("UI/SettingsWindow");

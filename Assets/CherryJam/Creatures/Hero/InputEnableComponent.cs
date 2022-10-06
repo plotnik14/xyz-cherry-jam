@@ -9,12 +9,20 @@ namespace CherryJam.Creatures.Hero
 
         private void Start()
         {
-            _input = FindObjectOfType<PlayerInput>();
+            InitInput();
         }
 
         public void SetInput(bool isEnabled)
         {
+            if (_input == null) 
+                InitInput();
+            
             _input.enabled = isEnabled;
+        }
+
+        private void InitInput()
+        {
+            _input = FindObjectOfType<PlayerInput>();
         }
     }
 }

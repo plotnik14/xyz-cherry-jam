@@ -130,8 +130,6 @@ namespace CherryJam.Creatures.Hero
         // ToDo Move to a new controller
         public void ShowMainMenuInGame()
         {
-            if (GameSession.Instance.IsInGameMenuOpened) return;
-            
             WindowUtils.CreateWindow("UI/InGameMenuWindow");
         }
         

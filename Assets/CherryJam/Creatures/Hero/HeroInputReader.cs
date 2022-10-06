@@ -25,8 +25,6 @@ namespace CherryJam.Creatures.Hero
 
         public void OnAttack(InputAction.CallbackContext context)
         {
-            if (GameSession.Instance.IsInGameMenuOpened) return;
-            
             if (context.performed)
             {
                 _hero.MeleeAttack();
@@ -35,8 +33,6 @@ namespace CherryJam.Creatures.Hero
         
         public void OnRangeAttack(InputAction.CallbackContext context)
         {
-            if (GameSession.Instance.IsInGameMenuOpened) return;
-            
             if (context.performed)
             {
                 var mousePosition = Mouse.current.position.ReadValue();
