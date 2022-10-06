@@ -1,4 +1,5 @@
 ﻿using System;
+using CherryJam.Model;
 using CherryJam.UI.LevelsLoader;
 using CherryJam.Utils;
 using UnityEngine;
@@ -16,6 +17,8 @@ namespace CherryJam.UI.Windows.MainMenu
 
         public void OnStartGame()
         {
+            CleanExistingSession();
+            
             _closeAction = () =>
             {
                 var loader = FindObjectOfType<LevelLoader>();
@@ -25,8 +28,13 @@ namespace CherryJam.UI.Windows.MainMenu
             
             Close();
         }
-        
-        
+
+        private void CleanExistingSession()
+        {
+            if (GameSession.Instance != null)
+                Destroy(GameSession.Instance.gameObject);
+        }
+
         public void OnCredsGame()
         {
             _closeAction = () =>
