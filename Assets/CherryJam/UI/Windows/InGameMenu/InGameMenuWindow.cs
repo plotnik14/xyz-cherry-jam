@@ -2,6 +2,7 @@
 using CherryJam.Model;
 using CherryJam.Utils;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 namespace CherryJam.UI.Windows.InGameMenu
@@ -33,6 +34,15 @@ namespace CherryJam.UI.Windows.InGameMenu
             
             var session = GameSession.Instance;
             Destroy(session.gameObject);
+        }
+        
+        public void OnCloseMenu(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                _input.SetInput(true);
+                base.Close();
+            }
         }
 
         private void OnDestroy()

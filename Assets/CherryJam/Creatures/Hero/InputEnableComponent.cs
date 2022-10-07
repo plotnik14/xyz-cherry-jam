@@ -6,7 +6,8 @@ namespace CherryJam.Creatures.Hero
     public class InputEnableComponent : MonoBehaviour
     {
         private PlayerInput _input;
-
+        private GameObject _hero;
+        
         private void Start()
         {
             InitInput();
@@ -22,7 +23,10 @@ namespace CherryJam.Creatures.Hero
 
         private void InitInput()
         {
-            _input = FindObjectOfType<PlayerInput>();
+            if (_hero != null) return;
+            
+            _hero = GameObject.FindWithTag("Player");
+            _input = _hero.GetComponent<PlayerInput>();
         }
     }
 }
