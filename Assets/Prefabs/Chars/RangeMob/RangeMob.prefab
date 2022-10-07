@@ -718,15 +718,15 @@ MonoBehaviour:
   _onDie:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7986551536112821836}
-        m_MethodName: OnDie
-        m_Mode: 1
+      - m_Target: {fileID: 7116715449670555679}
+        m_MethodName: Play
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Die
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 8196759456510313775}
@@ -740,9 +740,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 7116715449670555679}
-        m_MethodName: Play
-        m_Mode: 5
+      - m_Target: {fileID: 7986551536112821836}
+        m_MethodName: OnDie
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -846,14 +846,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _useLocalAudioSource: 0
   _sounds:
-  - _id: Melee
-    _clip: {fileID: 8300000, guid: 2d3e7142a374efa41a2df842b213e579, type: 3}
   - _id: Hurt
-    _clip: {fileID: 8300000, guid: 71afbd4773d04614883e8fbe43ca15ea, type: 3}
+    _clip: {fileID: 8300000, guid: 6b172ca9334a4b449a5d8a9ca96ff494, type: 3}
   - _id: Die
-    _clip: {fileID: 8300000, guid: 6c38a07691d165546afeab8c416ecdab, type: 3}
+    _clip: {fileID: 8300000, guid: f2468f9eed4d53743a74d740754aef23, type: 3}
   - _id: Range
-    _clip: {fileID: 8300000, guid: 422ba1bf10bdd5c42a5f28458ca9cd1b, type: 3}
+    _clip: {fileID: 8300000, guid: 5ce8820a790c68549b514d5e182dbbf9, type: 3}
 --- !u!114 &1722848639
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1728,7 +1728,7 @@ MonoBehaviour:
   - _id: Hurt
     _clip: {fileID: 8300000, guid: e8dc62103592eca41bdbf919fb998395, type: 3}
   - _id: Dead
-    _clip: {fileID: 8300000, guid: e8dc62103592eca41bdbf919fb998395, type: 3}
+    _clip: {fileID: 8300000, guid: 7dca5e3192e05ec44ab9835150049112, type: 3}
 --- !u!114 &1210272544332402138
 MonoBehaviour:
   m_ObjectHideFlags: 0

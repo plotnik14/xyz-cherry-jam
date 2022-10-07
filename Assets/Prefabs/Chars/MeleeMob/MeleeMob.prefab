@@ -800,11 +800,11 @@ MonoBehaviour:
   _useLocalAudioSource: 0
   _sounds:
   - _id: Melee
-    _clip: {fileID: 8300000, guid: 2d3e7142a374efa41a2df842b213e579, type: 3}
+    _clip: {fileID: 8300000, guid: 6b17af055af806a4e85e29f5d490b611, type: 3}
   - _id: Hurt
-    _clip: {fileID: 8300000, guid: 71afbd4773d04614883e8fbe43ca15ea, type: 3}
+    _clip: {fileID: 8300000, guid: 6b172ca9334a4b449a5d8a9ca96ff494, type: 3}
   - _id: Die
-    _clip: {fileID: 8300000, guid: 6c38a07691d165546afeab8c416ecdab, type: 3}
+    _clip: {fileID: 8300000, guid: f2468f9eed4d53743a74d740754aef23, type: 3}
 --- !u!114 &1722848639
 MonoBehaviour:
   m_ObjectHideFlags: 0
