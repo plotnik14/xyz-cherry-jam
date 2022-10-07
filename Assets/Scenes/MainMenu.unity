@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -228,27 +228,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 335505759}
     m_Modifications:
-    - target: {fileID: 366367366, guid: 64ef4ca76c1557a4db2f477df9543757, type: 3}
-      propertyPath: _audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 5eb05f57e91398145b95c35967a41ad1, type: 3}
-    - target: {fileID: 849011108, guid: 64ef4ca76c1557a4db2f477df9543757, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 83.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 896529441, guid: 64ef4ca76c1557a4db2f477df9543757, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 138749664525b9442ac8ee550c6a4242,
-        type: 3}
-    - target: {fileID: 1269797009, guid: 64ef4ca76c1557a4db2f477df9543757, type: 3}
-      propertyPath: _audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 5eb05f57e91398145b95c35967a41ad1, type: 3}
-    - target: {fileID: 1288616303, guid: 64ef4ca76c1557a4db2f477df9543757, type: 3}
-      propertyPath: _audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 5eb05f57e91398145b95c35967a41ad1, type: 3}
     - target: {fileID: 1727720433693813380, guid: 64ef4ca76c1557a4db2f477df9543757,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -434,36 +413,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4088036947105178540, guid: 64ef4ca76c1557a4db2f477df9543757,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4088036947105178540, guid: 64ef4ca76c1557a4db2f477df9543757,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4088036947105178540, guid: 64ef4ca76c1557a4db2f477df9543757,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 896529440}
-    - target: {fileID: 4088036947105178540, guid: 64ef4ca76c1557a4db2f477df9543757,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4088036947105178540, guid: 64ef4ca76c1557a4db2f477df9543757,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnCredsGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 4088036947105178540, guid: 64ef4ca76c1557a4db2f477df9543757,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 7655474623826467808, guid: 64ef4ca76c1557a4db2f477df9543757,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -489,11 +438,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8465112441531692350, guid: 64ef4ca76c1557a4db2f477df9543757,
-        type: 3}
-      propertyPath: _audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 5eb05f57e91398145b95c35967a41ad1, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64ef4ca76c1557a4db2f477df9543757, type: 3}
 --- !u!224 &896529439 stripped
@@ -502,18 +446,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 896529438}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &896529440 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1496200479964375765, guid: 64ef4ca76c1557a4db2f477df9543757,
-    type: 3}
-  m_PrefabInstance: {fileID: 896529438}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e164149c9b039e46bd6e2e35f100b58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1022639012
 GameObject:
   m_ObjectHideFlags: 0
