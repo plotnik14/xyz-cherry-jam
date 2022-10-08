@@ -4,6 +4,7 @@ using CherryJam.Model.Data;
 using CherryJam.Utils;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 namespace CherryJam.UI.Hud.Dialogs
 {
@@ -98,6 +99,7 @@ namespace CherryJam.UI.Hud.Dialogs
             if (_typingRoutine != null)
             {
                 StopCoroutine(_typingRoutine);
+                _typingRoutine = null;
             }
         }
 
@@ -116,8 +118,18 @@ namespace CherryJam.UI.Hud.Dialogs
                 OnStartDialogAnimation();
             }
         }
+        
+        public void OnDialogContinue(InputAction.CallbackContext context)
+        {
+            if (!context.performed) return;
+            
+            if (_typingRoutine == null)
+                OnContinue();
+            else
+                OnSkip();
+        }
 
-        private void HideDialogBox()
+        protected virtual void HideDialogBox()
         {
             _animator.SetBool(IsOpen, false);
             _sfxSource.PlayOneShot(_close);
@@ -132,14 +144,5 @@ namespace CherryJam.UI.Hud.Dialogs
             
             _callback?.Invoke();
         }
-        
-        
-        // [Space][Header("Testing")]
-        // [SerializeField] private DialogData _testData;
-        //
-        // public void DialogTest()
-        // {
-        //     ShowDialog(_testData);
-        // }
     }
 }

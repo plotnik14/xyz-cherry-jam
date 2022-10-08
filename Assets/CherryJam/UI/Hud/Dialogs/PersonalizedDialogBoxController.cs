@@ -17,5 +17,13 @@ namespace CherryJam.UI.Hud.Dialogs
             
             base.OnStartDialogAnimation();
         }
+
+        protected override void HideDialogBox()
+        {
+            _content.gameObject.SetActive(false);
+            _right.gameObject.SetActive(false);
+            
+            base.HideDialogBox();
+        }
     }
 }
