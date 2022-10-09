@@ -27,6 +27,8 @@ namespace CherryJam.Creatures.Hero
         [SerializeField] protected float _slamDownVelocity;
         [SerializeField] private CheckCircleOverlap _interactionCheck;
         [SerializeField] private CheckCircleOverlap _platformCheck;
+        [SerializeField] protected CheckCircleOverlap _superAttackRange;
+
 
         [Header("Throw")]       
         [SerializeField] private float _multiThrowPressDuration = 1;
@@ -77,6 +79,7 @@ namespace CherryJam.Creatures.Hero
         private Dictionary<UseActionDef, AbstractUseAction> _useActions;
         private static readonly int IsLeftDirectionKey = Animator.StringToHash("is-left-direction");
         private static readonly int IsHeroKey = Animator.StringToHash("is-hero");
+        private static readonly int IsBoostedKey = Animator.StringToHash("is-boosted");
 
         private const string SwordId = "Sword";
         private const string CoinId = "Coin";
@@ -197,12 +200,7 @@ namespace CherryJam.Creatures.Hero
         {
             _session.Data.Hp.Value = currentHealth;
         }
-      
-        public override void MeleeAttack()
-        {
-            base.MeleeAttack();
-        }
-        
+
         private void UsePotion()
         {
             var potion = DefsFacade.I.Potions.Get(SelectedItemId);
@@ -478,7 +476,7 @@ namespace CherryJam.Creatures.Hero
             // _throwCooldown.Reset();
         }
         
-        public void OnRangeAttackAnimationTriggered()
+        protected override void OnRangeAttackAnimationTriggered()
         {
             if (ProjectilesCount <= 0) return;
             
@@ -488,6 +486,11 @@ namespace CherryJam.Creatures.Hero
             direction.z = 0;
             _rangeProjectileSpawner.Spawn(direction.normalized);
             GameSession.Instance.Data.Inventory.Remove(ProjectileItemId, 1);
+        }
+        
+        public virtual void OnSuperAttackAnimationTriggered()
+        {
+            _superAttackRange.Check();
         }
 
         private void UpdateSpriteDirectionToCursor()
@@ -541,6 +544,11 @@ namespace CherryJam.Creatures.Hero
             Animator.SetTrigger(HealKey);
             _healthComponent.ApplyHealing(_fireflyHeal);
             _session.Data.Inventory.Remove(FireflyId, 1);
+        }
+
+        public void SetBoostedAttack(bool isBoosted)
+        {
+            Animator.SetBool(IsBoostedKey, isBoosted);
         }
     }
 }

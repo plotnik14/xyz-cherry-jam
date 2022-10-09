@@ -87,5 +87,13 @@ namespace CherryJam.Creatures.Hero
                 _hero.HealWithFirefly();
             }
         }
+
+        public void OnBoostAttack(InputAction.CallbackContext context)
+        {
+            if (context.started)
+                _hero.SetBoostedAttack(true);
+            else if (context.canceled)
+                _hero.SetBoostedAttack(false);
+        }
     }
 }

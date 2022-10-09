@@ -2463,7 +2463,7 @@ PrefabInstance:
     - target: {fileID: 174238078938213714, guid: ed0079593ab54f6449be80e2587a226c,
         type: 3}
       propertyPath: m_Lens.OrthographicSize
-      value: 2.8125
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 174238079085441905, guid: ed0079593ab54f6449be80e2587a226c,
         type: 3}
@@ -2563,7 +2563,7 @@ PrefabInstance:
     - target: {fileID: 174238080248163073, guid: ed0079593ab54f6449be80e2587a226c,
         type: 3}
       propertyPath: m_DeadZoneWidth
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 174238080391816788, guid: ed0079593ab54f6449be80e2587a226c,
         type: 3}
@@ -3184,16 +3184,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1823752867}
     m_Modifications:
-    - target: {fileID: 121960575706575392, guid: bc82d05006bd5c9449a8725b0c027602,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 121960575706575392, guid: bc82d05006bd5c9449a8725b0c027602,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 121960576350018771, guid: bc82d05006bd5c9449a8725b0c027602,
         type: 3}
       propertyPath: m_Enabled

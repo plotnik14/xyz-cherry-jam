@@ -30,7 +30,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8102529004577583019}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &121960575186895417
 MonoBehaviour:
@@ -218,7 +218,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8102529004577583019}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4611208852119675322
 MonoBehaviour:
@@ -566,7 +566,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8102529004577583019}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!81 &6245120769206379478
 AudioListener:
@@ -606,7 +606,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8102529004577583019}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &9193945785544649842
 SpriteRenderer:
@@ -684,6 +684,88 @@ MonoBehaviour:
     _onComplete:
       m_PersistentCalls:
         m_Calls: []
+--- !u!1 &6502369370541386300
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1311168893121950685}
+  - component: {fileID: 7021060297975658815}
+  - component: {fileID: 5509897433962912078}
+  m_Layer: 15
+  m_Name: SuperAttackRange
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1311168893121950685
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6502369370541386300}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.5, y: 0.13, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8102529004577583019}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7021060297975658815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6502369370541386300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df197df15e108a340a587e68c9dd3369, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _radius: 1.8
+  _mask:
+    serializedVersion: 2
+    m_Bits: 10039
+  _tags:
+  - Enemy
+  _onOverlap:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5509897433962912078}
+        m_MethodName: ApplyHealthChange
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onCheckComplete:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &5509897433962912078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6502369370541386300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ac3a445fcfdbab4e8bac31201724c28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isHeroAttack: 1
+  _isRangeAttack: 0
+  _hpDelta: -2
 --- !u!1 &6841404923878943884
 GameObject:
   m_ObjectHideFlags: 0
@@ -713,7 +795,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8102529004577583019}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6841404923878943885
 MonoBehaviour:
@@ -759,7 +841,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8102529004577583019}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7333585628934156617
 MonoBehaviour:
@@ -945,7 +1027,7 @@ Transform:
   - {fileID: 5547550590967538627}
   - {fileID: 5587268905842603621}
   m_Father: {fileID: 8102529004577583019}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &121960576350018771
 MonoBehaviour:
@@ -1235,6 +1317,7 @@ Transform:
   - {fileID: 8102529003565380452}
   - {fileID: 8102529003598140461}
   - {fileID: 121960575706575392}
+  - {fileID: 1311168893121950685}
   - {fileID: 121960575186895418}
   - {fileID: 2581416586513631852}
   - {fileID: 1599203485959438229}
@@ -1507,6 +1590,21 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 79e375bf-d492-42b7-b10d-48c8d39c3f60
     m_ActionName: UI/SkipContinueDialog[/Keyboard/anyKey]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8102529004577583012}
+        m_MethodName: OnBoostAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 84b86a12-e63a-4706-a7a4-440d45665336
+    m_ActionName: Hero/BoostAttack[/Keyboard/shift]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero
@@ -1687,6 +1785,7 @@ MonoBehaviour:
   _slamDownVelocity: 12
   _interactionCheck: {fileID: 121960575186895417}
   _platformCheck: {fileID: 7119883253007964481}
+  _superAttackRange: {fileID: 7021060297975658815}
   _multiThrowPressDuration: 1
   _multiThrowMaxCount: 3
   _delayBetweenThrows: 0.2
