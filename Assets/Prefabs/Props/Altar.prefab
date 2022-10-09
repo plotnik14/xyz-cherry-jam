@@ -114,8 +114,8 @@ GameObject:
   - component: {fileID: 1521090472923443576}
   - component: {fileID: 6570763021703624451}
   m_Layer: 0
-  m_Name: Checkpoint
-  m_TagString: Untagged
+  m_Name: Altar
+  m_TagString: Altar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

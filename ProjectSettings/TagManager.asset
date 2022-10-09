@@ -17,6 +17,7 @@ TagManager:
   - AtrCutSceneImage
   - Credentials
   - Lift
+  - Altar
   layers:
   - Default
   - TransparentFX
