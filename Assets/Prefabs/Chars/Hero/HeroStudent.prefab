@@ -106,7 +106,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 121960575706575393}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.14, y: 0.13, z: 0}
+  m_LocalPosition: {x: 2.47, y: 0.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8102529004577583019}
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df197df15e108a340a587e68c9dd3369, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _radius: 1.64
+  _radius: 1.5
   _mask:
     serializedVersion: 2
     m_Bits: 10039
@@ -146,7 +146,18 @@ MonoBehaviour:
         m_CallState: 2
   _onCheckComplete:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4933237684264827847}
+        m_MethodName: Spawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4933237684264827847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,7 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 121960575706575392}
-  _prefab: {fileID: 5527392513366398762, guid: 1b898295d73fa1a428122f56a94e099c, type: 3}
+  _prefab: {fileID: 5527392513366398762, guid: d3e0fc87b0843d34bb2021eb9d398e06, type: 3}
   _usePool: 1
 --- !u!114 &121960574535576902
 MonoBehaviour:
@@ -1488,6 +1499,14 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: e547bb3f-4c99-4108-904f-cf4bc87597ca
     m_ActionName: Hero/Heal[/Keyboard/r]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: eded46c7-4cfc-4bf3-b212-f4010c867e22
+    m_ActionName: UI/CloseMenu[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 79e375bf-d492-42b7-b10d-48c8d39c3f60
+    m_ActionName: UI/SkipContinueDialog[/Keyboard/anyKey]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero
