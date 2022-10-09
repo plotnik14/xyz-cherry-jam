@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using CherryJam.Model;
+﻿using CherryJam.Model;
 using CherryJam.Model.Definition;
 using CherryJam.Model.Definition.Repositories;
 using CherryJam.Utils.Disposables;

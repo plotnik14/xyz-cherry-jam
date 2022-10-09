@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -841,7 +841,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sceneName: Level5__CutScene2
-  _spawnPosition: {x: 0, y: 0, z: 0}
+  _pointType: 0
 --- !u!1 &432877469
 GameObject:
   m_ObjectHideFlags: 0
@@ -2081,7 +2081,7 @@ PrefabInstance:
     - target: {fileID: 8067804969206009118, guid: ed79aa4368d75704e9ff1ef41ab53d4e,
         type: 3}
       propertyPath: m_Name
-      value: LocationName
+      value: LocationConfig
       objectReference: {fileID: 0}
     - target: {fileID: 8067804969206009119, guid: ed79aa4368d75704e9ff1ef41ab53d4e,
         type: 3}

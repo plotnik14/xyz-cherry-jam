@@ -1,5 +1,4 @@
-﻿using System.ComponentModel;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace CherryJam.Components
 {

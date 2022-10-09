@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8067804969206009119}
   - component: {fileID: 8067804969206009116}
+  - component: {fileID: 5501349686143342990}
   m_Layer: 0
-  m_Name: LocationName
+  m_Name: LocationConfig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,3 +47,15 @@ MonoBehaviour:
   _locationName: "\u0418\u043C\u044F"
   LocationName:
     _value: 
+--- !u!114 &5501349686143342990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8067804969206009118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adcdc0eb382e4be987a0c43b933fb7ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

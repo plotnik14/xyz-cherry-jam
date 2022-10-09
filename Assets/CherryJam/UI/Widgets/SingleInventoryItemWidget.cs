@@ -1,5 +1,4 @@
 ﻿using CherryJam.Model;
-using CherryJam.Model.Definition;
 using CherryJam.Model.Definition.Repositories.Items;
 using UnityEngine;
 using UnityEngine.UI;

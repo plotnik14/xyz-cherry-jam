@@ -1,5 +1,4 @@
-﻿using CherryJam.Model;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace CherryJam.Creatures.Hero

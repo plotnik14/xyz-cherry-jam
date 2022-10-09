@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using static CherryJam.Model.Data.GameSettings;
 using System;
 using CherryJam.Model.Data;
 using CherryJam.Model.Data.Properties;

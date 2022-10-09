@@ -5,6 +5,7 @@ using CherryJam.Components;
 using CherryJam.Components.ColliderBased;
 using CherryJam.Components.GoBased;
 using CherryJam.Components.Health;
+using CherryJam.Components.LevelManagement.SpawnPoints;
 using CherryJam.Components.Light;
 using CherryJam.Creatures.UsableItems;
 using CherryJam.Effects.CameraRelated;
@@ -121,10 +122,12 @@ namespace CherryJam.Creatures.Hero
 
         private void UpdatePosition()
         {
-            var spawnPosition = GameSession.Instance.SpawnPosition;
-            if (spawnPosition == Vector3.zero) return;
+            var spawnType = GameSession.Instance.NextSpawnPointType;
+            if (spawnType == SpawnPointType.Default) return;
 
-            transform.position = spawnPosition;
+            var config = FindObjectOfType<SpawnPointsConfigComponent>();
+            var spawnPoint = config.GetPointByType(spawnType);
+            transform.position = spawnPoint.Position;
         }
 
         // ToDo Move to a new controller

@@ -1,5 +1,4 @@
-﻿using System;
-using CherryJam.Model;
+﻿using CherryJam.Model;
 using UnityEngine;
 
 namespace CherryJam.UI.Hud

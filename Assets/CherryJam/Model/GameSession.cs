@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using CherryJam.Components.LevelManagement;
+using CherryJam.Components.LevelManagement.SpawnPoints;
 using CherryJam.Model.Data;
 using CherryJam.Model.Definition.Player;
 using CherryJam.Model.Models;
@@ -27,9 +27,7 @@ namespace CherryJam.Model
         public StatsModel StatsModel { get; private set; }
         public ShopModel ShopModel { get; private set; }
         
-        public Vector3 SpawnPosition { get; set; }
-        
-        public bool IsInGameMenuOpened { get; set; }
+        public SpawnPointType NextSpawnPointType { get; set; }
 
         private readonly CompositeDisposable _trash = new CompositeDisposable();
 
@@ -97,14 +95,7 @@ namespace CherryJam.Model
 
         private void LoadUIs()
         {
-            LoadOnScreenControls();
             SceneManager.LoadScene("Hud", LoadSceneMode.Additive);
-        }
-
-        [Conditional("USE_ONSCREEN_CONTROLS")]
-        private void LoadOnScreenControls()
-        {
-            SceneManager.LoadScene("Controls", LoadSceneMode.Additive);
         }
 
         public void Save()

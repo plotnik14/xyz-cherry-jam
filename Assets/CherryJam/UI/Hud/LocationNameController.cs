@@ -1,6 +1,4 @@
-﻿using System;
-using CherryJam.Components;
-using CherryJam.Model;
+﻿using CherryJam.Components.LevelManagement;
 using CherryJam.Utils.Disposables;
 using UnityEngine;
 using UnityEngine.UI;

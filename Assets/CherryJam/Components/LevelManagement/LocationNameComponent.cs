@@ -1,8 +1,7 @@
-﻿using System;
-using CherryJam.Model.Data.Properties;
+﻿using CherryJam.Model.Data.Properties;
 using UnityEngine;
 
-namespace CherryJam.Components
+namespace CherryJam.Components.LevelManagement
 {
     public class LocationNameComponent : MonoBehaviour
     {
