@@ -165,14 +165,14 @@ namespace CherryJam.Creatures.Hero
 
         private void OnHeroUpgraded(StatId statId)
         {
-            switch (statId)
-            {
-                case StatId.Hp:
-                    var health = (int)_session.StatsModel.GetValue(statId);
-                    _session.Data.Hp.Value = health;
-                    _healthComponent.SetHealth(health);
-                    break;
-            }
+            // switch (statId)
+            // {
+            //     case StatId.Hp:
+            //         var health = (int)_session.StatsModel.GetValue(statId);
+            //         _session.Data.Hp.Value = health;
+            //         _healthComponent.SetHealth(health);
+            //         break;
+            // }
         }
 
         private void UpdateCooldown()

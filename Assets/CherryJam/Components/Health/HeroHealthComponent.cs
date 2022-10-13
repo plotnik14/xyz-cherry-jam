@@ -1,4 +1,5 @@
 ﻿using CherryJam.Model;
+using CherryJam.Model.Definition;
 using CherryJam.Model.Definition.Player;
 
 namespace CherryJam.Components.Health
@@ -19,7 +20,7 @@ namespace CherryJam.Components.Health
 
         private void UpdateMaxHealth()
         {
-            _maxHealth = (int) GameSession.Instance.StatsModel.GetValue(StatId.Hp);
+            _maxHealth = DefsFacade.I.Player.MaxHP;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using CherryJam.Model;
+using CherryJam.Model.Definition;
 using CherryJam.Model.Definition.Player;
 using CherryJam.UI.Widgets;
 using CherryJam.Utils;
@@ -22,7 +23,7 @@ namespace CherryJam.UI.Hud
 
         private void OnHealthChanged(int newValue, int oldValue)
         {
-            var maxHealth = _session.StatsModel.GetValue(StatId.Hp);
+            var maxHealth = DefsFacade.I.Player.MaxHP;
             var value = (float)newValue / maxHealth;
             _heathBar.SetProgress(value);
         }

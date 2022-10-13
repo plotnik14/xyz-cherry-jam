@@ -187,7 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isHeroAttack: 1
   _isRangeAttack: 0
-  _hpDelta: -1
+  _hpDelta: -10
 --- !u!1 &2144389796603003409
 GameObject:
   m_ObjectHideFlags: 0
@@ -765,7 +765,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isHeroAttack: 1
   _isRangeAttack: 0
-  _hpDelta: -2
+  _hpDelta: -20
 --- !u!1 &6841404923878943884
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,6 +3,7 @@ using System.Linq;
 using CherryJam.Components.LevelManagement;
 using CherryJam.Components.LevelManagement.SpawnPoints;
 using CherryJam.Model.Data;
+using CherryJam.Model.Definition;
 using CherryJam.Model.Definition.Player;
 using CherryJam.Model.Models;
 using CherryJam.Utils.Disposables;
@@ -90,7 +91,7 @@ namespace CherryJam.Model
             ShopModel = new ShopModel(_data);
             _trash.Retain(ShopModel);
 
-            _data.Hp.Value = (int) StatsModel.GetValue(StatId.Hp);
+            _data.Hp.Value = DefsFacade.I.Player.MaxHP;
         }
 
         private void LoadUIs()

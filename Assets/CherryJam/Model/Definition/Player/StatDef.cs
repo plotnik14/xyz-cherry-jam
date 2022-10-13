@@ -30,7 +30,7 @@ namespace CherryJam.Model.Definition.Player
     
     public enum StatId
     {
-        Hp,
+        // Hp,
         Speed,
         MeleeDamage,
         RangeDamage,

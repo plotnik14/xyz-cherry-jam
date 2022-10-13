@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: PlayerDef
   m_EditorClassIdentifier: 
   _inventorySize: 20
+  _maxHP: 20
   _stats:
   - _name: Health
     _id: 0
