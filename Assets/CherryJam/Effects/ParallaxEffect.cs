@@ -4,21 +4,28 @@ namespace CherryJam.Effects
 {
     public class ParallaxEffect : MonoBehaviour
     {
-        [SerializeField] private float _effectValue;
         [SerializeField] private Transform _followTarget;
+        [SerializeField][Range(0f, 1f)] private float _effectStrength = 0.1f;
+        [SerializeField] private bool _disableVertical = true;
+        [SerializeField] private bool _invertDirection;
 
-        private float _startX;
-        
+        private Vector3 _previousTargetPosition;
+
         private void Start()
         {
-            _startX = transform.position.x;
+            _previousTargetPosition = _followTarget.position;
         }
 
         private void LateUpdate()
         {
-            var currentPosition = transform.position;
-            var deltaX = _followTarget.position.x * _effectValue;
-            transform.position = new Vector3(_startX + deltaX, currentPosition.y, currentPosition.z);
+            var delta = _followTarget.position - _previousTargetPosition;
+            var directionMod = _invertDirection ? -1 : 1;
+
+            if (_disableVertical)
+                delta.y = 0;
+
+            _previousTargetPosition = _followTarget.position;
+            transform.position += delta * _effectStrength * directionMod;
         }
     }
 }
