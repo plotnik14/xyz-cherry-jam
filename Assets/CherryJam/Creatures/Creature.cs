@@ -1,4 +1,5 @@
-﻿using CherryJam.Components.Audio;
+﻿using System.Collections;
+using CherryJam.Components.Audio;
 using CherryJam.Components.ColliderBased;
 using CherryJam.Components.GoBased;
 using CherryJam.Creatures.Mobs;
@@ -15,6 +16,7 @@ namespace CherryJam.Creatures
         [SerializeField] protected float _jumpSpeed;
         [SerializeField] protected float _damageJumpSpeed;  
         [SerializeField] protected int _damage;
+        [SerializeField] protected float _damageAnimationDuration;
 
         [Header("Checkers")]
         [SerializeField] protected LayerMask _groundLayer;
@@ -29,6 +31,7 @@ namespace CherryJam.Creatures
         protected Vector2 Direction;
         protected Animator Animator;
         protected PlaySoundsComponent Sounds;
+        protected SpriteRenderer Sprite;
         protected bool IsGrounded;
         protected bool IsJumping;
         protected bool IsJumpActivated;
@@ -55,6 +58,7 @@ namespace CherryJam.Creatures
             Rigidbody = GetComponent<Rigidbody2D>();
             Animator = GetComponent<Animator>();
             Sounds = GetComponent<PlaySoundsComponent>();
+            Sprite = GetComponent<SpriteRenderer>();
 
             IsGrounded = _groundCheck.IsTouchingLayer;
         }
@@ -165,6 +169,15 @@ namespace CherryJam.Creatures
             IsJumping = false;
             Animator.SetTrigger(HitKey);
             Rigidbody.velocity = new Vector2(Rigidbody.velocity.x, _damageJumpSpeed);
+            StartCoroutine(HitAnimation());
+        }
+
+        private IEnumerator HitAnimation()
+        {
+            var originalColor = Sprite.color;
+            Sprite.color = Color.red;
+            yield return new WaitForSeconds(_damageAnimationDuration);
+            Sprite.color = originalColor;
         }
 
         public virtual void OnDie()

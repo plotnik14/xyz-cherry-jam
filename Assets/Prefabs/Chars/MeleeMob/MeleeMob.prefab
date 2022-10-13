@@ -770,6 +770,7 @@ MonoBehaviour:
   _jumpSpeed: 12
   _damageJumpSpeed: 5
   _damage: 1
+  _damageAnimationDuration: 0.2
   _groundLayer:
     serializedVersion: 2
     m_Bits: 256

@@ -311,12 +311,7 @@ namespace CherryJam.Creatures.Hero
         {
             base.TakeDamage();
 
-            // _cameraShake.Shake();
-            
-            if (CoinsCount > 0)
-            {
-                SpawnCoinParticles();
-            }
+            // ToDo make invincible for some time 
         }
 
         public override void OnDie()
