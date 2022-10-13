@@ -95,5 +95,21 @@ namespace CherryJam.Creatures.Hero
             else if (context.canceled)
                 _hero.SetBoostedAttack(false);
         }
+
+        public void OnLookingUp(InputAction.CallbackContext context)
+        {
+            if (context.started)
+                _hero.IsLookingUp = true;
+            else if (context.canceled)
+                _hero.IsLookingUp = false;
+        }
+        
+        public void OnLookingDown(InputAction.CallbackContext context)
+        {
+            if (context.started)
+                _hero.IsLookingDown = true;
+            else if (context.canceled)
+                _hero.IsLookingDown = false;
+        }
     }
 }

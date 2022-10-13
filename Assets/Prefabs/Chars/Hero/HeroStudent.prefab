@@ -1605,6 +1605,36 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 84b86a12-e63a-4706-a7a4-440d45665336
     m_ActionName: Hero/BoostAttack[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8102529004577583012}
+        m_MethodName: OnLookingUp
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9815055c-4bf2-4b78-b3f0-febd5fd3d476
+    m_ActionName: Hero/LookUp[/Keyboard/w]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8102529004577583012}
+        m_MethodName: OnLookingDown
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 678e8137-f608-4be3-82ec-6f66eae7b93c
+    m_ActionName: Hero/LookDown[/Keyboard/s]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero

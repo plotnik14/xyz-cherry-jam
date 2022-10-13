@@ -73,11 +73,12 @@ namespace CherryJam.Creatures.Hero
         private readonly Cooldown _activeMagicShieldCooldown = new Cooldown();
 
         private event Action<string> _onPerkUsed;
+        private event Action _onDirectionChanged;
 
 
         // ToDo move to proper place
         private Dictionary<UseActionDef, AbstractUseAction> _useActions;
-        private static readonly int IsLeftDirectionKey = Animator.StringToHash("is-left-direction");
+        private static readonly int IsLeftDirectionKey = Animator.StringToHash("is-left-direction"); // ToDo remove
         private static readonly int IsHeroKey = Animator.StringToHash("is-hero");
         private static readonly int IsBoostedKey = Animator.StringToHash("is-boosted");
 
@@ -104,6 +105,9 @@ namespace CherryJam.Creatures.Hero
         //         return def.HasTag(ItemTag.Throwable);
         //     }
         // }
+        
+        public bool IsLookingUp { get; set; }
+        public bool IsLookingDown { get; set; }
         
         protected override void Awake()
         {
@@ -452,6 +456,12 @@ namespace CherryJam.Creatures.Hero
             _onPerkUsed += call;
             return new ActionDisposable(() => _onPerkUsed -= call);
         }
+        
+        public IDisposable SubscribeDirectionChanged(Action call)
+        {
+            _onDirectionChanged += call;
+            return new ActionDisposable(() => _onDirectionChanged -= call);
+        }
 
         public void SwitchLight()
         {
@@ -534,6 +544,17 @@ namespace CherryJam.Creatures.Hero
         //         Animator.SetBool(IsLeftDirectionKey, true);
         //     }
         // }
+
+        public override void UpdateSpriteDirection(Vector2 direction)
+        {
+            var originalValue = transform.localScale.x;
+            base.UpdateSpriteDirection(direction);
+            var newValue = transform.localScale.x;
+            
+            if (Math.Abs(originalValue - newValue) < 0.01) return;
+
+            _onDirectionChanged?.Invoke();
+        }
 
         private const string FireflyId = "Firefly";
         public void HealWithFirefly()
