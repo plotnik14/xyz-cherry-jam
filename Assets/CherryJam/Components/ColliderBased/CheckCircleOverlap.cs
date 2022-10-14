@@ -31,11 +31,16 @@ namespace CherryJam.Components.ColliderBased
 
                 if (isInTags)
                 {
-                    _onOverlap?.Invoke(overlapResult.gameObject);
+                    FireOverlapEvent(overlapResult);
                 }
             }
             
             _onCheckComplete?.Invoke();
+        }
+
+        protected virtual void FireOverlapEvent(Collider2D overlap)
+        {
+            _onOverlap?.Invoke(overlap.gameObject);
         }
 
 #if UNITY_EDITOR

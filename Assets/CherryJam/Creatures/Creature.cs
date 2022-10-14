@@ -5,6 +5,7 @@ using CherryJam.Components.GoBased;
 using CherryJam.Creatures.Mobs;
 using CherryJam.Utils;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace CherryJam.Creatures
 {
@@ -36,6 +37,8 @@ namespace CherryJam.Creatures
         protected bool IsJumping;
         protected bool IsJumpActivated;
         protected bool IsFrozen;
+
+        protected float DamageXModifier;
 
         private Hero.Hero _hero;
 
@@ -95,7 +98,7 @@ namespace CherryJam.Creatures
 
         protected virtual float CalculateXVelocity()
         {
-            return Direction.x * CalculateSpeed();
+            return Direction.x * CalculateSpeed() + DamageXModifier;
         }
 
         protected virtual float CalculateSpeed()
@@ -164,20 +167,44 @@ namespace CherryJam.Creatures
             }
         }
 
+        private Coroutine _hitEffect;
+        private Coroutine _pushEffect;
+        
         public virtual void TakeDamage()
         {
             IsJumping = false;
             Animator.SetTrigger(HitKey);
-            Rigidbody.velocity = new Vector2(Rigidbody.velocity.x, _damageJumpSpeed);
-            StartCoroutine(HitAnimation());
+            // Rigidbody.velocity = new Vector2(Rigidbody.velocity.x, _damageJumpSpeed);
+
+            if (_hitEffect == null)
+                _hitEffect = StartCoroutine(HitEffect());
         }
 
-        private IEnumerator HitAnimation()
+        private IEnumerator HitEffect()
         {
             var originalColor = Sprite.color;
             Sprite.color = Color.red;
+
             yield return new WaitForSeconds(_damageAnimationDuration);
+            
             Sprite.color = originalColor;
+            _hitEffect = null;
+        }
+
+        public void ApplyPush(float directionX, float pushStrength)
+        {
+            if (_pushEffect == null)
+                StartCoroutine(PushEffect(directionX, pushStrength));
+        }
+
+        private IEnumerator PushEffect(float directionX, float pushStrength)
+        {
+            DamageXModifier = directionX * pushStrength;
+            
+            yield return new WaitForSeconds(_damageAnimationDuration);
+            
+            DamageXModifier = 0;
+            _pushEffect = null;
         }
 
         public virtual void OnDie()

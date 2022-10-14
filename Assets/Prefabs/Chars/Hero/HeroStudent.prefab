@@ -88,9 +88,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 121960575706575392}
-  - component: {fileID: 121960575706575423}
+  - component: {fileID: 1913836466318427518}
   - component: {fileID: 4933237684264827847}
   - component: {fileID: 121960574535576902}
+  - component: {fileID: 1432447138284554159}
   m_Layer: 15
   m_Name: AttackRange
   m_TagString: Untagged
@@ -112,7 +113,7 @@ Transform:
   m_Father: {fileID: 8102529004577583019}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &121960575706575423
+--- !u!114 &1913836466318427518
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,7 +122,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 121960575706575393}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df197df15e108a340a587e68c9dd3369, type: 3}
+  m_Script: {fileID: 11500000, guid: b482d005d76f448ba4e11e756dd5a8e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _radius: 1.5
@@ -150,6 +151,20 @@ MonoBehaviour:
       - m_Target: {fileID: 4933237684264827847}
         m_MethodName: Spawn
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onOverlapDirectional:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1432447138284554159}
+        m_MethodName: Push
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -188,6 +203,19 @@ MonoBehaviour:
   _isHeroAttack: 1
   _isRangeAttack: 0
   _hpDelta: -10
+--- !u!114 &1432447138284554159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121960575706575393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ac1b9c306cd43009c41f26d8bbda74f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pushStrength: 5
 --- !u!1 &2144389796603003409
 GameObject:
   m_ObjectHideFlags: 0
@@ -1809,7 +1837,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   _groundCheck: {fileID: 8102529004432793289}
-  _attackRange: {fileID: 121960575706575423}
+  _attackRange: {fileID: 1913836466318427518}
   _magicRange: {fileID: 0}
   _particles: {fileID: 8102529004432793290}
   _rangeProjectileSpawnerCreature: {fileID: 0}
