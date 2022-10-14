@@ -4,7 +4,6 @@ using CherryJam.Components.LevelManagement;
 using CherryJam.Components.LevelManagement.SpawnPoints;
 using CherryJam.Model.Data;
 using CherryJam.Model.Definition;
-using CherryJam.Model.Definition.Player;
 using CherryJam.Model.Models;
 using CherryJam.Utils.Disposables;
 using UnityEngine;
@@ -36,6 +35,18 @@ namespace CherryJam.Model
 
         private HashSet<string> permanentlyDestroyed = new HashSet<string>();
         private HashSet<string> markedToBeDestroyed = new HashSet<string>();
+
+        private readonly HashSet<string> _activatedTriggers = new HashSet<string>();
+
+        public void ActivateTrigger(string triggerName)
+        {
+            _activatedTriggers.Add(triggerName);
+        }
+
+        public bool IsTriggerActivated(string triggerName)
+        {
+            return _activatedTriggers.Contains(triggerName);
+        }
 
         public void Awake()
         {
