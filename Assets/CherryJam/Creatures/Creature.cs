@@ -139,7 +139,7 @@ namespace CherryJam.Creatures
         {
             if (IsGrounded)
             {
-                yVelocity += _jumpSpeed;
+                yVelocity = _jumpSpeed;
                 DoJumpVfx();
             }
 
