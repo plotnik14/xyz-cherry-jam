@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 namespace CherryJam.Creatures.Hero
 {
-    public class InputEnableComponent : MonoBehaviour
+    public class HeroInputEnableComponent : MonoBehaviour
     {
         private PlayerInput _input;
         private GameObject _hero;

@@ -1118,7 +1118,7 @@ GameObject:
   - component: {fileID: 1105153273}
   m_Layer: 5
   m_Name: InGameMenuWindow
-  m_TagString: Untagged
+  m_TagString: InGameMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1187,7 +1187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec08c05e759f41fd8a9f3bccaacf8102, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _input: {fileID: 1858948007}
+  _heroInput: {fileID: 1858948007}
 --- !u!114 &1858948007
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,11 +4,11 @@ namespace CherryJam.Utils
 {
     public static class WindowUtils
     {
-        public static void CreateWindow(string resourcePath)
+        public static GameObject CreateWindow(string resourcePath)
         {
             var window = Resources.Load<GameObject>(resourcePath);
             var canvas = GameObject.FindWithTag("MainUICanvas").GetComponent<Canvas>();
-            Object.Instantiate(window, canvas.transform);
+            return Object.Instantiate(window, canvas.transform);
         }
     }
 }

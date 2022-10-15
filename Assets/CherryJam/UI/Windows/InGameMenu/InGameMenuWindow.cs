@@ -1,5 +1,6 @@
 ﻿using CherryJam.Creatures.Hero;
 using CherryJam.Model;
+using CherryJam.UI.Windows.Settings;
 using CherryJam.Utils;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -9,15 +10,18 @@ namespace CherryJam.UI.Windows.InGameMenu
 {
     public class InGameMenuWindow : AnimatedWindow
     {
-        [SerializeField] private InputEnableComponent _input;
+        [SerializeField] private HeroInputEnableComponent _heroInput;
         
         private float _defaultTimeScale;
+        private PlayerInput _uiInput;
         
         protected override void Start()
         {
+            _uiInput = GetComponent<PlayerInput>();
+            
             base.Start();
             
-            _input.SetInput(false);
+            _heroInput.SetInput(false);
             _defaultTimeScale = Time.timeScale;
             Time.timeScale = 0;
             
@@ -25,7 +29,10 @@ namespace CherryJam.UI.Windows.InGameMenu
         
         public void OnShowSettings()
         {
-            WindowUtils.CreateWindow("UI/SettingsWindow");
+            SetUiInputActive(false);
+            var window = WindowUtils.CreateWindow("UI/SettingsWindow");
+            var settings = window.GetComponent<SettingsWindow>();
+            settings.SetRefToInGameMenu(this);
         }
 
         public void OnExit()
@@ -40,11 +47,16 @@ namespace CherryJam.UI.Windows.InGameMenu
         {
             if (context.performed)
             {
-                _input.SetInput(true);
+                _heroInput.SetInput(true);
                 base.Close();
             }
         }
 
+        public void SetUiInputActive(bool isActive)
+        {
+            _uiInput.enabled = isActive;
+        }
+        
         private void OnDestroy()
         {
             Time.timeScale = _defaultTimeScale;

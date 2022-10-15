@@ -18,6 +18,7 @@ TagManager:
   - Credentials
   - Lift
   - Altar
+  - InGameMenu
   layers:
   - Default
   - TransparentFX
