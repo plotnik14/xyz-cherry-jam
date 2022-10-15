@@ -721,8 +721,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1311168893121950685}
-  - component: {fileID: 7021060297975658815}
+  - component: {fileID: 4879835559187297826}
   - component: {fileID: 5509897433962912078}
+  - component: {fileID: 8385142662368325509}
   m_Layer: 15
   m_Name: SuperAttackRange
   m_TagString: Untagged
@@ -744,7 +745,7 @@ Transform:
   m_Father: {fileID: 8102529004577583019}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7021060297975658815
+--- !u!114 &4879835559187297826
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -753,7 +754,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6502369370541386300}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df197df15e108a340a587e68c9dd3369, type: 3}
+  m_Script: {fileID: 11500000, guid: b482d005d76f448ba4e11e756dd5a8e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _radius: 1.8
@@ -779,6 +780,20 @@ MonoBehaviour:
   _onCheckComplete:
     m_PersistentCalls:
       m_Calls: []
+  _onOverlapDirectional:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8385142662368325509}
+        m_MethodName: Push
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5509897433962912078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -794,6 +809,19 @@ MonoBehaviour:
   _isHeroAttack: 1
   _isRangeAttack: 0
   _hpDelta: -20
+--- !u!114 &8385142662368325509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6502369370541386300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ac1b9c306cd43009c41f26d8bbda74f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pushStrength: 7
 --- !u!1 &6841404923878943884
 GameObject:
   m_ObjectHideFlags: 0
@@ -1844,7 +1872,7 @@ MonoBehaviour:
   _slamDownVelocity: 12
   _interactionCheck: {fileID: 121960575186895417}
   _platformCheck: {fileID: 7119883253007964481}
-  _superAttackRange: {fileID: 7021060297975658815}
+  _superAttackRange: {fileID: 4879835559187297826}
   _multiThrowPressDuration: 1
   _multiThrowMaxCount: 3
   _delayBetweenThrows: 0.2

@@ -15,5 +15,10 @@ namespace CherryJam.Components.Animations
             var directionX = direction.x > 0 ? 1f : -1f;
             creature.ApplyPush(directionX, _pushStrength);
         }
+
+        public void Push(GameObject target)
+        {
+            Push(target, transform.lossyScale);
+        }
     }
 }
