@@ -1879,6 +1879,12 @@ MonoBehaviour:
   _throwCooldown:
     _value: 1
   _rangeProjectileSpawner: {fileID: 6841404923878943885}
+  _attackCooldown:
+    _value: 0.8
+  _superAttackCooldown:
+    _value: 1.5
+  _rangeAttackCooldown:
+    _value: 1
   _fireflyHeal: 10
   _magicShield: {fileID: 5689664606783346958}
   _armed: {fileID: 9100000, guid: 8af4b5f38880c2f44be4abbea3902066, type: 2}

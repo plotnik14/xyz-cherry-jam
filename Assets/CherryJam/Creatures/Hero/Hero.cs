@@ -37,6 +37,11 @@ namespace CherryJam.Creatures.Hero
         [SerializeField] private Cooldown _throwCooldown;
         [SerializeField] private DirectionalSpawnComponent _rangeProjectileSpawner;
 
+        [Header("Attack Params")]
+        [SerializeField] private Cooldown _attackCooldown;
+        [SerializeField] private Cooldown _superAttackCooldown;
+        [SerializeField] private Cooldown _rangeAttackCooldown;
+        
         [Space]
         [Header("Perks")]
         [SerializeField] private int _fireflyHeal;
@@ -65,6 +70,7 @@ namespace CherryJam.Creatures.Hero
 
         private readonly Cooldown _speedUpCooldown = new Cooldown();
         private float _additionalSpeed;
+        private bool _isBoostedAttack;
 
         private readonly Cooldown _superThrowCooldown = new Cooldown();
         private readonly Cooldown _magicShieldCooldown = new Cooldown();
@@ -295,6 +301,15 @@ namespace CherryJam.Creatures.Hero
             return base.CalculateJumpVelocity(yVelocity);
         }
 
+        public override void MeleeAttack()
+        {
+            var cooldown = _isBoostedAttack ? _superAttackCooldown : _attackCooldown;
+            if (!cooldown.IsReady) return;
+
+            base.MeleeAttack();
+            cooldown.Reset();
+        }
+        
         // private void OnCollisionEnter2D(Collision2D other)
         // {
         //     if (other.gameObject.IsInLayer(_groundLayer))
@@ -473,12 +488,11 @@ namespace CherryJam.Creatures.Hero
 
         public void RangeAttack(Vector3 target)
         {
-            // if (!CanThrow) return;
-            // if (!_throwCooldown.IsReady) return;
-            _rangeAttackTarget = target;
-            Animator.SetTrigger(RangeAttackKey);
+            if (!_rangeAttackCooldown.IsReady) return;
             
-            // _throwCooldown.Reset();
+            _rangeAttackTarget = target;
+            base.RangeAttack();
+            _rangeAttackCooldown.Reset();
         }
         
         protected override void OnRangeAttackAnimationTriggered()
@@ -564,6 +578,7 @@ namespace CherryJam.Creatures.Hero
 
         public void SetBoostedAttack(bool isBoosted)
         {
+            _isBoostedAttack = isBoosted;
             Animator.SetBool(IsBoostedKey, isBoosted);
         }
     }

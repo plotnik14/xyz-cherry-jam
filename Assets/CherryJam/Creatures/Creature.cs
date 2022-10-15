@@ -222,7 +222,7 @@ namespace CherryJam.Creatures
             Sounds.Play("Melee");
         }
         
-        public void RangeAttack()
+        public virtual void RangeAttack()
         {
             Animator.SetTrigger(RangeAttackKey);
         } 
