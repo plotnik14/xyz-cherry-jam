@@ -289,7 +289,7 @@ GameObject:
   - component: {fileID: 1727720433331141712}
   - component: {fileID: 1727720433331141714}
   - component: {fileID: 1727720433331141713}
-  - component: {fileID: 1727720433331141715}
+  - component: {fileID: 1423223857}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -355,7 +355,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!225 &1727720433331141715
+--- !u!225 &1423223857
 CanvasGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1115,6 +1115,7 @@ GameObject:
   - component: {fileID: 1167123455}
   - component: {fileID: 1858948007}
   - component: {fileID: 3940950244194929228}
+  - component: {fileID: 1105153273}
   m_Layer: 5
   m_Name: InGameMenuWindow
   m_TagString: Untagged
@@ -1284,8 +1285,36 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: eded46c7-4cfc-4bf3-b212-f4010c867e22
     m_ActionName: UI/CloseMenu[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 84b86a12-e63a-4706-a7a4-440d45665336
+    m_ActionName: Hero/BoostAttack[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9815055c-4bf2-4b78-b3f0-febd5fd3d476
+    m_ActionName: Hero/LookUp[/Keyboard/w]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 678e8137-f608-4be3-82ec-6f66eae7b93c
+    m_ActionName: Hero/LookDown[/Keyboard/s]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 79e375bf-d492-42b7-b10d-48c8d39c3f60
+    m_ActionName: UI/SkipContinueDialog[/Keyboard/anyKey]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: UI
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!225 &1105153273
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727720435189833997}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 1
