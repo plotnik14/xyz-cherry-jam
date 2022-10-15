@@ -174,7 +174,7 @@ namespace CherryJam.Creatures
         {
             IsJumping = false;
             Animator.SetTrigger(HitKey);
-            // Rigidbody.velocity = new Vector2(Rigidbody.velocity.x, _damageJumpSpeed);
+            Rigidbody.velocity = new Vector2(Rigidbody.velocity.x, _damageJumpSpeed);
 
             if (_hitEffect == null)
                 _hitEffect = StartCoroutine(HitEffect());

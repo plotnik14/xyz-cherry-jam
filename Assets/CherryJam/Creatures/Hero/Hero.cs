@@ -445,22 +445,6 @@ namespace CherryJam.Creatures.Hero
             _onPerkUsed?.Invoke("freezing-enemies");
         }
 
-        protected override void CheckActiveBuffs()
-        {
-            base.CheckActiveBuffs();
-            
-            CheckMagicShield();
-        }
-
-        private void CheckMagicShield()
-        {
-            if (_healthComponent.IsInvincible && _activeMagicShieldCooldown.IsReady )
-            {
-                _healthComponent.MakeVulnerable();
-                _magicShield.SetActive(false);
-            }
-        }
-        
         public IDisposable SubscribePerkUse(Action<string> call)
         {
             _onPerkUsed += call;

@@ -8,7 +8,7 @@ namespace CherryJam.Components.Health
     {
         [SerializeField] protected int _health;
         [SerializeField] private UnityEvent _onHealing;
-        [SerializeField] private UnityEvent _onDamage;
+        [SerializeField] protected UnityEvent _onDamage;
         [SerializeField] private UnityEvent _onDie;
         [SerializeField] private HealthChangeEvent _onChange;
 
