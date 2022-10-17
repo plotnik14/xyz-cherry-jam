@@ -352,11 +352,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63fcddfe85a247c88e47b9983e612951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _left: -3
-  _right: 3
+  _left: -1.5
+  _right: 1.5
   _up: 5
   _down: -4
-  _timeToChange: 0.5
+  _timeToChange: 0.7
 --- !u!1 &174238079206810632
 GameObject:
   m_ObjectHideFlags: 0
