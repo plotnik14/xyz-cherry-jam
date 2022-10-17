@@ -229,7 +229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isHeroAttack: 0
   _isRangeAttack: 0
-  _hpDelta: -7
+  _hpDelta: -8
 --- !u!114 &4314015886355339110
 MonoBehaviour:
   m_ObjectHideFlags: 0
