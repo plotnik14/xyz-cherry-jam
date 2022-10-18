@@ -324,7 +324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 1512955184}
-  _transitionTime: 7
+  _loadingDelay: 1
 --- !u!223 &478867981
 Canvas:
   m_ObjectHideFlags: 0

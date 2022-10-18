@@ -7,7 +7,7 @@ namespace CherryJam.UI.LevelsLoader
     public class LevelLoader : MonoBehaviour
     {
         [SerializeField] private Animator _animator;
-        [SerializeField] private float _transitionTime;
+        [SerializeField] private float _loadingDelay;
 
         private static readonly int Enabled = Animator.StringToHash("Enabled");
 
@@ -29,15 +29,24 @@ namespace CherryJam.UI.LevelsLoader
 
         public void LoadLevel(string sceneName)
         {
+            _animator.SetBool(Enabled, true);
             StartCoroutine(StartAnimation(sceneName));
         }
 
         private IEnumerator StartAnimation(string sceneName)
         {
-            _animator.SetBool(Enabled, true);
-            yield return new WaitForSeconds(_transitionTime);
-            SceneManager.LoadScene(sceneName);
+            yield return RunLoadingDelay(_loadingDelay);
+            var loading = SceneManager.LoadSceneAsync(sceneName);
+            
+            while (!loading.isDone)
+                yield return null;
+
             _animator.SetBool(Enabled, false);
+        }
+
+        private IEnumerator RunLoadingDelay(float time)
+        {
+            yield return new WaitForSeconds(time);
         }
     }
 }
