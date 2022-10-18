@@ -2629,7 +2629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 706964cc22f2d9e4380868eea31b42ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneName: Level5_BossArena
+  _sceneName: Level5__CutScene1
   _pointType: 0
 --- !u!114 &2124888047
 MonoBehaviour:

@@ -12,7 +12,6 @@ namespace CherryJam.UI.Windows.InGameMenu
     {
         [SerializeField] private HeroInputEnableComponent _heroInput;
         
-        private float _defaultTimeScale;
         private PlayerInput _uiInput;
         
         protected override void Start()
@@ -22,8 +21,7 @@ namespace CherryJam.UI.Windows.InGameMenu
             base.Start();
             
             _heroInput.SetInput(false);
-            _defaultTimeScale = Time.timeScale;
-            Time.timeScale = 0;
+            TimeUtils.StopTime();
             
         }
         
@@ -59,7 +57,7 @@ namespace CherryJam.UI.Windows.InGameMenu
         
         private void OnDestroy()
         {
-            Time.timeScale = _defaultTimeScale;
+            TimeUtils.ResumeTime();
         }
     }
 }

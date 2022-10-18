@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using CherryJam.Model.Data;
 using CherryJam.Model.Definition;
@@ -29,23 +30,28 @@ namespace CherryJam.Components.Dialogs
                 return;
             }
             
-            _dialogBox = FindDialogBoxController();
-            _dialogBox.ShowDialog(Data, _onComplete);
-            _hasBeenShown = true;
+            UpdateDialogBoxController();
         }
 
-        private DialogBoxController FindDialogBoxController()
+        private void UpdateDialogBoxController()
         {
-            if (_dialogBox != null) return _dialogBox;
-            
-            switch (Data.Type)
+            StartCoroutine(FindAndUpdateDialogBox("PersonalizedDialog"));
+        }
+
+        private IEnumerator FindAndUpdateDialogBox(string dialogBoxTag)
+        {
+            while (_dialogBox == null)
             {
-                case DialogType.Simple:
-                    return GameObject.FindWithTag("SimpleDialog").GetComponent<DialogBoxController>();
-                case DialogType.Personalized:
-                    return GameObject.FindWithTag("PersonalizedDialog").GetComponent<DialogBoxController>();
-                default:
-                    throw new ArgumentOutOfRangeException();
+                var dialogBoxObj = GameObject.FindWithTag(dialogBoxTag);
+
+                if (dialogBoxObj != null)
+                {
+                    _dialogBox = dialogBoxObj.GetComponent<DialogBoxController>();
+                    _dialogBox.ShowDialog(Data, _onComplete);
+                    _hasBeenShown = true;
+                }
+                else
+                    yield return null;
             }
         }
 

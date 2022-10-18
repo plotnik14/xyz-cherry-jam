@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace CherryJam.UI.Hud
+namespace CherryJam.Components.CutScenes.ArtCutScene
 {
-    public class AtrCutSceneBox : MonoBehaviour
+    public class ArtCutSceneBox : MonoBehaviour
     {
         [SerializeField] private Image _image;
 
