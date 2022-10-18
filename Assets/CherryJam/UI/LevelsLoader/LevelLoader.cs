@@ -37,10 +37,11 @@ namespace CherryJam.UI.LevelsLoader
         {
             yield return RunLoadingDelay(_loadingDelay);
             var loading = SceneManager.LoadSceneAsync(sceneName);
-            
-            while (!loading.isDone)
-                yield return null;
+            loading.completed += OnLoadingComplete;
+        }
 
+        private void OnLoadingComplete(AsyncOperation obj)
+        {   
             _animator.SetBool(Enabled, false);
         }
 
