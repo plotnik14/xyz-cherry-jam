@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 8823033645964818758}
   - component: {fileID: 8626110326061979845}
   m_Layer: 0
-  m_Name: MagicDirectionalProjectile
+  m_Name: MagicDirectionalProjectileCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

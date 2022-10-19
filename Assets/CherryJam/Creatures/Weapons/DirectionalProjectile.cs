@@ -17,7 +17,6 @@ namespace CherryJam.Creatures.Weapons
             var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             var q = Quaternion.AngleAxis(angle, Vector3.forward);
             transform.rotation = Quaternion.Slerp(transform.rotation, q, 100);
-            // transform.rotation = Quaternion.LookRotation(new Vector3(0,0, 180), direction);
         }
 
         public void Stop()

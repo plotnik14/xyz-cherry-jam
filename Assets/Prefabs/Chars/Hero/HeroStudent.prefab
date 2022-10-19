@@ -866,7 +866,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 2581416586513631852}
-  _prefab: {fileID: 3169117936097083666, guid: 21bc61f337df36f4e9f0d457ded26ed2, type: 3}
+  _prefab: {fileID: 3169117936097083666, guid: 97f013252d1353d4db782082e1c64c61, type: 3}
   _usePool: 1
 --- !u!1 &7030416033051187284
 GameObject:
@@ -1691,6 +1691,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 678e8137-f608-4be3-82ec-6f66eae7b93c
     m_ActionName: Hero/LookDown[/Keyboard/s]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fb79f739-432b-4b0c-affe-23f83df70c96
+    m_ActionName: UI/SkipCutScene[/Keyboard/anyKey]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero
