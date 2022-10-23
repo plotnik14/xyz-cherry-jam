@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -8821,7 +8821,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1280106248}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 112.55, y: 5.26, z: 0}
+  m_LocalPosition: {x: 100.8, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1253738018}
@@ -8903,7 +8903,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1286784227}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 100.8, y: 0, z: 0}
+  m_LocalPosition: {x: 95.3, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1253738018}
@@ -13160,9 +13160,9 @@ PolygonCollider2D:
       - {x: -0.82722473, y: -16.377802}
       - {x: -1.0790558, y: -16.328918}
       - {x: -1.0824432, y: -16.018276}
-      - {x: -15.639839, y: -16.041386}
-      - {x: -15.536461, y: -17.46872}
-      - {x: -21.27903, y: -17.568947}
+      - {x: -16.54007, y: -16.028706}
+      - {x: -16.550797, y: -17.443361}
+      - {x: -21.20295, y: -17.420341}
       - {x: -21.23185, y: -16.088074}
       - {x: -27.473625, y: -16.07172}
       - {x: -27.340965, y: -14.600573}
@@ -13174,7 +13174,7 @@ PolygonCollider2D:
       - {x: -34.7875, y: -14.835647}
       - {x: -33.017853, y: -16.32197}
       - {x: -32.96032, y: -19.180857}
-      - {x: -33.53504, y: -21.623549}
+      - {x: -32.62687, y: -20.959888}
       - {x: -32.48877, y: -20.861181}
       - {x: -31.703316, y: -22.226646}
       - {x: -31.315483, y: -22.049593}
@@ -13182,10 +13182,10 @@ PolygonCollider2D:
       - {x: -29.829903, y: -24.17734}
       - {x: -29.04908, y: -24.559507}
       - {x: -28.747879, y: -23.775154}
-      - {x: -29.055397, y: -22.313976}
+      - {x: -28.391739, y: -22.977638}
       - {x: -28.14016, y: -22.63412}
-      - {x: -27.370995, y: -21.632225}
-      - {x: -27.290962, y: -20.845541}
+      - {x: -27.877472, y: -21.702084}
+      - {x: -27.779976, y: -21.055117}
       - {x: -27.617645, y: -18.93419}
       - {x: -27.51751, y: -18.599796}
       - {x: -3.5646667, y: -18.647903}
@@ -17714,17 +17714,17 @@ PrefabInstance:
     - target: {fileID: 5547550590967538627, guid: bc82d05006bd5c9449a8725b0c027602,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.2500018
+      value: -1.2499636
       objectReference: {fileID: 0}
     - target: {fileID: 5547550590967538627, guid: bc82d05006bd5c9449a8725b0c027602,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.1650565
+      value: 2.165066
       objectReference: {fileID: 0}
     - target: {fileID: 5587268905842603621, guid: bc82d05006bd5c9449a8725b0c027602,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.2500018
+      value: -1.2499636
       objectReference: {fileID: 0}
     - target: {fileID: 5587268905842603621, guid: bc82d05006bd5c9449a8725b0c027602,
         type: 3}
@@ -17734,7 +17734,7 @@ PrefabInstance:
     - target: {fileID: 5946769159062268032, guid: bc82d05006bd5c9449a8725b0c027602,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.499998
+      value: 2.5000362
       objectReference: {fileID: 0}
     - target: {fileID: 5946769159062268032, guid: bc82d05006bd5c9449a8725b0c027602,
         type: 3}
@@ -17769,12 +17769,12 @@ PrefabInstance:
     - target: {fileID: 8102529004577583019, guid: bc82d05006bd5c9449a8725b0c027602,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 22.93
+      value: 125.22
       objectReference: {fileID: 0}
     - target: {fileID: 8102529004577583019, guid: bc82d05006bd5c9449a8725b0c027602,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.75
+      value: 13.95
       objectReference: {fileID: 0}
     - target: {fileID: 8102529004577583019, guid: bc82d05006bd5c9449a8725b0c027602,
         type: 3}
