@@ -103,7 +103,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.29, y: 0.014747083}
+  m_Offset: {x: 1.29, y: 0.014747083}
   serializedVersion: 2
   m_Radius: 0.62
 --- !u!50 &3169117936097083758
@@ -141,6 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 8
   _invertX: 0
+  _applyRotation: 1
 --- !u!114 &-781630999399838018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,7 +326,6 @@ MonoBehaviour:
   - _name: idle
     _sprites:
     - {fileID: 21300000, guid: c18e5a0145e9fac42bd89ff17b69c4b8, type: 3}
-    - {fileID: 21300000, guid: ecfa7baa597d46143bbab7f8d060cd54, type: 3}
     - {fileID: 21300000, guid: c1d2cddf347ffcb4092f5f08e7380311, type: 3}
     - {fileID: 21300000, guid: 3030a33b2dcd11b44882c6ee5c66d516, type: 3}
     _loop: 0
