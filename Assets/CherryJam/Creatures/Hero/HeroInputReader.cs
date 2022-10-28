@@ -39,22 +39,6 @@ namespace CherryJam.Creatures.Hero
                 _hero.RangeAttack(target);
             }
         }
-        
-        public void OnNextItem(InputAction.CallbackContext context)
-        {
-            if (context.performed)
-            {
-                _hero.NextItem();
-            }
-        }
-        
-        public void OnUseItem(InputAction.CallbackContext context)
-        {
-            if (context.performed)
-            {
-                _hero.UseItem();
-            }
-        }
 
         public void OnShowMenu(InputAction.CallbackContext context)
         {
@@ -64,14 +48,6 @@ namespace CherryJam.Creatures.Hero
             }
         }
 
-        public void OnUseMagic(InputAction.CallbackContext context)
-        {
-            if (context.performed)
-            {
-                _hero.UseMagic();
-            }
-        }
-        
         public void OnLight(InputAction.CallbackContext context)
         {
             if (context.performed)

@@ -12,8 +12,6 @@ namespace CherryJam.Model.Data
         public InventoryData Inventory => _inventory;
 
         public IntProperty Hp = new IntProperty();
-        public PerksData Perks = new PerksData();
-        public LevelData Levels = new LevelData();
 
         public PlayerData Clone()
         {

@@ -4,7 +4,6 @@ using CherryJam.Components.LevelManagement;
 using CherryJam.Components.LevelManagement.SpawnPoints;
 using CherryJam.Model.Data;
 using CherryJam.Model.Definition;
-using CherryJam.Model.Models;
 using CherryJam.Utils.Disposables;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -22,11 +21,6 @@ namespace CherryJam.Model
 
         private PlayerData _save;
 
-        public QuickInventoryModel QuickInventory { get; private set; }
-        public PerksModel PerksModel { get; private set; }
-        public StatsModel StatsModel { get; private set; }
-        public ShopModel ShopModel { get; private set; }
-        
         public SpawnPointType NextSpawnPointType { get; set; }
 
         private readonly CompositeDisposable _trash = new CompositeDisposable();
@@ -90,18 +84,6 @@ namespace CherryJam.Model
 
         private void InitModels()
         {
-            QuickInventory = new QuickInventoryModel(_data);
-            _trash.Retain(QuickInventory);
-
-            PerksModel = new PerksModel(_data);
-            _trash.Retain(PerksModel);
-
-            StatsModel = new StatsModel(_data);
-            _trash.Retain(StatsModel);
-            
-            ShopModel = new ShopModel(_data);
-            _trash.Retain(ShopModel);
-
             _data.Hp.Value = DefsFacade.I.Player.MaxHP;
         }
 

@@ -5,7 +5,6 @@ using CherryJam.Components.GoBased;
 using CherryJam.Creatures.Mobs;
 using CherryJam.Utils;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace CherryJam.Creatures
 {

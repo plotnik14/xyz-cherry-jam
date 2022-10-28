@@ -1,6 +1,5 @@
 ﻿using CherryJam.Model;
 using CherryJam.Model.Definition;
-using CherryJam.Model.Definition.Player;
 using CherryJam.UI.Widgets;
 using CherryJam.Utils;
 using UnityEngine;

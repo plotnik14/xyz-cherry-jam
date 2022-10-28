@@ -11,8 +11,6 @@ using CherryJam.Creatures.UsableItems;
 using CherryJam.Effects.CameraRelated;
 using CherryJam.Model;
 using CherryJam.Model.Definition;
-using CherryJam.Model.Definition.Player;
-using CherryJam.Model.Definition.Repositories;
 using CherryJam.Model.Definition.Repositories.Items;
 using CherryJam.Utils;
 using CherryJam.Utils.Disposables;
@@ -80,10 +78,7 @@ namespace CherryJam.Creatures.Hero
 
         private event Action<string> _onPerkUsed;
         private event Action _onDirectionChanged;
-
-
-        // ToDo move to proper place
-        private Dictionary<UseActionDef, AbstractUseAction> _useActions;
+        
         private static readonly int IsLeftDirectionKey = Animator.StringToHash("is-left-direction"); // ToDo remove
         private static readonly int IsHeroKey = Animator.StringToHash("is-hero");
         private static readonly int IsBoostedKey = Animator.StringToHash("is-boosted");
@@ -95,8 +90,7 @@ namespace CherryJam.Creatures.Hero
         private int SwordsCount => _session.Data.Inventory.Count(SwordId);
         private int CoinsCount => _session.Data.Inventory.Count(CoinId);
         private int ProjectilesCount => _session.Data.Inventory.Count(ProjectileItemId);
-
-        private string SelectedItemId => _session.QuickInventory.SelectedItem.Id;
+        
         private bool CanThrow => SwordsCount > 1;
         // private bool CanThrow
         // {
@@ -124,13 +118,6 @@ namespace CherryJam.Creatures.Hero
             _allowDoubleJump = true;
             _isMultiThrow = false;
             _speedMod = 1;
-
-            // ToDo move to proper place. Some config in scriptable object&
-            _useActions = new Dictionary<UseActionDef, AbstractUseAction>
-            {
-                { UseActionDef.Heal, new HealingAction(this) },
-                { UseActionDef.BoostSpeed, new BoostSpeedAction(this) }
-            };
         }
 
         private void UpdatePosition()
@@ -161,38 +148,9 @@ namespace CherryJam.Creatures.Hero
 
             var health = GetComponent<HeroHealthComponent>();
             _session.Data.Inventory.OnChange += OnInventoryChanged;
-
-            _session.StatsModel.OnUpgraded += OnHeroUpgraded;
             health.SetHealth(_session.Data.Hp.Value);
-
-            // UpdateHeroWeapon();
-            UpdateCooldown();
         }
-
-        private void OnHeroUpgraded(StatId statId)
-        {
-            // switch (statId)
-            // {
-            //     case StatId.Hp:
-            //         var health = (int)_session.StatsModel.GetValue(statId);
-            //         _session.Data.Hp.Value = health;
-            //         _healthComponent.SetHealth(health);
-            //         break;
-            // }
-        }
-
-        private void UpdateCooldown()
-        {
-            var superThrowPerkDef = DefsFacade.I.Perks.Get("super-throw");
-            _superThrowCooldown.Value = superThrowPerkDef.Cooldown;
-            
-            var magicShieldThrowPerkDef = DefsFacade.I.Perks.Get("magic-shield");
-            _magicShieldCooldown.Value = magicShieldThrowPerkDef.Cooldown;
-            
-            var freezeEnemiesThrowPerkDef = DefsFacade.I.Perks.Get("freezing-enemies");
-            _freezeEnemiesCooldown.Value = freezeEnemiesThrowPerkDef.Cooldown;
-        }
-
+        
         private void OnDestroy()
         {
             _session.Data.Inventory.OnChange -= OnInventoryChanged;
@@ -210,36 +168,12 @@ namespace CherryJam.Creatures.Hero
         {
             _session.Data.Hp.Value = currentHealth;
         }
-
-        private void UsePotion()
-        {
-            var potion = DefsFacade.I.Potions.Get(SelectedItemId);
-
-            switch (potion.Effect)
-            {
-                case Effect.AddHp:
-                    Heal((int)potion.Value);
-                    break;
-                case Effect.SpeedUp:
-                    SpeedUp(potion.Value, potion.Time);
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-            
-            _session.Data.Inventory.Remove(potion.Id, 1);
-        }
         
         private void SpeedUp(float value, float time)
         {
             _speedUpCooldown.Value = _speedUpCooldown.RemainingTime + time;
             _additionalSpeed = Mathf.Max(_additionalSpeed, value);
             _speedUpCooldown.Reset();
-        }
-
-        private bool IsSelectedItem(ItemTag tag)
-        {
-            return _session.QuickInventory.SelectedDef.HasTag(tag);
         }
 
         public bool AddToInventory(string id, int value)
@@ -291,7 +225,7 @@ namespace CherryJam.Creatures.Hero
 
         protected override float CalculateJumpVelocity(float yVelocity)
         {
-            if (!IsGrounded && _allowDoubleJump && _session.PerksModel.IsDoubleJumpSupported)
+            if (!IsGrounded && _allowDoubleJump) // ToDo - remove double jump
             {
                 DoJumpVfx();
                 _allowDoubleJump = false;
@@ -348,36 +282,7 @@ namespace CherryJam.Creatures.Hero
         {
             _interactionCheck.Check();
         }
-
-        public void NextItem()
-        {
-            _session.QuickInventory.SetNextItem();
-        }
-
-        public void UseItem()
-        {
-            if (IsSelectedItem(ItemTag.Potion))
-                UsePotion();
-        }
-
-        // Alternative implementation of usable items
-        public void UseItem2()
-        {
-            var usableItemId = _session.QuickInventory.SelectedItem.Id;
-            var usableItemDef = DefsFacade.I.UsableItems.Get(usableItemId);
-            if (usableItemDef.IsVoid)
-            {
-                Debug.Log($"{usableItemId} is not usable item");
-                return;
-            }
-
-            var actionDef = usableItemDef.Action;
-            var action = _useActions[actionDef];
-            action.Use(usableItemDef.Value);
-            
-            _session.Data.Inventory.Remove(usableItemId, 1);
-        }
-
+        
         public void Heal(int healingValue)
         {
             _healthComponent.ApplyHealing(healingValue);
@@ -414,14 +319,6 @@ namespace CherryJam.Creatures.Hero
             return defaultSpeed + _additionalSpeed;
         }
 
-        public void UseMagic()
-        {
-            if (_session.PerksModel.IsMagicShieldSupported)
-                ActivateMagicShield();
-            else if (_session.PerksModel.IsFreezeEnemiesSupported)
-                FreezeEnemies();
-        }
-        
         public void ActivateMagicShield()
         {
             if (!_magicShieldCooldown.IsReady) return;
