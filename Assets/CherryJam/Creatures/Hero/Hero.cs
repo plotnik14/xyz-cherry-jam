@@ -1,17 +1,13 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using CherryJam.Components;
 using CherryJam.Components.ColliderBased;
 using CherryJam.Components.GoBased;
 using CherryJam.Components.Health;
 using CherryJam.Components.LevelManagement.SpawnPoints;
 using CherryJam.Components.Light;
-using CherryJam.Creatures.UsableItems;
 using CherryJam.Effects.CameraRelated;
 using CherryJam.Model;
-using CherryJam.Model.Definition;
-using CherryJam.Model.Definition.Repositories.Items;
 using CherryJam.Utils;
 using CherryJam.Utils.Disposables;
 using UnityEngine;
