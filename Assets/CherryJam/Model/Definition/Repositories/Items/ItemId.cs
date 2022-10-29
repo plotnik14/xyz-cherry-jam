@@ -3,6 +3,7 @@
     public enum ItemId
     {
         FireflyToUse,
-        FireflyCaptured
+        FireflyCaptured,
+        Projectile
     }
 }

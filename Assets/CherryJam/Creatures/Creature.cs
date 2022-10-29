@@ -2,8 +2,6 @@
 using CherryJam.Components.Audio;
 using CherryJam.Components.ColliderBased;
 using CherryJam.Components.GoBased;
-using CherryJam.Creatures.Mobs;
-using CherryJam.Utils;
 using UnityEngine;
 
 namespace CherryJam.Creatures
@@ -14,17 +12,12 @@ namespace CherryJam.Creatures
         [SerializeField] protected bool _invertScale;
         [SerializeField] protected float _speed;
         [SerializeField] protected float _jumpSpeed;
-        [SerializeField] protected float _damageJumpSpeed;  
-        [SerializeField] protected int _damage;
+        [SerializeField] protected float _damageJumpSpeed;
         [SerializeField] protected float _damageAnimationDuration;
 
         [Header("Checkers")]
-        [SerializeField] protected LayerMask _groundLayer;
         [SerializeField] protected ColliderCheck _groundCheck;
         [SerializeField] protected CheckCircleOverlap _attackRange;
-        [SerializeField] protected CheckCircleOverlap _magicRange;
-        [SerializeField] protected SpawnListComponent _particles;
-        
         [SerializeField] public DirectionalSpawnComponent _rangeProjectileSpawnerCreature;
 
         protected Rigidbody2D Rigidbody;
@@ -35,15 +28,12 @@ namespace CherryJam.Creatures
         protected bool IsGrounded;
         protected bool IsJumping;
         protected bool IsJumpActivated;
-        protected bool IsFrozen;
-
         protected float DamageXModifier;
 
         private Hero.Hero _hero;
 
-        protected readonly Cooldown FreezeCooldown = new Cooldown();
-
-        private Color _colorBeforeFreezing;
+        private Coroutine _hitEffect;
+        private Coroutine _pushEffect;
         
         protected static readonly int VerticalVelocityKey = Animator.StringToHash("vertical-velocity");
         protected static readonly int IsRunningKey = Animator.StringToHash("is-running");
@@ -73,13 +63,6 @@ namespace CherryJam.Creatures
         protected virtual void Update()
         {
             IsGrounded = _groundCheck.IsTouchingLayer;
-            CheckActiveBuffs();
-        }
-
-        protected virtual void CheckActiveBuffs()
-        {
-            if (IsFrozen && FreezeCooldown.IsReady)
-                Unfreeze();
         }
 
         protected virtual void FixedUpdate()
@@ -147,7 +130,6 @@ namespace CherryJam.Creatures
 
         protected void DoJumpVfx()
         {
-            // _particles.Spawn("Jump");
             Sounds.Play("Jump");
         }
 
@@ -165,9 +147,6 @@ namespace CherryJam.Creatures
                 transform.localScale = new Vector3(-1 * Mathf.Abs(localScale.x) * multiplier, localScale.y, localScale.z);
             }
         }
-
-        private Coroutine _hitEffect;
-        private Coroutine _pushEffect;
         
         public virtual void TakeDamage()
         {
@@ -256,38 +235,6 @@ namespace CherryJam.Creatures
             var direction = target.transform.position - transform.position;
             direction.y = 0;
             return direction.normalized;
-        }
-
-        public void Freeze()
-        {   
-            Animator.enabled = false;
-            
-            var sprite = GetComponent<SpriteRenderer>();
-            _colorBeforeFreezing = sprite.color;
-            var frozenColor = new Color(0f, 255f, 255f);
-            sprite.color = frozenColor;
-
-            var mobAI = GetComponent<MobAI>();
-            if (mobAI != null)
-                mobAI.DisableAI();
-
-            FreezeCooldown.Value = 10; // ToDo Move for defs
-            FreezeCooldown.Reset();
-            IsFrozen = true;
-        }
-        
-        private void Unfreeze()
-        {
-            IsFrozen = false;
-            
-            var mobAI = GetComponent<MobAI>();
-            if (mobAI != null)
-                mobAI.EnableAI();
-            
-            var sprite = GetComponent<SpriteRenderer>();
-            sprite.color = _colorBeforeFreezing;
-
-            Animator.enabled = true;
         }
     }
 }

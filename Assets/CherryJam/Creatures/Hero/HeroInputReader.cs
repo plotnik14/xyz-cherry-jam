@@ -47,20 +47,12 @@ namespace CherryJam.Creatures.Hero
                 _hero.ShowMainMenuInGame();
             }
         }
-
-        public void OnLight(InputAction.CallbackContext context)
-        {
-            if (context.performed)
-            {
-                _hero.SwitchLight();
-            }
-        }
         
         public void OnHeal(InputAction.CallbackContext context)
         {
             if (context.performed)
             {
-                _hero.HealWithFirefly();
+                _hero.Heal();
             }
         }
 
