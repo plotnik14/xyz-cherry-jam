@@ -3762,12 +3762,6 @@ MonoBehaviour:
         Value: 20
     Hp:
       _value: 10
-    Perks:
-      _used:
-        _value: 
-      _unlocked: []
-    Levels:
-      _progress: []
   _defaultCheckpoint: 
 --- !u!4 &467279163
 Transform:
@@ -17714,17 +17708,17 @@ PrefabInstance:
     - target: {fileID: 5547550590967538627, guid: bc82d05006bd5c9449a8725b0c027602,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.2499636
+      value: -1.2500018
       objectReference: {fileID: 0}
     - target: {fileID: 5547550590967538627, guid: bc82d05006bd5c9449a8725b0c027602,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.165066
+      value: 2.1650565
       objectReference: {fileID: 0}
     - target: {fileID: 5587268905842603621, guid: bc82d05006bd5c9449a8725b0c027602,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.2499636
+      value: -1.2500018
       objectReference: {fileID: 0}
     - target: {fileID: 5587268905842603621, guid: bc82d05006bd5c9449a8725b0c027602,
         type: 3}
@@ -17734,7 +17728,7 @@ PrefabInstance:
     - target: {fileID: 5946769159062268032, guid: bc82d05006bd5c9449a8725b0c027602,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.5000362
+      value: 2.499998
       objectReference: {fileID: 0}
     - target: {fileID: 5946769159062268032, guid: bc82d05006bd5c9449a8725b0c027602,
         type: 3}
@@ -17769,12 +17763,12 @@ PrefabInstance:
     - target: {fileID: 8102529004577583019, guid: bc82d05006bd5c9449a8725b0c027602,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 125.22
+      value: 22.1
       objectReference: {fileID: 0}
     - target: {fileID: 8102529004577583019, guid: bc82d05006bd5c9449a8725b0c027602,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.95
+      value: 12.1
       objectReference: {fileID: 0}
     - target: {fileID: 8102529004577583019, guid: bc82d05006bd5c9449a8725b0c027602,
         type: 3}

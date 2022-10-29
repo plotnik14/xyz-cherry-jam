@@ -200,8 +200,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ac3a445fcfdbab4e8bac31201724c28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isHeroAttack: 1
-  _isRangeAttack: 0
   _hpDelta: -10
 --- !u!114 &1432447138284554159
 MonoBehaviour:
@@ -684,7 +682,7 @@ SpriteRenderer:
   m_Size: {x: 1.40625, y: 1.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &8279608252867797337
@@ -806,8 +804,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ac3a445fcfdbab4e8bac31201724c28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isHeroAttack: 1
-  _isRangeAttack: 0
   _hpDelta: -20
 --- !u!114 &8385142662368325509
 MonoBehaviour:
@@ -1349,6 +1345,7 @@ GameObject:
   - component: {fileID: 8102529004432793290}
   - component: {fileID: 6864363217471795216}
   - component: {fileID: 1210272544332402138}
+  - component: {fileID: 4888748736304038856}
   m_Layer: 11
   m_Name: HeroStudent
   m_TagString: Player
@@ -1878,6 +1875,7 @@ MonoBehaviour:
   _interactionCheck: {fileID: 121960575186895417}
   _platformCheck: {fileID: 7119883253007964481}
   _superAttackRange: {fileID: 4879835559187297826}
+  _inventory: {fileID: 0}
   _multiThrowPressDuration: 1
   _multiThrowMaxCount: 3
   _delayBetweenThrows: 0.2
@@ -1958,6 +1956,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _path: UI/GameOverWindow
+--- !u!114 &4888748736304038856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8102529004577583017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1abc9810c49b4ac1bfc4465726707853, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8102529005059778489
 GameObject:
   m_ObjectHideFlags: 0

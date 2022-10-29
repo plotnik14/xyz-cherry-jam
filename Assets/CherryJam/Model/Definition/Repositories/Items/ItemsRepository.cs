@@ -30,14 +30,11 @@ namespace CherryJam.Model.Definition.Repositories.Items
     public struct ItemDef : IHaveId
     {
         [SerializeField] private string _id;
-        [SerializeField] private Sprite _icon;
         [SerializeField] private ItemTag[] _tags;
-        [SerializeField] private ItemWithCount _price;
+        [SerializeField] private int _maxCount;
 
         public string Id => _id;
-        public bool IsStackable => HasTag(ItemTag.Stackable);
-        public Sprite Icon => _icon;
-        public ItemWithCount Price => _price;
+        public int MaxCount => _maxCount;
 
         public bool IsVoid => string.IsNullOrEmpty(_id);
 

@@ -14,34 +14,18 @@ namespace CherryJam.Model.Data
 
         public Action<string, int> OnChange;
 
-        public bool Add(string id, int value)
+        public bool Add(string id, int value, int maxValue = -1)
         {          
             if (value <= 0) return false;
 
             var itemDef = DefsFacade.I.Items.Get(id);
-            if (itemDef.IsVoid) return false;
-
-            if (itemDef.IsStackable)
+            if (itemDef.IsVoid)
             {
-                if (!AddStackable(id, value)) return false;
-            }
-            else
-            {
-                
-                if (!AddNotStackable(id, value)) return false;
+                Debug.LogWarning("Trying to add item with empty id to inventory");
+                return false;
             }
 
-            OnChange?.Invoke(id, Count(id));
-            return true;
-        }
-
-        private bool AddStackable(string id, int value)
-        {
             var item = GetItem(id);
-
-            var currentFireflyMax = Count("FireflyMax");
-            var projectileMax = 20;
-            
             if (item == null)
             {
                 if (_inventory.Count >= DefsFacade.I.Player.InventorySize)
@@ -49,69 +33,31 @@ namespace CherryJam.Model.Data
                     Debug.Log($"Inventory is full. Max size:{DefsFacade.I.Player.InventorySize}");
                     return false;
                 }
-
-                // Hack 1
-                if (id == "FireflyMax" && value > 3)
-                {
-                    value = 3;
-                }
-                
-                if (id == "Firefly" && value > currentFireflyMax)
-                {
-                    value = currentFireflyMax;
-                }
-
-                if (id == "Projectile" && value > projectileMax)
-                {
-                    value = projectileMax;
-                }
-                
-                
-                
                 
                 item = new InventoryItemData(id);
                 _inventory.Add(item);
             }
             
             item.Value += value;
-            
-            
-            // Hack2 грязь
-            if (id == "FireflyMax" && item.Value > 3)
-            {
-                item.Value = 3;
-            }
-                
-            if (id == "Firefly" &&  item.Value > currentFireflyMax)
-            {
-                item.Value = currentFireflyMax;
-            }
 
-            if (id == "Projectile" && item.Value > projectileMax)
-            {
-                item.Value = projectileMax;
-            }
+            var maxCount = maxValue < 0 ? itemDef.MaxCount : maxValue;
             
+            if (item.Value > maxCount)
+                item.Value = maxCount;
+
+            OnChange?.Invoke(id, Count(id));
             return true;
         }
-
-        private bool AddNotStackable(string id, int value)
-        {
-            if (_inventory.Count >= DefsFacade.I.Player.InventorySize)
-            {
-                Debug.Log($"Inventory is full. Max size:{DefsFacade.I.Player.InventorySize}");
-                return false;
-            }
-
-            var item = new InventoryItemData(id, value);
-            _inventory.Add(item);
-            return true;
-        }
-
+        
         public void Remove(string id, int value)
         {
             var itemDef = DefsFacade.I.Items.Get(id);
-            if (itemDef.IsVoid) return;
+
+            if (itemDef.IsVoid)
+            {
+                Debug.LogWarning("Trying to remove item with empty id to inventory");
+                return;
+            }
 
             var item = GetItem(id);
 
@@ -120,14 +66,12 @@ namespace CherryJam.Model.Data
             item.Value -= value;
 
             if (item.Value <= 0)
-            {
                 _inventory.Remove(item);
-            }
-
+            
             OnChange?.Invoke(id, Count(id));
         }
 
-        public InventoryItemData[] GetAll(params ItemTag[] tags)
+        public InventoryItemData[] GetAllWithTags(params ItemTag[] tags)
         {
             var retValue = new List<InventoryItemData>();
 
@@ -146,48 +90,18 @@ namespace CherryJam.Model.Data
         
         private InventoryItemData GetItem(string id)
         {
-            foreach (InventoryItemData item in _inventory)
-            {
-                if (item.Id == id)
-                {
-                    return item;
-                }
-            }
+            foreach (var item in _inventory)
+                if (item.Id == id) return item;
+            
             return null;
         }
 
         public int Count(string id)
         {
-            var count = 0;
             foreach (var item in _inventory)
-            {
-                if (item.Id == id)
-                {
-                    count += item.Value;
-                }
-            }
-            return count;
-        }
+                if (item.Id == id) return item.Value;
 
-        public bool HasEnough(params ItemWithCount[] items)
-        {
-            var joinedItems = new Dictionary<string, int>();
-            
-            foreach (var item in items)
-            {
-                if (joinedItems.ContainsKey(item.ItemId))
-                    joinedItems[item.ItemId] += item.Count;
-                else 
-                    joinedItems.Add(item.ItemId, item.Count);
-            }
-
-            foreach (var kvp in joinedItems)
-            {
-                var count = Count(kvp.Key);
-                if (count < kvp.Value) return false;
-            }
-
-            return true;
+            return 0;
         }
     }
 

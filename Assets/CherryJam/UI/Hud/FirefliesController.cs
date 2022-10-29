@@ -1,4 +1,5 @@
 ﻿using CherryJam.Model;
+using CherryJam.Model.Definition.Repositories.Items;
 using UnityEngine;
 
 namespace CherryJam.UI.Hud
@@ -11,22 +12,20 @@ namespace CherryJam.UI.Hud
         private int _firefliesMax;
         private static readonly int FirefliesCountKey = Animator.StringToHash("fireflies-count");
 
-        private const string FireflyId = "Firefly";
-
         private void Start()
         {
             _session = GameSession.Instance;
             _session.Data.Inventory.OnChange += OnInventoryChanged;
             
-            _firefliesMax = _session.Data.Inventory.Count(FireflyId);
+            _firefliesMax = _session.Data.Inventory.Count(ItemId.FireflyToUse.ToString());
             UpdateView();
         }
 
         private void OnInventoryChanged(string id, int value)
         {
-            if (id == FireflyId)
+            if (id == ItemId.FireflyToUse.ToString())
             {
-                _firefliesMax = _session.Data.Inventory.Count(FireflyId);
+                _firefliesMax = _session.Data.Inventory.Count(ItemId.FireflyToUse.ToString());
                 UpdateView();
             }
         }

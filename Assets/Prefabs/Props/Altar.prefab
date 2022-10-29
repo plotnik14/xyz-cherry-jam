@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Projectile
-  _count: 20
+  _count: 10
   _onSuccess:
     m_PersistentCalls:
       m_Calls: []
@@ -390,7 +390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 697ddb2c316d7bb4db4a53a2c4d13ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _id: Firefly
+  _id: FireflyToUse
   _count: 3
   _onSuccess:
     m_PersistentCalls:
@@ -471,7 +471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 697ddb2c316d7bb4db4a53a2c4d13ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _id: FireflyMax
+  _id: FireflyCaptured
   _count: 1
   _onSuccess:
     m_PersistentCalls:

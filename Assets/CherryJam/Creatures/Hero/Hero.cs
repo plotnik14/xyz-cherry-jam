@@ -8,6 +8,7 @@ using CherryJam.Components.LevelManagement.SpawnPoints;
 using CherryJam.Components.Light;
 using CherryJam.Effects.CameraRelated;
 using CherryJam.Model;
+using CherryJam.Model.Definition.Repositories.Items;
 using CherryJam.Utils;
 using CherryJam.Utils.Disposables;
 using UnityEngine;
@@ -22,6 +23,7 @@ namespace CherryJam.Creatures.Hero
         [SerializeField] private CheckCircleOverlap _interactionCheck;
         [SerializeField] private CheckCircleOverlap _platformCheck;
         [SerializeField] protected CheckCircleOverlap _superAttackRange;
+        [SerializeField] protected InventoryController _inventory;
 
 
         [Header("Throw")]       
@@ -111,6 +113,7 @@ namespace CherryJam.Creatures.Hero
 
             _playerInput = GetComponent<PlayerInput>();
             _healthComponent = GetComponent<HeroHealthComponent>();
+            _inventory = GetComponent<InventoryController>();
             _allowDoubleJump = true;
             _isMultiThrow = false;
             _speedMod = 1;
@@ -174,7 +177,7 @@ namespace CherryJam.Creatures.Hero
 
         public bool AddToInventory(string id, int value)
         {
-            return _session.Data.Inventory.Add(id, value);
+            return _inventory.Add(id, value);
         }
         
         private void SpawnThrownParticle(GameObject projectile)
@@ -282,7 +285,6 @@ namespace CherryJam.Creatures.Hero
         public void Heal(int healingValue)
         {
             _healthComponent.ApplyHealing(healingValue);
-            // _particles.Spawn("Heal");
         }
         
         // My implementation
@@ -441,16 +443,15 @@ namespace CherryJam.Creatures.Hero
 
             _onDirectionChanged?.Invoke();
         }
-
-        private const string FireflyId = "Firefly";
+        
         public void HealWithFirefly()
         {
-            var firefliesCount = _session.Data.Inventory.Count(FireflyId);
+            var firefliesCount = _session.Data.Inventory.Count(ItemId.FireflyToUse.ToString());
             if (firefliesCount <= 0) return;
             
             Animator.SetTrigger(HealKey);
             _healthComponent.ApplyHealing(_fireflyHeal);
-            _session.Data.Inventory.Remove(FireflyId, 1);
+            _session.Data.Inventory.Remove(ItemId.FireflyToUse.ToString(), 1);
         }
 
         public void SetBoostedAttack(bool isBoosted)

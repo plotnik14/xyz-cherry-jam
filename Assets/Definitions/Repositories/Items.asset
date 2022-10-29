@@ -13,21 +13,12 @@ MonoBehaviour:
   m_Name: Items
   m_EditorClassIdentifier: PixelCrewAssembly:PixelCrew.Model:InventoryItemsDef
   _collection:
-  - _id: Firefly
-    _icon: {fileID: 0}
+  - _id: FireflyToUse
     _tags: 00000000
-    _price:
-      _itemId: Coin
-      _count: 5
-  - _id: FireflyMax
-    _icon: {fileID: 0}
+    _maxCount: 0
+  - _id: FireflyCaptured
     _tags: 00000000
-    _price:
-      _itemId: Coin
-      _count: 5
+    _maxCount: 3
   - _id: Projectile
-    _icon: {fileID: 0}
     _tags: 00000000
-    _price:
-      _itemId: Coin
-      _count: 5
+    _maxCount: 10
