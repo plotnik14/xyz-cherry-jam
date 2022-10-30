@@ -141,6 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 8
   _invertX: 0
+  _applyRotation: 0
 --- !u!114 &-781630999399838018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,8 +228,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ac3a445fcfdbab4e8bac31201724c28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isHeroAttack: 0
-  _isRangeAttack: 0
   _hpDelta: -5
 --- !u!114 &4314015886355339110
 MonoBehaviour:
@@ -285,7 +284,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 0, b: 0.04843235, a: 1}
   m_Intensity: 5.61
   m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 2b276728bb153caa65595190b7c96eb835bfd3b7
+  m_ApplyToSortingLayers: 2b276728bb153caa65595190b7c96eb835bfd3b7b7d7d5c9
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
   m_LightOrder: 0
@@ -295,7 +294,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 0.66
+  m_PointLightOuterRadius: 1.65
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5

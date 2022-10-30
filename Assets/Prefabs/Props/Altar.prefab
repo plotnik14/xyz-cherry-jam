@@ -113,6 +113,7 @@ GameObject:
   - component: {fileID: 526133946}
   - component: {fileID: 1521090472923443576}
   - component: {fileID: 6570763021703624451}
+  - component: {fileID: 6802153709699378678}
   m_Layer: 0
   m_Name: Altar
   m_TagString: Altar
@@ -329,6 +330,23 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &6802153709699378678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521090472923443577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cda88fd28da64a5fb04c67db9d532823, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _triggers:
+  - {fileID: 8778779973551085933}
+  _onAllActivated:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2086158818542886144
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,6 +456,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3756013292757687689}
   - component: {fileID: 2889778216089614807}
+  - component: {fileID: 8778779973551085933}
   m_Layer: 0
   m_Name: NewFirefly
   m_TagString: Untagged
@@ -475,7 +494,34 @@ MonoBehaviour:
   _count: 1
   _onSuccess:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8778779973551085933}
+        m_MethodName: Activate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _onFail:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &8778779973551085933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5466441954494479426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77601e81f09f4b86863d89ff814b29d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _activated: 0
+  _onActivate:
     m_PersistentCalls:
       m_Calls: []

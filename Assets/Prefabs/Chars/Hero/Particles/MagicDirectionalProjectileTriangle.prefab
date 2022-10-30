@@ -228,8 +228,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ac3a445fcfdbab4e8bac31201724c28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isHeroAttack: 0
-  _isRangeAttack: 0
   _hpDelta: -8
 --- !u!114 &4314015886355339110
 MonoBehaviour:
@@ -283,7 +281,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.621
-  m_Color: {r: 0, g: 0.15004349, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.6117647, b: 0.9622642, a: 1}
   m_Intensity: 5.61
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 2b276728bb153caa65595190b7c96eb835bfd3b7
@@ -296,7 +294,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 0.72
+  m_PointLightOuterRadius: 3.28
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5

@@ -864,7 +864,7 @@ MonoBehaviour:
   m_Color: {r: 0.8349056, g: 0.92530227, b: 0.7607843, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.15
-  m_ApplyToSortingLayers: 2b276728bb153caa65595190b7c96eb835bfd3b7
+  m_ApplyToSortingLayers: 2b276728bb153caa65595190b7c96eb835bfd3b7b7d7d5c9
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
   m_LightOrder: 0
@@ -1397,8 +1397,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.005584717, y: -0.12612534}
-  m_Size: {x: 1.5852814, y: 3.3291397}
+  m_Offset: {x: 0.005584717, y: -0.0877018}
+  m_Size: {x: 1.5852814, y: 3.2522926}
   m_Direction: 0
 --- !u!95 &8102529004577583010
 Animator:
