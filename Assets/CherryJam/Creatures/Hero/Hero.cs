@@ -57,7 +57,7 @@ namespace CherryJam.Creatures.Hero
             _healthComponent = GetComponent<HeroHealthComponent>();
             _inventory = GetComponent<InventoryController>();
             
-            _allowDoubleJump = true;
+            _allowDoubleJump = false;
         }
 
         private void UpdatePosition()
@@ -109,7 +109,7 @@ namespace CherryJam.Creatures.Hero
         {
             if (IsGrounded)
             {
-                _allowDoubleJump = true;
+                _allowDoubleJump = false;
                 IsJumping = false;
             }
 
