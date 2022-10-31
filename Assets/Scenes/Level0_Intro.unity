@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2206,7 +2206,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1379782093}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -91.37, y: 0.09, z: 0}
+  m_LocalPosition: {x: -104.56, y: 0.09, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1482397498}
@@ -2839,8 +2839,8 @@ PolygonCollider2D:
       - {x: 16.365135, y: 4.7400513}
       - {x: 15.73386, y: 3.9521027}
       - {x: 15.03381, y: 2.6864395}
-      - {x: 15.035427, y: 0.9469681}
-      - {x: -37.647236, y: 0.9673879}
+      - {x: 15.035427, y: 0.8181963}
+      - {x: -53.06435, y: 0.75235534}
       - {x: -48.98944, y: -4.1800003}
       - {x: -0.39207596, y: -3.304287}
       - {x: 4.355165, y: -2.6193197}
@@ -3056,22 +3056,22 @@ PrefabInstance:
     - target: {fileID: 174238080391816788, guid: ed0079593ab54f6449be80e2587a226c,
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x
-      value: -42.677574
+      value: -49.37436
       objectReference: {fileID: 0}
     - target: {fileID: 174238080391816788, guid: ed0079593ab54f6449be80e2587a226c,
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].y
-      value: 12.457425
+      value: 12.2342005
       objectReference: {fileID: 0}
     - target: {fileID: 174238080391816788, guid: ed0079593ab54f6449be80e2587a226c,
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
-      value: -42.74277
+      value: -49.216328
       objectReference: {fileID: 0}
     - target: {fileID: 174238080391816788, guid: ed0079593ab54f6449be80e2587a226c,
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].y
-      value: -11.300291
+      value: -11.672335
       objectReference: {fileID: 0}
     - target: {fileID: 174238080391816788, guid: ed0079593ab54f6449be80e2587a226c,
         type: 3}
