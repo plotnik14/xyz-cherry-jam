@@ -1,5 +1,5 @@
 {
-    "name": "HeroInput",
+    "name": "PlayerInput",
     "maps": [
         {
             "name": "Hero",
@@ -148,17 +148,6 @@
                     "name": "up",
                     "id": "df739a94-eb6e-4b1b-8d41-88054a8619b8",
                     "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "1841f82a-b485-4c50-b515-6b867bcbe05b",
-                    "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

@@ -39,6 +39,7 @@ namespace CherryJam.Creatures.Hero
         private readonly Cooldown _speedUpCooldown = new Cooldown();
         private float _additionalSpeed;
         private bool _isBoostedAttack;
+        
         private event Action _onDirectionChanged;
         
         private static readonly int IsHeroKey = Animator.StringToHash("is-hero");
@@ -113,9 +114,12 @@ namespace CherryJam.Creatures.Hero
                 IsJumping = false;
             }
 
-            var isJumpingDown = Direction.y < 0;
+            var isJumpingDown = Direction.y > 0 && IsLookingDown; // Jump pressed
             if (isJumpingDown)
+            {
                 TryJumpDown();
+                return 0;
+            }
 
             return base.CalculateYVelocity();
         }
