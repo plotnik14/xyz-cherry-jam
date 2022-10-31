@@ -818,8 +818,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7204302000287035876}
-  - component: {fileID: 121960576350018771}
-  - component: {fileID: 267550043812120102}
   - component: {fileID: 1356442521129968185}
   - component: {fileID: 5184413115833468248}
   m_Layer: 0
@@ -846,63 +844,6 @@ Transform:
   m_Father: {fileID: 8102529004577583019}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &121960576350018771
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7204302000287035879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_LightType: 3
-  m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.604
-  m_Color: {r: 0.8349056, g: 0.92530227, b: 0.7607843, a: 1}
-  m_Intensity: 1
-  m_LightVolumeOpacity: 0.15
-  m_ApplyToSortingLayers: 2b276728bb153caa65595190b7c96eb835bfd3b7b7d7d5c9
-  m_LightCookieSprite: {fileID: 0}
-  m_UseNormalMap: 0
-  m_LightOrder: 0
-  m_AlphaBlendOnOverlap: 0
-  m_ShadowIntensity: 0
-  m_ShadowVolumeIntensity: 0
-  m_PointLightInnerAngle: 360
-  m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 8.37
-  m_PointLightDistance: 3
-  m_PointLightQuality: 1
-  m_ShapeLightParametricSides: 5
-  m_ShapeLightParametricAngleOffset: 0
-  m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 0.5
-  m_ShapeLightFalloffOffset: {x: 0, y: 0}
-  m_ShapePath:
-  - {x: -0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: 0.5, z: 0}
-  - {x: -0.5, y: 0.5, z: 0}
---- !u!114 &267550043812120102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7204302000287035879}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32ad4c4b3aa9453fa83de50a3085cbb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxFuel: 30
-  _startGoOutValue: 6
-  _goOutSpeed: 0.001
-  _currentFuel: 0
 --- !u!114 &1356442521129968185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1018,6 +959,7 @@ GameObject:
   - component: {fileID: 6864363217471795216}
   - component: {fileID: 1210272544332402138}
   - component: {fileID: 4888748736304038856}
+  - component: {fileID: 9187137639522682344}
   m_Layer: 11
   m_Name: HeroStudent
   m_TagString: Player
@@ -1592,6 +1534,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1abc9810c49b4ac1bfc4465726707853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &9187137639522682344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8102529004577583017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LightType: 3
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.604
+  m_Color: {r: 0.8349056, g: 0.92530227, b: 0.7607843, a: 1}
+  m_Intensity: 1
+  m_LightVolumeOpacity: 0.15
+  m_ApplyToSortingLayers: 2b276728bb153caa65595190b7c96eb835bfd3b7b7d7d5c9
+  m_LightCookieSprite: {fileID: 0}
+  m_UseNormalMap: 0
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_ShadowIntensity: 0
+  m_ShadowVolumeIntensity: 0
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 8.37
+  m_PointLightDistance: 3
+  m_PointLightQuality: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
 --- !u!1 &8689478332747668180
 GameObject:
   m_ObjectHideFlags: 0
