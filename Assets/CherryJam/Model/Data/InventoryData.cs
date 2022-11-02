@@ -12,7 +12,7 @@ namespace CherryJam.Model.Data
     {
         [SerializeField] private List<InventoryItemData> _inventory = new List<InventoryItemData>();
 
-        public Action<string, int> OnChange;
+        public event Action<string, int> OnChange;
 
         public bool Add(string id, int value, int maxValue = -1)
         {          
