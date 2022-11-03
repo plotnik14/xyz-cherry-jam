@@ -246,5 +246,10 @@ namespace CherryJam.Creatures.Hero
             _isBoostedAttack = isBoosted;
             Animator.SetBool(IsBoostedKey, isBoosted);
         }
+
+        public override void OnDieAnimationEnded()
+        {
+            // do nothing
+        }
     }
 }

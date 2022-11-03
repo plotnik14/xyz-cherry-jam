@@ -16,7 +16,7 @@ namespace CherryJam.Components.Movement
             StartMovement();
         }
 
-        private void StartMovement()
+        public void StartMovement()
         {
             StartCoroutine(Move());
         }

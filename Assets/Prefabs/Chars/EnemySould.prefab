@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 527493480876897652}
   - component: {fileID: 527493480876897653}
   - component: {fileID: 527493480876897651}
-  - component: {fileID: 4358625060417191282}
+  - component: {fileID: 6482634721343586452}
+  - component: {fileID: 6375566703069739485}
   m_Layer: 0
   m_Name: EnemySould
   m_TagString: Untagged
@@ -154,8 +155,45 @@ MonoBehaviour:
   _OnReached:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4358625060417191282}
-        m_MethodName: Activate
+      - m_Target: {fileID: 6375566703069739485}
+        m_MethodName: ReleaseOrDestroy
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 527493480876897655}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6482634721343586452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527493480876897655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc23b298113043feb98a4d53b7172569, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onRestart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 527493480876897653}
+        m_MethodName: SetClip
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Main
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 527493480876897651}
+        m_MethodName: StartMovement
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -165,18 +203,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 527493480876897655}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &4358625060417191282
+--- !u!114 &6375566703069739485
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -185,10 +212,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 527493480876897655}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77601e81f09f4b86863d89ff814b29d6, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c15a6552d76e0443817419f3dc04fd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _activated: 0
-  _onActivate:
-    m_PersistentCalls:
-      m_Calls: []
+  _objectToDestroy: {fileID: 527493480876897655}

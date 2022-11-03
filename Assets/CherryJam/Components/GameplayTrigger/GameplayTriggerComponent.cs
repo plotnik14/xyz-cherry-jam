@@ -7,14 +7,14 @@ namespace CherryJam.Components.GameplayTrigger
 {
     public class GameplayTriggerComponent : MonoBehaviour
     {
-        [SerializeField] private bool _activated;
-        [SerializeField] UnityEvent _onActivate;
+        [SerializeField] protected bool _activated;
+        [SerializeField] protected UnityEvent _onActivate;
         
-        private event Action OnChanged;
+        protected event Action OnChanged;
 
         public bool IsActivated => _activated;
         
-        public void Activate()
+        public virtual void Activate()
         {
             _activated = true;
             

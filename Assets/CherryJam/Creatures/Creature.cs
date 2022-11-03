@@ -236,5 +236,10 @@ namespace CherryJam.Creatures
             direction.y = 0;
             return direction.normalized;
         }
+
+        public virtual void OnDieAnimationEnded()
+        {
+            Destroy(gameObject);
+        }
     }
 }
