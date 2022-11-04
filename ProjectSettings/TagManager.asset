@@ -19,6 +19,7 @@ TagManager:
   - Lift
   - Altar
   - InGameMenu
+  - MusicAudioSource
   layers:
   - Default
   - TransparentFX

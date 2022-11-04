@@ -38,11 +38,13 @@ namespace CherryJam.Components.Audio
                     return GameSettings.I.Sfx;
             }
 
-            throw new ArgumentException("Undefinde mode");
+            throw new ArgumentException("Undefined SoundSetting mode");
         }
 
         private void OnDestroy()
         {
+            if (_model == null) return;
+            
             _model.OnChanged -= OnSoundSettingChanged;
         }
     }
