@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1356,7 +1356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _followTarget: {fileID: 1934815588}
-  _effectStrength: 0.1
+  _effectStrength: 0.05
   _disableVertical: 1
   _invertDirection: 0
 --- !u!1 &721520352
@@ -5332,7 +5332,7 @@ PrefabInstance:
     - target: {fileID: 4637590855742770847, guid: eb2b03524384a5c459e9c66aa6c8f63e,
         type: 3}
       propertyPath: m_Intensity
-      value: 1
+      value: 0.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb2b03524384a5c459e9c66aa6c8f63e, type: 3}
