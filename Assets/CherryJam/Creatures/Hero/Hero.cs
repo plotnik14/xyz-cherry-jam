@@ -118,7 +118,7 @@ namespace CherryJam.Creatures.Hero
             if (isJumpingDown)
             {
                 TryJumpDown();
-                return 0;
+                return Rigidbody.velocity.y;
             }
 
             return base.CalculateYVelocity();
