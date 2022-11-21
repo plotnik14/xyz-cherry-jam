@@ -7,7 +7,9 @@ namespace CherryJam.Creatures.Mobs.Boss.Master
 {
     public class BossMaster : Creature
     {
-        [SerializeField] public DirectionalSpawnComponent _waveProjectileSpawner;
+        [SerializeField] private DirectionalSpawnComponent _waveProjectileSpawner;
+        [SerializeField] private BossHealthStageController _healthStageController;
+        [SerializeField] private MultipleSpawnComponent _firefliesSpawner;
         
         [Space][Header("Running Params")]
         [SerializeField] private float _treshold;
@@ -20,13 +22,24 @@ namespace CherryJam.Creatures.Mobs.Boss.Master
         private static readonly int WaveAttackKey = Animator.StringToHash("wave-attack");
         private static readonly int HeroInVisionKey = Animator.StringToHash("hero-in-vision");
         private static readonly int LostHeroKey = Animator.StringToHash("lost-hero");
+        private static readonly int SpawnKey = Animator.StringToHash("spawn");
 
         protected override void Awake()
         {
             base.Awake();
 
             _health = GetComponent<HealthComponent>();
+            _health.OnChange.AddListener(OnHealthChanged);
+            
             _heroStudent = FindObjectOfType<Hero.Hero>();
+        }
+
+        private void OnHealthChanged(int health)
+        {
+            if (_healthStageController.HasReachedNextStage(health, _health.MaxHealth))
+            {
+                Animator.SetTrigger(SpawnKey);
+            }
         }
 
         public void Run()
@@ -68,9 +81,9 @@ namespace CherryJam.Creatures.Mobs.Boss.Master
             return (point.position - transform.position).magnitude < _treshold;
         }
 
-        public void Spawn()
+        public void OnSpawn()
         {
-            throw new System.NotImplementedException();
+            _firefliesSpawner.SpawnMultiple();
         }
         
         public void WaveAttack()
@@ -101,6 +114,11 @@ namespace CherryJam.Creatures.Mobs.Boss.Master
             if (_current == null) return;
             StopCoroutine(_current);
             _current = null;
+        }
+
+        private void OnDestroy()
+        {
+            _health.OnChange.RemoveListener(OnHealthChanged);
         }
     }
 }

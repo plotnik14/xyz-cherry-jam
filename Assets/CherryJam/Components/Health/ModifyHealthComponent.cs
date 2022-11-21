@@ -7,6 +7,8 @@ namespace CherryJam.Components.Health
     {
         [SerializeField] private int _hpDelta;
 
+        public int HpDelta => _hpDelta;
+
         private GameSession _session;
         
         public virtual void ApplyHealthChange(GameObject target)
