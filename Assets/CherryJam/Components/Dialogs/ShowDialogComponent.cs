@@ -11,7 +11,7 @@ namespace CherryJam.Components.Dialogs
     public class ShowDialogComponent : MonoBehaviour
     {
         [SerializeField] private Mode _mode;
-        [SerializeField] private bool _useLocalization = true;
+        // [SerializeField] private bool _useLocalization = true;
         [SerializeField] private bool _oneTimeDialog = true;
         [SerializeField] private DialogData _boundDialog;
         [SerializeField] private DialogDef _externalDialog;

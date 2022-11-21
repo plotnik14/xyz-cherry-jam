@@ -7,28 +7,20 @@ namespace CherryJam.Creatures.Mobs.Boss.Master
 {
     public class BossMaster : Creature
     {
-        [Space][Header("Boss Params")]
-        [SerializeField] private float _jumpDuration;
-        [SerializeField] private int _hpRestoredByEating;
+        [SerializeField] public DirectionalSpawnComponent _waveProjectileSpawner;
         
         [Space][Header("Running Params")]
-        [SerializeField] private Transform[] _runPoints;
         [SerializeField] private float _treshold;
 
-        [Space] [Header("Spawners")] 
-        [SerializeField] private GroupProjectileSpawner _perlsUpSpawner;
-        [SerializeField] private GroupProjectileSpawner _perlsDownSpawner;
-        
-        [SerializeField] public DirectionalSpawnComponent _rangeProjectileSpawnerCreatureRight;
-        
         private Coroutine _current;
         private HealthComponent _health;
-        private int _targetPointIndex = 0;
-        
-        private static readonly int IsOnPointKey = Animator.StringToHash("is-on-point");
-
         private Hero.Hero _heroStudent;
-        
+
+        private static readonly int IsOnPointKey = Animator.StringToHash("is-on-point");
+        private static readonly int WaveAttackKey = Animator.StringToHash("wave-attack");
+        private static readonly int HeroInVisionKey = Animator.StringToHash("hero-in-vision");
+        private static readonly int LostHeroKey = Animator.StringToHash("lost-hero");
+
         protected override void Awake()
         {
             base.Awake();
@@ -36,13 +28,7 @@ namespace CherryJam.Creatures.Mobs.Boss.Master
             _health = GetComponent<HealthComponent>();
             _heroStudent = FindObjectOfType<Hero.Hero>();
         }
-        
 
-        public void LaunchPerlsDown()
-        {
-            _perlsDownSpawner.LaunchProjectiles();
-        }
-        
         public void Run()
         {
             if (_current != null) return;
@@ -87,11 +73,34 @@ namespace CherryJam.Creatures.Mobs.Boss.Master
             throw new System.NotImplementedException();
         }
         
-        protected override void OnRangeAttackAnimationTriggered()
+        public void WaveAttack()
+        {
+            Animator.SetTrigger(WaveAttackKey);
+        } 
+        
+        protected void OnWaveAttackAnimationTriggered()
         {
             var direction = new Vector2( - transform.localScale.x, 0);
-            _rangeProjectileSpawnerCreature.Spawn(direction);
-            // _rangeProjectileSpawnerCreatureRight.Spawn(Vector2.right);
+            _waveProjectileSpawner.Spawn(direction);
+        }
+
+        public void SetVision(bool isInVision)
+        {
+            Animator.SetBool(HeroInVisionKey, isInVision);
+
+            if (!isInVision)
+            {
+                StopCurrentCoroutine();
+                StopCreature();
+                Animator.SetTrigger(LostHeroKey);
+            }
+        }
+
+        private void StopCurrentCoroutine()
+        {
+            if (_current == null) return;
+            StopCoroutine(_current);
+            _current = null;
         }
     }
 }
