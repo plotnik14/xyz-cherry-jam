@@ -6,6 +6,7 @@ namespace CherryJam.Components.Animations
     public class PushCreatureComponent : MonoBehaviour
     {
         [SerializeField] private float _pushStrength;
+        [SerializeField] private bool _useVelocityForDirection;
         
         public void Push(GameObject target, Vector2 direction)
         {
@@ -18,7 +19,17 @@ namespace CherryJam.Components.Animations
 
         public void Push(GameObject target)
         {
-            Push(target, transform.lossyScale);
+            var direction = GetDirection();
+            Push(target, direction);
+        }
+
+        private Vector2 GetDirection()
+        {
+            if (!_useVelocityForDirection) return transform.lossyScale;
+            
+            var rigidbodyComponent = GetComponent<Rigidbody2D>();
+            return rigidbodyComponent.velocity;
+
         }
     }
 }

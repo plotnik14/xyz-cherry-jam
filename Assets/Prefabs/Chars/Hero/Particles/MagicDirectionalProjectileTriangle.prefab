@@ -367,3 +367,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pushStrength: 5
+  _useVelocityForDirection: 1
