@@ -10,16 +10,10 @@ namespace CherryJam.Components.GoBased
         [ContextMenu("Spawn")]
         public void Spawn(Vector2 direction)
         {
-            var instance = _usePool
-                ? Pool.Instance.Get(_prefab, _target.position, transform.lossyScale)
-                : SpawnUtils.Spawn(_prefab, _target.position);
-            
-            instance.transform.localScale = transform.lossyScale;
-
+            var instance = SpawnInactive();
             var projectile = instance.GetComponent<DirectionalProjectile>();
-            projectile.Launch(direction);
-            
             instance.SetActive(true);
+            projectile.Launch(direction);
         }
     }
 }

@@ -16,17 +16,9 @@ namespace CherryJam.Creatures.Weapons
         }
 
         private void Rotate(Vector2 direction)
-        {
-            direction = UpdateScaledDirection(direction);
-           var angleDeg = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg; ;
-           transform.rotation = Quaternion.AngleAxis(angleDeg, Vector3.forward);
-        }
-
-        private Vector2 UpdateScaledDirection(Vector2 direction)
-        {
-            return direction.x < 0
-                ? -direction
-                : direction;
+        { 
+            var angleDeg = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg; ;
+            transform.rotation = Quaternion.AngleAxis(angleDeg, Vector3.forward);
         }
 
         public void Stop()

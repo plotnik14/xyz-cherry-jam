@@ -188,6 +188,7 @@ MonoBehaviour:
   _target: {fileID: 121960575706575392}
   _prefab: {fileID: 5527392513366398762, guid: d3e0fc87b0843d34bb2021eb9d398e06, type: 3}
   _usePool: 1
+  _useSpawnerScale: 1
 --- !u!114 &121960574535576902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,6 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pushStrength: 5
+  _useVelocityForDirection: 0
 --- !u!1 &2844249419142584623
 GameObject:
   m_ObjectHideFlags: 0
@@ -629,6 +631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pushStrength: 7
+  _useVelocityForDirection: 0
 --- !u!1 &6841404923878943884
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,6 +678,7 @@ MonoBehaviour:
   _target: {fileID: 2581416586513631852}
   _prefab: {fileID: 3169117936097083666, guid: 97f013252d1353d4db782082e1c64c61, type: 3}
   _usePool: 1
+  _useSpawnerScale: 0
 --- !u!1 &7151701312425754166
 GameObject:
   m_ObjectHideFlags: 0

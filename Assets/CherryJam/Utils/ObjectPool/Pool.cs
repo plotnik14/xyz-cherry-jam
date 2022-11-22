@@ -44,12 +44,14 @@ namespace CherryJam.Utils.ObjectPool
                 if (scale != Vector3.zero)
                     pooledItem.transform.localScale = scale;
                 
-                pooledItem.gameObject.SetActive(true);
                 pooledItem.Restart();
                 return pooledItem.gameObject;
             }
 
             var instance = SpawnUtils.Spawn(go, position, gameObject.name);
+            if (scale != Vector3.zero)
+                instance.transform.localScale = scale;
+            
             var poolItem = instance.GetComponent<PoolItem>();
             poolItem.Retain(id, this);
             return instance;

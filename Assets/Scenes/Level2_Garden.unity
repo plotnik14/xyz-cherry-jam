@@ -998,7 +998,7 @@ MonoBehaviour:
     _inventory:
       _inventory:
       - Id: Projectile
-        Value: 20
+        Value: 10
     Hp:
       _value: 10
   _defaultCheckpoint: 

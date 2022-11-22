@@ -14,19 +14,39 @@ namespace CherryJam.Components.GoBased
         [ContextMenu("Spawn")]
         public void Spawn()
         {
-            var instance = _usePool
-            ? Pool.Instance.Get(_prefab, _target.position, _useSpawnerScale ? transform.lossyScale : Vector3.zero)
-            : SpawnUtils.Spawn(_prefab, _target.position);
-            
-            if (_useSpawnerScale)
-                instance.transform.localScale = transform.lossyScale;
-            
+            var instance = SpawnInactive();
             instance.SetActive(true);
+        }
+
+        protected GameObject SpawnInactive()
+        {
+            var instance = _usePool
+                ? GetInstanceFromPool()
+                : GetNewInstance();
+
+            return instance;
         }
 
         public void SetPrefab(GameObject prefab)
         {
             _prefab = prefab;
+        }
+
+        private GameObject GetInstanceFromPool()
+        {
+            return _useSpawnerScale
+                ? Pool.Instance.Get(_prefab, _target.position, transform.lossyScale)
+                : Pool.Instance.Get(_prefab, _target.position);
+        }
+
+        private GameObject GetNewInstance()
+        {
+            var instance = SpawnUtils.Spawn(_prefab, _target.position);
+            
+            if (_useSpawnerScale)
+                instance.transform.localScale = transform.lossyScale;
+
+            return instance;
         }
     }
 }
