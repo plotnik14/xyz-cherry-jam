@@ -1160,9 +1160,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -908732489
-  m_SortingLayer: 8
-  m_SortingOrder: 0
+  m_SortingLayerID: -1438902853
+  m_SortingLayer: 2
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 156fedab2e87314458c05ebd03036b92, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2018,14 +2018,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.5
+  m_FalloffIntensity: 0.478
   m_Color: {r: 1, g: 0.42577282, b: 0.09803921, a: 1}
-  m_Intensity: 0.98
+  m_Intensity: 0.94
   m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 000000002b276728bb153caa65595190b7c96eb8a591207735bfd3b7bfb018b2b7d7d5c9631b096a
+  m_ApplyToSortingLayers: 000000002b276728bb153caa65595190b7c96eb8
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
-  m_LightOrder: 0
+  m_LightOrder: -1
   m_AlphaBlendOnOverlap: 0
   m_ShadowIntensity: 0
   m_ShadowVolumeIntensity: 0
@@ -2053,7 +2053,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1191581312}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 124.39238, y: -12.305952, z: -11.418922}
+  m_LocalPosition: {x: 124.39238, y: -12.305952, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 835655937}
@@ -2308,7 +2308,7 @@ MonoBehaviour:
   m_Color: {r: 0.09803921, g: 0.62921476, b: 1, a: 1}
   m_Intensity: 0.98
   m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 000000002b276728bb153caa65595190b7c96eb8a591207735bfd3b7bfb018b2b7d7d5c9631b096a
+  m_ApplyToSortingLayers: 000000002b276728bb153caa65595190b7c96eb8a591207735bfd3b7bfb018b2
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
   m_LightOrder: 0
@@ -4742,12 +4742,12 @@ PrefabInstance:
     - target: {fileID: 174238079085441934, guid: ed0079593ab54f6449be80e2587a226c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 131.9154
+      value: 131.92015
       objectReference: {fileID: 0}
     - target: {fileID: 174238079085441934, guid: ed0079593ab54f6449be80e2587a226c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.7105465
+      value: 10.710555
       objectReference: {fileID: 0}
     - target: {fileID: 174238079200469161, guid: ed0079593ab54f6449be80e2587a226c,
         type: 3}
