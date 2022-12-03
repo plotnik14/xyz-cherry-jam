@@ -127,9 +127,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.056172173, y: 0}
+  m_Offset: {x: 0.01, y: 0}
   serializedVersion: 2
-  m_Radius: 0.6683786
+  m_Radius: 0.82
 --- !u!114 &2136022512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,6 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pushStrength: 5
+  _useVelocityForDirection: 0
 --- !u!1 &1857073676
 GameObject:
   m_ObjectHideFlags: 0
@@ -790,7 +791,7 @@ MonoBehaviour:
   _platformCheck: {fileID: 1848102005}
   _wallCheck: {fileID: 934075363693512090}
   _alarmDelay: 0
-  _attackCooldown: 2
+  _attackCooldown: 0.5
   _missHeroCooldown: 0.5
 --- !u!114 &7116715449670555679
 MonoBehaviour:
