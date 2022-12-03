@@ -58,5 +58,10 @@ namespace CherryJam.Creatures.Mobs
             var direction = target.transform.position - transform.position;
             return direction.normalized;
         }
+
+        public void OnDieAnimationFinished()
+        {
+            Destroy(gameObject);
+        }
     }
 }
