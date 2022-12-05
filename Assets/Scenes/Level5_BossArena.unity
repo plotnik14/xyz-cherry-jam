@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -898,6 +898,7 @@ GameObject:
   m_Component:
   - component: {fileID: 663222032}
   - component: {fileID: 663222033}
+  - component: {fileID: 663222034}
   m_Layer: 0
   m_Name: "\u0421\u0430\u043C\u044B\u0439 \u0437\u0430\u0434 1"
   m_TagString: Untagged
@@ -969,6 +970,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &663222034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663222031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5acef4a2863349eb9048ee24f2613636, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _followTarget: {fileID: 174238078725933839}
+  _effectStrength: 0.1
+  _disableVertical: 1
+  _invertDirection: 0
 --- !u!1 &835655936
 GameObject:
   m_ObjectHideFlags: 0
@@ -2033,6 +2050,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed0079593ab54f6449be80e2587a226c, type: 3}
+--- !u!4 &174238078725933839 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 174238079085441934, guid: ed0079593ab54f6449be80e2587a226c,
+    type: 3}
+  m_PrefabInstance: {fileID: 174238078725933838}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3706491829237265032
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2451,6 +2474,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BossMaster
+      objectReference: {fileID: 0}
+    - target: {fileID: 8196221949270268441, guid: ade9b9c643e49334f8cbe5ae06a5a9e5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ade9b9c643e49334f8cbe5ae06a5a9e5, type: 3}
