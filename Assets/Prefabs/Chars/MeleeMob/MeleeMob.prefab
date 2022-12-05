@@ -791,7 +791,7 @@ MonoBehaviour:
   _platformCheck: {fileID: 1848102005}
   _wallCheck: {fileID: 934075363693512090}
   _alarmDelay: 0
-  _attackCooldown: 0.5
+  _attackCooldown: 1
   _missHeroCooldown: 0.5
 --- !u!114 &7116715449670555679
 MonoBehaviour:
