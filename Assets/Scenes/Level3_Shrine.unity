@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -375,6 +375,7 @@ GameObject:
   - component: {fileID: 253211654}
   - component: {fileID: 253211655}
   - component: {fileID: 253211656}
+  - component: {fileID: 253211657}
   m_Layer: 13
   m_Name: DestroyableFloor
   m_TagString: Enemy
@@ -519,6 +520,17 @@ MonoBehaviour:
           m_StringArgument: Destroy
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 253211657}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _onChange:
     m_PersistentCalls:
       m_Calls: []
@@ -584,6 +596,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectToDestroy: {fileID: 253211650}
+--- !u!114 &253211657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253211650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c2dd2d5e4572eb48a05e305cbe08869, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clip: {fileID: 8300000, guid: da47478b51de64d45a3162d8c6e7e239, type: 3}
 --- !u!1 &259666690
 GameObject:
   m_ObjectHideFlags: 0
@@ -2681,6 +2706,25 @@ MonoBehaviour:
   _effectStrength: 0.3
   _disableVertical: 1
   _invertDirection: 0
+--- !u!1 &1279372415 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1362951706645389478, guid: ab4a856852e812242a7ce34fa6884c37,
+    type: 3}
+  m_PrefabInstance: {fileID: 1362951707561634712}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1279372416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279372415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c2dd2d5e4572eb48a05e305cbe08869, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clip: {fileID: 8300000, guid: da47478b51de64d45a3162d8c6e7e239, type: 3}
 --- !u!1001 &1289278525
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2872,6 +2916,7 @@ GameObject:
   - component: {fileID: 1303207489}
   - component: {fileID: 1303207490}
   - component: {fileID: 1303207491}
+  - component: {fileID: 1303207492}
   m_Layer: 8
   m_Name: FallingBranch
   m_TagString: Untagged
@@ -3084,6 +3129,30 @@ MonoBehaviour:
           m_StringArgument: Shaking
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1303207492}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1303207492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303207485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c2dd2d5e4572eb48a05e305cbe08869, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clip: {fileID: 8300000, guid: 743e73e8320d2204c9a3c32f3f0ee714, type: 3}
 --- !u!1 &1337836272
 GameObject:
   m_ObjectHideFlags: 0
@@ -3814,6 +3883,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1279372416}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &1749455641
 GameObject:
   m_ObjectHideFlags: 0
@@ -3886,6 +3966,7 @@ GameObject:
   - component: {fileID: 1753188683}
   - component: {fileID: 1753188684}
   - component: {fileID: 1753188685}
+  - component: {fileID: 1753188686}
   m_Layer: 8
   m_Name: FallingPlatform
   m_TagString: Platform
@@ -4115,6 +4196,30 @@ MonoBehaviour:
           m_StringArgument: Shaking
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1753188686}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1753188686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753188678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c2dd2d5e4572eb48a05e305cbe08869, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clip: {fileID: 8300000, guid: da47478b51de64d45a3162d8c6e7e239, type: 3}
 --- !u!1001 &1780312469
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5245,7 +5350,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1362951707561634712}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1279372415}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 96a7b47a1cbe6e048a7bc444b9d27bed, type: 3}
