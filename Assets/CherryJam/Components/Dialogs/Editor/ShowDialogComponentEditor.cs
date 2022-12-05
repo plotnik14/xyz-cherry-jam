@@ -17,7 +17,7 @@ namespace CherryJam.Components.Dialogs.Editor
         public override void OnInspectorGUI()
         {
             EditorGUILayout.PropertyField(_modeProperty);
-            EditorGUILayout.PropertyField(serializedObject.FindProperty("_useLocalization"));
+            // EditorGUILayout.PropertyField(serializedObject.FindProperty("_useLocalization"));
             EditorGUILayout.PropertyField(serializedObject.FindProperty("_oneTimeDialog"));
             
             if (_modeProperty.TryGetEnum(out ShowDialogComponent.Mode mode))
