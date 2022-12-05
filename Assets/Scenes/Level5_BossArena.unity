@@ -567,7 +567,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &590965570
 GameObject:
@@ -2225,7 +2225,7 @@ PrefabInstance:
     - target: {fileID: 5295528582907728703, guid: 6df314e043b92034aaf5377b9d3a045b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5295528582907728703, guid: 6df314e043b92034aaf5377b9d3a045b,
         type: 3}
@@ -2474,11 +2474,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BossMaster
-      objectReference: {fileID: 0}
-    - target: {fileID: 8196221949270268441, guid: ade9b9c643e49334f8cbe5ae06a5a9e5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ade9b9c643e49334f8cbe5ae06a5a9e5, type: 3}

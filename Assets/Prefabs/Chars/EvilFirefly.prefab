@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: 2889733175481374750}
   - component: {fileID: 2889733175481374751}
   - component: {fileID: 2889733175481374748}
+  - component: {fileID: 1829973394}
+  - component: {fileID: 1829973393}
   m_Layer: 13
   m_Name: EvilFirefly
   m_TagString: Enemy
@@ -76,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1200698953
   m_SortingLayer: 4
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 5a683866ecbea974db7471bbeea5f5af, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -154,9 +156,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.52
+  m_FalloffIntensity: 0.152
   m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_Intensity: 1.41
+  m_Intensity: 0.18
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000bb153caa65595190b7c96eb82b276728
   m_LightCookieSprite: {fileID: 0}
@@ -167,8 +169,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensity: 0
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 1.48
-  m_PointLightOuterRadius: 2.47
+  m_PointLightInnerRadius: 0.81
+  m_PointLightOuterRadius: 1.85
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -206,8 +208,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28e8fe4436fc47608a5729660d6764a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _wayPoints: []
+  _speed: 5
+  _onPoitTreshold: 0.3
   _attackCooldown:
-    _value: 3
+    _value: 1
 --- !u!58 &2889733175481374750
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -273,3 +278,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectToDestroy: {fileID: 2889733175481374743}
+--- !u!50 &1829973394
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2889733175481374743}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &1829973393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2889733175481374743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9cebd0c424cbb548a9b386da39db13e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tag: 
+  _layer:
+    serializedVersion: 2
+    m_Bits: 2048
+  _action:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2889733175481374749}
+        m_MethodName: Attack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

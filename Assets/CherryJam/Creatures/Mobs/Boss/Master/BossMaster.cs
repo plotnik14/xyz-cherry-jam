@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using CherryJam.Components.GoBased;
 using CherryJam.Components.Health;
+using CherryJam.Creatures.Mobs.Boss.EvilFireflies;
 using UnityEngine;
 
 namespace CherryJam.Creatures.Mobs.Boss.Master
@@ -9,7 +10,7 @@ namespace CherryJam.Creatures.Mobs.Boss.Master
     {
         [SerializeField] private DirectionalSpawnComponent _waveProjectileSpawner;
         [SerializeField] private BossHealthStageController _healthStageController;
-        [SerializeField] private MultipleSpawnComponent _firefliesSpawner;
+        [SerializeField] private EvilFirefliesSpawner _firefliesSpawner;
         
         [Space][Header("Running Params")]
         [SerializeField] private float _treshold;
@@ -83,7 +84,7 @@ namespace CherryJam.Creatures.Mobs.Boss.Master
 
         public void OnSpawn()
         {
-            _firefliesSpawner.SpawnMultiple();
+            _firefliesSpawner.SpawnFireflies();
         }
         
         public void WaveAttack()
