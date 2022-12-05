@@ -11,14 +11,18 @@ namespace CherryJam.Components.Movement
         [SerializeField] private float _reachTreshold;
         [SerializeField] private UnityEvent _OnReached;
 
-        protected virtual void Start()
+        private Coroutine _current;
+        
+        private void OnEnable()
         {
             StartMovement();
         }
 
         public void StartMovement()
         {
-            StartCoroutine(Move());
+            if (_current != null) return;
+            
+            _current = StartCoroutine(Move());
         }
 
         private IEnumerator Move()
@@ -33,6 +37,7 @@ namespace CherryJam.Components.Movement
             }
             
             _OnReached?.Invoke();
+            _current = null;
         }
         
         private bool IsDestinationReached()
