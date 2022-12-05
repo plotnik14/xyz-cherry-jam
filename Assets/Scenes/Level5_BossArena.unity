@@ -546,7 +546,7 @@ MonoBehaviour:
   _data:
     _inventory:
       _inventory:
-      - Id: FireflyToUse
+      - Id: FireflyCaptured
         Value: 3
       - Id: FireflyToUse
         Value: 3
