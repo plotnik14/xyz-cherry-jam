@@ -244,5 +244,5 @@ SpriteAtlas:
   - 2Glass7
   - GlassEmpty
   - GLass9
-  m_Tag: HudAtlass
+  m_Tag: HudAtlas
   m_IsVariant: 0
