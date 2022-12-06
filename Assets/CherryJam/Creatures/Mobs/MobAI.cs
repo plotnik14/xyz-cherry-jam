@@ -64,15 +64,17 @@ namespace CherryJam.Creatures.Mobs
                     if (_platformCheck.IsTouchingLayer && !_wallCheck.IsTouchingLayer)
                         SetDirectionToTarget();
                     else
-                        StopCreature();
+                    {
+                        SetDirectionOppositeToTarget();
+                        StartState(_patrol.DoPatrol());
+                    }
                 }
 
                 yield return null;
             }
 
             StopCreature();
-
-            // _particles.Spawn("MissHero");
+            
             yield return new WaitForSeconds(_missHeroCooldown);
 
             StartState(_patrol.DoPatrol());
@@ -92,6 +94,13 @@ namespace CherryJam.Creatures.Mobs
         protected virtual void SetDirectionToTarget()
         {
             var direction = GetDirectionToTarget();
+            _creature.SetDirection(direction);
+        }
+        
+        protected virtual void SetDirectionOppositeToTarget()
+        {
+            var direction = GetDirectionToTarget();
+            direction.x = - direction.x;
             _creature.SetDirection(direction);
         }
 

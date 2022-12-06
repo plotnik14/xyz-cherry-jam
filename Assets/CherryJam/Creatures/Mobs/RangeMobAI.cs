@@ -8,10 +8,9 @@ namespace CherryJam.Creatures.Mobs
         protected override IEnumerator AgroToHero()
         {
             LookAtHero();
-            // _particles.Spawn("Exclamation");
-
+            
             yield return new WaitForSeconds(_alarmDelay);
-
+            
             StartState(Attack());
         }
 
