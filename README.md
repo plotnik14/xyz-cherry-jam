@@ -3,7 +3,7 @@
 2D platformer about a girl from academy of magic. The game was developed by a team of 8 members and took 3d place in XYZ Game Jam. 
   
 **Platform:** PC  
-**Engine:** Unity
+**Engine:** Unity 2019.4
 ### Gameplay Video
 [**YouTube** - GameJam version](https://youtu.be/fZmjbFi3S4M)
 
