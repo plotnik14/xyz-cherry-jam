@@ -908,6 +908,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RangeMob (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8196759456510313766, guid: d956d0796dff49c4aa9f3efc370a368c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d956d0796dff49c4aa9f3efc370a368c, type: 3}
 --- !u!4 &513079940 stripped
@@ -1256,6 +1261,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeleeMob (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8196759456510313766, guid: 6cb88e01784e30547bcab53d9aca8c0c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8196759456510313772, guid: 6cb88e01784e30547bcab53d9aca8c0c,
         type: 3}
       propertyPath: _onDie.m_PersistentCalls.m_Calls.Array.size
@@ -1380,6 +1390,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RangeMob (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8196759456510313766, guid: d956d0796dff49c4aa9f3efc370a368c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d956d0796dff49c4aa9f3efc370a368c, type: 3}
@@ -2064,6 +2079,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeleeMob (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8196759456510313766, guid: 6cb88e01784e30547bcab53d9aca8c0c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8196759456510313772, guid: 6cb88e01784e30547bcab53d9aca8c0c,
         type: 3}
       propertyPath: _onDie.m_PersistentCalls.m_Calls.Array.size
@@ -2144,6 +2164,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RangeMob (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8196759456510313766, guid: d956d0796dff49c4aa9f3efc370a368c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d956d0796dff49c4aa9f3efc370a368c, type: 3}
@@ -3090,6 +3115,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RangeMob
       objectReference: {fileID: 0}
+    - target: {fileID: 8196759456510313766, guid: d956d0796dff49c4aa9f3efc370a368c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d956d0796dff49c4aa9f3efc370a368c, type: 3}
 --- !u!4 &1593457935 stripped
@@ -3382,6 +3412,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RangeMob (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8196759456510313766, guid: d956d0796dff49c4aa9f3efc370a368c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d956d0796dff49c4aa9f3efc370a368c, type: 3}
 --- !u!4 &1770807852 stripped
@@ -3466,6 +3501,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MeleeMob (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8196759456510313766, guid: 6cb88e01784e30547bcab53d9aca8c0c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8196759456510313772, guid: 6cb88e01784e30547bcab53d9aca8c0c,
         type: 3}

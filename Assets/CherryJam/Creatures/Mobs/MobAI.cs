@@ -22,7 +22,6 @@ namespace CherryJam.Creatures.Mobs
         protected GameObject _target;
         protected bool _isDead;
 
-        protected SpawnListComponent _particles;
         protected Creature _creature;
         protected Animator _animator;
         protected Patrol _patrol;
@@ -31,7 +30,6 @@ namespace CherryJam.Creatures.Mobs
 
         protected virtual void Awake()
         {
-            _particles = GetComponent<SpawnListComponent>();
             _creature = GetComponent<Creature>();
             _animator = GetComponent<Animator>();
             _patrol = GetComponent<Patrol>();
@@ -114,7 +112,6 @@ namespace CherryJam.Creatures.Mobs
         protected virtual IEnumerator AgroToHero()
         {
             LookAtHero();
-            // _particles.Spawn("Exclamation");
 
             yield return new WaitForSeconds(_alarmDelay);
 
