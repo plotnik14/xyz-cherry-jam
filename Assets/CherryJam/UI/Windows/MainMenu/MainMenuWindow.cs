@@ -17,25 +17,17 @@ namespace CherryJam.UI.Windows.MainMenu
 
         public void OnStartGame()
         {
-            CleanExistingSession();
-            
-            _closeAction = () =>
-            {
-                var loader = FindObjectOfType<LevelLoader>();
-                loader.LoadLevel("Level0__CutScene1");
-            };
-            
-            Close();
+            LoadLevel("Level0__CutScene1");
         }
         
-        public void LoadBossLevel()
+        public void LoadLevel(string sceneName)
         {
             CleanExistingSession();
             
             _closeAction = () =>
             {
                 var loader = FindObjectOfType<LevelLoader>();
-                loader.LoadLevel("Level5_BossArena");
+                loader.LoadLevel(sceneName);
             };
             
             Close();
@@ -52,7 +44,6 @@ namespace CherryJam.UI.Windows.MainMenu
             _closeAction = () =>
             {
                 var loader = FindObjectOfType<LevelLoader>();
-                // loader.LoadLevel("Level0_Intro");
                 loader.LoadLevel("Level6_Credits");
             };
             
