@@ -247,6 +247,11 @@ namespace CherryJam.Creatures.Hero
             Animator.SetBool(IsBoostedKey, isBoosted);
         }
 
+        public void HealSound()
+        {
+            Sounds.Play("Heal");
+        }
+        
         public override void OnDieAnimationEnded()
         {
             // do nothing
