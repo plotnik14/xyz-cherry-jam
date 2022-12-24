@@ -48,7 +48,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.14609098, y: -2.0882497}
   serializedVersion: 2
-  m_Radius: 1.3337874
+  m_Radius: 2
 --- !u!114 &8866464059959705963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,6 +256,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8866464059959705963}
+        m_MethodName: Add
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1521090472923443576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,6 +373,7 @@ GameObject:
   - component: {fileID: 2430091176439007473}
   - component: {fileID: 1374520462765980779}
   - component: {fileID: 4491579539091874937}
+  - component: {fileID: 7199578678309784396}
   m_Layer: 0
   m_Name: FireflyRestore
   m_TagString: Untagged
@@ -398,7 +410,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.14609098, y: -2.0882497}
   serializedVersion: 2
-  m_Radius: 1.3337874
+  m_Radius: 2
 --- !u!114 &1374520462765980779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -415,7 +427,18 @@ MonoBehaviour:
   _count: 3
   _onSuccess:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7199578678309784396}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _onFail:
     m_PersistentCalls:
       m_Calls: []
@@ -449,6 +472,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7199578678309784396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086158818542886144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c2dd2d5e4572eb48a05e305cbe08869, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clip: {fileID: 8300000, guid: 40bc9a891452cdc48816c6e768584703, type: 3}
 --- !u!1 &5466441954494479426
 GameObject:
   m_ObjectHideFlags: 0
