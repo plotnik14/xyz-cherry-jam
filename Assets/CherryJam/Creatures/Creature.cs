@@ -17,7 +17,7 @@ namespace CherryJam.Creatures
 
         [Header("Checkers")]
         [SerializeField] protected ColliderCheck _groundCheck;
-        [SerializeField] protected CheckCircleOverlap _attackRange;
+        [SerializeField] protected OverlapCheck _attackRange;
         [SerializeField] public DirectionalSpawnComponent _rangeProjectileSpawnerCreature;
 
         protected Rigidbody2D Rigidbody;

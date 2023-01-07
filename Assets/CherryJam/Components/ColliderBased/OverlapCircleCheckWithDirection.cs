@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 namespace CherryJam.Components.ColliderBased
 {
-    public class CheckCircleOverlapWithDirection : CheckCircleOverlap
+    public class OverlapCircleCheckWithDirection : OverlapCheck
     {
         [SerializeField] private OnOverlapWithDirectionEvent _onOverlapDirectional;
 

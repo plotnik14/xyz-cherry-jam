@@ -6,27 +6,23 @@ using UnityEngine.Events;
 
 namespace CherryJam.Components.ColliderBased
 {
-    public class CheckCircleOverlap : MonoBehaviour
+    public class OverlapCheck : MonoBehaviour
     {
         [SerializeField] private float _radius = 1f;
-        [SerializeField] private LayerMask _mask;
+        [SerializeField] protected LayerMask _mask;
         [SerializeField] private string[] _tags;
         [SerializeField] private OnOverlapEvent _onOverlap;
         [SerializeField] private UnityEvent _onCheckComplete;
 
-        private readonly Collider2D[] _interactionResult = new Collider2D[10];
+        protected readonly Collider2D[] InteractionResult = new Collider2D[10];
 
         public void Check()
         {
-            var size = Physics2D.OverlapCircleNonAlloc(
-                transform.position,
-                _radius,
-                _interactionResult,
-                _mask);
+            var size = CheckOverlap();
 
             for (int i = 0; i < size; i++)
             {
-                var overlapResult = _interactionResult[i];
+                var overlapResult = InteractionResult[i];
                 var isInTags = _tags.Any(tag => overlapResult.CompareTag(tag));
 
                 if (isInTags)
@@ -38,15 +34,24 @@ namespace CherryJam.Components.ColliderBased
             _onCheckComplete?.Invoke();
         }
 
+        protected virtual int CheckOverlap()
+        {
+            return Physics2D.OverlapCircleNonAlloc(
+                transform.position,
+                _radius,
+                InteractionResult,
+                _mask);
+        }
+        
         protected virtual void FireOverlapEvent(Collider2D overlap)
         {
             _onOverlap?.Invoke(overlap.gameObject);
         }
 
 #if UNITY_EDITOR
-        private void OnDrawGizmosSelected()
+        protected virtual void OnDrawGizmosSelected()
         {
-            UnityEditor.Handles.color = HandlesUtils.TransparentRed;
+            UnityEditor.Handles.color = HandlesUtils.TransparentRed01;
             UnityEditor.Handles.DrawSolidDisc(transform.position, Vector3.forward, _radius);
         }
 #endif

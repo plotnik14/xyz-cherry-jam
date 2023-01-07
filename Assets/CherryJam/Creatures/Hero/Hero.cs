@@ -17,13 +17,13 @@ namespace CherryJam.Creatures.Hero
     public class Hero : Creature
     {
         [Header("Hero Params")]
-        [SerializeField] private CheckCircleOverlap _interactionCheck;
-        [SerializeField] private CheckCircleOverlap _platformCheck;
+        [SerializeField] private OverlapCheck _interactionCheck;
+        [SerializeField] private OverlapCheck _platformCheck;
         [SerializeField] protected InventoryController _inventory;
         [SerializeField] private int _fireflyHeal;
 
         [Header("Attack Params")]
-        [SerializeField] protected CheckCircleOverlap _superAttackRange;
+        [SerializeField] protected OverlapCheck _superAttackRange;
         [SerializeField] private DirectionalSpawnComponent _rangeProjectileSpawner;
         [SerializeField] private Cooldown _attackCooldown;
         [SerializeField] private Cooldown _superAttackCooldown;
