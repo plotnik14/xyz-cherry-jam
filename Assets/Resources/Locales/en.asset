@@ -57,4 +57,12 @@ MonoBehaviour:
   - Key: tutorial_look_around
     Value: "Hold W or S to look around\r"
   - Key: tutorial_altar
-    Value: R - Healing\nAltar restores fireflies and magic projectiles
+    Value: "R - Healing\\nAltar restores fireflies and magic projectiles\r"
+  - Key: location_name_academy
+    Value: "Academy\r"
+  - Key: location_name_garden
+    Value: "Botanical Garden\r"
+  - Key: location_name_shrine
+    Value: "Tomb of the Founders\r"
+  - Key: location_name_mountain
+    Value: Mountain of Magisters
