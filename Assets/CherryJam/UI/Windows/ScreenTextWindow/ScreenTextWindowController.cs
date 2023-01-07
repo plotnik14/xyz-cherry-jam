@@ -1,19 +1,21 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace CherryJam.UI.Windows.AuthorsWindow
+namespace CherryJam.UI.Windows.ScreenTextWindow
 {
-    public class AuthorsWindowController : MonoBehaviour
+    public class ScreenTextWindowController : MonoBehaviour
     {
+        [SerializeField] private string _windowToLoad;
+        
         private GameObject _canvasObj;
         private void Awake()
         {
-            StartCoroutine(ShowAuthorsWindow());
+            StartCoroutine(LoadWindow());
         }
 
-        private IEnumerator ShowAuthorsWindow()
+        private IEnumerator LoadWindow()
         {
-            var window = Resources.Load<GameObject>("UI/AuthorsWindow");
+            var window = Resources.Load<GameObject>(_windowToLoad);
             
             while (_canvasObj == null)
             {

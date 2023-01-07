@@ -337,7 +337,7 @@ GameObject:
   - component: {fileID: 735325184}
   - component: {fileID: 735325183}
   m_Layer: 0
-  m_Name: AuthorsWindowController
+  m_Name: EndGameWindowController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -355,7 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 452956b0f0614d068b5cc2f78f0fff7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _windowToLoad: UI/AuthorsWindow
+  _windowToLoad: UI/EndGameWindow
 --- !u!4 &735325184
 Transform:
   m_ObjectHideFlags: 0

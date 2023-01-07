@@ -506,7 +506,7 @@ PrefabInstance:
     - target: {fileID: 6317902441296589652, guid: eb16c5223b7831f45a82b1a38cbea8ab,
         type: 3}
       propertyPath: _sceneName
-      value: Level6_Credits
+      value: Level6_EndGame
       objectReference: {fileID: 0}
     - target: {fileID: 6317902441296589654, guid: eb16c5223b7831f45a82b1a38cbea8ab,
         type: 3}

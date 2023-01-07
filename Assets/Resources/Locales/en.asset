@@ -130,4 +130,17 @@ MonoBehaviour:
     Value: "Artists\\nAleksandr Asonov\\nAntonina Alferova\\nMaksim Chernyshenko\\nDmitrii
       Kuznetsov\\nMaksim Vorotiagin\\nViktoriia Isaeva\r"
   - Key: authors_thanks
-    Value: Thanks for your interest in our project!
+    Value: "Thanks for your interest in our project!\r"
+  - Key: found_letter_1
+    Value: "No way! I received a similar letter!\r"
+  - Key: found_letter_2
+    Value: "Another one! But Magister said I was the only one who responded\r"
+  - Key: found_letter_3
+    Value: "I'll find out who sent these letters!\r"
+  - Key: diag_lvl4_gates
+    Value: "The Gates are open! And where is the Magister?\r"
+  - Key: end_of_the_game
+    Value: Bits of dust hunging in the air. There is no eternal light of the Great
+      Founders, nor the Darkness. Only the moon and stars illuminate the ancient
+      hall through the stained glass, leaving the student with thoughts of fulfilled
+      ordeals and the fate that could have overtaken her\n\nThe end
