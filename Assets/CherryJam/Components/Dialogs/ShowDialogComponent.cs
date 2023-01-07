@@ -40,19 +40,22 @@ namespace CherryJam.Components.Dialogs
 
         private IEnumerator FindAndUpdateDialogBox(string dialogBoxTag)
         {
-            while (_dialogBox == null)
+            if (_dialogBox == null)
             {
-                var dialogBoxObj = GameObject.FindWithTag(dialogBoxTag);
-
-                if (dialogBoxObj != null)
+                GameObject dialogBoxObj = null;
+                while (dialogBoxObj == null)
                 {
-                    _dialogBox = dialogBoxObj.GetComponent<DialogBoxController>();
-                    _dialogBox.ShowDialog(Data, _onComplete);
-                    _hasBeenShown = true;
+                    dialogBoxObj = GameObject.FindWithTag(dialogBoxTag);
+
+                    if (dialogBoxObj == null)
+                        yield return null;
                 }
-                else
-                    yield return null;
+                
+                _dialogBox = dialogBoxObj.GetComponent<DialogBoxController>();
             }
+            
+            _dialogBox.ShowDialog(Data, _onComplete);
+            _hasBeenShown = true;
         }
 
         public void Show(DialogDef dialogDef)

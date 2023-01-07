@@ -12,10 +12,25 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 1.38
       objectReference: {fileID: 0}
+    - target: {fileID: 8209137115748087257, guid: 427e7865631624f458fb2659c9d44402,
+        type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209137115748087257, guid: 427e7865631624f458fb2659c9d44402,
+        type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 8049838682630285199}
+    - target: {fileID: 8209137115748087257, guid: 427e7865631624f458fb2659c9d44402,
+        type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetInput
+      objectReference: {fileID: 0}
     - target: {fileID: 8209137115748087261, guid: 427e7865631624f458fb2659c9d44402,
         type: 3}
       propertyPath: m_Name
-      value: CannotLeaveNow
+      value: CannotLeaveNowSouls
       objectReference: {fileID: 0}
     - target: {fileID: 8209137115748087262, guid: 427e7865631624f458fb2659c9d44402,
         type: 3}
@@ -74,6 +89,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8209137115748087263, guid: 427e7865631624f458fb2659c9d44402,
         type: 3}
+      propertyPath: _oneTimeDialog
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209137115748087263, guid: 427e7865631624f458fb2659c9d44402,
+        type: 3}
       propertyPath: _useLocalization
       value: 1
       objectReference: {fileID: 0}
@@ -87,5 +107,22 @@ PrefabInstance:
       propertyPath: _boundDialog.Sentences.Array.data[0]._value
       value: diag_cant_leave_release_souls
       objectReference: {fileID: 0}
+    - target: {fileID: 8209137115748087263, guid: 427e7865631624f458fb2659c9d44402,
+        type: 3}
+      propertyPath: _onComplete.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 427e7865631624f458fb2659c9d44402, type: 3}
+--- !u!114 &8049838682630285199 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8209137115748087259, guid: 427e7865631624f458fb2659c9d44402,
+    type: 3}
+  m_PrefabInstance: {fileID: 2187187112900809300}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d04453da9e0e4ad09b1adcd1f4c7f8d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
