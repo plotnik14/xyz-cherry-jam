@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -810,6 +810,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 474594786}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &474594788 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2490357133750630715, guid: e7b50e624e1ad90409e922b1007d1c39,
+    type: 3}
+  m_PrefabInstance: {fileID: 474594786}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &474594789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474594788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40334e020af04c1a8418b94418afc86e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: tutorial_jump
+  _capitalize: 0
 --- !u!1001 &569688003
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -827,6 +847,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2490357133750630708, guid: e7b50e624e1ad90409e922b1007d1c39,
+        type: 3}
+      propertyPath: m_FontData.m_RichText
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2490357133750630708, guid: e7b50e624e1ad90409e922b1007d1c39,
         type: 3}
@@ -981,6 +1006,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 569688003}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &569688005 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2490357133750630715, guid: e7b50e624e1ad90409e922b1007d1c39,
+    type: 3}
+  m_PrefabInstance: {fileID: 569688003}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &569688006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 569688005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40334e020af04c1a8418b94418afc86e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: tutorial_movement_and menu
+  _capitalize: 0
 --- !u!1 &580473668
 GameObject:
   m_ObjectHideFlags: 0
@@ -1587,6 +1632,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 919706531}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &919706533 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2490357133750630715, guid: e7b50e624e1ad90409e922b1007d1c39,
+    type: 3}
+  m_PrefabInstance: {fileID: 919706531}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &919706534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919706533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40334e020af04c1a8418b94418afc86e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: tutorial_attack
+  _capitalize: 0
 --- !u!1001 &945692910
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1767,6 +1832,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 945692910}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &945692912 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2490357133750630715, guid: e7b50e624e1ad90409e922b1007d1c39,
+    type: 3}
+  m_PrefabInstance: {fileID: 945692910}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &945692913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945692912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40334e020af04c1a8418b94418afc86e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: tutorial_jump_down
+  _capitalize: 0
 --- !u!1 &995506642
 GameObject:
   m_ObjectHideFlags: 0

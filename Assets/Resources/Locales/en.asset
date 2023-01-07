@@ -43,4 +43,18 @@ MonoBehaviour:
   - Key: txt_loading
     Value: "Loading..\r"
   - Key: txt_next
-    Value: Next
+    Value: "Next\r"
+  - Key: tutorial_movement_and menu
+    Value: "A,D - Movement\\nESC - Menu\r"
+  - Key: tutorial_attack
+    Value: "LMB - Melee Attack\\nRMB - Range Attack\\nShift+LMB - Power Melee Attack\r"
+  - Key: tutorial_jump
+    Value: "Space - Jump\r"
+  - Key: tutorial_jump_down
+    Value: "Space+S - Jump down\r"
+  - Key: tutorial_interaction
+    Value: "E - Interaction\r"
+  - Key: tutorial_look_around
+    Value: "Hold W or S to look around\r"
+  - Key: tutorial_altar
+    Value: R - Healing\nAltar restores fireflies and magic projectiles

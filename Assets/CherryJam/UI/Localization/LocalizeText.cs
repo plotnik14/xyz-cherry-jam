@@ -27,9 +27,16 @@ namespace CherryJam.UI.Localization
         private void Localize()
         {
             var localizedText = LocalizationManager.I.Localize(_key);
+            localizedText = FormatNewLines(localizedText);
+            
             _text.text = _capitalize 
                 ? localizedText.ToUpper() 
                 : localizedText;
+        }
+
+        private string FormatNewLines(string text)
+        {
+            return text.Replace("\\n", "\n");
         }
 
         private void OnDestroy()
