@@ -43,7 +43,7 @@ MonoBehaviour:
   - Key: txt_loading
     Value: "Loading..\r"
   - Key: txt_next
-    Value: "Next\r"
+    Value: "Continue\r"
   - Key: tutorial_movement_and menu
     Value: "A,D - Movement\\nESC - Menu\r"
   - Key: tutorial_attack
@@ -105,7 +105,7 @@ MonoBehaviour:
   - Key: diag_cant_leave_release_souls
     Value: "I can\u2019t go further, I should release the souls of all the Students\r"
   - Key: diag_cant_leave_firefly
-    Value: "TODO\r"
+    Value: "The soul of the Founder must rest around here\r"
   - Key: letter_text_1
     Value: "Masters,\\n\\nDark times have come\u2026I am calling everyone who learned
       within the walls of our Academy! My apologies for suddenness, but there are
