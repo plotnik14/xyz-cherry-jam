@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using CherryJam.Model.Data;
 using CherryJam.Model.Definition;
+using CherryJam.Model.Definition.Localization;
 using CherryJam.UI.Hud.Dialogs;
 using UnityEngine;
 using UnityEngine.Events;
@@ -11,7 +13,7 @@ namespace CherryJam.Components.Dialogs
     public class ShowDialogComponent : MonoBehaviour
     {
         [SerializeField] private Mode _mode;
-        // [SerializeField] private bool _useLocalization = true;
+        [SerializeField] private bool _useLocalization = true;
         [SerializeField] private bool _oneTimeDialog = true;
         [SerializeField] private DialogData _boundDialog;
         [SerializeField] private DialogDef _externalDialog;
@@ -59,6 +61,26 @@ namespace CherryJam.Components.Dialogs
             Show();
         }
         
+        private DialogData LocalizeData(DialogData data)
+        {
+            var localizedData = data;
+            var localizedSentences = new List<Sentence>();
+
+            foreach (var sentence in localizedData.Sentences)
+            {
+                var localizedSentence = new Sentence(
+                    LocalizationManager.I.Localize(sentence.Value),
+                    sentence.Icon, 
+                    sentence.Side
+                );      
+                
+                localizedSentences.Add(localizedSentence);
+            }
+
+            localizedData.Sentences = localizedSentences.ToArray();
+            return localizedData;
+        }
+        
         public DialogData Data
         {
             get
@@ -66,9 +88,13 @@ namespace CherryJam.Components.Dialogs
                 switch (_mode)
                 {
                     case Mode.Bound:
-                        return _boundDialog;
+                        return _useLocalization 
+                            ? LocalizeData(_boundDialog) 
+                            : _boundDialog;
                     case Mode.External:
-                        return _externalDialog.Data;
+                        return _useLocalization 
+                            ? LocalizeData(_externalDialog.Data) 
+                            : _externalDialog.Data;
                     default:
                         throw new ArgumentOutOfRangeException();
                 }

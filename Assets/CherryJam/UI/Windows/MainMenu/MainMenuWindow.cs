@@ -14,6 +14,11 @@ namespace CherryJam.UI.Windows.MainMenu
         {
             WindowUtils.CreateWindow("UI/SettingsWindow");
         }
+        
+        public void OnShowLanguages()
+        {
+            WindowUtils.CreateWindow("UI/LocalizationWindow");
+        }
 
         public void OnStartGame()
         {

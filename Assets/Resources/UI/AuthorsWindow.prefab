@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4529870869625306380}
   - component: {fileID: 8430185026115120793}
   - component: {fileID: 1463074216688738855}
+  - component: {fileID: 1917526611}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -78,6 +79,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\u0410\u0432\u0442\u043E\u0440\u044B"
+--- !u!114 &1917526611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925702462351999505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40334e020af04c1a8418b94418afc86e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: menu_authors
+  _capitalize: 0
 --- !u!1 &3412661231334159817
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,6 +228,7 @@ GameObject:
   - component: {fileID: 3412661231371245356}
   - component: {fileID: 3412661231371245358}
   - component: {fileID: 3412661231371245359}
+  - component: {fileID: 1917526613}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -280,6 +296,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\u0412 \u043C\u0435\u043D\u044E"
+--- !u!114 &1917526613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3412661231371245357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40334e020af04c1a8418b94418afc86e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: menu_back_to_menu
+  _capitalize: 0
 --- !u!1 &3412661231564053260
 GameObject:
   m_ObjectHideFlags: 0

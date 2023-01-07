@@ -439,6 +439,7 @@ GameObject:
   - component: {fileID: 1229238461}
   - component: {fileID: 1229238463}
   - component: {fileID: 1229238462}
+  - component: {fileID: 899055927}
   m_Layer: 5
   m_Name: Label Music
   m_TagString: Untagged
@@ -506,6 +507,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\u041C\u0443\u0437\u044B\u043A\u0430:"
+--- !u!114 &899055927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229238460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40334e020af04c1a8418b94418afc86e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: menu_music
+  _capitalize: 0
 --- !u!1 &1236666676
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,6 +631,7 @@ GameObject:
   - component: {fileID: 1370858809}
   - component: {fileID: 1370858811}
   - component: {fileID: 1370858810}
+  - component: {fileID: 899055929}
   m_Layer: 5
   m_Name: Label SFX
   m_TagString: Untagged
@@ -683,6 +699,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\u042D\u0444\u0444\u0435\u043A\u0442\u044B:"
+--- !u!114 &899055929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370858808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40334e020af04c1a8418b94418afc86e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: menu_sfx
+  _capitalize: 0
 --- !u!1 &1448162862
 GameObject:
   m_ObjectHideFlags: 0
@@ -1160,6 +1190,7 @@ GameObject:
   - component: {fileID: 5588570184011965862}
   - component: {fileID: 5588570184011965856}
   - component: {fileID: 5588570184011965857}
+  - component: {fileID: 899055925}
   m_Layer: 5
   m_Name: Header
   m_TagString: Untagged
@@ -1227,6 +1258,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438"
+--- !u!114 &899055925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5588570184011965863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40334e020af04c1a8418b94418afc86e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: menu_settings
+  _capitalize: 0
 --- !u!1 &5588570184839729134
 GameObject:
   m_ObjectHideFlags: 0
