@@ -1,4 +1,5 @@
-﻿using CherryJam.UI.Hud.Letter;
+﻿using CherryJam.Model.Definition.Localization;
+using CherryJam.UI.Hud.Letter;
 using UnityEngine;
 
 namespace CherryJam.Components
@@ -11,8 +12,8 @@ namespace CherryJam.Components
         {
             var letterBox = GameObject.FindWithTag("LetterBox");
             var letterController = letterBox.GetComponent<LetterController>();
-
-            letterController.Show(_text);
+            var localizedText = LocalizationManager.I.Localize(_text);
+            letterController.Show(localizedText);
         }
     }
 }

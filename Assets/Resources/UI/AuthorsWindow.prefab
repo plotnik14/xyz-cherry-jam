@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 3412661231334159816}
   - component: {fileID: 3412661231334159818}
   - component: {fileID: 3412661231334159819}
+  - component: {fileID: 879783994}
   m_Layer: 5
   m_Name: GameDesign
   m_TagString: Untagged
@@ -172,6 +173,20 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "\u0413\u0435\u0439\u043C\u0434\u0438\u0437\u0430\u0439\u043D\n\u041C\u0430\u043A\u0441\u0438\u043C
     \u0427\u0435\u0440\u043D\u044B\u0448\u0435\u043D\u043A\u043E"
+--- !u!114 &879783994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3412661231334159817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40334e020af04c1a8418b94418afc86e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: authors_game designer
+  _capitalize: 0
 --- !u!1 &3412661231359672775
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,6 +473,7 @@ GameObject:
   - component: {fileID: 3412661231689330016}
   - component: {fileID: 3412661231689330018}
   - component: {fileID: 3412661231689330019}
+  - component: {fileID: 879783996}
   m_Layer: 5
   m_Name: Sound
   m_TagString: Untagged
@@ -526,6 +542,20 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "\u0421\u0430\u0443\u043D\u0434-\u043F\u0440\u043E\u0434\u044E\u0441\u0435\u0440/\u041A\u043E\u043C\u043F\u043E\u0437\u0438\u0442\u043E\u0440\n\u0415\u0432\u0433\u0435\u043D\u0438\u0439
     \u041B\u0435\u0441\u043D\u044B\u0445"
+--- !u!114 &879783996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3412661231689330017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40334e020af04c1a8418b94418afc86e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: authors_composer
+  _capitalize: 0
 --- !u!1 &3412661231918117378
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,6 +773,7 @@ GameObject:
   - component: {fileID: 3412661232565769230}
   - component: {fileID: 3412661232565769216}
   - component: {fileID: 3412661232565769217}
+  - component: {fileID: 879783992}
   m_Layer: 5
   m_Name: Programmer
   m_TagString: Untagged
@@ -811,6 +842,20 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0441\u0442\n\u0410\u043B\u0435\u043A\u0441\u0430\u043D\u0434\u0440
     \u041F\u043B\u043E\u0442\u043D\u0438\u043A\u043E\u0432"
+--- !u!114 &879783992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3412661232565769231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40334e020af04c1a8418b94418afc86e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: authors_programmer
+  _capitalize: 0
 --- !u!1 &3412661232768405679
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,6 +931,7 @@ GameObject:
   - component: {fileID: 3412661233026403379}
   - component: {fileID: 3412661233026403381}
   - component: {fileID: 3412661233026403378}
+  - component: {fileID: 879783998}
   m_Layer: 5
   m_Name: Art
   m_TagString: Untagged
@@ -959,6 +1005,20 @@ MonoBehaviour:
     \u041A\u0443\u0437\u043D\u0435\u0446\u043E\u0432 \n\u041C\u0430\u043A\u0441\u0438\u043C
     \u0412\u043E\u0440\u043E\u0442\u044F\u0433\u0438\u043D\r\n\u0412\u0438\u043A\u0442\u043E\u0440\u0438\u044F
     \u0418\u0441\u0430\u0435\u0432\u0430 \r"
+--- !u!114 &879783998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3412661233026403376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40334e020af04c1a8418b94418afc86e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: authors_art
+  _capitalize: 0
 --- !u!1 &5858914795232496539
 GameObject:
   m_ObjectHideFlags: 0
@@ -970,6 +1030,7 @@ GameObject:
   - component: {fileID: 2869779512806637993}
   - component: {fileID: 3868919138432564619}
   - component: {fileID: 367600333972878925}
+  - component: {fileID: 879784000}
   m_Layer: 5
   m_Name: Comment
   m_TagString: Untagged
@@ -1038,3 +1099,17 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "\u0421\u043F\u0430\u0441\u0438\u0431\u043E \u0437\u0430 \u0438\u043D\u0442\u0435\u0440\u0435\u0441
     \u043A \u043D\u0430\u0448\u0435\u043C\u0443 \u043F\u0440\u043E\u0435\u043A\u0442\u0443!"
+--- !u!114 &879784000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5858914795232496539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40334e020af04c1a8418b94418afc86e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: authors_thanks
+  _capitalize: 0

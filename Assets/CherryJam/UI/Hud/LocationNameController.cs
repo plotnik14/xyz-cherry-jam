@@ -14,15 +14,10 @@ namespace CherryJam.UI.Hud
         
         private static readonly int StartKey = Animator.StringToHash("start");
 
-        private void Awake()
+        private void Start()
         {
             var locationNameComponent = FindObjectOfType<LocationNameComponent>();
-            locationNameComponent.LocationName.Subscribe(OnChanged);
-        }
-
-        private void OnChanged(string value, string _)
-        {
-            _name.text = value;
+            _name.text = locationNameComponent.LocationName;
             _animator.SetTrigger(StartKey);
         }
 

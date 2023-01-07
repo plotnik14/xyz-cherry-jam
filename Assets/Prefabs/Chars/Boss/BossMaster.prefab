@@ -591,17 +591,6 @@ MonoBehaviour:
           m_StringArgument: Die
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8196221947795011448}
-        m_MethodName: Exit
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   _onChange:
     m_PersistentCalls:
       m_Calls: []
@@ -781,6 +770,7 @@ GameObject:
   - component: {fileID: 8196221948265461086}
   - component: {fileID: 8196221948265461080}
   - component: {fileID: 8196221948265461081}
+  - component: {fileID: 972344890}
   m_Layer: 13
   m_Name: BossName
   m_TagString: Untagged
@@ -847,7 +837,21 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041C\u0430\u0441\u0442\u0435\u0440"
+  m_Text: "\u041C\u0430\u0433\u0438\u0441\u0442\u0440"
+--- !u!114 &972344890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8196221948265461087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40334e020af04c1a8418b94418afc86e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: boss_name
+  _capitalize: 0
 --- !u!1 &8196221948415226956
 GameObject:
   m_ObjectHideFlags: 0

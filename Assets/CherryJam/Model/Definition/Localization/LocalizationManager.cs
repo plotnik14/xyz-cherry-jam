@@ -36,11 +36,17 @@ namespace CherryJam.Model.Definition.Localization
 
         public string Localize(string key)
         {
-            return _localization.TryGetValue(key, out var value) 
+            var localizedValue = _localization.TryGetValue(key, out var value) 
                 ? value 
                 : $"%%%{key}%%%";
+            return FormatNewLines(localizedValue);
         }
 
+        private string FormatNewLines(string text)
+        {
+            return text.Replace("\\n", "\n");
+        }
+        
         public void SetLocale(string localeKey)
         {
             LoadLocale(localeKey);

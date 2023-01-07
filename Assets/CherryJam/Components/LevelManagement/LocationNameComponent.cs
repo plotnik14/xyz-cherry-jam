@@ -8,12 +8,11 @@ namespace CherryJam.Components.LevelManagement
     {
         [SerializeField] private string _locationName;
 
-        public StringProperty LocationName = new StringProperty();
+        public string LocationName => _locationName;
 
-        private void Start()
+        private void Awake()
         {
-            var locationName = Localize(_locationName);
-            LocationName.Value = locationName;
+            _locationName = Localize(_locationName);
         }
 
         private string Localize(string locationName)

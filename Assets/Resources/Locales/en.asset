@@ -65,4 +65,69 @@ MonoBehaviour:
   - Key: location_name_shrine
     Value: "Tomb of the Founders\r"
   - Key: location_name_mountain
-    Value: Mountain of Magisters
+    Value: "Mountain of Magisters\r"
+  - Key: diag_lvl0_start
+    Value: "Weird, the Academy looks completely abandoned\u2026\r"
+  - Key: diag_lvl0_kill_mob
+    Value: "What is that thing?\r"
+  - Key: diag_lvl0_gate
+    Value: "These Gates are closed. Have to find another way\r"
+  - Key: diag_lvl1_master_1
+    Value: "Here you are, my dear. I see you have already understood, why I called
+      you\r"
+  - Key: diag_lvl1_master_2
+    Value: "I did, Magister. This place has changed a lot since my graduation. There
+      were not a soul on my way here\r"
+  - Key: diag_lvl1_master_3
+    Value: "Everyone left, and those who chose to struggle\u2026 They\u2019re gone\r"
+  - Key: diag_lvl1_master_4
+    Value: "But why?\r"
+  - Key: diag_lvl1_master_5
+    Value: "Me and students succeeded to seal the source of darkness behind these
+      doors, but it cost us a lot\r"
+  - Key: diag_lvl1_master_6
+    Value: "My strength is lacking, I have no energy to hold the gate myself\r"
+  - Key: diag_lvl1_master_7
+    Value: "You are the only one who responded to my letter, so you will have to
+      fulfill your old Magister's last assignment\r"
+  - Key: diag_lvl1_master_8
+    Value: "What should I do, Magister?\r"
+  - Key: diag_lvl1_master_9
+    Value: "Our Academy is protected by the power of its Founders, three great magicians,
+      whose souls reincarnated as fireflies.\r"
+  - Key: diag_lvl1_master_10
+    Value: " You must find and bring me all the fireflies, and we will destroy the
+      Darkness!\r"
+  - Key: diag_lvl1_blocked_path
+    Value: "I haven\u2019t been here for so long, Botanical Garden - another direction\r"
+  - Key: diag_lvl2_first_firefly
+    Value: "Here is a firefly. Gotcha!\r"
+  - Key: diag_cant_leave_release_souls
+    Value: "I can\u2019t go further, I should release the souls of all the Students\r"
+  - Key: diag_cant_leave_firefly
+    Value: "TODO\r"
+  - Key: letter_text_1
+    Value: "Masters,\\n\\nDark times have come\u2026I am calling everyone who learned
+      within the walls of our Academy! My apologies for suddenness, but there are
+      exigent circumstances.\\n\\nMagister\r"
+  - Key: diag_lvl5_boss_1
+    Value: "Well done! Did you meet your friends and fellow students? They missed
+      you too.\r"
+  - Key: diag_lvl5_boss_2
+    Value: "These Great Founders interfered with me, even after death.\r"
+  - Key: diag_lvl5_boss_3
+    Value: "I am very glad you fulfilled my task and brought their souls here. Five
+      points for you!\r"
+  - Key: boss_name
+    Value: "Magister\r"
+  - Key: authors_programmer
+    Value: "Programmer\\nAlexander Plotnikov\r"
+  - Key: authors_game designer
+    Value: "Game Design\\nMaksim Chernyshenko\r"
+  - Key: authors_composer
+    Value: "Sound Producer/Composer\\nEvgenii Lesnykh\r"
+  - Key: authors_art
+    Value: "Artists\\nAleksandr Asonov\\nAntonina Alferova\\nMaksim Chernyshenko\\nDmitrii
+      Kuznetsov\\nMaksim Vorotiagin\\nViktoriia Isaeva\r"
+  - Key: authors_thanks
+    Value: Thanks for your interest in our project!
