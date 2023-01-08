@@ -140,7 +140,13 @@ MonoBehaviour:
   - Key: diag_lvl4_gates
     Value: "The Gates are open! And where is the Magister?\r"
   - Key: end_of_the_game
-    Value: Bits of dust hunging in the air. There is no eternal light of the Great
+    Value: "Bits of dust hunging in the air. There is no eternal light of the Great
       Founders, nor the Darkness. Only the moon and stars illuminate the ancient
       hall through the stained glass, leaving the student with thoughts of fulfilled
-      ordeals and the fate that could have overtaken her\n\nThe end
+      ordeals and the fate that could have overtaken her\\n\\nThe end\r"
+  - Key: intro_subtitle_1
+    Value: "Masters, Dark times have come\u2026\r"
+  - Key: intro_subtitle_2
+    Value: "I am calling everyone who learned within the walls of our Academy!\r"
+  - Key: intro_subtitle_3
+    Value: My apologies for suddenness, but there are exigent circumstances.
