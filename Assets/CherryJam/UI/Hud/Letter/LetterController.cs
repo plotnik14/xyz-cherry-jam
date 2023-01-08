@@ -2,6 +2,7 @@
 using CherryJam.Creatures.Hero;
 using CherryJam.Utils;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace CherryJam.UI.Hud.Letter
@@ -12,9 +13,12 @@ namespace CherryJam.UI.Hud.Letter
         [SerializeField] private Text _text;
         
         private Hero _hero;
+        private UnityEvent _onComplete;
 
-        public void Show(string text)
+        public void Show(string text, UnityEvent onComplete)
         {
+            _onComplete = onComplete;
+            
             TimeUtils.StopTime();
             
             if (_hero == null)
@@ -33,6 +37,8 @@ namespace CherryJam.UI.Hud.Letter
             _text.text = String.Empty;
             
             _hero.UnlockInput();
+            
+            _onComplete?.Invoke();
         }
     }
 }
