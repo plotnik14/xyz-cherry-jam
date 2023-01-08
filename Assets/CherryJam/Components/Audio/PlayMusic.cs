@@ -14,13 +14,19 @@ namespace CherryJam.Components.Audio
                 _source = AudioManager.Instance.Music;
             
             if (_playOnStart)
-                Play();
+                PlayIfNew();
         }
 
         public void Play()
         {
             _source.clip = _clip;
             _source.Play();
+        }
+
+        private void PlayIfNew()
+        {
+            if (_source.clip.name == _clip.name) return;
+            Play();
         }
     }
 }
