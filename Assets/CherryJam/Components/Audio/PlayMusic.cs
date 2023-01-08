@@ -25,7 +25,7 @@ namespace CherryJam.Components.Audio
 
         private void PlayIfNew()
         {
-            if (_source.clip.name == _clip.name) return;
+            if (_source.clip == _clip) return;
             Play();
         }
     }
