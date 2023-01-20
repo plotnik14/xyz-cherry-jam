@@ -1514,7 +1514,7 @@ MonoBehaviour:
   - _id: Dead
     _clip: {fileID: 8300000, guid: 7dca5e3192e05ec44ab9835150049112, type: 3}
   - _id: Heal
-    _clip: {fileID: 8300000, guid: 1b3e5a4ce47f74d41894ec7d598d1e75, type: 3}
+    _clip: {fileID: 8300000, guid: 0806fdd099954204fb94af93d460ca0d, type: 3}
 --- !u!114 &1210272544332402138
 MonoBehaviour:
   m_ObjectHideFlags: 0

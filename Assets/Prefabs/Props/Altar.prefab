@@ -484,7 +484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c2dd2d5e4572eb48a05e305cbe08869, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _clip: {fileID: 8300000, guid: 40bc9a891452cdc48816c6e768584703, type: 3}
+  _clip: {fileID: 8300000, guid: 9126015d2a6197d46a4b7d645f361a8d, type: 3}
 --- !u!1 &5466441954494479426
 GameObject:
   m_ObjectHideFlags: 0
