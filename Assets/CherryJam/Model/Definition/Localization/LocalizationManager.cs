@@ -13,9 +13,9 @@ namespace CherryJam.Model.Definition.Localization
         private Dictionary<string, string> _localization;
 
         public string LocaleKey => _localeKey.Value;
-        
+
         public event Action OnLocaleChanged;
-        
+
         static LocalizationManager()
         {
             I = new LocalizationManager();
@@ -25,7 +25,7 @@ namespace CherryJam.Model.Definition.Localization
         {
             LoadLocale(_localeKey.Value);
         }
-        
+
         private void LoadLocale(string localeToLoad)
         {
             var localeDef = Resources.Load<LocaleDef>($"Locales/{localeToLoad}");
@@ -36,8 +36,8 @@ namespace CherryJam.Model.Definition.Localization
 
         public string Localize(string key)
         {
-            var localizedValue = _localization.TryGetValue(key, out var value) 
-                ? value 
+            var localizedValue = _localization.TryGetValue(key, out var value)
+                ? value
                 : $"%%%{key}%%%";
             return FormatNewLines(localizedValue);
         }
@@ -46,7 +46,13 @@ namespace CherryJam.Model.Definition.Localization
         {
             return text.Replace("\\n", "\n");
         }
-        
+
+        public Sprite LocalizeImage(string imageTag)
+        {
+            var sprite = Resources.Load<Sprite>($"LocalizedImages/{_localeKey.Value}/{imageTag}");
+            return sprite;
+        }
+
         public void SetLocale(string localeKey)
         {
             LoadLocale(localeKey);
