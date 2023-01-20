@@ -417,7 +417,7 @@ MonoBehaviour:
   _useLocalAudioSource: 0
   _sounds:
   - _id: Melee
-    _clip: {fileID: 8300000, guid: 6b17af055af806a4e85e29f5d490b611, type: 3}
+    _clip: {fileID: 8300000, guid: 8b63e3b95cc6ae447bed32a9211f6c1b, type: 3}
   - _id: Hurt
     _clip: {fileID: 8300000, guid: 6b172ca9334a4b449a5d8a9ca96ff494, type: 3}
   - _id: Die
