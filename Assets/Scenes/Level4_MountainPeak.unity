@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -4612,7 +4612,9 @@ PolygonCollider2D:
       - {x: -21.043192, y: 12.700365}
       - {x: -18.503057, y: 17.811258}
       - {x: -15.534057, y: 21.853607}
-      - {x: -15.140001, y: 20.41229}
+      - {x: -14.958968, y: 21.93814}
+      - {x: -15.273966, y: 15.816304}
+      - {x: -14.770662, y: 14.8364525}
       - {x: -14.203244, y: 12.381061}
       - {x: -11.68662, y: 10.454533}
       - {x: -10.05508, y: 9.032644}
@@ -4742,7 +4744,30 @@ MonoBehaviour:
   _externalDialog: {fileID: 0}
   _onComplete:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1884336750}
+        m_MethodName: DestroyObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1884336750 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4274736780220148012, guid: db236a9f1b332d94289a0e2a917f96c3,
+    type: 3}
+  m_PrefabInstance: {fileID: 4274736779296400057}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1884336748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c15a6552d76e0443817419f3dc04fd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1925661125
 PrefabInstance:
   m_ObjectHideFlags: 0
