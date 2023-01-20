@@ -4065,6 +4065,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trap
       objectReference: {fileID: 0}
+    - target: {fileID: 684558030657358422, guid: 4f22af6865a8b6d41a077c4873a4c94a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f22af6865a8b6d41a077c4873a4c94a, type: 3}
 --- !u!1001 &1521090473429512321
