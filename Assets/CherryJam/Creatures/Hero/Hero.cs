@@ -91,7 +91,7 @@ namespace CherryJam.Creatures.Hero
             var isGroundedBefore = IsGrounded;
             base.Update();
 
-            if (IsGrounded && !isGroundedBefore)
+            if (IsGrounded && !isGroundedBefore && Rigidbody.velocity.y < 0)
                 PlayLandingSound();
         }
 
