@@ -1506,7 +1506,7 @@ MonoBehaviour:
   - _id: Jump
     _clip: {fileID: 8300000, guid: 50f2dbe265963564aa53b33f852dac21, type: 3}
   - _id: Melee
-    _clip: {fileID: 8300000, guid: 3df4e1b6bd948aa4694d2ee25f411cc3, type: 3}
+    _clip: {fileID: 8300000, guid: 448e78c99da7ed444909ce9b3120f8fe, type: 3}
   - _id: Range
     _clip: {fileID: 8300000, guid: 422ba1bf10bdd5c42a5f28458ca9cd1b, type: 3}
   - _id: Hurt
