@@ -149,4 +149,6 @@ MonoBehaviour:
   - Key: intro_subtitle_2
     Value: "I am calling everyone who learned within the walls of our Academy!\r"
   - Key: intro_subtitle_3
-    Value: My apologies for suddenness, but there are exigent circumstances.
+    Value: "My apologies for suddenness, but there are exigent circumstances.\r"
+  - Key: authors_composer2
+    Value: Composer\nAleksandr ???
