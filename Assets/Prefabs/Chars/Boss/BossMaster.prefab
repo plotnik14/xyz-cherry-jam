@@ -368,7 +368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 8196221947787030707}
-  _prefab: {fileID: 3169117936097083666, guid: 879189889e5d2754a994001dcdd412ff, type: 3}
+  _prefab: {fileID: 2805873956774582838, guid: 972a5168c7508bd47a18b9b73ba4d3ba, type: 3}
   _usePool: 1
   _useSpawnerScale: 1
 --- !u!1 &8196221947795011463
