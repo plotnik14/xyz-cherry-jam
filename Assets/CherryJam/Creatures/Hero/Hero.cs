@@ -39,9 +39,9 @@ namespace CherryJam.Creatures.Hero
         private readonly Cooldown _speedUpCooldown = new Cooldown();
         private float _additionalSpeed;
         private bool _isBoostedAttack;
-        
+
         private event Action _onDirectionChanged;
-        
+
         private static readonly int IsHeroKey = Animator.StringToHash("is-hero");
         private static readonly int IsBoostedKey = Animator.StringToHash("is-boosted");
 
@@ -49,7 +49,7 @@ namespace CherryJam.Creatures.Hero
 
         public bool IsLookingUp { get; set; }
         public bool IsLookingDown { get; set; }
-        
+
         protected override void Awake()
         {
             base.Awake();
@@ -57,7 +57,7 @@ namespace CherryJam.Creatures.Hero
             _playerInput = GetComponent<PlayerInput>();
             _healthComponent = GetComponent<HeroHealthComponent>();
             _inventory = GetComponent<InventoryController>();
-            
+
             _allowDoubleJump = false;
         }
 
@@ -76,21 +76,30 @@ namespace CherryJam.Creatures.Hero
         {
             WindowUtils.CreateWindow("UI/InGameMenuWindow");
         }
-        
+
         protected void Start()
         {
             UpdatePosition();
             Animator.SetBool(IsHeroKey, true);
-            
+
             var health = GetComponent<HeroHealthComponent>();
             health.SetHealth(GameSession.Instance.Data.Hp.Value);
         }
-        
+
+        protected override void Update()
+        {
+            var isGroundedBefore = IsGrounded;
+            base.Update();
+
+            if (IsGrounded && !isGroundedBefore)
+                PlayLandingSound();
+        }
+
         public void OnHealthChanged(int currentHealth)
         {
             GameSession.Instance.Data.Hp.Value = currentHealth;
         }
-        
+
         public bool AddToInventory(string id, int value)
         {
             return _inventory.Add(id, value);
@@ -149,7 +158,7 @@ namespace CherryJam.Creatures.Hero
             base.MeleeAttack();
             cooldown.Reset();
         }
-        
+
         public override void OnDie()
         {
             LockInput();
@@ -160,12 +169,12 @@ namespace CherryJam.Creatures.Hero
         {
             _interactionCheck.Check();
         }
-        
+
         protected override float CalculateSpeed()
         {
             if (_speedUpCooldown.IsReady)
                 _additionalSpeed = 0f;
-            
+
             var defaultSpeed = _speed;
             return defaultSpeed + _additionalSpeed;
         }
@@ -175,28 +184,28 @@ namespace CherryJam.Creatures.Hero
             _onDirectionChanged += call;
             return new ActionDisposable(() => _onDirectionChanged -= call);
         }
-        
+
         public void RangeAttack(Vector3 target)
         {
             if (!_rangeAttackCooldown.IsReady) return;
-            
+
             _rangeAttackTarget = target;
             base.RangeAttack();
             _rangeAttackCooldown.Reset();
         }
-        
+
         protected override void OnRangeAttackAnimationTriggered()
         {
             if (ProjectilesCount <= 0) return;
-            
+
             UpdateSpriteDirectionToCursor();
-            
+
             var direction = _rangeAttackTarget - _rangeProjectileSpawner.gameObject.transform.position;
             direction.z = 0;
             _rangeProjectileSpawner.Spawn(direction.normalized);
             GameSession.Instance.Data.Inventory.Remove(ItemId.Projectile.ToString(), 1);
         }
-        
+
         public virtual void OnSuperAttackAnimationTriggered()
         {
             _superAttackRange.Check();
@@ -207,9 +216,9 @@ namespace CherryJam.Creatures.Hero
             var mousePosition = Mouse.current.position.ReadValue();
             var target = Camera.main.ScreenToWorldPoint(mousePosition);
             var direction = target - transform.position;
-            
+
             var localScale = transform.localScale;
-            
+
             if (direction.x > 0)
             {
                 transform.localScale = new Vector3( Mathf.Abs(localScale.x), localScale.y, localScale.z);
@@ -219,23 +228,23 @@ namespace CherryJam.Creatures.Hero
                 transform.localScale = new Vector3(-1 * Mathf.Abs(localScale.x), localScale.y, localScale.z);
             }
         }
-        
+
         public override void UpdateSpriteDirection(Vector2 direction)
         {
             var originalValue = transform.localScale.x;
             base.UpdateSpriteDirection(direction);
             var newValue = transform.localScale.x;
-            
+
             if (Math.Abs(originalValue - newValue) < 0.01) return;
 
             _onDirectionChanged?.Invoke();
         }
-        
+
         public void Heal()
         {
             var firefliesCount = GameSession.Instance.Data.Inventory.Count(ItemId.FireflyToUse.ToString());
             if (firefliesCount <= 0) return;
-            
+
             Animator.SetTrigger(HealKey);
             _healthComponent.ApplyHealing(_fireflyHeal);
             GameSession.Instance.Data.Inventory.Remove(ItemId.FireflyToUse.ToString(), 1);
@@ -251,10 +260,25 @@ namespace CherryJam.Creatures.Hero
         {
             Sounds.Play("Heal");
         }
-        
+
         public override void OnDieAnimationEnded()
         {
             // do nothing
+        }
+
+        public void StepLeftSound()
+        {
+            Sounds.Play("Step1");
+        }
+
+        public void StepRightSound()
+        {
+            Sounds.Play("Step2");
+        }
+
+        public void PlayLandingSound()
+        {
+            Sounds.Play("Landing");
         }
     }
 }
