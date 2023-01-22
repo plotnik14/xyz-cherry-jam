@@ -5506,6 +5506,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6570763021703624451, guid: 18f533497c1ea39409001ccc0b361955,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6802153709699378678, guid: 18f533497c1ea39409001ccc0b361955,
         type: 3}
       propertyPath: _triggers.Array.size
