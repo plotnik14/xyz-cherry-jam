@@ -617,6 +617,7 @@ MonoBehaviour:
   _waveProjectileSpawner: {fileID: 8196221947849458086}
   _healthStageController: {fileID: 8196221947795011458}
   _firefliesSpawner: {fileID: 806685838}
+  _lostHeroDelay: 1
   _treshold: 5
 --- !u!114 &8196221947795011453
 MonoBehaviour:

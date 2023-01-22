@@ -11,13 +11,16 @@ namespace CherryJam.Creatures.Mobs.Boss.Master
         [SerializeField] private DirectionalSpawnComponent _waveProjectileSpawner;
         [SerializeField] private BossHealthStageController _healthStageController;
         [SerializeField] private EvilFirefliesSpawner _firefliesSpawner;
-        
+        [SerializeField] private float _lostHeroDelay;
+
         [Space][Header("Running Params")]
         [SerializeField] private float _treshold;
 
         private Coroutine _current;
+        private Coroutine _heroLostVisionCoroutine;
         private HealthComponent _health;
         private Hero.Hero _heroStudent;
+        private bool _isHeroInVision;
 
         private static readonly int IsOnPointKey = Animator.StringToHash("is-on-point");
         private static readonly int WaveAttackKey = Animator.StringToHash("wave-attack");
@@ -31,7 +34,7 @@ namespace CherryJam.Creatures.Mobs.Boss.Master
 
             _health = GetComponent<HealthComponent>();
             _health.OnChange.AddListener(OnHealthChanged);
-            
+
             _heroStudent = FindObjectOfType<Hero.Hero>();
         }
 
@@ -49,11 +52,11 @@ namespace CherryJam.Creatures.Mobs.Boss.Master
 
             _current = StartCoroutine(RunToHero());
         }
-        
+
         private IEnumerator RunToHero()
         {
             var point = _heroStudent.transform;
-            
+
             while (!IsOnPoint(point))
             {
                 UpdateRunDirection(point);
@@ -64,12 +67,12 @@ namespace CherryJam.Creatures.Mobs.Boss.Master
             _current = null;
             Animator.SetTrigger(IsOnPointKey);
         }
-        
+
         private void StopCreature()
         {
             SetDirection(Vector2.zero);
         }
-        
+
         private void UpdateRunDirection(Transform point)
         {
             var direction = point.position - transform.position;
@@ -86,12 +89,12 @@ namespace CherryJam.Creatures.Mobs.Boss.Master
         {
             _firefliesSpawner.SpawnFireflies();
         }
-        
+
         public void WaveAttack()
         {
             Animator.SetTrigger(WaveAttackKey);
-        } 
-        
+        }
+
         protected void OnWaveAttackAnimationTriggered()
         {
             var direction = new Vector2( - transform.localScale.x, 0);
@@ -100,14 +103,33 @@ namespace CherryJam.Creatures.Mobs.Boss.Master
 
         public void SetVision(bool isInVision)
         {
+            _isHeroInVision = isInVision;
             Animator.SetBool(HeroInVisionKey, isInVision);
 
-            if (!isInVision)
+            if (!isInVision && _heroLostVisionCoroutine == null)
+            {
+                _heroLostVisionCoroutine = StartCoroutine(WaitBeforeLoseHeroInVision());
+            }
+
+            if (isInVision && _heroLostVisionCoroutine != null)
+            {
+                StopCoroutine(_heroLostVisionCoroutine);
+                _heroLostVisionCoroutine = null;
+            }
+        }
+
+        private IEnumerator WaitBeforeLoseHeroInVision()
+        {
+            yield return new WaitForSeconds(_lostHeroDelay);
+
+            if (!_isHeroInVision)
             {
                 StopCurrentCoroutine();
                 StopCreature();
                 Animator.SetTrigger(LostHeroKey);
             }
+
+            _heroLostVisionCoroutine = null;
         }
 
         private void StopCurrentCoroutine()
