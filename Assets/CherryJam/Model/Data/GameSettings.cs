@@ -22,7 +22,7 @@ namespace CherryJam.Model.Data
 
         private void OnEnable()
         {
-            _music = new FloatPersistentProperty(1, SoundSetting.Music.ToString());
+            _music = new FloatPersistentProperty(0.8f, SoundSetting.Music.ToString());
             _sfx = new FloatPersistentProperty(1, SoundSetting.Sfx.ToString());
         }
 
