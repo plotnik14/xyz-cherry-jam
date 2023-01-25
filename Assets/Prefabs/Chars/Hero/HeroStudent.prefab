@@ -1521,6 +1521,8 @@ MonoBehaviour:
     _clip: {fileID: 8300000, guid: 1144fe85d338e7249b7ab97bc3cf7b76, type: 3}
   - _id: Landing
     _clip: {fileID: 8300000, guid: e51d01d9b95ffff4091deec91adf692a, type: 3}
+  - _id: MeleeSuper
+    _clip: {fileID: 8300000, guid: 24467bb6e10e8d94abf3c26a15118e65, type: 3}
 --- !u!114 &1210272544332402138
 MonoBehaviour:
   m_ObjectHideFlags: 0

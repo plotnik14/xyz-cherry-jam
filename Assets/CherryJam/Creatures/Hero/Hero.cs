@@ -280,5 +280,10 @@ namespace CherryJam.Creatures.Hero
         {
             Sounds.Play("Landing");
         }
+
+        public void AttackSoundSuper()
+        {
+            Sounds.Play("MeleeSuper");
+        }
     }
 }
