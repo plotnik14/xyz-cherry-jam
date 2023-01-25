@@ -123,12 +123,12 @@ MonoBehaviour:
   - Key: authors_programmer
     Value: "Programmer\\nAlexander Plotnikov\r"
   - Key: authors_game designer
-    Value: "Game Design\\nMaksim Chernyshenko\r"
+    Value: "Game Design\\nLev Griboyedov\r"
   - Key: authors_composer
     Value: "Sound Producer/Composer\\nEvgenii Lesnykh\r"
   - Key: authors_art
-    Value: "Artists\\nAleksandr Asonov\\nAntonina Alferova\\nMaksim Chernyshenko\\nDmitrii
-      Kuznetsov\\nMaksim Vorotiagin\\nViktoriia Isaeva\r"
+    Value: "Artists\\nAlexander Asonov (Saidel)\\nAntonina Alferova\\nLev Griboyedov\\nDmitry
+      Kuznetsov\\nMaksim Vorotiagin\\nVictoria Isaeva\r"
   - Key: authors_thanks
     Value: "Thanks for your interest in our project!\r"
   - Key: found_letter_1
@@ -151,4 +151,4 @@ MonoBehaviour:
   - Key: intro_subtitle_3
     Value: "My apologies for suddenness, but there are exigent circumstances.\r"
   - Key: authors_composer2
-    Value: Composer\nAleksandr ???
+    Value: Composer\nAlexander Fedoseev
